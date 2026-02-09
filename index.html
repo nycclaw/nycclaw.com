@@ -28,18 +28,6 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
-    .gradient-cta {
-      background: linear-gradient(135deg, #ec4899, #9333ea);
-    }
-    .gradient-cta:hover {
-      background: linear-gradient(135deg, #db2777, #7c3aed);
-    }
-    .gradient-text {
-      background: linear-gradient(135deg, #ec4899, #9333ea);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
     details summary::-webkit-details-marker { display: none; }
     details summary::marker { display: none; content: ""; }
     details[open] summary .faq-chevron { transform: rotate(180deg); }
@@ -60,7 +48,7 @@
         </div>
       </div>
       <div class="flex items-center gap-4">
-        <a href="#pricing" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg gradient-cta transition-all shadow-sm">Book a Call</a>
+        <a href="#pricing" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
         <!-- Mobile menu button -->
         <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-500 hover:text-gray-900" aria-label="Menu">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -81,19 +69,19 @@
   <!-- ==================== HERO ==================== -->
   <section class="pt-32 pb-20 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-purple-700 text-sm font-medium mb-6">
-        <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-gray-500"></span>
         Powered by OpenClaw &mdash; Open-Source AI
       </div>
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
         Your AI assistant,<br>
-        <span class="gradient-text">set up for you. In person.</span>
+        <span class="text-gray-900">set up for you. In person.</span>
       </h1>
       <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
         We deploy OpenClaw &mdash; the open-source AI assistant that connects to ChatGPT, Claude, Gemini, and more &mdash; directly on your devices. White-glove setup for NYC executives who want AI that actually works.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#pricing" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg gradient-cta transition-all shadow-md hover:shadow-lg">
+        <a href="#pricing" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
           Book a Discovery Call &mdash; $50
         </a>
         <a href="#what-is-openclaw" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all">
@@ -122,18 +110,18 @@
         </div>
         <!-- Google / Gemini -->
         <div class="flex items-center gap-2 text-gray-400">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 4.8a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4z"/></svg>
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68q.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58a12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68q-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96q2.19.93 3.81 2.55t2.55 3.81"/></svg>
           <span class="text-sm font-medium">Gemini</span>
         </div>
         <!-- xAI / Grok -->
         <div class="flex items-center gap-2 text-gray-400">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3l7.5 9L3 21h2.5l6-7.5L17.5 21H21l-7.5-9L21 3h-2.5l-6 7.5L6.5 3H3z"/></svg>
+          <svg class="w-6 h-6" viewBox="0 0 512 509.641" fill="currentColor"><path d="M213.235 306.019l178.976-180.002v.169l51.695-51.763c-.924 1.32-1.86 2.605-2.785 3.89-39.281 54.164-58.46 80.649-43.07 146.922l-.09-.101c10.61 45.11-.744 95.137-37.398 131.836-46.216 46.306-120.167 56.611-181.063 14.928l42.462-19.675c38.863 15.278 81.392 8.57 111.947-22.03 30.566-30.6 37.432-75.159 22.065-112.252-2.92-7.025-11.67-8.795-17.792-4.263l-124.947 92.341zm-25.786 22.437l-.033.034L68.094 435.217c7.565-10.429 16.957-20.294 26.327-30.149 26.428-27.803 52.653-55.359 36.654-94.302-21.422-52.112-8.952-113.177 30.724-152.898 41.243-41.254 101.98-51.661 152.706-30.758 11.23 4.172 21.016 10.114 28.638 15.639l-42.359 19.584c-39.44-16.563-84.629-5.299-112.207 22.313-37.298 37.308-44.84 102.003-1.128 143.81z"/></svg>
           <span class="text-sm font-medium">Grok</span>
         </div>
-        <!-- Ollama -->
+        <!-- Kimi -->
         <div class="flex items-center gap-2 text-gray-400">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="4"/><path d="M6 18c0-3.314 2.686-6 6-6s6 2.686 6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-          <span class="text-sm font-medium">Ollama</span>
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 4.5h1m.5 0a1 1 0 0 1-1 1h-1v-1a1 1 0 1 1 2 0M5.5 6H3v14.5h2.5V17l2.256-2.256l6.07 4.823c.76.604 1.703.933 2.674.933v-3a2.9 2.9 0 0 1-1.787-.616L9.61 12.889L16.5 6H13l-7.5 7.5z"/></svg>
+          <span class="text-sm font-medium">Kimi</span>
         </div>
         <!-- Local Models -->
         <div class="flex items-center gap-2 text-gray-400">
@@ -153,15 +141,15 @@
       </div>
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Card 1 -->
-        <div class="p-6 rounded-xl border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all">
-          <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+        <div class="p-6 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
           <h3 class="text-lg font-semibold mb-2">Use Any AI Model</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Switch between ChatGPT, Claude, Gemini, Grok, or local models instantly. One interface, every provider. No vendor lock-in.</p>
         </div>
         <!-- Card 2 -->
-        <div class="p-6 rounded-xl border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all">
+        <div class="p-6 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
           <div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
           </div>
@@ -169,7 +157,7 @@
           <p class="text-gray-500 text-sm leading-relaxed">Self-hosted or local-first. Your conversations, documents, and workflows never leave your control. Open-source means full transparency.</p>
         </div>
         <!-- Card 3 -->
-        <div class="p-6 rounded-xl border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all">
+        <div class="p-6 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
           <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
           </div>
@@ -190,19 +178,19 @@
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Step 1 -->
         <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
-          <div class="w-12 h-12 rounded-full gradient-cta text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">1</div>
+          <div class="w-12 h-12 rounded-full bg-gray-900 hover:bg-gray-800 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">1</div>
           <h3 class="text-lg font-semibold mb-2">Discovery Call</h3>
           <p class="text-gray-500 text-sm leading-relaxed">We learn how you work &mdash; your tools, communication style, and what you wish an assistant could handle. 30 minutes, remote.</p>
         </div>
         <!-- Step 2 -->
         <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
-          <div class="w-12 h-12 rounded-full gradient-cta text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">2</div>
+          <div class="w-12 h-12 rounded-full bg-gray-900 hover:bg-gray-800 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">2</div>
           <h3 class="text-lg font-semibold mb-2">Deploy OpenClaw</h3>
           <p class="text-gray-500 text-sm leading-relaxed">We install and configure OpenClaw on your devices, connect your AI providers, email, calendar, and key integrations.</p>
         </div>
         <!-- Step 3 -->
         <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
-          <div class="w-12 h-12 rounded-full gradient-cta text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">3</div>
+          <div class="w-12 h-12 rounded-full bg-gray-900 hover:bg-gray-800 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">3</div>
           <h3 class="text-lg font-semibold mb-2">Start Using It</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Walk through real tasks together. We make sure you're comfortable, then provide 2 weeks of follow-up support.</p>
         </div>
@@ -219,7 +207,7 @@
       </div>
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <!-- Discovery Call -->
-        <div class="p-8 rounded-xl border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all flex flex-col">
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
           <h3 class="text-lg font-semibold mb-1">Discovery Call</h3>
           <div class="flex items-baseline gap-1 mb-4">
             <span class="text-4xl font-bold">$50</span>
@@ -243,11 +231,11 @@
               Credits toward setup package
             </li>
           </ul>
-          <a href="https://buy.stripe.com/fZu14ofkp93NaGNchff3a01" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg gradient-cta transition-all shadow-sm" data-stripe="discovery">Book Now</a>
+          <a href="https://buy.stripe.com/fZu14ofkp93NaGNchff3a01" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm" data-stripe="discovery">Book Now</a>
         </div>
         <!-- Remote Setup -->
-        <div class="p-8 rounded-xl border-2 border-purple-500 shadow-lg relative flex flex-col">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full gradient-cta text-white text-xs font-semibold">Most Popular</div>
+        <div class="p-8 rounded-xl border-2 border-gray-900 shadow-lg relative flex flex-col">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gray-900 hover:bg-gray-800 text-white text-xs font-semibold">Most Popular</div>
           <h3 class="text-lg font-semibold mb-1">Remote Setup</h3>
           <div class="flex items-baseline gap-1 mb-4">
             <span class="text-4xl font-bold">$1,200</span>
@@ -275,10 +263,10 @@
               2 weeks of follow-up support
             </li>
           </ul>
-          <a href="https://buy.stripe.com/aFaeVe6NTeo7g175SRf3a02" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg gradient-cta transition-all shadow-md" data-stripe="remote">Get Started</a>
+          <a href="https://buy.stripe.com/aFaeVe6NTeo7g175SRf3a02" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md" data-stripe="remote">Get Started</a>
         </div>
         <!-- In-Person NYC -->
-        <div class="p-8 rounded-xl border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all flex flex-col">
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
           <h3 class="text-lg font-semibold mb-1">In-Person NYC</h3>
           <div class="flex items-baseline gap-1 mb-4">
             <span class="text-4xl font-bold">$2,400</span>
@@ -306,7 +294,7 @@
               1 month of priority support
             </li>
           </ul>
-          <a href="https://buy.stripe.com/7sYaEYb49cfZaGNchff3a03" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg gradient-cta transition-all shadow-sm" data-stripe="inperson">Get Started</a>
+          <a href="https://buy.stripe.com/7sYaEYb49cfZaGNchff3a03" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm" data-stripe="inperson">Get Started</a>
         </div>
       </div>
     </div>
@@ -393,14 +381,14 @@
           <h3 class="text-lg font-semibold mb-2">Newsletter</h3>
           <p class="text-gray-500 text-sm mb-4 leading-relaxed">Weekly tips on AI workflows, OpenClaw updates, and NYC community news.</p>
           <form id="newsletter-form" class="flex flex-col gap-3">
-            <input type="email" name="email" placeholder="you@company.com" required class="px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-            <button type="submit" class="px-4 py-2.5 text-sm font-medium text-white rounded-lg gradient-cta transition-all">Subscribe</button>
+            <input type="email" name="email" placeholder="you@company.com" required class="px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+            <button type="submit" class="px-4 py-2.5 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all">Subscribe</button>
             <p id="newsletter-msg" class="text-sm hidden"></p>
           </form>
         </div>
         <!-- Events -->
         <div class="p-8 rounded-xl border border-gray-200">
-          <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
           </div>
           <h3 class="text-lg font-semibold mb-2">Events & Meetups</h3>
@@ -440,26 +428,26 @@
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Post 1 -->
         <article class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all">
-          <div class="h-40 bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center">
-            <svg class="w-12 h-12 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          <div class="h-40 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+            <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
           </div>
           <div class="p-6">
             <p class="text-xs text-gray-400 mb-2">Guide</p>
             <h3 class="font-semibold mb-2">Why Open-Source AI Beats ChatGPT Pro for Power Users</h3>
             <p class="text-sm text-gray-500 leading-relaxed">You're paying $200/month for ChatGPT when you could be using every model for less. Here's why executives are switching.</p>
-            <span class="inline-block mt-4 text-sm font-medium text-purple-600">Coming soon</span>
+            <span class="inline-block mt-4 text-sm font-medium text-gray-600">Coming soon</span>
           </div>
         </article>
         <!-- Post 2 -->
         <article class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all">
-          <div class="h-40 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+          <div class="h-40 bg-gradient-to-br from-gray-50 to-gray-150 flex items-center justify-center">
             <svg class="w-12 h-12 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
           </div>
           <div class="p-6">
             <p class="text-xs text-gray-400 mb-2">Privacy</p>
             <h3 class="font-semibold mb-2">AI Privacy for Executives: What Your IT Team Won't Tell You</h3>
             <p class="text-sm text-gray-500 leading-relaxed">Every prompt you send to ChatGPT is stored. Here's how to use AI without giving away your strategy.</p>
-            <span class="inline-block mt-4 text-sm font-medium text-purple-600">Coming soon</span>
+            <span class="inline-block mt-4 text-sm font-medium text-gray-600">Coming soon</span>
           </div>
         </article>
         <!-- Post 3 -->
@@ -471,7 +459,7 @@
             <p class="text-xs text-gray-400 mb-2">NYC</p>
             <h3 class="font-semibold mb-2">How NYC Founders Are Using AI Assistants to Run Leaner Teams</h3>
             <p class="text-sm text-gray-500 leading-relaxed">Real stories from NYC startups using OpenClaw to automate admin, scheduling, and research.</p>
-            <span class="inline-block mt-4 text-sm font-medium text-purple-600">Coming soon</span>
+            <span class="inline-block mt-4 text-sm font-medium text-gray-600">Coming soon</span>
           </div>
         </article>
       </div>
@@ -485,7 +473,7 @@
       <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
         Book a $50 discovery call. We'll map out your ideal AI setup in 30 minutes &mdash; and credit the fee toward any package.
       </p>
-      <a href="#pricing" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg gradient-cta transition-all shadow-md hover:shadow-lg">
+      <a href="#pricing" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
         Book Your Discovery Call
       </a>
     </div>
