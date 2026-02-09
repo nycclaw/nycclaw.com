@@ -33,5 +33,5 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: nycclaw
           directory: .
-          # Optional: Use wrangler for deployment if you need D1 bindings
-          # wranglerVersion: '3'
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: '3'
