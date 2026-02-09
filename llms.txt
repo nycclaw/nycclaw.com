@@ -1,0 +1,22 @@
+# NYC Claw
+
+> In-person AI assistant setup for NYC executives, powered by OpenClaw.
+
+NYC Claw deploys OpenClaw — an open-source AI assistant that connects to ChatGPT, Claude, Gemini, Grok, and local models — directly on clients' devices. White-glove service for busy professionals who want AI that works without the technical setup.
+
+## Services
+
+- Discovery Call ($50): 30-minute workflow analysis and AI recommendations
+- Remote Setup ($1,200): Full OpenClaw deployment via screen share
+- In-Person NYC ($2,400): On-site setup at your NYC office or home
+
+## Community
+
+- Weekly newsletter with AI workflow tips
+- Monthly NYC meetups for OpenClaw users
+- Discord community (coming soon)
+
+## Links
+
+- Website: https://nycclaw.com
+- Detailed info: https://nycclaw.com/llms-full.txt

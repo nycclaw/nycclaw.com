@@ -1,0 +1,73 @@
+# NYC Claw — Full Context
+
+> In-person AI assistant setup for NYC executives, powered by OpenClaw.
+
+## What is NYC Claw?
+
+NYC Claw is a service that deploys OpenClaw — an open-source AI assistant platform — directly on clients' devices. We handle all the technical configuration so executives can use AI immediately without touching a terminal or managing API keys.
+
+## What is OpenClaw?
+
+OpenClaw is an open-source AI assistant that connects to every major AI provider:
+- OpenAI (ChatGPT/GPT-4)
+- Anthropic (Claude)
+- Google (Gemini)
+- xAI (Grok)
+- Ollama and other local models
+
+Unlike using a single AI provider, OpenClaw lets users switch between models, keeps data private (self-hosted/local-first), and integrates with email, calendar, and workflows.
+
+## Services
+
+### Discovery Call — $50
+- 30-minute remote call
+- Workflow analysis
+- AI tool recommendations
+- Setup plan and cost estimate
+- Fee credits toward any setup package
+
+### Remote Setup — $1,200
+- Everything in Discovery Call
+- Full OpenClaw installation
+- AI provider account configuration
+- Email and calendar integration
+- 2 weeks of follow-up support
+
+### In-Person NYC — $2,400
+- Everything in Remote Setup
+- On-site at client's NYC location
+- Multi-device setup (laptop + phone)
+- Live training session
+- 1 month of priority support
+
+## Target Audience
+
+NYC-based executives, founders, and professionals who:
+- Want to use AI but don't have the technical skills to set it up
+- Value privacy and don't want to send data to a single AI provider
+- Want an assistant that does things (email, calendar, workflows) not just chat
+- Prefer in-person, white-glove service
+
+## Community
+
+- Weekly newsletter: AI workflow tips, OpenClaw updates, NYC community news
+- Monthly meetups: Demos, workshops, and networking in Manhattan
+- Discord: Real-time help and conversation (coming soon)
+
+## Blog Topics
+
+- Open-source AI vs ChatGPT Pro for power users
+- AI privacy for executives
+- How NYC founders use AI assistants for leaner teams
+
+## Technology
+
+- Website: Static HTML on Cloudflare Pages
+- Backend: Cloudflare Workers + D1 (email capture)
+- Payments: Stripe Payment Links
+- Booking: Cal.com (after payment)
+
+## Contact
+
+- Website: https://nycclaw.com
+- GitHub: https://github.com/nycclaw

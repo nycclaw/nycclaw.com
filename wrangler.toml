@@ -1,0 +1,8 @@
+name = "nycclaw"
+compatibility_date = "2024-12-01"
+account_id = "795668d6fefb419a392595269c252e95"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nycclaw-db"
+database_id = "7d567996-c959-45d0-b1fa-2e3ec152a03d"

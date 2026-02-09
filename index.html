@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYC Claw — Your AI assistant, set up for you. In person.</title>
+  <meta name="description" content="NYC Claw offers in-person OpenClaw AI assistant setup for NYC executives. White-glove deployment of open-source AI that works across ChatGPT, Claude, Gemini and more.">
+  <meta property="og:title" content="NYC Claw — AI Setup Service for NYC Executives">
+  <meta property="og:description" content="Your AI assistant, set up for you. In person. Powered by OpenClaw.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://nycclaw.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gradient-cta {
+      background: linear-gradient(135deg, #ec4899, #9333ea);
+    }
+    .gradient-cta:hover {
+      background: linear-gradient(135deg, #db2777, #7c3aed);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #ec4899, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+  </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- ==================== NAV ==================== -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="#" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#setup" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Setup</a>
+          <a href="#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="#blog" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Blog</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#pricing" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg gradient-cta transition-all shadow-sm">Book a Call</a>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-500 hover:text-gray-900" aria-label="Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#setup" class="text-sm text-gray-600 hover:text-gray-900">Setup</a>
+        <a href="#pricing" class="text-sm text-gray-600 hover:text-gray-900">Pricing</a>
+        <a href="#community" class="text-sm text-gray-600 hover:text-gray-900">Community</a>
+        <a href="#blog" class="text-sm text-gray-600 hover:text-gray-900">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="pt-32 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-purple-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+        Powered by OpenClaw &mdash; Open-Source AI
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Your AI assistant,<br>
+        <span class="gradient-text">set up for you. In person.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        We deploy OpenClaw &mdash; the open-source AI assistant that connects to ChatGPT, Claude, Gemini, and more &mdash; directly on your devices. White-glove setup for NYC executives who want AI that actually works.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#pricing" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg gradient-cta transition-all shadow-md hover:shadow-lg">
+          Book a Discovery Call &mdash; $50
+        </a>
+        <a href="#what-is-openclaw" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all">
+          What is OpenClaw?
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== POWERED BY OPENCLAW (Logo Bar) ==================== -->
+  <section class="py-12 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="text-center text-sm text-gray-400 font-medium uppercase tracking-wider mb-8">
+        One assistant. Every AI provider.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+        <!-- OpenAI -->
+        <div class="flex items-center gap-2 text-gray-400">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z"/></svg>
+          <span class="text-sm font-medium">OpenAI</span>
+        </div>
+        <!-- Anthropic -->
+        <div class="flex items-center gap-2 text-gray-400">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M13.827 3.52h3.603L24 20.48h-3.603l-6.57-16.96zm-7.258 0h3.767L16.906 20.48h-3.674l-1.626-4.283H5.416l-1.589 4.283H.254L6.569 3.52zm.637 10.036h4.544L9.53 7.29l-2.324 6.266z"/></svg>
+          <span class="text-sm font-medium">Anthropic</span>
+        </div>
+        <!-- Google / Gemini -->
+        <div class="flex items-center gap-2 text-gray-400">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 4.8a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4z"/></svg>
+          <span class="text-sm font-medium">Gemini</span>
+        </div>
+        <!-- xAI / Grok -->
+        <div class="flex items-center gap-2 text-gray-400">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3l7.5 9L3 21h2.5l6-7.5L17.5 21H21l-7.5-9L21 3h-2.5l-6 7.5L6.5 3H3z"/></svg>
+          <span class="text-sm font-medium">Grok</span>
+        </div>
+        <!-- Ollama -->
+        <div class="flex items-center gap-2 text-gray-400">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="4"/><path d="M6 18c0-3.314 2.686-6 6-6s6 2.686 6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <span class="text-sm font-medium">Ollama</span>
+        </div>
+        <!-- Local Models -->
+        <div class="flex items-center gap-2 text-gray-400">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span class="text-sm font-medium">Local Models</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHAT IS OPENCLAW? ==================== -->
+  <section id="what-is-openclaw" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What is OpenClaw?</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">An open-source AI assistant that connects to every major AI provider &mdash; so you're never locked in.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Use Any AI Model</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Switch between ChatGPT, Claude, Gemini, Grok, or local models instantly. One interface, every provider. No vendor lock-in.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Your Data Stays Yours</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Self-hosted or local-first. Your conversations, documents, and workflows never leave your control. Open-source means full transparency.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Actually Does Things</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Not just chat. OpenClaw reads your email, manages your calendar, runs workflows, and takes actions &mdash; like a real assistant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SETUP SERVICE ==================== -->
+  <section id="setup" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How Setup Works</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three steps to a fully working AI assistant, configured exactly for your workflow.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Step 1 -->
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full gradient-cta text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">1</div>
+          <h3 class="text-lg font-semibold mb-2">Discovery Call</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We learn how you work &mdash; your tools, communication style, and what you wish an assistant could handle. 30 minutes, remote.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full gradient-cta text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">2</div>
+          <h3 class="text-lg font-semibold mb-2">Deploy OpenClaw</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We install and configure OpenClaw on your devices, connect your AI providers, email, calendar, and key integrations.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full gradient-cta text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">3</div>
+          <h3 class="text-lg font-semibold mb-2">Start Using It</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Walk through real tasks together. We make sure you're comfortable, then provide 2 weeks of follow-up support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRICING ==================== -->
+  <section id="pricing" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple Pricing</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Start with a discovery call. We'll recommend the right setup for your workflow.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Discovery Call -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">Discovery Call</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$50</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">30-minute call to understand your workflow and recommend the best AI setup.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Workflow analysis
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              AI tool recommendations
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Setup plan & cost estimate
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Credits toward setup package
+            </li>
+          </ul>
+          <a href="#" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg gradient-cta transition-all shadow-sm" data-stripe="discovery">Book Now</a>
+        </div>
+        <!-- Remote Setup -->
+        <div class="p-8 rounded-xl border-2 border-purple-500 shadow-lg relative flex flex-col">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full gradient-cta text-white text-xs font-semibold">Most Popular</div>
+          <h3 class="text-lg font-semibold mb-1">Remote Setup</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$1,200</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">Full OpenClaw deployment over screen share. Perfect for executives outside Manhattan.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Discovery Call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw installation
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              AI provider accounts configured
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Email + calendar integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              2 weeks of follow-up support
+            </li>
+          </ul>
+          <a href="#" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg gradient-cta transition-all shadow-md" data-stripe="remote">Get Started</a>
+        </div>
+        <!-- In-Person NYC -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">In-Person NYC</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$2,400</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">White-glove setup at your NYC office or home. Hands-on, face-to-face deployment.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote Setup
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              In-person at your NYC location
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Multi-device setup (laptop + phone)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Live training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              1 month of priority support
+            </li>
+          </ul>
+          <a href="#" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg gradient-cta transition-all shadow-sm" data-stripe="inperson">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section id="faq" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What is OpenClaw?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            OpenClaw is an open-source AI assistant platform that connects to every major AI provider (OpenAI, Anthropic, Google, xAI, and more). Unlike ChatGPT or Claude alone, OpenClaw lets you switch between models, keeps your data private, and integrates with your email, calendar, and workflows.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Why do I need a setup service?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            OpenClaw is powerful but requires technical configuration &mdash; API keys, integrations, model selection, privacy settings, and workflow automation. Our service handles all of that so you can start using AI immediately, without touching a terminal or reading documentation.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is my data private?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw runs on your own devices. Your conversations, files, and data stay under your control. We configure it with privacy-first settings and can set up fully local AI models if you want zero cloud dependency.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Do I need my own AI subscriptions?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            We help you set up API keys with the providers you choose. Most people spend $20&ndash;50/month on AI API usage. We'll recommend the right providers based on your needs and help you create accounts during setup.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What happens after setup?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            You get follow-up support (2 weeks for Remote, 1 month for In-Person) to answer questions and fine-tune your setup. After that, you're fully independent &mdash; OpenClaw is yours. We also host a NYC community with meetups and a Discord for ongoing help.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is the $50 discovery call worth it?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Absolutely. You'll walk away with a clear picture of which AI tools fit your workflow, estimated monthly costs, and a setup plan &mdash; even if you don't proceed with our service. The $50 also credits toward any setup package.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMMUNITY HUB ==================== -->
+  <section id="community" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">NYC OpenClaw Community</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Connect with other NYC professionals using open-source AI.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Newsletter -->
+        <div class="p-8 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Newsletter</h3>
+          <p class="text-gray-500 text-sm mb-4 leading-relaxed">Weekly tips on AI workflows, OpenClaw updates, and NYC community news.</p>
+          <form id="newsletter-form" class="flex flex-col gap-3">
+            <input type="email" name="email" placeholder="you@company.com" required class="px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+            <button type="submit" class="px-4 py-2.5 text-sm font-medium text-white rounded-lg gradient-cta transition-all">Subscribe</button>
+            <p id="newsletter-msg" class="text-sm hidden"></p>
+          </form>
+        </div>
+        <!-- Events -->
+        <div class="p-8 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Events & Meetups</h3>
+          <p class="text-gray-500 text-sm mb-4 leading-relaxed">Monthly NYC meetups for OpenClaw users. Demos, workshops, and networking with other AI-forward professionals.</p>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg bg-gray-50 text-sm">
+              <p class="font-medium text-gray-900">Next Meetup: March 2026</p>
+              <p class="text-gray-500">Location TBA &mdash; Manhattan</p>
+            </div>
+            <p class="text-xs text-gray-400">Subscribe to the newsletter for event announcements.</p>
+          </div>
+        </div>
+        <!-- Discord -->
+        <div class="p-8 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Discord</h3>
+          <p class="text-gray-500 text-sm mb-4 leading-relaxed">Join the NYC Claw Discord for real-time help, tips, and conversations with other OpenClaw users in the city.</p>
+          <a href="#" class="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-white rounded-lg bg-[#5865F2] hover:bg-[#4752C4] transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            Join Discord
+          </a>
+          <p class="text-xs text-gray-400 mt-3">Coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BLOG TEASER ==================== -->
+  <section id="blog" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">From the Blog</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Practical AI guides for NYC professionals.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Post 1 -->
+        <article class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all">
+          <div class="h-40 bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center">
+            <svg class="w-12 h-12 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <div class="p-6">
+            <p class="text-xs text-gray-400 mb-2">Guide</p>
+            <h3 class="font-semibold mb-2">Why Open-Source AI Beats ChatGPT Pro for Power Users</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">You're paying $200/month for ChatGPT when you could be using every model for less. Here's why executives are switching.</p>
+            <span class="inline-block mt-4 text-sm font-medium text-purple-600">Coming soon</span>
+          </div>
+        </article>
+        <!-- Post 2 -->
+        <article class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all">
+          <div class="h-40 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+            <svg class="w-12 h-12 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <div class="p-6">
+            <p class="text-xs text-gray-400 mb-2">Privacy</p>
+            <h3 class="font-semibold mb-2">AI Privacy for Executives: What Your IT Team Won't Tell You</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Every prompt you send to ChatGPT is stored. Here's how to use AI without giving away your strategy.</p>
+            <span class="inline-block mt-4 text-sm font-medium text-purple-600">Coming soon</span>
+          </div>
+        </article>
+        <!-- Post 3 -->
+        <article class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-all">
+          <div class="h-40 bg-gradient-to-br from-pink-100 to-orange-100 flex items-center justify-center">
+            <svg class="w-12 h-12 text-pink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <div class="p-6">
+            <p class="text-xs text-gray-400 mb-2">NYC</p>
+            <h3 class="font-semibold mb-2">How NYC Founders Are Using AI Assistants to Run Leaner Teams</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Real stories from NYC startups using OpenClaw to automate admin, scheduling, and research.</p>
+            <span class="inline-block mt-4 text-sm font-medium text-purple-600">Coming soon</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA ==================== -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to get started?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a $50 discovery call. We'll map out your ideal AI setup in 30 minutes &mdash; and credit the fee toward any package.
+      </p>
+      <a href="#pricing" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg gradient-cta transition-all shadow-md hover:shadow-lg">
+        Book Your Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+        <!-- Brand -->
+        <div>
+          <p class="font-bold text-gray-900 mb-3">NYC Claw</p>
+          <p class="text-sm text-gray-500 leading-relaxed">In-person AI assistant setup for NYC executives. Powered by OpenClaw.</p>
+        </div>
+        <!-- Service -->
+        <div>
+          <p class="text-sm font-semibold text-gray-900 mb-3">Service</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="#setup" class="hover:text-gray-900 transition-colors">How It Works</a></li>
+            <li><a href="#pricing" class="hover:text-gray-900 transition-colors">Pricing</a></li>
+            <li><a href="#faq" class="hover:text-gray-900 transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+        <!-- Community -->
+        <div>
+          <p class="text-sm font-semibold text-gray-900 mb-3">Community</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="#community" class="hover:text-gray-900 transition-colors">Newsletter</a></li>
+            <li><a href="#community" class="hover:text-gray-900 transition-colors">Events</a></li>
+            <li><a href="#" class="hover:text-gray-900 transition-colors">Discord</a></li>
+            <li><a href="#blog" class="hover:text-gray-900 transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        <!-- Legal -->
+        <div>
+          <p class="text-sm font-semibold text-gray-900 mb-3">Legal</p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="#" class="hover:text-gray-900 transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-gray-900 transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/nycclaw" class="text-gray-400 hover:text-gray-600 transition-colors" aria-label="GitHub">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://twitter.com/nycclaw" class="text-gray-400 hover:text-gray-600 transition-colors" aria-label="Twitter">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== INLINE JS ==================== -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Newsletter form submission
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterMsg = document.getElementById('newsletter-msg');
+
+    newsletterForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = newsletterForm.email.value.trim();
+      if (!email) return;
+
+      const btn = newsletterForm.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Subscribing...';
+      newsletterMsg.classList.add('hidden');
+
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, type: 'newsletter', source: 'community' }),
+        });
+        const data = await res.json();
+        newsletterMsg.textContent = data.message || 'Subscribed!';
+        newsletterMsg.className = 'text-sm ' + (res.ok ? 'text-green-600' : 'text-red-500');
+        newsletterMsg.classList.remove('hidden');
+        if (res.ok) newsletterForm.reset();
+      } catch {
+        newsletterMsg.textContent = 'Something went wrong. Please try again.';
+        newsletterMsg.className = 'text-sm text-red-500';
+        newsletterMsg.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Subscribe';
+      }
+    });
+  </script>
+
+</body>
+</html>
