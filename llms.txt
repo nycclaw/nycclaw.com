@@ -14,7 +14,7 @@ NYC Claw deploys OpenClaw — an open-source AI assistant that connects to ChatG
 
 - Weekly newsletter with AI workflow tips
 - Monthly NYC meetups for OpenClaw users
-- Discord community (coming soon)
+- Discord community: https://discord.gg/QTrS7z7CN5
 
 ## Links
 
