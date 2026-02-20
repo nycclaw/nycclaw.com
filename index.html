@@ -10,28 +10,119 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nycclaw.com">
   <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta name="twitter:image" content="https://nycclaw.com/og-image.png">
+  <meta name="theme-color" content="#111827">
   <link rel="canonical" href="https://nycclaw.com">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
   <style>
     html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
     details summary::-webkit-details-marker { display: none; }
     details summary::marker { display: none; content: ""; }
     details[open] summary .faq-chevron { transform: rotate(180deg); }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "NYC Claw",
+    "description": "In-person AI assistant setup for NYC executives. White-glove deployment of OpenClaw open-source AI.",
+    "url": "https://nycclaw.com",
+    "areaServed": {
+      "@type": "City",
+      "name": "New York City"
+    },
+    "priceRange": "$50 - $2,400",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Setup Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Discovery Call",
+          "price": "50",
+          "priceCurrency": "USD",
+          "description": "30-minute workflow analysis and AI recommendations"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD",
+          "description": "Full OpenClaw deployment via screen share"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC",
+          "price": "2400",
+          "priceCurrency": "USD",
+          "description": "White-glove on-site setup at your NYC office or home"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is OpenClaw?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw is an open-source AI assistant platform that connects to every major AI provider (OpenAI, Anthropic, Google, xAI, and more). Unlike ChatGPT or Claude alone, OpenClaw lets you switch between models, keeps your data private, and integrates with your email, calendar, and workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do I need a setup service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw is powerful but requires technical configuration — API keys, integrations, model selection, privacy settings, and workflow automation. Our service handles all of that so you can start using AI immediately, without touching a terminal or reading documentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw runs on your own devices. Your conversations, files, and data stay under your control. We configure it with privacy-first settings and can set up fully local AI models if you want zero cloud dependency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need my own AI subscriptions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We help you set up API keys with the providers you choose. Most people spend $20-50/month on AI API usage. We'll recommend the right providers based on your needs and help you create accounts during setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens after setup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You get follow-up support (2 weeks for Remote, 1 month for In-Person) to answer questions and fine-tune your setup. After that, you're fully independent — OpenClaw is yours. We also host a NYC community with meetups and a Discord for ongoing help."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the $50 discovery call worth it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. You'll walk away with a clear picture of which AI tools fit your workflow, estimated monthly costs, and a setup plan — even if you don't proceed with our service. The $50 also credits toward any setup package."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="font-sans text-gray-900 bg-white antialiased">
 
@@ -74,7 +165,7 @@
         Powered by OpenClaw &mdash; Open-Source AI
       </div>
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-        Your AI assistant,<br>
+        NYC Claw &mdash; Your AI assistant,<br>
         <span class="text-gray-900">set up for you. In person.</span>
       </h1>
       <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -510,8 +601,8 @@
         <div>
           <p class="text-sm font-semibold text-gray-900 mb-3">Legal</p>
           <ul class="space-y-2 text-sm text-gray-500">
-            <li><a href="#" class="hover:text-gray-900 transition-colors">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-gray-900 transition-colors">Terms of Service</a></li>
+            <li><a href="/privacy" class="hover:text-gray-900 transition-colors">Privacy Policy</a></li>
+            <li><a href="/terms" class="hover:text-gray-900 transition-colors">Terms of Service</a></li>
           </ul>
         </div>
       </div>
