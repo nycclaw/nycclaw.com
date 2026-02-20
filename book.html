@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Free Discovery Call — NYC Claw</title>
+  <meta name="description" content="Book a free 15-minute discovery call with NYC Claw. We'll analyze your workflow and recommend the best AI setup for you.">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/book">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+  </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+      <a href="/" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Back to Home</a>
+    </div>
+  </nav>
+
+  <main class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4">Book a Free Discovery Call</h1>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">15 minutes to understand your workflow and see how AI can help. No commitment, no pitch.</p>
+      </div>
+      <!-- Cal.com embed -->
+      <div id="cal-embed" style="width:100%;height:700px;overflow:auto;"></div>
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-200 py-8 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cal.com embed script -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    Cal("init", {origin:"https://app.cal.com"});
+
+    Cal("inline", {
+      elementOrSelector: "#cal-embed",
+      calLink: "giovanninyc/15min",
+      layout: "month_view",
+      config: {
+        theme: "light"
+      }
+    });
+
+    Cal("ui", {
+      theme: "light",
+      styles: { branding: { brandColor: "#111827" } },
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
+  </script>
+
+</body>
+</html>
