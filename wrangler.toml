@@ -5,4 +5,4 @@ pages_build_output_dir = "."
 [[d1_databases]]
 binding = "DB"
 database_name = "nycclaw-db"
-database_id = "7d567996-c959-45d0-b1fa-2e3ec152a03d"
+database_id = "66297908-53aa-4f74-953f-5f39007ea0ca"
