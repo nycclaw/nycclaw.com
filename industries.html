@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industries We Serve — NYC Claw</title>
+  <meta name="description" content="OpenClaw AI assistant setup for real estate, law firms, accounting, insurance, financial advisors, recruiting, startups, creative agencies, healthcare, architecture, and e-commerce.">
+  <meta property="og:title" content="Industries We Serve — NYC Claw">
+  <meta property="og:description" content="AI that works the way you do. Industry-specific OpenClaw setup for 11 verticals.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/industries">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/industries">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .industry-card { transition: all 0.2s ease; }
+    .industry-card:hover { border-color: #d1d5db; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      background-color: #f3f4f6;
+      color: #9ca3af;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .industry-card--soon { opacity: 0.75; }
+    .industry-card--soon:hover { opacity: 1; }
+
+    /* Industries dropdown */
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://nycclaw.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://nycclaw.com/industries"
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms<span class="soon-dot"></span></a>
+                  <a href="/for/insurance-agencies">Insurance Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/financial-advisors">Financial Advisors<span class="soon-dot"></span></a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/startup-founders">Startup Founders<span class="soon-dot"></span></a>
+                  <a href="/for/creative-agencies">Creative Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/healthcare">Healthcare<span class="soon-dot"></span></a>
+                  <a href="/for/architecture-firms">Architecture Firms<span class="soon-dot"></span></a>
+                  <a href="/for/ecommerce">E-commerce<span class="soon-dot"></span></a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/#setup" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Setup</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="/book" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-500 hover:text-gray-900" aria-label="Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Industries</p>
+        <a href="/for/real-estate" class="text-sm text-gray-600 hover:text-gray-900 pl-2">Real Estate</a>
+        <a href="/for/law-firms" class="text-sm text-gray-600 hover:text-gray-900 pl-2">Law Firms</a>
+        <a href="/for/accounting-firms" class="text-sm text-gray-400 hover:text-gray-900 pl-2">Accounting Firms</a>
+        <a href="/for/insurance-agencies" class="text-sm text-gray-400 hover:text-gray-900 pl-2">Insurance Agencies</a>
+        <a href="/for/financial-advisors" class="text-sm text-gray-400 hover:text-gray-900 pl-2">Financial Advisors</a>
+        <a href="/for/recruiting-agencies" class="text-sm text-gray-400 hover:text-gray-900 pl-2">Recruiting Agencies</a>
+        <a href="/for/startup-founders" class="text-sm text-gray-400 hover:text-gray-900 pl-2">Startup Founders</a>
+        <a href="/for/creative-agencies" class="text-sm text-gray-400 hover:text-gray-900 pl-2">Creative Agencies</a>
+        <a href="/for/healthcare" class="text-sm text-gray-400 hover:text-gray-900 pl-2">Healthcare</a>
+        <a href="/for/architecture-firms" class="text-sm text-gray-400 hover:text-gray-900 pl-2">Architecture Firms</a>
+        <a href="/for/ecommerce" class="text-sm text-gray-400 hover:text-gray-900 pl-2">E-commerce</a>
+        <a href="/industries" class="text-sm font-medium text-gray-900 pl-2">View All Industries &rarr;</a>
+        <div class="border-t border-gray-100 pt-3 mt-1"></div>
+        <a href="/#setup" class="text-sm text-gray-600 hover:text-gray-900">Setup</a>
+        <a href="/#pricing" class="text-sm text-gray-600 hover:text-gray-900">Pricing</a>
+        <a href="/#community" class="text-sm text-gray-600 hover:text-gray-900">Community</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        11 Industries &amp; Counting
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        AI that works<br>
+        <span class="text-gray-500">the way you do.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Every industry has different workflows, tools, and pain points. We configure OpenClaw specifically for yours &mdash; so it actually helps from day one.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">Powered by OpenClaw &mdash; open-source AI that runs on your devices.</p>
+    </div>
+  </section>
+
+  <!-- INDUSTRY GRID -->
+  <section class="pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- 1. Real Estate -->
+        <a href="/for/real-estate" class="industry-card p-6 rounded-xl border border-gray-200 bg-white block">
+          <div class="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Real Estate</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Respond to leads instantly, track every deal deadline.</p>
+        </a>
+
+        <!-- 2. Law Firms -->
+        <a href="/for/law-firms" class="industry-card p-6 rounded-xl border border-gray-200 bg-white block">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Law Firms</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Automate client intake, never miss a filing deadline.</p>
+        </a>
+
+        <!-- 3. Accounting Firms -->
+        <a href="/for/accounting-firms" class="industry-card industry-card--soon p-6 rounded-xl border border-gray-200 bg-white block">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Accounting Firms</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Handle tax season without drowning in client requests.</p>
+        </a>
+
+        <!-- 4. Insurance Agencies -->
+        <a href="/for/insurance-agencies" class="industry-card industry-card--soon p-6 rounded-xl border border-gray-200 bg-white block">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Insurance Agencies</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Automate renewals, quotes, and cross-sell follow-ups.</p>
+        </a>
+
+        <!-- 5. Financial Advisors -->
+        <a href="/for/financial-advisors" class="industry-card industry-card--soon p-6 rounded-xl border border-gray-200 bg-white block">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Financial Advisors</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Prep for meetings automatically, keep clients informed.</p>
+        </a>
+
+        <!-- 6. Recruiting Agencies -->
+        <a href="/for/recruiting-agencies" class="industry-card industry-card--soon p-6 rounded-xl border border-gray-200 bg-white block">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-cyan-100 text-cyan-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Recruiting Agencies</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Screen faster, schedule automatically, stop candidate ghosting.</p>
+        </a>
+
+        <!-- 7. Startup Founders -->
+        <a href="/for/startup-founders" class="industry-card industry-card--soon p-6 rounded-xl border border-gray-200 bg-white block">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-yellow-100 text-yellow-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Startup Founders</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Run ops, investor updates, and hiring without an EA.</p>
+        </a>
+
+        <!-- 8. Creative Agencies -->
+        <a href="/for/creative-agencies" class="industry-card industry-card--soon p-6 rounded-xl border border-gray-200 bg-white block">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+            </div>
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Creative Agencies</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Manage projects, clients, and content workflows.</p>
+        </a>
+
+        <!-- 9. Healthcare -->
+        <a href="/for/healthcare" class="industry-card industry-card--soon p-6 rounded-xl border border-gray-200 bg-white block">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-red-100 text-red-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Healthcare</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Streamline scheduling, intake forms, and patient follow-ups.</p>
+        </a>
+
+        <!-- 10. Architecture Firms -->
+        <a href="/for/architecture-firms" class="industry-card industry-card--soon p-6 rounded-xl border border-gray-200 bg-white block">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Architecture Firms</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Track project timelines, RFPs, and client communication.</p>
+        </a>
+
+        <!-- 11. E-commerce -->
+        <a href="/for/ecommerce" class="industry-card industry-card--soon p-6 rounded-xl border border-gray-200 bg-white block">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+            </div>
+            <span class="coming-soon-badge">Coming Soon</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">E-commerce</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Automate customer service, inventory alerts, and marketing.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Don't see your industry?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        OpenClaw works for any workflow-heavy business. Book a free discovery call and we'll map out a setup plan for your specific needs.
+      </p>
+      <a href="/book" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free Discovery Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">30 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+  </script>
+
+</body>
+</html>
