@@ -17,7 +17,7 @@ You are building an integration landing page for nycclaw.com. Follow these instr
 7. **What is OpenClaw** - same 2-paragraph explainer section
 8. **Use cases** - 3 industry-specific scenarios showing the integration in action
 9. **How it works** - 3 steps (connect, configure, operate)
-10. **Pricing** - 3 tiers: Free discovery / $1,200 remote / $2,400 in-person. Stripe links: remote=https://buy.stripe.com/5kA3e9gAVbAY2w84gi in-person=https://buy.stripe.com/7sI5ml8ej7kI5Ik6oq Cal.com=https://cal.com/giovanninyc/15min
+10. **Pricing** - 3 tiers: Free discovery / $1,200 remote / $2,400 in-person. ALL links go to Cal.com with UTM params: https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=[PLATFORM-SLUG]--discovery (replace discovery with remote or in-person for paid tiers). NO Stripe links.
 11. **FAQ** - 5 questions with schema markup. Always include: "Does this replace [platform]?" and "How long does setup take?"
 12. **Related industries** - links to relevant /for/ pages + "View All Industries"
 13. **Final CTA** - dark bg, book a free discovery call
@@ -39,4 +39,4 @@ You are building an integration landing page for nycclaw.com. Follow these instr
 /integrations/[platform-slug]
 
 ## Template file to match design
-/tmp/nycclaw-git/integrations/gohighlevel.html
+side-projects/nycclaw/integrations/gohighlevel.html

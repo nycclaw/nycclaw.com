@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrations — Connect OpenClaw to Your Tools | NYC Claw</title>
+  <meta name="description" content="50+ integrations for OpenClaw — connect your CRM, accounting, legal, healthcare, and productivity tools. We configure every connection for your business.">
+  <meta property="og:title" content="Integrations — Connect OpenClaw to Your Tools | NYC Claw">
+  <meta property="og:description" content="50+ integrations for OpenClaw — connect your CRM, accounting, legal, healthcare, and productivity tools.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/integrations">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/integrations">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .integration-card { transition: all 0.2s ease; }
+    .integration-card:hover { border-color: #d1d5db; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .category-heading {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+    }
+    .category-heading:first-of-type { margin-top: 0; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://nycclaw.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Integrations",
+        "item": "https://nycclaw.com/integrations"
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches & Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-900 font-medium transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=nav&utm_content=home--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        50+ Integrations
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Connects to the tools<br>
+        <span class="text-gray-500">you already use.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        OpenClaw plugs into your CRM, calendar, email, accounting software, and everything else your team runs on. We configure every connection during setup so it works from day one.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">Powered by OpenClaw. Open-source AI that runs on your devices.</p>
+    </div>
+  </section>
+
+  <!-- INTEGRATION GRID -->
+  <section class="pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- CRM & Sales -->
+      <h2 class="category-heading">CRM &amp; Sales</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/hubspot" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">HubSpot</h3>
+          <p class="text-gray-500 text-sm">Sync contacts, deals, and tickets with your CRM automatically.</p>
+        </a>
+        <a href="/integrations/salesforce" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Salesforce</h3>
+          <p class="text-gray-500 text-sm">Read and update leads, opportunities, and accounts in real time.</p>
+        </a>
+        <a href="/integrations/zoho" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Zoho CRM</h3>
+          <p class="text-gray-500 text-sm">Manage leads, contacts, and deals across your Zoho workspace.</p>
+        </a>
+        <a href="/integrations/pipedrive" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Pipedrive</h3>
+          <p class="text-gray-500 text-sm">Move deals through your pipeline and log activities automatically.</p>
+        </a>
+        <a href="/integrations/freshsales" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Freshsales</h3>
+          <p class="text-gray-500 text-sm">Track leads, score prospects, and update deal stages on the fly.</p>
+        </a>
+        <a href="/integrations/close" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Close</h3>
+          <p class="text-gray-500 text-sm">Log calls, emails, and deal updates directly inside Close.</p>
+        </a>
+        <a href="/integrations/attio" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Attio</h3>
+          <p class="text-gray-500 text-sm">Keep relationship data and deal records current without manual entry.</p>
+        </a>
+        <a href="/integrations/followupboss" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Follow Up Boss</h3>
+          <p class="text-gray-500 text-sm">Route new leads, trigger follow-ups, and track agent activity.</p>
+        </a>
+        <a href="/integrations/kvcore" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">kvCORE</h3>
+          <p class="text-gray-500 text-sm">Automate lead assignment and drip campaigns for your brokerage.</p>
+        </a>
+        <a href="/integrations/liondesk" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">LionDesk</h3>
+          <p class="text-gray-500 text-sm">Send texts, emails, and video messages to leads on autopilot.</p>
+        </a>
+        <a href="/integrations/lofty" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Lofty</h3>
+          <p class="text-gray-500 text-sm">Manage IDX leads and smart plans from one connected workflow.</p>
+        </a>
+        <a href="/integrations/clay" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Clay</h3>
+          <p class="text-gray-500 text-sm">Enrich contacts and build targeted outreach lists automatically.</p>
+        </a>
+        <a href="/integrations/apollo" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Apollo.io</h3>
+          <p class="text-gray-500 text-sm">Prospect, sequence, and track outbound campaigns from one place.</p>
+        </a>
+        <a href="/integrations/instantly" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Instantly</h3>
+          <p class="text-gray-500 text-sm">Scale cold email with warmup, rotation, and reply tracking built in.</p>
+        </a>
+      </div>
+
+      <!-- Real Estate & Property -->
+      <h2 class="category-heading">Real Estate &amp; Property</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/buildium" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Buildium</h3>
+          <p class="text-gray-500 text-sm">Track leases, maintenance requests, and tenant communications.</p>
+        </a>
+        <a href="/integrations/appfolio" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">AppFolio</h3>
+          <p class="text-gray-500 text-sm">Manage properties, work orders, and owner reports in one flow.</p>
+        </a>
+        <a href="/integrations/dealmachine" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">DealMachine</h3>
+          <p class="text-gray-500 text-sm">Pull property data and skip trace owners for direct outreach.</p>
+        </a>
+        <a href="/integrations/guesty" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Guesty</h3>
+          <p class="text-gray-500 text-sm">Coordinate short-term rental listings, guests, and cleaning crews.</p>
+        </a>
+      </div>
+
+      <!-- Legal -->
+      <h2 class="category-heading">Legal</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/clio" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Clio</h3>
+          <p class="text-gray-500 text-sm">Track matters, log time entries, and manage client intake.</p>
+        </a>
+        <a href="/integrations/practicepanther" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">PracticePanther</h3>
+          <p class="text-gray-500 text-sm">Automate billing, deadlines, and document management for your firm.</p>
+        </a>
+        <a href="/integrations/mycase" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">MyCase</h3>
+          <p class="text-gray-500 text-sm">Keep case files, calendars, and client messages organized.</p>
+        </a>
+        <a href="/integrations/smokeball" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Smokeball</h3>
+          <p class="text-gray-500 text-sm">Auto-track billable time and generate documents from case data.</p>
+        </a>
+        <a href="/integrations/filevine" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Filevine</h3>
+          <p class="text-gray-500 text-sm">Manage complex litigation workflows and task deadlines at scale.</p>
+        </a>
+        <a href="/integrations/rocketmatter" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Rocket Matter</h3>
+          <p class="text-gray-500 text-sm">Handle time tracking, invoicing, and trust accounting in one system.</p>
+        </a>
+        <a href="/integrations/litify" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Litify</h3>
+          <p class="text-gray-500 text-sm">Run your firm on Salesforce with legal-specific case management.</p>
+        </a>
+        <a href="/integrations/cosmolex" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">CosmoLex</h3>
+          <p class="text-gray-500 text-sm">Combine practice management and built-in legal accounting.</p>
+        </a>
+      </div>
+
+      <!-- Healthcare -->
+      <h2 class="category-heading">Healthcare</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/athenahealth" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">athenahealth</h3>
+          <p class="text-gray-500 text-sm">Coordinate scheduling, patient records, and billing workflows.</p>
+        </a>
+        <a href="/integrations/drchrono" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">DrChrono</h3>
+          <p class="text-gray-500 text-sm">Manage appointments, charting, and insurance claims from one EHR.</p>
+        </a>
+        <a href="/integrations/kareo" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Kareo</h3>
+          <p class="text-gray-500 text-sm">Handle patient intake, billing, and practice analytics together.</p>
+        </a>
+      </div>
+
+      <!-- Accounting & Finance -->
+      <h2 class="category-heading">Accounting &amp; Finance</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/quickbooks" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">QuickBooks</h3>
+          <p class="text-gray-500 text-sm">Pull invoices, expenses, and client balances without logging in.</p>
+        </a>
+        <a href="/integrations/xero" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Xero</h3>
+          <p class="text-gray-500 text-sm">Reconcile transactions, send invoices, and track cash flow.</p>
+        </a>
+        <a href="/integrations/freshbooks" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">FreshBooks</h3>
+          <p class="text-gray-500 text-sm">Automate invoicing, time tracking, and expense categorization.</p>
+        </a>
+        <a href="/integrations/wave" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Wave</h3>
+          <p class="text-gray-500 text-sm">Track income, expenses, and receipts for small businesses.</p>
+        </a>
+        <a href="/integrations/bench" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Bench</h3>
+          <p class="text-gray-500 text-sm">Access monthly financials and year-end reports on demand.</p>
+        </a>
+      </div>
+
+      <!-- Insurance -->
+      <h2 class="category-heading">Insurance</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/applied-epic" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Applied Epic</h3>
+          <p class="text-gray-500 text-sm">Manage policies, claims, and commission tracking for your agency.</p>
+        </a>
+        <a href="/integrations/hawksoft" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">HawkSoft</h3>
+          <p class="text-gray-500 text-sm">Track renewals, client documents, and carrier communications.</p>
+        </a>
+      </div>
+
+      <!-- Home Services -->
+      <h2 class="category-heading">Home Services</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/servicetitan" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">ServiceTitan</h3>
+          <p class="text-gray-500 text-sm">Dispatch techs, track jobs, and follow up on estimates automatically.</p>
+        </a>
+        <a href="/integrations/jobber" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Jobber</h3>
+          <p class="text-gray-500 text-sm">Schedule crews, send quotes, and collect payments in one place.</p>
+        </a>
+        <a href="/integrations/housecallpro" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Housecall Pro</h3>
+          <p class="text-gray-500 text-sm">Book jobs, notify customers, and manage your field team.</p>
+        </a>
+      </div>
+
+      <!-- Recruiting -->
+      <h2 class="category-heading">Recruiting</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/greenhouse" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Greenhouse</h3>
+          <p class="text-gray-500 text-sm">Track candidates, schedule interviews, and move them through stages.</p>
+        </a>
+      </div>
+
+      <!-- Support -->
+      <h2 class="category-heading">Support</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/zendesk" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Zendesk</h3>
+          <p class="text-gray-500 text-sm">Triage tickets, draft replies, and escalate issues without switching tabs.</p>
+        </a>
+      </div>
+
+      <!-- Marketing & Email -->
+      <h2 class="category-heading">Marketing &amp; Email</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/gohighlevel" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">GoHighLevel</h3>
+          <p class="text-gray-500 text-sm">Run funnels, SMS campaigns, and appointment booking from one platform.</p>
+        </a>
+        <a href="/integrations/mailchimp" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Mailchimp</h3>
+          <p class="text-gray-500 text-sm">Build lists, send campaigns, and track opens and clicks.</p>
+        </a>
+        <a href="/integrations/calendly" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Calendly</h3>
+          <p class="text-gray-500 text-sm">Auto-schedule meetings and sync bookings to your calendar.</p>
+        </a>
+      </div>
+
+      <!-- Productivity -->
+      <h2 class="category-heading">Productivity</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/slack" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Slack</h3>
+          <p class="text-gray-500 text-sm">Get notifications, run commands, and pull data right in your channels.</p>
+        </a>
+        <a href="/integrations/notion" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Notion</h3>
+          <p class="text-gray-500 text-sm">Create pages, update databases, and search your workspace instantly.</p>
+        </a>
+        <a href="/integrations/monday" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Monday.com</h3>
+          <p class="text-gray-500 text-sm">Update boards, assign tasks, and track project status automatically.</p>
+        </a>
+      </div>
+
+      <!-- Automation -->
+      <h2 class="category-heading">Automation</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/zapier" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Zapier</h3>
+          <p class="text-gray-500 text-sm">Connect OpenClaw to 6,000+ apps with no-code workflows.</p>
+        </a>
+        <a href="/integrations/make" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Make</h3>
+          <p class="text-gray-500 text-sm">Build visual automations with branching logic and API calls.</p>
+        </a>
+        <a href="/integrations/n8n" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">n8n</h3>
+          <p class="text-gray-500 text-sm">Self-host your automation workflows with full code access.</p>
+        </a>
+      </div>
+
+      <!-- AI Platforms -->
+      <h2 class="category-heading">AI Platforms</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4 mb-8">
+        <a href="/integrations/lindy" class="integration-card p-5 rounded-xl border border-gray-200 bg-white block">
+          <h3 class="text-base font-semibold mb-1">Lindy</h3>
+          <p class="text-gray-500 text-sm">Orchestrate multiple AI agents and connect them to your stack.</p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Don't see your tool?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        OpenClaw connects to virtually any platform with an API. Book a free call and we'll figure out the right setup for your stack.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=directory--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free Discovery Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; We'll map your integrations</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
