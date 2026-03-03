@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw for Lofty (Chime) | Real Estate CRM Integration & AI Automation | NYC Claw</title>
+  <meta name="description" content="Connect OpenClaw to Lofty and let AI handle your leads, Smart Plans, and follow-ups. We set up the full integration so your real estate CRM runs itself.">
+  <meta property="og:title" content="OpenClaw for Lofty | Real Estate CRM Integration & AI Automation | NYC Claw">
+  <meta property="og:description" content="OpenClaw connects to Lofty's REST API. Leads, Smart Plans, IDX activity, conversations. Your real estate CRM finally has a brain.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/integrations/lofty">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/integrations/lofty">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw for Lofty - Real Estate CRM Integration & AI Automation",
+    "description": "Professional OpenClaw integration with Lofty (formerly Chime) real estate CRM. AI-powered lead management, Smart Plan automation, and IDX visitor tracking through Lofty's REST API.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does OpenClaw replace Lofty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OpenClaw connects to Lofty through the API and operates it for you. Your Lofty account, leads, Smart Plans, and IDX website stay exactly where they are. OpenClaw adds a layer of intelligence on top of the system you already pay for."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Lofty features can OpenClaw access?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw connects through Lofty's REST API using OAuth 2.0. It can read and update leads, trigger and manage Smart Plans, track IDX website activity, handle conversations via text and email, update lead scores and tags, and coordinate with integrations like Zillow, Realtor.com, and Dotloop."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the integration setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Lofty integrations are fully running within 3 to 5 days. The API connection goes live on day one. The rest of the time is spent configuring the AI for your specific lead sources, qualifying criteria, and follow-up style."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Lofty plan do I need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any Lofty plan that includes API access works. You can find your API key under Settings > Integrations > API in your Lofty account. If you're unsure whether your plan includes it, check with Lofty support or ask us during the discovery call."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about Lofty's built-in AI Assistant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lofty's AI Assistant handles basic text follow-ups within the platform. OpenClaw goes further: it reads lead behavior across your entire pipeline, makes decisions about which Smart Plan to trigger, updates records based on real conversation context, and coordinates actions across Lofty and your other tools like email and calendar. They can work alongside each other."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/#setup" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Setup</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=lofty--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Platform Integration
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        You have the leads.<br>
+        <span class="text-gray-500">Nobody's working them.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Lofty captures leads from Zillow, Realtor.com, your IDX site, and paid ads. But those leads still need someone to respond, qualify, and follow up. That someone is now OpenClaw.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">OpenClaw connects to Lofty's REST API via OAuth 2.0. Leads, Smart Plans, conversations, IDX activity. All of it.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=lofty--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">OAuth 2.0</p>
+          <p class="text-sm text-gray-500 mt-1">secure API connection to your Lofty account</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">24/7</p>
+          <p class="text-sm text-gray-500 mt-1">lead response, including nights and weekends</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">&lt;60s</p>
+          <p class="text-sm text-gray-500 mt-1">average response time to new Lofty leads</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">50+</p>
+          <p class="text-sm text-gray-500 mt-1">lead sources supported (Zillow, Realtor.com, IDX, ads)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Lofty does a lot. You're still doing the hard part.</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">The platform captures leads and scores them. But someone still has to act on all of it.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Smart Plans run, but they're not smart enough</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lofty's Smart Plans can drip emails and texts on a schedule. That works until a lead replies with a real question. "What's the HOA fee on that listing?" Your Smart Plan doesn't know. So the lead waits for you. And if you're showing houses or in a meeting, they wait a long time.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Lead scores pile up with no one acting on them</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lofty scores your leads based on website behavior, property views, and contact validity. Great. But a lead score of 85 means nothing if nobody calls them within the hour. You log in, see a list of hot leads from last night, and half of them have already gone cold. The data was there. The action wasn't.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Portal leads arrive at 11 PM and sit until morning</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A Zillow inquiry hits your Lofty account at 11:14 PM. Lofty sends an auto-text. The buyer replies "Is this still available?" Silence until you wake up. By 9 AM, they've already talked to two other agents. Speed to lead isn't a suggestion in real estate. It's the difference between getting the client and losing them.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">IDX visitors browse but nobody follows up</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lofty tracks every property view, saved search, and favorite on your IDX site. You can see that a lead looked at 12 listings in Williamsburg last Tuesday. But turning that browsing behavior into a timely, relevant follow-up? That takes reading the activity, writing a personalized message, and actually sending it. Most agents never get to it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">OpenClaw + Lofty Integration</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">OpenClaw connects to Lofty through the REST API and acts on your leads in real time. Here's what that looks like in practice.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Instant lead response from any source</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Zillow inquiry, Realtor.com lead, IDX registration, Facebook ad form. Doesn't matter where it comes from. OpenClaw picks up the new lead through Lofty's API, reads the source and details, and sends a personalized text or email within seconds. Not a template. A real response based on what they asked about.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Qualifies leads through real conversation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When a lead texts back, OpenClaw keeps the conversation going. It asks about their timeline, budget, pre-approval status, and neighborhood preferences. Based on your criteria, it figures out if they're ready to tour or just browsing. Qualified leads get pushed toward booking. Everyone else gets nurtured.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Triggers the right Smart Plan automatically</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw reads the lead's behavior and conversation context, then enrolls them in the appropriate Lofty Smart Plan. A buyer looking at condos under $500K gets a different drip than an investor asking about multi-family. No manual sorting. The right sequence starts based on what the lead actually told you.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Books showings and consultations</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Once a lead is qualified, OpenClaw checks your calendar and suggests times. The lead picks one, gets a confirmation, and you get a notification with everything you need to know: who they are, what they're looking for, budget, pre-approval status, and the full conversation history.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Updates lead records as it learns</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw adds tags, updates custom fields, and writes notes to lead records in Lofty as conversations happen. When you open a lead's profile, their budget, timeline, neighborhood preferences, and qualification status are already filled in. No data entry on your end.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Acts on IDX browsing behavior</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lofty tracks every property view and saved search on your IDX site. OpenClaw reads that activity and follows up based on what the lead actually looked at. "I noticed you saved three listings near Prospect Park. Want me to set up showings this weekend?" Specific, timely, and relevant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">What is OpenClaw?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-3">
+        OpenClaw is an open-source AI assistant that connects to the tools you already use and operates them for you. Email, calendar, CRM, messaging. It reads, it responds, it takes action. It runs on your own devices, so your data stays yours.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed">
+        It's not a chatbot you paste into a website. It's an operator that works behind the scenes, handling the tasks you keep putting off because there aren't enough hours in the day.
+      </p>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What this looks like in practice</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three real scenarios where OpenClaw and Lofty work together.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Solo Agent</div>
+          <h3 class="font-semibold mb-3">The Zillow lead at midnight</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A buyer submits an inquiry on Zillow at 11:42 PM. It flows into Lofty. OpenClaw picks it up, sees they asked about a 2-bed in Park Slope, and texts them within 30 seconds. The buyer replies asking about the school district. OpenClaw answers, asks if they're pre-approved, and books a showing for Saturday. You wake up to a qualified appointment with full context.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Team Lead</div>
+          <h3 class="font-semibold mb-3">Round-robin that actually works</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your team gets 40 leads a week from Facebook ads. They land in Lofty and get assigned via round-robin. Half of them never get a first call because your agents are busy with active clients. OpenClaw handles the initial outreach for every lead, qualifies them through text conversation, and only passes the ready-to-tour ones to the assigned agent. Your team spends time on closeable deals, not cold calls.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Listing Agent</div>
+          <h3 class="font-semibold mb-3">Open house follow-up on autopilot</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You host an open house on Sunday. Twenty people sign in through your Lofty form. By Sunday evening, OpenClaw has texted every one of them a personalized follow-up based on the property they saw. It asks about their search criteria, qualifies their timeline, and enrolls serious buyers into your active Smart Plan. Monday morning, you have three showing requests waiting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg">Three steps. We handle the technical work.</p>
+      </div>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">1</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We connect OpenClaw to your Lofty account</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We set up OAuth 2.0 authentication and configure the API connection so OpenClaw can read your leads, track IDX activity, and act on new inquiries from Zillow, Realtor.com, Facebook, and your website. This happens on day one.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">2</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We configure the AI for your market</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Your qualifying questions. Your neighborhoods. Your price points. Your tone of voice. We train OpenClaw on how you work so it responds the way you would. A luxury agent in Manhattan gets a different setup than a first-time buyer specialist in Queens.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">3</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">OpenClaw starts working your leads</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Leads come in. OpenClaw responds, qualifies, updates your Lofty records, triggers the right Smart Plans, and books showings. You review the first few days, tell us what to adjust, and we fine-tune. Within a week, it's running on its own.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg">One-time setup. No monthly fees from us. No contracts.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Free -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">Discovery Call</h3>
+          <p class="text-gray-500 text-sm mb-4">See if this makes sense for your setup.</p>
+          <p class="text-4xl font-extrabold mb-6">Free</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              15-minute video call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Review your Lofty setup and lead sources
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Honest recommendation on next steps
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=lofty--discovery" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Book a Call
+          </a>
+        </div>
+        <!-- Remote -->
+        <div class="bg-white p-8 rounded-xl border-2 border-gray-900 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</div>
+          <h3 class="font-bold text-lg mb-1">Remote Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">Full Lofty integration over screen share.</p>
+          <p class="text-4xl font-extrabold mb-6">$1,200</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw + Lofty API integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Lead source routing and Smart Plan triggers
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              AI configured for your market and voice
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              14 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=lofty--remote" target="_blank" class="block text-center py-3 px-4 rounded-lg bg-gray-900 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-md">
+            Get Started
+          </a>
+        </div>
+        <!-- In-Person -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">In-Person Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">We come to your office. NYC area.</p>
+          <p class="text-4xl font-extrabold mb-6">$2,400</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote, plus
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              On-site at your office in NYC
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full team training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              30 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=lofty--inperson" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Common questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Does OpenClaw replace Lofty?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            No. OpenClaw connects to Lofty through the API and operates it for you. Your Lofty account, leads, Smart Plans, and IDX website stay exactly where they are. OpenClaw adds a layer of intelligence on top of the system you already pay for. Think of it as giving your CRM a brain, not swapping it out.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">What Lofty features can OpenClaw access?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            OpenClaw connects through Lofty's REST API using OAuth 2.0. It can read and update leads, trigger and manage Smart Plans, track IDX website activity, handle conversations via text and email, update lead scores and tags, and coordinate with integrations like Zillow, Realtor.com, and Dotloop. If Lofty exposes it through the API, OpenClaw can act on it.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">How long does the integration setup take?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Most Lofty integrations are fully running within 3 to 5 days. The API connection goes live on day one. The rest of the time is spent configuring the AI for your specific lead sources, qualifying criteria, and follow-up style. Within a week, it's handling leads on its own.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Which Lofty plan do I need?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Any Lofty plan that includes API access works. You can find your API key under Settings > Integrations > API in your Lofty account. If you're unsure whether your plan includes it, check with Lofty support or ask us during the discovery call. We'll confirm before you commit to anything.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">What about Lofty's built-in AI Assistant?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Lofty's AI Assistant handles basic text follow-ups within the platform. OpenClaw goes further: it reads lead behavior across your entire pipeline, makes decisions about which Smart Plan to trigger, updates records based on real conversation context, and coordinates actions across Lofty and your other tools like email and calendar. They can work alongside each other.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED INDUSTRIES -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm text-gray-400 mb-4">Lofty is built for real estate. See how OpenClaw works for your specialty:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/for/real-estate" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Real Estate</a>
+        <a href="/for/insurance-agencies" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Insurance</a>
+        <a href="/for/financial-advisors" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Financial Advisors</a>
+        <a href="/for/startup-founders" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Startups</a>
+        <a href="/industries" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Industries &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-900 text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Your leads deserve better than a drip campaign.</h2>
+      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your Lofty setup together and figure out where OpenClaw can take work off your plate.</p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=lofty--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg">
+        Book a Free Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-6 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Home</a>
+        <a href="/industries" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Industries</a>
+        <a href="/#pricing" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Pricing</a>
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=lofty--discovery" target="_blank" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Book a Call</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

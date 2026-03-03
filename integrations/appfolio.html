@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw for AppFolio | Property Management AI Automation | NYC Claw</title>
+  <meta name="description" content="Connect OpenClaw to AppFolio and let AI handle maintenance requests, tenant communications, lease tracking, and vacancy management. We set up the full integration.">
+  <meta property="og:title" content="OpenClaw for AppFolio | Property Management AI Automation | NYC Claw">
+  <meta property="og:description" content="OpenClaw connects to AppFolio's API. Properties, tenants, work orders, leases, payments. Your property management software finally runs itself.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/integrations/appfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/integrations/appfolio">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw for AppFolio - Property Management AI Automation",
+    "description": "Professional OpenClaw integration with AppFolio property management software. AI-powered maintenance coordination, tenant communication, and lease tracking through AppFolio's API.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does OpenClaw replace AppFolio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OpenClaw connects to AppFolio through the API and operates it on your behalf. Your AppFolio account, data, and workflows stay exactly where they are. OpenClaw just adds a layer of intelligence so things get done without you manually clicking through every screen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What AppFolio features can OpenClaw access?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw connects to AppFolio's API endpoints for properties, units, tenants, leases, work orders, bills, payments, owners, rental applications, vacancies, violations, and attachments. It can also receive callback notifications when data changes in your account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the integration setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most AppFolio integrations are fully running within 3 to 5 days. The API connection happens on day one. The remaining time goes toward configuring the AI for your specific properties, maintenance workflows, and communication preferences."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AppFolio plan do I need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You need an AppFolio plan that includes API access through AppFolio Stack. Most Plus and Max plans include this. If you're unsure, check your AppFolio Stack settings or ask your AppFolio rep to confirm API access is enabled."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will OpenClaw interfere with my existing AppFolio setup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OpenClaw reads your existing data and adds to it. It doesn't delete records, overwrite your configurations, or change your account settings. It works alongside what you've already built, handling the repetitive tasks so you can focus on the work that actually requires your judgment."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/#setup" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Setup</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=appfolio--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Platform Integration
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        You manage properties.<br>
+        <span class="text-gray-500">Not software.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        AppFolio tracks every property, tenant, and work order. But someone still has to read the maintenance requests, follow up on late rent, and keep vacancies from sitting too long. That someone is now OpenClaw.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">OpenClaw connects to AppFolio's API. Properties, tenants, leases, work orders, payments. All of it.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=appfolio--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">15+</p>
+          <p class="text-sm text-gray-500 mt-1">AppFolio API endpoint categories OpenClaw connects to</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">24/7</p>
+          <p class="text-sm text-gray-500 mt-1">maintenance triage, including nights and weekends</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">&lt;2min</p>
+          <p class="text-sm text-gray-500 mt-1">average response time to new tenant requests</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">Full API</p>
+          <p class="text-sm text-gray-500 mt-1">properties, tenants, work orders, payments, leases</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">AppFolio holds all the data. You're still doing all the work.</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">The software is powerful. But it still needs a human for the parts that eat up your day.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Maintenance requests pile up overnight</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A tenant submits a work order at 11 PM about a leaking faucet. Another one at 6 AM about a broken heater in January. Both sit in AppFolio until you log in, read them, decide the priority, and assign a vendor. By then the tenant has called twice and left a bad review on Google.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Vacancy days cost you real money</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A unit goes vacant. The listing is in AppFolio. Applications trickle in. But each one needs screening, follow-up, and scheduling. You get to them when you can, which means qualified applicants wait two days for a response and find somewhere else. Every empty day is lost rent you can't get back.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Late rent chasing is tedious and constant</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Rent is due on the first. By the fifth, you're manually checking who hasn't paid, sending notices, and following up. AppFolio tracks the balances, but it doesn't have the conversation with the tenant about why they're late or negotiate a payment plan. That's still you, every single month.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Owner reports get done last</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Property owners want updates. How's occupancy? What maintenance was done? What's the rent collection rate? The data is all in AppFolio, but pulling it together into something useful takes time you'd rather spend on properties. So owners get updates late, or not at all.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">OpenClaw + AppFolio Integration</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">OpenClaw connects to AppFolio through the API. It reads your property data, makes decisions, and takes action. Here's what that looks like.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Maintenance triage in seconds</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">New work order comes in through AppFolio? OpenClaw reads the description, determines urgency (burst pipe vs. squeaky door), and assigns the right vendor from your list. Emergency requests get flagged immediately. Routine ones get queued and the tenant gets an update within minutes, not hours.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Tenant communication that doesn't wait for you</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Tenant asks about their lease renewal date? OpenClaw pulls the lease data from AppFolio and responds. Someone wants to know when the pest control visit is scheduled? OpenClaw checks the work order and answers. Real responses based on real data, not generic auto-replies.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Vacancy follow-up on autopilot</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw monitors your vacant units through AppFolio's vacancy data. When a rental application comes in, it reviews the details, follows up with the applicant for missing information, and schedules showings. You only step in for the final approval. Days on market go down because leads don't wait around.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Rent collection follow-up</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw checks payment records in AppFolio daily. When rent is late, it sends the right notice at the right time. Friendly reminder on day 2. Firm notice on day 5. It tracks who responded, who promised to pay Friday, and who needs escalation. You get a summary, not a to-do list.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Owner reporting without the busywork</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw pulls property financials, occupancy rates, maintenance activity, and payment data from AppFolio. It compiles owner-ready summaries on a schedule you set. Weekly, monthly, whatever works. Owners get clear updates. You didn't spend an hour in spreadsheets.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Lease renewal tracking</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw monitors lease expiration dates across your entire portfolio. Sixty days out, it starts the renewal conversation with the tenant. It handles the back and forth on timing, answers questions about new terms, and flags anyone who's not renewing so you can plan for turnover early.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">What is OpenClaw?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-3">
+        OpenClaw is an open-source AI assistant that connects to the tools you already use and operates them for you. Email, calendar, CRM, property management software. It reads, it responds, it takes action. It runs on your own devices, so your data stays yours.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed">
+        It's not a chatbot you paste into a website. It's an operator that works behind the scenes, handling the tasks you keep putting off because there aren't enough hours in the day.
+      </p>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What this looks like in practice</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three real scenarios where OpenClaw and AppFolio work together.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Property Manager</div>
+          <h3 class="font-semibold mb-3">The midnight pipe burst</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A tenant submits a work order at 1:23 AM: "Water leaking from ceiling in bedroom." OpenClaw reads the description, flags it as emergency priority, pulls the property's plumber from your vendor list in AppFolio, and sends the tenant a message confirming a vendor has been contacted. You wake up to a situation that's already being handled, not one that's been sitting for seven hours.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Multifamily Owner</div>
+          <h3 class="font-semibold mb-3">Filling units faster</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A rental application comes through AppFolio for your two-bedroom in Astoria. OpenClaw reviews it, notices the applicant left the employer phone number blank, and follows up within minutes asking for the missing info. Once complete, it schedules a showing based on your availability. The unit that used to sit 18 days now fills in 9 because nobody's waiting on you to check AppFolio.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Portfolio Operator</div>
+          <h3 class="font-semibold mb-3">Rent collection across 200 units</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">It's the 3rd. OpenClaw checks AppFolio payment records across your entire portfolio. 14 units haven't paid. It sends personalized reminders based on each tenant's history. First-time late? Friendly nudge. Third time this year? Firmer language with a payment deadline. By the 5th, 11 of the 14 have paid. You only deal with the three that need real attention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg">Three steps. We handle the technical work.</p>
+      </div>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">1</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We connect OpenClaw to your AppFolio account</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We set up API access through AppFolio Stack and configure the data connections so OpenClaw can read your properties, units, tenants, work orders, leases, and payment records. Callback URLs get configured so OpenClaw knows when something changes. This happens on day one.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">2</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We configure the AI for your portfolio</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Your maintenance priorities. Your vendor preferences. Your communication tone. Your rent collection timeline. We train OpenClaw on how you manage properties so it acts the way you would. Different properties can have different rules if needed.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">3</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">OpenClaw starts operating your AppFolio</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Work orders get triaged. Tenants get responses. Vacancies get follow-up. You review the first few days, tell us what to adjust, and we fine-tune. Within a week, it's running your day-to-day operations while you focus on growing the portfolio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg">One-time setup. No monthly fees from us. No contracts.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Free -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">Discovery Call</h3>
+          <p class="text-gray-500 text-sm mb-4">See if this makes sense for your portfolio.</p>
+          <p class="text-4xl font-extrabold mb-6">Free</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              15-minute video call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Review your AppFolio setup and goals
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Honest recommendation on next steps
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=appfolio--discovery" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Book a Call
+          </a>
+        </div>
+        <!-- Remote -->
+        <div class="bg-white p-8 rounded-xl border-2 border-gray-900 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</div>
+          <h3 class="font-bold text-lg mb-1">Remote Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">Full AppFolio integration over screen share.</p>
+          <p class="text-4xl font-extrabold mb-6">$1,200</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw + AppFolio API integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Callback configuration for work orders and leases
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              AI configured for your portfolio and workflows
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              14 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=appfolio--remote" target="_blank" class="block text-center py-3 px-4 rounded-lg bg-gray-900 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-md">
+            Get Started
+          </a>
+        </div>
+        <!-- In-Person -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">In-Person Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">We come to your office. NYC area.</p>
+          <p class="text-4xl font-extrabold mb-6">$2,400</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote, plus
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              On-site at your office in NYC
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full team training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              30 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=appfolio--inperson" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Common questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Does OpenClaw replace AppFolio?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            No. OpenClaw connects to AppFolio through the API and operates it on your behalf. Your AppFolio account, data, and workflows stay exactly where they are. OpenClaw adds a layer of intelligence so things get done without you manually clicking through every screen. Think of it as giving your property management software a brain.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">What AppFolio features can OpenClaw access?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            OpenClaw connects to AppFolio's API endpoints for properties, units, tenants, leases, work orders, bills, payments, owners, rental applications, vacancies, violations, and attachments. It can also receive callback notifications when data changes in your account, so it reacts to new events in real time.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">How long does the integration setup take?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Most AppFolio integrations are fully running within 3 to 5 days. The API connection happens on day one. The remaining time goes toward configuring the AI for your specific properties, maintenance workflows, vendor preferences, and communication style. Within a week, it's handling tenant requests on its own.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Which AppFolio plan do I need?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            You need an AppFolio plan that includes API access through AppFolio Stack. Most Plus and Max plans include this. If you're unsure, check your AppFolio Stack settings or ask your AppFolio representative to confirm API access is enabled. That's the only requirement on the AppFolio side.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Will OpenClaw interfere with my existing AppFolio setup?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            No. OpenClaw reads your existing data and adds to it. It doesn't delete records, overwrite your configurations, or change your account settings. It works alongside what you've already built, handling the repetitive tasks so you can focus on the work that actually requires your judgment.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED INDUSTRIES -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm text-gray-400 mb-4">OpenClaw + AppFolio works great for property management teams. See setup details for your industry:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/for/real-estate" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Real Estate</a>
+        <a href="/for/property-management" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Property Management</a>
+        <a href="/for/accounting-firms" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Accounting</a>
+        <a href="/for/insurance-agencies" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Insurance</a>
+        <a href="/industries" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Industries &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-900 text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to stop being your portfolio's bottleneck?</h2>
+      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your AppFolio setup together and figure out where OpenClaw can take work off your plate.</p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=appfolio--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg">
+        Book a Free Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-6 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Home</a>
+        <a href="/industries" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Industries</a>
+        <a href="/#pricing" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Pricing</a>
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=appfolio--discovery" target="_blank" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Book a Call</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
