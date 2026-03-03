@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw for Apollo.io | Sales Intelligence & Outbound Automation | NYC Claw</title>
+  <meta name="description" content="Connect OpenClaw to Apollo.io and let AI run your prospecting, sequences, and pipeline. We handle the full integration so your outbound runs itself.">
+  <meta property="og:title" content="OpenClaw for Apollo.io | Sales Intelligence & Outbound Automation | NYC Claw">
+  <meta property="og:description" content="OpenClaw connects to Apollo's full API. Contacts, sequences, dialer, deals. Your sales stack finally has a brain.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/integrations/apollo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/integrations/apollo">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw for Apollo.io - Sales Intelligence & Outbound Automation",
+    "description": "Professional OpenClaw integration with Apollo.io. AI-powered prospecting, sequence management, and deal pipeline automation through Apollo's full API.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does OpenClaw replace Apollo.io?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OpenClaw sits on top of Apollo.io and operates it through the API. Your Apollo account, sequences, and data stay exactly where they are. OpenClaw just adds intelligence to the system you already use."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Apollo.io features can OpenClaw access?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw connects to Apollo's full REST API: people search, company enrichment, email sequences, the dialer, deals and pipeline, tasks, and engagement analytics. If Apollo exposes it through the API, OpenClaw can read it and act on it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the integration setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Apollo integrations are fully running within 3 to 5 days. The API connection goes live on day one. The remaining time is spent configuring the AI for your ICP filters, sequence logic, and outreach style."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Apollo.io plan do I need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any Apollo plan with API access works. The Basic plan includes API access with rate limits. Professional and Organization plans offer higher rate limits and more credits, which matters if you're running high-volume prospecting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can OpenClaw work with my existing Apollo sequences?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw works alongside your existing sequences and doesn't overwrite anything. It can add contacts to sequences you've already built, or create new ones based on criteria you define. Your current setup stays intact."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/#setup" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Setup</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=apollo--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Platform Integration
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        275 million contacts.<br>
+        <span class="text-gray-500">Zero people working them.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Apollo.io gives you the database, the sequences, the dialer. But someone still has to build the lists, write the emails, and follow up when prospects reply. That someone is now OpenClaw.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">OpenClaw connects to Apollo's full REST API. People search, enrichment, sequences, deals, tasks. All of it.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=apollo--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">275M+</p>
+          <p class="text-sm text-gray-500 mt-1">contacts in Apollo's B2B database</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">73M+</p>
+          <p class="text-sm text-gray-500 mt-1">companies with enrichment data</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">24/7</p>
+          <p class="text-sm text-gray-500 mt-1">prospecting and reply handling</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">Full API</p>
+          <p class="text-sm text-gray-500 mt-1">search, enrich, sequences, deals</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">You have the data. You're still doing the work.</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Apollo gives you access to nearly every B2B contact on earth. The bottleneck was never the data.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">List building eats your mornings</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You know your ICP. You've got the filters dialed in. But every week you're still sitting in Apollo for 45 minutes, building a new list, checking for duplicates, and adding contacts to sequences. It's manual labor disguised as strategy. The criteria don't change much. The process shouldn't require you.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Replies pile up without real follow-through</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your sequences generate replies. Some are interested. Some ask questions. Some say "not now, try me in Q3." You check them between meetings, respond to the easy ones, and flag the rest for later. Later turns into never. The interested replies that needed a fast, thoughtful response? They went to someone who answered first.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Sequences run, but nobody's reading the signals</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A prospect opens your email four times in one afternoon. Another clicks the pricing link but doesn't reply. A third visits your website after step 2. Apollo tracks all of this. But the signals just sit in the dashboard because nobody has time to act on intent data in real time. By the time you notice, the moment's passed.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Your pipeline is a graveyard of stale deals</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You moved 30 contacts into "Interested" last month. Half of them haven't been touched since. The deal stages in Apollo are accurate for about two days after you update them, then they drift. Nobody's checking which deals need a nudge, which went cold, or which should be closed out. The pipeline looks full. The reality is different.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">OpenClaw + Apollo.io Integration</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">OpenClaw connects to Apollo through the REST API. It searches contacts, manages sequences, handles replies, and moves deals forward. Here's what that looks like.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Automated prospect sourcing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You define the ICP once: industry, company size, title, location, technologies used. OpenClaw runs the searches through Apollo's People Search API on a schedule you set. It filters out duplicates, checks against your existing contacts, and adds fresh prospects to the right sequence. No more Monday morning list-building sessions.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Sequences that adapt to replies</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When a prospect replies to your sequence, OpenClaw reads the message and decides what to do. Interested? It responds, qualifies them, and books a meeting. Objection? It handles it based on your playbook. "Not now"? It pauses the sequence and creates a task to re-engage in the timeframe they mentioned. Every reply gets a real response.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Intent signals trigger action</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Apollo tracks email opens, link clicks, and website visits. OpenClaw watches those signals and acts on them. A prospect opens your email three times in an hour? OpenClaw bumps them to the top of your call list and drafts a personalized follow-up. No more checking dashboards for hot leads. The hot leads come to you.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Enrichment that feeds your outreach</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw uses Apollo's enrichment endpoints to pull company revenue, employee count, tech stack, funding data, and recent news before writing outreach. Your first email references something specific about their business. Not "I noticed your company is growing." Actual details from the enrichment data that make the prospect stop and read.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Deal pipeline stays accurate</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw updates your Apollo deals based on what's actually happening. Prospect booked a call? Moved to "Meeting Scheduled." No response after two weeks? Moved to "Stale" with a re-engagement task created. You open Apollo and the pipeline reflects reality, not last week's optimism.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Contact records that update themselves</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Every conversation OpenClaw has with a prospect gets logged back to their Apollo contact record. Tags, notes, custom fields. When you pick up the phone for a qualified call, you know exactly what was discussed, what the prospect cares about, and where they are in the process. No hunting through email threads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">What is OpenClaw?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-3">
+        OpenClaw is an open-source AI assistant that connects to the tools you already use and operates them for you. Email, calendar, CRM, messaging. It reads, it responds, it takes action. It runs on your own devices, so your data stays yours.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed">
+        It's not a chatbot you paste into a website. It's an operator that works behind the scenes, handling the tasks you keep putting off because there aren't enough hours in the day.
+      </p>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What this looks like in practice</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three real scenarios where OpenClaw and Apollo.io work together.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Startup Founder</div>
+          <h3 class="font-semibold mb-3">Outbound that runs while you build</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You're a founder selling to VPs of Engineering at Series A companies. OpenClaw searches Apollo for contacts matching that filter every Monday, enriches them with company data, writes personalized first emails referencing their tech stack, and adds them to your sequence. When someone replies interested, OpenClaw qualifies them on budget and timeline, then books the demo on your calendar. You spend your mornings on product, not prospecting.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Recruiting Agency</div>
+          <h3 class="font-semibold mb-3">Candidate sourcing on autopilot</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You need senior developers in fintech. OpenClaw searches Apollo for people with the right titles at the right companies, checks their tenure (less than two years signals they might be open to a move), and sends a personalized outreach sequence. When candidates reply, OpenClaw asks about salary expectations, availability, and interest level. Qualified candidates land on your desk with a full brief. The unqualified ones get a polite "we'll keep you in mind."</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">B2B Sales Team</div>
+          <h3 class="font-semibold mb-3">Pipeline hygiene without the meetings</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your team has 200 deals in Apollo. Half are stale. OpenClaw audits the pipeline every week, checks the last activity date on each deal, and takes action. Deals with no activity in 14 days get a follow-up email. Deals with no response after 30 days get moved to "Closed Lost" with a note. Your weekly pipeline review takes 10 minutes instead of an hour because the data is already clean.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg">Three steps. We handle the technical work.</p>
+      </div>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">1</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We connect OpenClaw to your Apollo account</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We set up API access so OpenClaw can search contacts, manage sequences, update deals, and read engagement data. Your API key stays on your machine. This happens on day one.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">2</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We configure the AI for your sales process</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Your ICP filters. Your qualification criteria. Your tone of voice. Your objection handling playbook. We train OpenClaw on how your outbound works so it prospects and responds the way you would. Specific to your market, your offer, and your style.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">3</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">OpenClaw starts operating your Apollo</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Prospects get sourced, enriched, and sequenced. Replies get handled. Deals get updated. You review the first few days, tell us what to adjust, and we fine-tune. Within a week, your outbound is running on its own.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg">One-time setup. No monthly fees from us. No contracts.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Free -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">Discovery Call</h3>
+          <p class="text-gray-500 text-sm mb-4">See if this makes sense for your setup.</p>
+          <p class="text-4xl font-extrabold mb-6">Free</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              15-minute video call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Review your Apollo setup and goals
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Honest recommendation on next steps
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=apollo--discovery" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Book a Call
+          </a>
+        </div>
+        <!-- Remote -->
+        <div class="bg-white p-8 rounded-xl border-2 border-gray-900 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</div>
+          <h3 class="font-bold text-lg mb-1">Remote Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">Full Apollo integration over screen share.</p>
+          <p class="text-4xl font-extrabold mb-6">$1,200</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw + Apollo API integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              ICP filters and sequence configuration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              AI configured for your outreach style
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              14 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=apollo--remote" target="_blank" class="block text-center py-3 px-4 rounded-lg bg-gray-900 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-md">
+            Get Started
+          </a>
+        </div>
+        <!-- In-Person -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">In-Person Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">We come to your office. NYC area.</p>
+          <p class="text-4xl font-extrabold mb-6">$2,400</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote, plus
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              On-site at your office in NYC
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full team training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              30 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=apollo--inperson" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Common questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Does OpenClaw replace Apollo.io?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            No. OpenClaw sits on top of Apollo.io and operates it through the API. Your Apollo account, contacts, sequences, and data stay exactly where they are. OpenClaw adds intelligence to the system you already use. Think of it as giving your sales stack a brain, not replacing it with a different one.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">What Apollo.io features can OpenClaw access?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            OpenClaw connects to Apollo's full REST API: people search, company search, contact enrichment, email sequences, the dialer, deals and pipeline management, tasks, and engagement tracking. If Apollo exposes it through the API, OpenClaw can read it, write to it, and act on it.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">How long does the integration setup take?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Most Apollo integrations are fully running within 3 to 5 days. The API connection goes live on day one. The remaining time is spent configuring the AI for your specific ICP filters, sequence logic, qualification criteria, and outreach style. Within a week, it's sourcing and engaging prospects on its own.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Which Apollo.io plan do I need?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Any Apollo plan with API access works. The Basic plan includes API access with rate limits. Professional and Organization plans give you higher rate limits and more credits per month, which matters if you're running high-volume outbound. We'll help you figure out which plan fits your volume during the discovery call.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Can OpenClaw work with my existing Apollo sequences?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw works alongside your existing sequences and doesn't overwrite anything. It can add contacts to sequences you've already built, or help create new ones based on criteria you define. Your current setup stays intact. OpenClaw just makes it smarter about who gets added, when, and what happens when they reply.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED INDUSTRIES -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm text-gray-400 mb-4">OpenClaw + Apollo.io works across industries. See setup details for yours:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/for/startup-founders" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Startups</a>
+        <a href="/for/recruiting-agencies" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Recruiting</a>
+        <a href="/for/creative-agencies" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Creative Agencies</a>
+        <a href="/for/financial-advisors" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Financial Advisors</a>
+        <a href="/for/real-estate" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Real Estate</a>
+        <a href="/industries" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Industries &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-900 text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to stop doing your outbound by hand?</h2>
+      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your Apollo setup together and figure out where OpenClaw can take work off your plate.</p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=apollo--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg">
+        Book a Free Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-6 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Home</a>
+        <a href="/industries" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Industries</a>
+        <a href="/#pricing" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Pricing</a>
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=apollo--discovery" target="_blank" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Book a Call</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

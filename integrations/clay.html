@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw for Clay | Data Enrichment & Outreach Automation | NYC Claw</title>
+  <meta name="description" content="Connect OpenClaw to Clay and let AI run your data enrichment, lead research, and outreach sequences. Waterfall enrichment across 100+ providers, fully automated.">
+  <meta property="og:title" content="OpenClaw for Clay | Data Enrichment & Outreach Automation | NYC Claw">
+  <meta property="og:description" content="OpenClaw connects to Clay's enrichment engine and outreach tools. 100+ data providers, waterfall logic, automated sequences. Your prospecting runs itself.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/integrations/clay">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/integrations/clay">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw for Clay - Data Enrichment & Outreach Automation",
+    "description": "Professional OpenClaw integration with Clay. AI-powered waterfall enrichment, lead research, and automated outreach sequences through Clay's full API.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does OpenClaw replace Clay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OpenClaw connects to Clay through its API and operates it for you. Your Clay tables, enrichment providers, and data stay exactly where they are. OpenClaw adds a decision-making layer so your enrichment and outreach workflows run without manual intervention."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Clay features can OpenClaw access?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw works with Clay's full platform: table creation and management, waterfall enrichment across 100+ data providers, AI research agent, HTTP API integrations, webhook triggers, CRM push, and outreach sequence management. If Clay exposes it, OpenClaw can operate it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the integration setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Clay integrations are running within 3 to 5 days. The API connection and initial table setup happen on day one. The remaining time goes into configuring enrichment waterfall logic, qualifying criteria, and outreach templates specific to your business."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a specific Clay plan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You'll need a Clay plan with API access and enough enrichment credits for your volume. The Pro plan and above include API access and higher credit allocations. We'll review your expected volume during the discovery call and recommend the right tier."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can OpenClaw work with my existing CRM alongside Clay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Clay already integrates with Salesforce, HubSpot, and other CRMs. OpenClaw can manage the entire flow: enrich leads in Clay, push qualified records to your CRM, and trigger outreach sequences. The data moves between systems automatically."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/#setup" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Setup</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=clay--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Platform Integration
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        100+ data providers.<br>
+        <span class="text-gray-500">Zero manual research.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Clay gives you waterfall enrichment, AI research, and outreach tools. But someone still has to build the tables, configure the logic, and keep the sequences running. That someone is now OpenClaw.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">OpenClaw connects to Clay's full platform. Enrichment, tables, webhooks, CRM sync, outreach. All of it.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=clay--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">100+</p>
+          <p class="text-sm text-gray-500 mt-1">enrichment providers in Clay's waterfall</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">10x</p>
+          <p class="text-sm text-gray-500 mt-1">more coverage than any single data vendor</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">&lt;2 min</p>
+          <p class="text-sm text-gray-500 mt-1">to enrich a full lead record end to end</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">Full API</p>
+          <p class="text-sm text-gray-500 mt-1">tables, enrichment, webhooks, CRM push</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Clay is powerful. You're still doing the work.</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">The platform can pull data from everywhere. But getting it to run without you? That's a different story.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Building tables takes hours you don't have</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Every new campaign needs a new Clay table. Import a list, configure enrichment columns, set up waterfall logic for each field, test the results, fix the ones that didn't resolve. By the time your table is ready, you've spent half a day on setup instead of selling.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Enrichment gaps need babysitting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Waterfall enrichment is brilliant in theory. Provider A misses the email, so it falls to Provider B, then C. But when 30% of your records still have gaps after the waterfall runs, someone has to decide what to do next. Try a different provider? Use the AI research agent? Skip the record? That someone is you, row by row.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Outreach sequences need constant feeding</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You enrich a batch of leads on Monday. By Wednesday, you need another batch. Each one needs to be filtered, scored, and pushed to your outreach tool. The enrichment is automated. Everything around it still isn't. So your pipeline dries up every time you get busy with actual client work.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">The CRM sync breaks and nobody notices</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Clay pushes enriched records to Salesforce or HubSpot. Until a field mapping changes, a required field goes blank, or a duplicate check fails. Records pile up in Clay but never make it to your CRM. Your sales team works off stale data and doesn't know why. You find out two weeks later.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">OpenClaw + Clay Integration</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">OpenClaw connects to Clay through the API and manages your enrichment, research, and outreach workflows. Here's what that looks like in practice.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Automated waterfall enrichment</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw triggers Clay's waterfall enrichment on new leads as they come in. It monitors which providers return data, handles fallback logic when gaps remain, and flags records that need manual review. You get fully enriched records without touching the table.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">AI research on every prospect</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Clay's AI research agent can find information that structured providers miss. OpenClaw uses it to answer specific questions about each prospect: recent funding rounds, job changes, tech stack, company size. The research runs in the background. Results land in your table columns automatically.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Outreach sequences that stay full</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw keeps your outreach pipeline fed. It filters enriched leads by your scoring criteria, personalizes messaging using Clay's enrichment data, and pushes qualified records to your sequencing tool. New leads enter your sequences daily without you importing a single CSV.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">CRM sync that actually stays in sync</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw monitors the Clay-to-CRM pipeline. When a push fails (bad field mapping, duplicate record, missing required field), it catches the error, fixes what it can, and alerts you on the rest. Your CRM always reflects what Clay knows.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Lead scoring from enrichment data</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw reads the enrichment results and scores each lead based on your criteria. Company size, funding stage, tech stack, job title seniority. High-scoring leads go straight to outreach. Low-scoring ones get tagged and parked. No manual review of spreadsheets.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Scheduled list building</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Tell OpenClaw your ideal customer profile once. It builds new prospect lists on a schedule, pulls them into Clay, runs enrichment, scores the results, and pushes winners to your outreach. Monday morning, fresh leads are already in your sequences. You didn't do a thing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">What is OpenClaw?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-3">
+        OpenClaw is an open-source AI assistant that connects to the tools you already use and operates them for you. Email, calendar, CRM, messaging. It reads, it responds, it takes action. It runs on your own devices, so your data stays yours.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed">
+        It's not a chatbot you paste into a website. It's an operator that works behind the scenes, handling the tasks you keep putting off because there aren't enough hours in the day.
+      </p>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What this looks like in practice</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three real scenarios where OpenClaw and Clay work together.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Recruiting Agency</div>
+          <h3 class="font-semibold mb-3">Candidate sourcing on autopilot</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your client needs five senior engineers in Austin. OpenClaw builds a prospect list from LinkedIn and job boards, pulls it into Clay, and runs waterfall enrichment to find verified emails and phone numbers. It scores candidates by experience and tech stack, then pushes the top 20 into your outreach sequence with personalized messages referencing their recent work. You wake up to replies from qualified candidates. <a href="/for/recruiting-agencies" class="text-gray-900 underline">See more for recruiting agencies</a>.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Startup Founder</div>
+          <h3 class="font-semibold mb-3">Investor outreach that scales</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You're raising a seed round and need to reach 200 investors who've funded companies in your space. OpenClaw pulls investor data into Clay, enriches each record with portfolio companies, check sizes, and recent activity. It identifies the 50 best fits, drafts personalized emails referencing their relevant investments, and queues them in your outreach tool. Your fundraise runs like a sales pipeline. <a href="/for/startup-founders" class="text-gray-900 underline">See more for startup founders</a>.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Sales Team</div>
+          <h3 class="font-semibold mb-3">Account research in seconds, not hours</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A new enterprise prospect books a demo. OpenClaw pulls their company into Clay, runs enrichment across 100+ providers, and uses Clay's AI research agent to find their tech stack, recent news, and key decision makers. By the time your AE opens the CRM record, it has a full company brief, org chart of relevant contacts, and suggested talking points. No pre-call research needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg">Three steps. We handle the technical work.</p>
+      </div>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">1</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We connect OpenClaw to your Clay account</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We set up API access, configure webhooks, and connect OpenClaw to your Clay workspace. It gets access to your tables, enrichment providers, and any downstream integrations (CRM, outreach tools, Slack). This happens on day one.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">2</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We configure the AI for your workflow</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Your ideal customer profile. Your enrichment priorities. Your scoring criteria. Your outreach cadence. We configure OpenClaw to build lists, run enrichment, score leads, and manage sequences the way you would. Specific to your market and sales process.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">3</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">OpenClaw starts operating your Clay</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Prospect lists get built. Enrichment runs automatically. Qualified leads flow into your outreach sequences. You review the first few days of output, tell us what to adjust, and we fine-tune. Within a week, your prospecting engine runs on its own.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg">One-time setup. No monthly fees from us. No contracts.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Free -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">Discovery Call</h3>
+          <p class="text-gray-500 text-sm mb-4">See if this makes sense for your setup.</p>
+          <p class="text-4xl font-extrabold mb-6">Free</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              15-minute video call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Review your Clay setup and goals
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Honest recommendation on next steps
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=clay--discovery" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Book a Call
+          </a>
+        </div>
+        <!-- Remote -->
+        <div class="bg-white p-8 rounded-xl border-2 border-gray-900 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</div>
+          <h3 class="font-bold text-lg mb-1">Remote Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">Full Clay integration over screen share.</p>
+          <p class="text-4xl font-extrabold mb-6">$1,200</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw + Clay API integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Waterfall enrichment configuration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              AI configured for your ICP and outreach
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              14 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=clay--remote" target="_blank" class="block text-center py-3 px-4 rounded-lg bg-gray-900 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-md">
+            Get Started
+          </a>
+        </div>
+        <!-- In-Person -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">In-Person Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">We come to your office. NYC area.</p>
+          <p class="text-4xl font-extrabold mb-6">$2,400</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote, plus
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              On-site at your office in NYC
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full team training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              30 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=clay--inperson" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Common questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Does OpenClaw replace Clay?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            No. OpenClaw connects to Clay through its API and operates it for you. Your Clay tables, enrichment providers, and data stay exactly where they are. OpenClaw adds a decision-making layer so your enrichment and outreach workflows run without manual intervention.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">What Clay features can OpenClaw access?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            OpenClaw works with Clay's full platform: table creation and management, waterfall enrichment across 100+ data providers, the AI research agent, HTTP API integrations, webhook triggers, CRM push, and outreach sequence management. If Clay exposes it through the API, OpenClaw can read it, write to it, and act on it.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">How long does the integration setup take?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Most Clay integrations are running within 3 to 5 days. The API connection and initial table setup happen on day one. The remaining time goes into configuring waterfall enrichment logic, lead scoring criteria, and outreach templates specific to your business and ICP.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Do I need a specific Clay plan?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            You'll need a Clay plan with API access and enough enrichment credits for your volume. The Pro plan and above include API access and higher credit allocations. We'll review your expected volume during the discovery call and recommend the right tier.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Can OpenClaw work with my existing CRM alongside Clay?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Yes. Clay already integrates with Salesforce, HubSpot, and other CRMs. OpenClaw can manage the entire flow: enrich leads in Clay, push qualified records to your CRM, and trigger outreach sequences. The data moves between systems automatically, and OpenClaw monitors the sync to catch errors before they pile up.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED INDUSTRIES -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm text-gray-400 mb-4">OpenClaw + Clay works across industries. See setup details for yours:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/for/recruiting-agencies" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Recruiting</a>
+        <a href="/for/startup-founders" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Startups</a>
+        <a href="/for/creative-agencies" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Creative Agencies</a>
+        <a href="/for/real-estate" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Real Estate</a>
+        <a href="/for/financial-advisors" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Financial Advisors</a>
+        <a href="/industries" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Industries &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-900 text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to stop building tables by hand?</h2>
+      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your Clay setup together and figure out where OpenClaw can take the manual work off your plate.</p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=clay--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg">
+        Book a Free Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-6 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Home</a>
+        <a href="/industries" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Industries</a>
+        <a href="/#pricing" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Pricing</a>
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=clay--discovery" target="_blank" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Book a Call</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

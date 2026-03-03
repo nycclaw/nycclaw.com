@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw for Close CRM | Sales Automation & AI Integration | NYC Claw</title>
+  <meta name="description" content="Connect OpenClaw to Close CRM and let AI handle lead follow-up, call logging, pipeline updates, and email sequences. Built for inside sales teams that live on the phone.">
+  <meta property="og:title" content="OpenClaw for Close CRM | Sales Automation & AI Integration | NYC Claw">
+  <meta property="og:description" content="OpenClaw connects to Close's full API. Leads, calls, emails, opportunities, sequences. Your inside sales CRM gets a brain.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/integrations/close">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/integrations/close">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw for Close CRM - Sales Automation & AI Integration",
+    "description": "Professional OpenClaw integration with Close CRM. AI-powered lead follow-up, call logging, pipeline management, and email sequences for inside sales teams.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does OpenClaw replace Close CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OpenClaw connects to Close through its REST API and operates your existing account. Your leads, call recordings, email threads, and pipeline data stay exactly where they are. OpenClaw just adds intelligence on top so the CRM works harder without more effort from your team."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Close CRM features can OpenClaw access?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw connects to Close's full API: leads, contacts, opportunities, activities (calls, emails, SMS), custom fields, Smart Views, sequences, and webhooks for real-time event triggers. If Close exposes it through the API, OpenClaw can read it, write to it, and act on it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the integration setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Close integrations are running within 3 to 5 days. API keys and webhooks connect on day one. The remaining time goes toward configuring OpenClaw for your specific pipeline stages, lead qualification criteria, and communication style."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Close plan do I need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any Close plan includes API access. The Startup plan ($49/mo per user) works. Higher plans add features like custom activities, call coaching, and predictive dialer, which OpenClaw can also integrate with."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will OpenClaw interfere with my existing sequences and workflows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OpenClaw works alongside your existing Close sequences and automations. It doesn't overwrite anything. It reads events through webhooks and the API, then takes action based on rules you define. Your sequences keep running. OpenClaw handles the parts that need judgment."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/#setup" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Setup</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=close--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Platform Integration
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Your reps are dialing.<br>
+        <span class="text-gray-500">Everything else is falling through the cracks.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Close is built for speed. Built-in calling, email sequences, pipeline tracking. But someone still has to log the notes, update the pipeline, and follow up with the leads that didn't pick up. That someone is now OpenClaw.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">OpenClaw connects to Close's full REST API. Leads, contacts, calls, emails, opportunities, custom fields. All of it.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=close--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">Full API</p>
+          <p class="text-sm text-gray-500 mt-1">leads, calls, emails, opportunities, custom fields</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">24/7</p>
+          <p class="text-sm text-gray-500 mt-1">lead follow-up, even when your reps clock out</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">&lt;60s</p>
+          <p class="text-sm text-gray-500 mt-1">response to new Close leads via webhook</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">Webhooks</p>
+          <p class="text-sm text-gray-500 mt-1">real-time events for leads, calls, emails, pipeline</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Close handles the calls. Nobody handles the rest.</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Your sales team picked Close because it's fast. But speed on the phone doesn't fix the admin pile-up after the call ends.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Call ends, notes don't get written</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your rep finishes a 12-minute call, scribbles something in the notes field, and moves on to the next dial. Three days later, nobody remembers what was discussed. The lead calls back, and your team scrambles to piece together context from a half-sentence note that says "interested, follow up."</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Pipeline updates happen when someone remembers</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A lead said yes on the phone. They're ready to move forward. But the opportunity still shows "Demo Scheduled" because the rep got pulled into another call. Your pipeline view is always a day behind reality, which means your forecasting is too.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Inbound leads sit while reps are on the phone</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A hot lead comes in through your website at 2:15 PM. Every rep is on a call. The lead gets an auto-email that feels like an auto-email. By the time someone follows up at 4 PM, the lead has already booked a demo with someone else. Close tracks speed-to-lead. Your team's average isn't great.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Sequences run, but nobody adapts</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You've built email sequences in Close for different lead stages. They work fine for the first touch. But when a lead replies with a specific question or objection, the sequence doesn't know what to do. It just sends the next scheduled email like nothing happened. That's not selling. That's spamming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">OpenClaw + Close CRM Integration</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">OpenClaw connects to Close through the REST API and webhooks. It watches what's happening in your account, makes decisions, and takes action. Here's what that looks like.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Instant inbound response</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">New lead hits Close? OpenClaw picks it up via webhook within seconds. It reads the lead data, checks the source, and sends a personalized email or SMS through Close's API. Not a template. An actual response based on what the lead submitted and what your reps would say.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Post-call notes and actions</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">After a call ends in Close, OpenClaw reads the call activity data and duration. It creates a structured note on the lead, updates relevant custom fields, and moves the opportunity to the right pipeline stage. Your reps can hang up and dial the next number. The admin is already done.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Pipeline stays current automatically</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw updates opportunity stages based on actual activity. Lead responded to an email? Moved to "Engaged." Call lasted over 5 minutes and they asked about pricing? "Qualified." No response in 7 days? "Needs Follow-up." Your pipeline reflects reality, not whatever your rep remembered to update.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Smart email replies, not canned sequences</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When a lead replies to an email in Close with a question or objection, OpenClaw reads the thread and responds intelligently. It can pause or adjust sequences based on what the lead actually said. A lead asks about pricing? OpenClaw sends the right information instead of the next generic follow-up in the queue.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Lead data stays clean without effort</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw updates custom fields, adds tags, and writes structured notes on every lead as it learns new information. When a rep opens a lead record before a call, the context is already there: company size, budget range, decision timeline, previous objections. No digging through email threads.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Re-engages stale leads on schedule</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw monitors lead activity through the API and identifies leads that have gone quiet. It sends a follow-up email or queues a call task for your reps at the right time. Not a blanket "just checking in" message. A specific follow-up based on the last conversation and where things left off.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">What is OpenClaw?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-3">
+        OpenClaw is an open-source AI assistant that connects to the tools you already use and operates them for you. Email, calendar, CRM, messaging. It reads, it responds, it takes action. It runs on your own devices, so your data stays yours.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed">
+        It's not a chatbot you paste into a website. It's an operator that works behind the scenes, handling the tasks you keep putting off because there aren't enough hours in the day.
+      </p>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What this looks like in practice</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three real scenarios where OpenClaw and Close work together.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">SaaS Sales Team</div>
+          <h3 class="font-semibold mb-3">The demo request that books itself</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A lead fills out your demo request form at 7:45 PM. Every rep is offline. OpenClaw picks up the webhook, reads that they're a 50-person company looking for CRM migration, and sends a personalized email within 40 seconds. The lead replies asking about integrations. OpenClaw answers with specifics from your docs and sends a booking link. You come in the next morning to a qualified demo on the calendar with full context notes in Close.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Recruiting Agency</div>
+          <h3 class="font-semibold mb-3">Candidate follow-up that never lapses</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your recruiters make 80 calls a day through Close. After each call, OpenClaw creates a structured note with the candidate's availability, salary expectations, and role preferences. It updates the custom fields and moves the opportunity to the right stage. When a candidate goes quiet for 5 days, OpenClaw sends a personalized check-in referencing their last conversation. Your recruiters just dial.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Insurance Agency</div>
+          <h3 class="font-semibold mb-3">Renewal outreach that runs itself</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Policy renewals are 60 days out. OpenClaw queries Close for leads with renewal dates in that window, checks the last activity, and sends a tailored email referencing their current coverage and any changes worth discussing. Leads who respond get moved to "Renewal Active" with a call task assigned to the right rep. The ones who don't get a follow-up sequence. No spreadsheets. No manual tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg">Three steps. We handle the technical work.</p>
+      </div>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">1</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We connect OpenClaw to your Close account</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We generate an API key in Close and configure webhooks so OpenClaw can listen for new leads, call activities, email events, pipeline changes, and opportunity updates. This happens on day one.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">2</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We configure the AI for your sales process</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Your qualification criteria. Your pipeline stages. Your tone. Your objection handling. We configure OpenClaw to respond and act the way your best rep would. Not generic scripts. Specific to how your team sells.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">3</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">OpenClaw starts operating your Close account</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Leads come in. Calls get logged. Pipeline updates happen automatically. OpenClaw handles the follow-up, the data entry, the re-engagement. You review the first few days, tell us what to adjust, and we fine-tune. Within a week, it's running on its own.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg">One-time setup. No monthly fees from us. No contracts.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Free -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">Discovery Call</h3>
+          <p class="text-gray-500 text-sm mb-4">See if this makes sense for your team.</p>
+          <p class="text-4xl font-extrabold mb-6">Free</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              15-minute video call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Review your Close setup and sales process
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Honest recommendation on next steps
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=close--discovery" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Book a Call
+          </a>
+        </div>
+        <!-- Remote -->
+        <div class="bg-white p-8 rounded-xl border-2 border-gray-900 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</div>
+          <h3 class="font-bold text-lg mb-1">Remote Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">Full Close integration over screen share.</p>
+          <p class="text-4xl font-extrabold mb-6">$1,200</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw + Close API integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Webhook configuration for leads, calls, emails
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              AI configured for your pipeline and sales voice
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              14 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=close--remote" target="_blank" class="block text-center py-3 px-4 rounded-lg bg-gray-900 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-md">
+            Get Started
+          </a>
+        </div>
+        <!-- In-Person -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">In-Person Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">We come to your office. NYC area.</p>
+          <p class="text-4xl font-extrabold mb-6">$2,400</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote, plus
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              On-site at your office in NYC
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full team training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              30 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=close--inperson" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Common questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Does OpenClaw replace Close?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            No. OpenClaw connects to Close through its REST API and operates your existing account. Your leads, call recordings, email threads, and pipeline data stay exactly where they are. OpenClaw adds intelligence on top so the CRM works harder without more effort from your team.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">What Close features can OpenClaw access?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            OpenClaw connects to Close's full API: leads, contacts, opportunities, activities (calls, emails, SMS, notes), custom fields, Smart Views, sequences, and webhooks for real-time event triggers. If Close exposes it through the API, OpenClaw can read it, write to it, and act on it.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">How long does the integration setup take?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Most Close integrations are running within 3 to 5 days. API keys and webhooks connect on day one. The remaining time goes toward configuring OpenClaw for your specific pipeline stages, qualification criteria, and communication style. Within a week, it's handling leads on its own.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Which Close plan do I need?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Any Close plan includes API access. The Startup plan ($49/mo per user) works fine. Higher-tier plans add features like custom activities, call coaching, and predictive dialer, all of which OpenClaw can also integrate with if you have them.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Will OpenClaw interfere with my existing sequences?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            No. OpenClaw works alongside your existing Close sequences and automations. It reads events through webhooks and the API, then takes action based on rules you define. Your sequences keep running as they are. OpenClaw handles the parts that need judgment, like responding to replies and updating pipeline stages.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED INDUSTRIES -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm text-gray-400 mb-4">OpenClaw + Close works across industries. See setup details for yours:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/for/recruiting-agencies" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Recruiting</a>
+        <a href="/for/insurance-agencies" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Insurance</a>
+        <a href="/for/real-estate" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Real Estate</a>
+        <a href="/for/startup-founders" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Startups</a>
+        <a href="/for/financial-advisors" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Financial Advisors</a>
+        <a href="/industries" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Industries &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-900 text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Your reps should be selling, not doing data entry.</h2>
+      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your Close setup together and figure out where OpenClaw can take work off your team's plate.</p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=close--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg">
+        Book a Free Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-6 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Home</a>
+        <a href="/industries" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Industries</a>
+        <a href="/#pricing" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Pricing</a>
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=close--discovery" target="_blank" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Book a Call</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
