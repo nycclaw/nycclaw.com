@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Setup for Dental Practices — AI Transformation | NYC Claw</title>
+  <meta name="description" content="OpenClaw setup for dental practices — automated patient scheduling, insurance verification & recall systems. White-glove AI deployment in NYC.">
+  <meta property="og:title" content="OpenClaw Setup for Dental Practices — AI Transformation | NYC Claw">
+  <meta property="og:description" content="OpenClaw setup for dental practices — automated patient scheduling, insurance verification & recall systems. White-glove AI deployment in NYC.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/for/dental-practices">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/for/dental-practices">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw Setup for Dental Practices",
+    "description": "Done-for-you AI assistant setup for dentists and dental offices. Automated patient scheduling, insurance verification, recall systems, and front desk operations.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does OpenClaw handle patient scheduling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw monitors your incoming calls, web forms, and emails. When a patient requests an appointment, it checks your practice management system for open slots, confirms the booking, and sends reminders automatically. You and your front desk get notified of every new appointment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this integrate with my practice management software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw connects to your existing tools including Dentrix, Eaglesoft, Open Dental, and others via email, calendar, and API integrations. It works alongside your current systems rather than replacing them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take for a dental practice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most dental practice setups are completed in a single session of 2-3 hours, with fine-tuning over the following two weeks. Your practice will have automated scheduling, recall, and patient communication running within the first day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is patient data kept private and HIPAA-compliant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw runs on your own devices. Patient records, insurance information, and communications never leave your control. The software is open-source, giving you full transparency into how data is handled."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this work for a DSO with multiple locations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. OpenClaw can be configured across multiple practice locations with location-specific scheduling rules, provider availability, and recall protocols. Each location gets its own workflows while you maintain centralized oversight."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/accounting-firms">Accounting Firms<span class="soon-dot"></span></a>
+                  <a href="/for/insurance-agencies">Insurance Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/financial-advisors">Financial Advisors<span class="soon-dot"></span></a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/startup-founders">Startup Founders<span class="soon-dot"></span></a>
+                  <a href="/for/creative-agencies">Creative Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/healthcare">Healthcare<span class="soon-dot"></span></a>
+                  <a href="/for/architecture-firms">Architecture Firms<span class="soon-dot"></span></a>
+                  <a href="/for/ecommerce">E-commerce<span class="soon-dot"></span></a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/#setup" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Setup</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=dental-practices--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        For Dental Practices
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Your front desk can't answer<br>
+        <span class="text-gray-500">every call. Now it doesn't have to.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Dental practices lose $150,000+ per year in missed calls and unfilled chairs. Patients who can't book in under 60 seconds call the next office. OpenClaw catches what your front desk can't.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">Powered by OpenClaw &mdash; open-source AI that runs on your devices.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=dental-practices--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">35%</p>
+          <p class="text-sm text-gray-500 mt-1">of patient calls go unanswered during business hours</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">$150K+</p>
+          <p class="text-sm text-gray-500 mt-1">lost annually from missed calls &amp; no-shows</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">28%</p>
+          <p class="text-sm text-gray-500 mt-1">average patient no-show rate without reminders</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">10+</p>
+          <p class="text-sm text-gray-500 mt-1">hours per week spent on insurance verification</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Sound familiar?</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">These aren't hypothetical problems. They're what dental practices deal with every single day.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Pain 1 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">New patients call while your front desk is with someone else</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A potential patient calls at 10am to book a cleaning. Your front desk is checking in Mrs. Johnson, verifying insurance for the next patient, and printing a treatment plan. The call goes to voicemail. That patient calls the practice down the street instead. Studies show 35% of dental calls go unanswered during business hours. Each missed new patient call costs you $1,000+ in lifetime value.</p>
+        </div>
+        <!-- Pain 2 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">No-shows leave empty chairs that cost you $500+ each</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Without consistent reminders, the average dental practice sees a 28% no-show rate. That's 5-6 empty appointment slots per week. At $200-$500 per appointment, you're leaving $4,000-$12,000 on the table every month. Your team tries to confirm appointments manually but they're already stretched thin handling check-ins, insurance, and treatment coordination.</p>
+        </div>
+        <!-- Pain 3 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Recall patients disappear for years at a time</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your hygiene schedule should be booked 6 weeks out. Instead, you've got 2,000 patients overdue for their 6-month cleaning. Sending postcards costs $1-2 each and gets a 1-2% response rate. Your front desk is supposed to call them but never gets through the list. Those patients aren't switching dentists on purpose. They just forgot, and nobody reminded them enough times.</p>
+        </div>
+        <!-- Pain 4 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Insurance verification eats 10+ hours per week</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Before every appointment, someone on your team needs to verify coverage, check remaining benefits, confirm frequencies, and flag any issues. For a practice seeing 20 patients a day, that's 15-20 minutes per patient just on insurance. It's the most tedious part of running a dental office, and getting it wrong means denied claims and awkward conversations about unexpected bills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What OpenClaw does for your practice</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Not another app your team ignores. OpenClaw runs in the background and handles the work that keeps falling through the cracks.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-green-600 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Instant Patient Response</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">New patient inquiries from your website, Google Business Profile, or email get a response in seconds. OpenClaw collects insurance info, preferred times, and reason for visit, then books them into your next available slot. No more lost calls.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Appointment Reminders &amp; Confirmations</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Automated text and email reminders at 72 hours, 24 hours, and 2 hours before each appointment. Patients confirm with a single tap. Cancellations trigger your waitlist automatically so chairs stay filled.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Recall &amp; Reactivation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Patients overdue for cleanings, exams, or treatment get personalized outreach at the right intervals. OpenClaw sends 3-5 touchpoints over 60 days via text and email. You'll see patients who haven't been in for 18 months booking again.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Insurance Verification Support</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw pulls patient insurance details, checks eligibility through your portal, and flags issues before the patient sits in the chair. Your team spends minutes instead of hours on verification each day.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Review Generation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">After each appointment, OpenClaw sends a personalized follow-up. Happy patients get a direct link to leave a Google review. Unhappy ones get routed to your office manager first. Your review count grows on autopilot.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Treatment Follow-Up</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Patients who got a treatment plan but haven't scheduled? OpenClaw follows up with specific, personalized messages about their recommended procedures. No generic blasts. Just the right nudge at the right time to get them back in the chair.</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-8">Every setup is configured for your specific practice, tools, and patient flow.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">OpenClaw Setup for Dental Practices: Your AI Transformation</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">OpenClaw is an open-source AI assistant that runs on your own devices. Unlike cloud-based tools that store patient data on their servers, everything stays under your control. It connects to your practice management software, email, phone system, and calendar to handle the operational work that buries your front desk every day.</p>
+      <p class="text-gray-500 text-lg leading-relaxed">We don't just install it. We <strong>configure it for dental</strong>. Your scheduling rules, your recall intervals, your insurance workflows, your patient communication style. That's what separates this from a generic chatbot that doesn't know a prophylaxis from a prophy. <a href="/" class="text-gray-900 underline hover:no-underline">Learn more about NYC Claw &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- THE MATH -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Do the math</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">This isn't about technology. It's about the revenue walking out your door right now.</p>
+      </div>
+      <div class="p-8 rounded-xl border border-gray-200 bg-gray-50">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold text-lg mb-4 text-red-500">Without OpenClaw</h3>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                35% of new patient calls go to voicemail
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                28% no-show rate, 5-6 empty slots per week
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                2,000+ patients overdue for recall with no outreach
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                10+ hours/week on manual insurance verification
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                $150K+ lost annually in missed revenue
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-4 text-green-600">With OpenClaw</h3>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Every inquiry gets a response in under 60 seconds
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                No-show rate drops to 8-12% with automated reminders
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Recall patients reactivated automatically over 60-day sequences
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Insurance verified before patients walk in the door
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Front desk freed up to focus on patient experience
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+          <p class="text-sm text-gray-500">Filling just 3 extra hygiene appointments per week pays for the entire setup in under a month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three steps to a fully working AI assistant, configured for dental.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">1</div>
+          <h3 class="text-lg font-semibold mb-2">Discovery Call</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We learn your practice: which PMS you use, how your schedule is structured, what your biggest bottlenecks are, and where patients are falling through the cracks. 15 minutes, free, no commitment.</p>
+        </div>
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">2</div>
+          <h3 class="text-lg font-semibold mb-2">Configure &amp; Deploy</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We install OpenClaw, connect your practice management system, email, and phone. Set up patient scheduling, recall sequences, appointment reminders, and insurance workflows specific to your practice.</p>
+        </div>
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">3</div>
+          <h3 class="text-lg font-semibold mb-2">Fill More Chairs</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Walk through real scenarios together: a new patient calls, someone cancels, a recall patient needs outreach. Two weeks of follow-up support to fine-tune everything until it runs like clockwork.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Start with a discovery call. We'll tell you exactly what to expect.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Discovery -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">Discovery Call</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">Free</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">15-minute practice analysis. We'll map out exactly where your schedule is leaking revenue.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Practice workflow analysis
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Revenue leakage assessment
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Setup plan &amp; cost estimate
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              No commitment required
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=dental-practices--discovery" target="_blank" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book Now</a>
+        </div>
+        <!-- Remote (highlighted) -->
+        <div class="p-8 rounded-xl border-2 border-gray-900 shadow-lg relative flex flex-col">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gray-900 text-white text-xs font-semibold">Most Popular</div>
+          <h3 class="text-lg font-semibold mb-1">Remote Setup</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$1,200</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">Full OpenClaw deployment over screen share. Everything configured for your dental practice workflow.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Discovery Call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw installation &amp; configuration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Scheduling + recall + reminder setup
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              PMS + email + calendar integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              2 weeks of follow-up support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=dental-practices--discovery" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md">Book a Call</a>
+        </div>
+        <!-- In-Person -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">In-Person NYC</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$2,400</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">White-glove setup at your practice. Hands-on deployment, staff training, multi-device.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote Setup
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              In-person at your NYC practice
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Multi-device setup (front desk + provider)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Live staff training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              1 month of priority support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=dental-practices--discovery" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does OpenClaw handle patient scheduling?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            OpenClaw monitors your incoming calls, web forms, and emails. When a patient requests an appointment, it checks your practice management system for open slots, confirms the booking, and sends reminders automatically. You and your front desk get notified of every new appointment.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Does this integrate with my practice management software?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            OpenClaw connects to your existing tools including Dentrix, Eaglesoft, Open Dental, and others via email, calendar, and API integrations. It works alongside your current systems rather than replacing them.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does setup take for a dental practice?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Most dental practice setups are completed in a single session of 2-3 hours, with fine-tuning over the following two weeks. Your practice will have automated scheduling, recall, and patient communication running within the first day.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is patient data kept private and HIPAA-compliant?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw runs on your own devices. Patient records, insurance information, and communications never leave your control. The software is open-source, giving you full transparency into how data is handled.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can this work for a DSO with multiple locations?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Absolutely. OpenClaw can be configured across multiple practice locations with location-specific scheduling rules, provider availability, and recall protocols. Each location gets its own workflows while you maintain centralized oversight.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Stop losing patients to missed calls and no-shows</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free discovery call. We'll map out exactly how OpenClaw fits your dental practice and where you're leaving revenue on the table.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=dental-practices--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book Your Discovery Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Setup for Coaches & Consultants — AI Transformation | NYC Claw</title>
+  <meta name="description" content="OpenClaw setup for coaches and consultants — automate client intake, session prep, follow-ups, and billing. White-glove AI deployment in NYC.">
+  <meta property="og:title" content="OpenClaw Setup for Coaches & Consultants — AI Transformation | NYC Claw">
+  <meta property="og:description" content="OpenClaw setup for coaches and consultants — automate client intake, session prep, follow-ups, and billing. White-glove AI deployment in NYC.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/for/coaches-consultants">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/for/coaches-consultants">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw Setup for Coaches & Consultants",
+    "description": "Done-for-you AI assistant setup for business coaches, executive coaches, and management consultants. Automated client intake, session prep, follow-ups, and practice operations.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does OpenClaw handle client intake for coaches?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw monitors your inquiry channels — website forms, email, LinkedIn messages. When a potential client reaches out, it responds within seconds with a personalized message, asks qualifying questions about their goals and timeline, and books a discovery call on your calendar. You get a brief with everything they shared before the call starts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my clients know they're talking to an AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That's your call. Most coaches use OpenClaw for the initial response and scheduling, then take over personally once a conversation is underway. The handoff is seamless. You can also have OpenClaw draft messages for your review before anything sends — so every touchpoint still sounds like you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most coaching practice setups wrap up in a single session of 2-3 hours, with fine-tuning over two weeks. You'll have automated intake, session prep, and follow-up workflows running within the first day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my client data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw runs on your own devices. Session notes, client details, and private conversations never leave your control. It's open-source, so you can verify exactly how it handles your information."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I'm a solo consultant — is this overkill for a one-person practice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It's the opposite. Solo practitioners benefit the most because there's no team to delegate to. OpenClaw handles the admin work that eats into your billable hours — intake, scheduling, follow-ups, session prep — so you can focus on the work clients actually pay you for."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                  <a href="/for/accounting-firms">Accounting Firms<span class="soon-dot"></span></a>
+                  <a href="/for/insurance-agencies">Insurance Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/financial-advisors">Financial Advisors<span class="soon-dot"></span></a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/startup-founders">Startup Founders<span class="soon-dot"></span></a>
+                  <a href="/for/creative-agencies">Creative Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/healthcare">Healthcare<span class="soon-dot"></span></a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/#setup" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Setup</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=coaches-consultants--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        For Coaches &amp; Consultants
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        You sell your time.<br>
+        <span class="text-gray-500">Stop spending it on admin.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        The average coach spends 40% of their week on non-billable work. Intake forms, scheduling back-and-forth, session prep, follow-up emails. That's two full days a week you're not getting paid for.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">Powered by OpenClaw &mdash; open-source AI that runs on your devices.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=coaches-consultants--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">40%</p>
+          <p class="text-sm text-gray-500 mt-1">of a coach's week spent on non-billable admin</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">$150K+</p>
+          <p class="text-sm text-gray-500 mt-1">in lost revenue per year from unbilled time</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">68%</p>
+          <p class="text-sm text-gray-500 mt-1">of coaching clients come from referrals</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">5.3</p>
+          <p class="text-sm text-gray-500 mt-1">hours/week on scheduling alone</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Sound familiar?</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">You didn't become a coach to spend your days on admin. But here you are.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Pain 1 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Prospects ghost you after the first inquiry</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Someone fills out your contact form at 9pm on a Tuesday. You're with a client all Wednesday morning. By the time you respond Thursday, they've already booked a discovery call with another coach. Speed matters. The coaches who respond within an hour close 3x more discovery calls than those who wait a day.</p>
+        </div>
+        <!-- Pain 2 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Session prep eats into your billable hours</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Before every session, you're reviewing notes from last time, checking what homework they committed to, and pulling together relevant frameworks. It takes 15-20 minutes per client. Multiply that by 20 clients and you've lost an entire workday each week just getting ready for sessions you're already booked for.</p>
+        </div>
+        <!-- Pain 3 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Follow-up falls through the cracks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You know you should send a check-in email between sessions. You know that post-engagement follow-up is how you get referrals. But when you're running back-to-back coaching calls, those "quick follow-ups" pile up until they feel awkward to send. Clients notice the silence, even if they don't say anything.</p>
+        </div>
+        <!-- Pain 4 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">You're the bottleneck in your own business</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Invoicing, proposals, contract renewals, content creation, LinkedIn posts, newsletter drafts. You can't hire a full-time assistant for a solo practice, and VAs need constant direction. So everything lands on you. Your capacity tops out at 15-20 clients not because of session time, but because of everything around it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What OpenClaw does for your practice</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Not another SaaS tool collecting dust. OpenClaw works in the background and talks to you like a colleague via text or chat.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-green-600 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Instant Client Intake</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A prospect fills out your form or sends an email. OpenClaw responds in seconds, asks about their goals, current challenges, and timeline. Then it books them directly on your calendar and sends you a pre-call brief. You show up prepared, they feel heard.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Session Prep Briefs</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Before each session, OpenClaw pulls together a one-page brief: what you covered last time, commitments the client made, progress on their goals, and suggested talking points. Delivered to your inbox 30 minutes before the call starts.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Between-Session Follow-Up</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Automated mid-week check-ins, accountability nudges, and resource sharing. OpenClaw drafts personalized messages based on what each client is working on. You review before they send. Clients feel supported without you writing 20 individual emails.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Referral &amp; Re-Engagement</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When an engagement wraps up, OpenClaw keeps the relationship warm. Quarterly check-ins, relevant article shares, anniversary touchpoints. Past clients remember you when a colleague asks "know any good coaches?" because you stayed present without being pushy.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Proposals &amp; Invoicing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Tell OpenClaw about a new engagement and it drafts the proposal from your templates, tracks contract status, sends payment reminders, and flags overdue invoices. No more chasing payments at 10pm on a Sunday.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Content &amp; Thought Leadership</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw turns your session insights (with client details removed) into LinkedIn posts, newsletter drafts, and blog outlines. You've got a goldmine of expertise from every coaching conversation. Now it actually gets published.</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-8">Every setup is configured for your specific coaching niche, tools, and client workflow.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">OpenClaw Setup for Coaches: Your AI Transformation</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">OpenClaw is an open-source AI assistant that runs on your own devices. Unlike cloud platforms, your client notes and session data never leave your control. It connects to your email, calendar, Zoom, and whatever tools you already use. Think of it as the operational backbone your practice has been missing.</p>
+      <p class="text-gray-500 text-lg leading-relaxed">We don't just install it. We <strong>configure it for coaching and consulting</strong>. Your intake process, your session cadence, your follow-up style. That's what separates this from a generic chatbot or another SaaS subscription. <a href="/" class="text-gray-900 underline hover:no-underline">Learn more about NYC Claw &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- THE MATH -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Do the math</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">If your hourly rate is $300, every hour of admin costs you $300. It adds up fast.</p>
+      </div>
+      <div class="p-8 rounded-xl border border-gray-200 bg-gray-50">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold text-lg mb-4 text-red-500">Without OpenClaw</h3>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                15 clients max, capped by admin overhead
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                16+ hours/week on non-billable work
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                Prospects slip away during slow response times
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                Past clients forget you after the engagement ends
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                Content ideas stay locked in your head
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-4 text-green-600">With OpenClaw</h3>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                20-25 clients with the same effort
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                10+ hours/week reclaimed for sessions or life
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Every inquiry gets a response in under 60 seconds
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Automated nurture drives referrals on autopilot
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Consistent thought leadership without the grind
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+          <p class="text-sm text-gray-500">Five extra client hours per week at $300/hr = $6,500/month in recovered revenue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three steps to a fully working AI assistant, configured for your coaching practice.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">1</div>
+          <h3 class="text-lg font-semibold mb-2">Discovery Call</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We walk through your practice: how you get clients, what your session workflow looks like, which tools you use, and where time disappears. 15 minutes, free, no strings attached.</p>
+        </div>
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">2</div>
+          <h3 class="text-lg font-semibold mb-2">Configure &amp; Deploy</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We install OpenClaw and connect your email, calendar, Zoom, and CRM. Then we set up intake flows, session prep automation, follow-up sequences, and content workflows tailored to how you actually coach.</p>
+        </div>
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">3</div>
+          <h3 class="text-lg font-semibold mb-2">Coach More, Admin Less</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We test with real scenarios: a new inquiry arrives, a session starts tomorrow, a client finishes their engagement. Two weeks of follow-up support to dial everything in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Start with a discovery call. We'll tell you exactly what to expect.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Discovery -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">Discovery Call</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">Free</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">15-minute practice audit. We'll map out exactly where AI can save you time and win you clients.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Practice workflow analysis
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Tool recommendations
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Setup plan &amp; cost estimate
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              No commitment required
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=coaches-consultants--discovery" target="_blank" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book Now</a>
+        </div>
+        <!-- Remote (highlighted) -->
+        <div class="p-8 rounded-xl border-2 border-gray-900 shadow-lg relative flex flex-col">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gray-900 text-white text-xs font-semibold">Most Popular</div>
+          <h3 class="text-lg font-semibold mb-1">Remote Setup</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$1,200</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">Full OpenClaw deployment over screen share. Everything configured for your coaching or consulting workflow.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Discovery Call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw installation &amp; configuration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Client intake + session prep automation
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Email + calendar + Zoom integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              2 weeks of follow-up support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=coaches-consultants--discovery" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md">Book a Call</a>
+        </div>
+        <!-- In-Person -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">In-Person NYC</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$2,400</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">White-glove setup at your office. Hands-on deployment, multi-device, live training.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote Setup
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              In-person at your NYC location
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Multi-device setup (laptop + phone)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Live training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              1 month of priority support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=coaches-consultants--discovery" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does OpenClaw handle client intake for coaches?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            OpenClaw monitors your inquiry channels: website forms, email, LinkedIn messages. When a potential client reaches out, it responds within seconds with a personalized message, asks qualifying questions about their goals and timeline, and books a discovery call on your calendar. You get a brief with everything they shared before the call starts.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Will my clients know they're talking to an AI?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            That's your call. Most coaches use OpenClaw for the initial response and scheduling, then take over personally once a conversation is underway. The handoff is seamless. You can also have OpenClaw draft messages for your review before anything sends, so every touchpoint still sounds like you.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does setup take?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Most coaching practice setups wrap up in a single session of 2-3 hours, with fine-tuning over two weeks. You'll have automated intake, session prep, and follow-up workflows running within the first day.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is my client data private?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw runs on your own devices. Session notes, client details, and private conversations never leave your control. It's open-source, so you can verify exactly how it handles your information.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">I'm a solo consultant. Is this overkill for a one-person practice?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            It's the opposite. Solo practitioners benefit the most because there's no team to delegate to. OpenClaw handles the admin work that eats into your billable hours: intake, scheduling, follow-ups, session prep. So you can focus on the work clients actually pay you for.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Spend your week coaching, not catching up</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free discovery call. We'll walk through your practice and show you exactly where OpenClaw saves you time. No commitment required.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=coaches-consultants--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book Your Discovery Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

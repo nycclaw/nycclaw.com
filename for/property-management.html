@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Setup for Property Management — AI Transformation | NYC Claw</title>
+  <meta name="description" content="OpenClaw setup for property managers, landlords & multi-family operators. Automate tenant comms, maintenance tracking & lease renewals. White-glove AI deployment.">
+  <meta property="og:title" content="OpenClaw Setup for Property Management — AI Transformation | NYC Claw">
+  <meta property="og:description" content="OpenClaw setup for property managers, landlords & multi-family operators. Automate tenant comms, maintenance tracking & lease renewals.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/for/property-management">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/for/property-management">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw Setup for Property Management",
+    "description": "Done-for-you AI assistant setup for property managers, landlords, and multi-family operators. Automated tenant communication, maintenance coordination, and lease management.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does OpenClaw handle tenant maintenance requests?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw monitors your email, text messages, and tenant portal. When a maintenance request comes in, it acknowledges the tenant immediately, categorizes the issue by urgency, dispatches the right vendor from your approved list, and keeps the tenant updated on status. You get a summary instead of playing middleman on every request."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work with Buildium or AppFolio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw connects to your existing property management software and works alongside it. It handles the communication and coordination layer that these platforms don't cover well, like following up on late rent, chasing vendor invoices, or sending personalized lease renewal offers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take for a property management company?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most setups take a single session of 2-3 hours, with fine-tuning over the following two weeks. We configure it around your portfolio size, vendor list, lease terms, and communication preferences. You'll have a working assistant handling tenant requests within the first day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is tenant data kept private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw runs on your own devices. Tenant information, lease details, and financial records never leave your control. It's open-source, so you can verify exactly how your data is handled."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it handle multiple properties and portfolios?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. OpenClaw tracks each property individually with its own vendor lists, lease schedules, and tenant contacts. Whether you manage 10 units or 500, it scales without adding headcount."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms<span class="soon-dot"></span></a>
+                  <a href="/for/insurance-agencies">Insurance Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/financial-advisors">Financial Advisors<span class="soon-dot"></span></a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/startup-founders">Startup Founders<span class="soon-dot"></span></a>
+                  <a href="/for/creative-agencies">Creative Agencies<span class="soon-dot"></span></a>
+                  <a href="/for/healthcare">Healthcare<span class="soon-dot"></span></a>
+                  <a href="/for/architecture-firms">Architecture Firms<span class="soon-dot"></span></a>
+                  <a href="/for/ecommerce">E-commerce<span class="soon-dot"></span></a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/#setup" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Setup</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=property-management--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        For Property Managers &amp; Landlords
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Your tenants don't wait.<br>
+        <span class="text-gray-500">Your operations shouldn't either.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        The average maintenance request takes 3 days to resolve. Tenants expect same-day acknowledgment. OpenClaw responds in seconds, dispatches vendors, and keeps everyone updated without you playing phone tag.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">Powered by OpenClaw &mdash; open-source AI that runs on your devices.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=property-management--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">3 days</p>
+          <p class="text-sm text-gray-500 mt-1">average maintenance request resolution time</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">40%</p>
+          <p class="text-sm text-gray-500 mt-1">of PM time spent on tenant communication</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">$4,000</p>
+          <p class="text-sm text-gray-500 mt-1">average cost per unit turnover</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">67%</p>
+          <p class="text-sm text-gray-500 mt-1">of tenants leave over poor communication</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Sound familiar?</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">These aren't hypothetical problems. They're Tuesday morning for anyone managing rental properties.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Pain 1 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Maintenance requests pile up while you're putting out fires</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A tenant texts about a leaking faucet at 9am. You're dealing with a burst pipe at another building. By 5pm you've got 12 unread messages, three angry voicemails, and a bad Google review brewing. Every delayed response chips away at tenant satisfaction and your retention rate.</p>
+        </div>
+        <!-- Pain 2 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Lease renewals slip through the cracks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A lease expires in 60 days. You meant to send the renewal offer last month. Now you're scrambling, the tenant is already browsing apartments, and you're staring at a $4,000 turnover cost. Multiply that across a 50-unit portfolio and you're bleeding money on preventable vacancies.</p>
+        </div>
+        <!-- Pain 3 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Vendor coordination eats your entire day</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">The plumber can come Thursday. The tenant works from home Monday and Wednesday. You're stuck in a three-way scheduling loop that takes 8 texts and 2 phone calls to resolve. Now multiply that by 15 open work orders. You didn't get into property management to be a dispatcher.</p>
+        </div>
+        <!-- Pain 4 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Late rent collection is a constant chase</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Rent is due on the 1st. By the 5th, you're sending reminders. By the 10th, you're making calls. By the 15th, you're drafting notices. This cycle repeats every single month with the same handful of tenants. It's tedious, uncomfortable, and it takes hours you don't have.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What OpenClaw does for your portfolio</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Not another portal tenants won't use. OpenClaw works in the background and talks to you the same way you'd text a colleague.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-green-600 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Instant Maintenance Triage</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Tenant reports a broken heater at midnight. OpenClaw acknowledges immediately, categorizes it as urgent, texts your HVAC vendor, and confirms an ETA back to the tenant. You wake up to a status update, not a crisis.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Lease Renewal Automation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">90 days before a lease expires, OpenClaw starts the renewal process. It drafts personalized offers based on market rates, sends them at the right time, follows up if there's no response, and alerts you when a tenant wants to negotiate or leave.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Vendor Dispatch &amp; Scheduling</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw matches work orders to your approved vendor list, coordinates availability with the tenant, confirms appointments, and follows up on completion. No more three-way phone tag. You approve the spend; it handles the logistics.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Rent Collection &amp; Late Follow-Up</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Automated rent reminders before the due date. Escalating follow-ups on the 3rd, 5th, and 10th. Late fee notices drafted and ready for your review. You set the rules; OpenClaw handles the uncomfortable conversations consistently.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Tenant Screening &amp; Onboarding</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">New applicant fills out a form. OpenClaw collects the docs, runs preliminary checks against your criteria, flags anything missing, and queues qualified applications for your review. Move-in packets and welcome emails go out automatically once you approve.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Portfolio Reporting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Weekly summaries of occupancy rates, outstanding maintenance, upcoming lease expirations, and rent collection status. Ask OpenClaw anything about your portfolio in plain English and get an answer in seconds, not after pulling three spreadsheets together.</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-8">Every setup is configured for your specific portfolio, vendor network, and management style.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">OpenClaw Setup for Property Management: Your AI Transformation</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">OpenClaw is an open-source AI assistant that runs on your own devices. Unlike cloud-based tools, your data never leaves your control. It connects to your email, calendar, and property management software to handle tenant communication, vendor coordination, and lease tracking so you can focus on growing your portfolio instead of babysitting it.</p>
+      <p class="text-gray-500 text-lg leading-relaxed">We don't just install it. We <strong>configure it for property management</strong>. Your vendor list, your lease terms, your tenant communication preferences, your escalation rules. That's what separates this from a generic chatbot. <a href="/" class="text-gray-900 underline hover:no-underline">Learn more about NYC Claw &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- THE MATH -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Do the math</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">This isn't about technology. It's about the vacancies and turnover costs you're eating right now.</p>
+      </div>
+      <div class="p-8 rounded-xl border border-gray-200 bg-gray-50">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold text-lg mb-4 text-red-500">Without OpenClaw</h3>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#10005;</span>
+                50-unit portfolio, 3-day avg maintenance response
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#10005;</span>
+                15% annual tenant turnover &rarr; 7-8 turnovers/year
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#10005;</span>
+                $28,000-$32,000/year in turnover costs alone
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#10005;</span>
+                20+ hours/week on tenant comms &amp; vendor calls
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#10005;</span>
+                Missed lease renewals creating preventable vacancies
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-4 text-green-600">With OpenClaw</h3>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Same-day maintenance acknowledgment, every time
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                8% turnover rate &rarr; 4 turnovers/year
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                $12,000-$16,000 saved on turnover annually
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                10+ hours/week back for acquisitions &amp; growth
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Zero missed lease renewals
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+          <p class="text-sm text-gray-500">Preventing just two turnovers per year pays for your entire setup and then some.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three steps to a fully working AI assistant, configured for property management.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">1</div>
+          <h3 class="text-lg font-semibold mb-2">Discovery Call</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We learn your operation: portfolio size, property types, vendor relationships, PM software, and where your time disappears. 15 minutes, free, no commitment.</p>
+        </div>
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">2</div>
+          <h3 class="text-lg font-semibold mb-2">Configure &amp; Deploy</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We install OpenClaw, connect your email, calendar, and PM platform. Set up maintenance triage rules, vendor dispatch, lease renewal schedules, and rent collection workflows.</p>
+        </div>
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">3</div>
+          <h3 class="text-lg font-semibold mb-2">Start Scaling</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Walk through real scenarios together: a maintenance request comes in, a lease is expiring, rent is overdue. Two weeks of follow-up support to fine-tune everything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Start with a discovery call. We'll tell you exactly what to expect.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Discovery -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">Discovery Call</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">Free</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">15-minute workflow analysis. We'll map out exactly how automation fits your property management operation.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Workflow analysis
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Tool recommendations
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Setup plan &amp; cost estimate
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              No commitment required
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=property-management--discovery" target="_blank" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book Now</a>
+        </div>
+        <!-- Remote (highlighted) -->
+        <div class="p-8 rounded-xl border-2 border-gray-900 shadow-lg relative flex flex-col">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gray-900 text-white text-xs font-semibold">Most Popular</div>
+          <h3 class="text-lg font-semibold mb-1">Remote Setup</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$1,200</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">Full OpenClaw deployment over screen share. Everything configured for your property management workflow.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Discovery Call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw installation &amp; configuration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Maintenance triage + vendor dispatch setup
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Email + calendar + PM software integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              2 weeks of follow-up support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=property-management--discovery" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md">Book a Call</a>
+        </div>
+        <!-- In-Person -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">In-Person NYC</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$2,400</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">White-glove setup at your office. Hands-on deployment, multi-device, live training for your team.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote Setup
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              In-person at your NYC location
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Multi-device setup (laptop + phone)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Live team training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              1 month of priority support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=property-management--discovery" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does OpenClaw handle tenant maintenance requests?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            OpenClaw monitors your email, text messages, and tenant portal. When a maintenance request comes in, it acknowledges the tenant immediately, categorizes the issue by urgency, dispatches the right vendor from your approved list, and keeps the tenant updated on status. You get a summary instead of playing middleman on every request.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Does this work with Buildium or AppFolio?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw connects to your existing property management software and works alongside it. It handles the communication and coordination layer that these platforms don't cover well, like following up on late rent, chasing vendor invoices, or sending personalized lease renewal offers. <a href="/integrations/buildium" class="text-gray-900 underline hover:no-underline">See the Buildium integration</a> or <a href="/integrations/appfolio" class="text-gray-900 underline hover:no-underline">AppFolio integration</a> for details.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does setup take for a property management company?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Most setups take a single session of 2-3 hours, with fine-tuning over the following two weeks. We configure it around your portfolio size, vendor list, lease terms, and communication preferences. You'll have a working assistant handling tenant requests within the first day.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is tenant data kept private?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw runs on your own devices. Tenant information, lease details, and financial records never leave your control. It's open-source, so you can verify exactly how your data is handled.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can it handle multiple properties and portfolios?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Absolutely. OpenClaw tracks each property individually with its own vendor lists, lease schedules, and tenant contacts. Whether you manage 10 units or 500, it scales without adding headcount.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Stop losing tenants to slow response times</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free discovery call. We'll map out exactly how OpenClaw fits your property management operation. No commitment required.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=property-management--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book Your Discovery Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- INTEGRATION CALLOUT -->
+  <section class="py-12 px-6 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-gray-500 text-sm">Already use Buildium or AppFolio? See how OpenClaw integrates with <a href="/integrations/buildium" class="font-semibold text-gray-900 underline hover:no-underline">Buildium</a> or <a href="/integrations/appfolio" class="font-semibold text-gray-900 underline hover:no-underline">AppFolio</a> to automate tenant comms, maintenance dispatch, and lease renewals.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
