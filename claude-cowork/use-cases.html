@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work Use Cases: 12 Real Workflows Across Industries | NYC Claw</title>
+  <meta name="description" content="Real Claude Co-Work use cases and examples: banner uploads, product feed optimization, contract markup, market reports, bookkeeping, and more. See what Co-Work actually does.">
+  <meta property="og:title" content="Claude Co-Work Use Cases: 12 Real Workflows Across Industries | NYC Claw">
+  <meta property="og:description" content="Real Claude Co-Work use cases and examples: banner uploads, product feed optimization, contract markup, market reports, bookkeeping, and more. See what Co-Work actually does.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/use-cases">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/use-cases">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+    .use-case-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      background: white;
+      transition: box-shadow 0.2s;
+    }
+    .use-case-card:hover {
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+    }
+    .use-case-tag {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: #f3f4f6;
+      color: #6b7280;
+      margin-bottom: 0.75rem;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work Setup and Training",
+    "description": "White-glove Claude Co-Work setup, custom plugin development, connector configuration, and team training for businesses.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What kinds of tasks can Claude Co-Work handle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work handles multi-step knowledge work across industries: file processing, data analysis, document generation, scheduled reporting, CRM updates, bookkeeping, contract markup, and more. If the task involves reading files, connecting to business tools, or following a repeatable process, Co-Work can likely automate it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Co-Work process thousands of files or rows at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Co-Work runs inside an isolated VM with access to your local filesystem. Users regularly process product feeds with 100,000+ rows, batch-analyze banner images, and sort hundreds of documents in a single session. The main constraint is your Claude plan's usage limits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do self-improving skills work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A self-improving skill includes a meta-layer that watches the skill perform its task, logs corrections you make, and updates the skill's instructions over time. Each run gets more accurate. The open-source project 'one-skill-to-rule-them-all' on GitHub provides a starting template for building these."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need separate tools for each use case?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Co-Work uses connectors to link to the tools you already use: Google Workspace, Notion, Slack, QuickBooks, Salesforce, and 30+ others. A single Co-Work setup can handle multiple workflows across different tools. Skills and plugins define the logic; connectors provide the access."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can NYC Claw build a custom workflow for my specific use case?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We build custom plugins, skills, and connector configurations for specific business workflows. Book a free 15-minute call and walk us through what you need automated. We'll tell you whether Co-Work can handle it and what the setup looks like."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=use-cases--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="pt-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Use Cases</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-4 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Real Workflows
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Claude Co-Work Use Cases:<br>
+        <span class="text-gray-500">What People Actually Build</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 leading-relaxed max-w-2xl mx-auto mb-8">
+        These aren't hypothetical demos. Every use case below comes from real Co-Work users running real business workflows. Banner processing, contract markup, scheduled reports, product feed analysis, and more.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=use-cases--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Why Use Cases Matter</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4 max-w-3xl mx-auto">
+        <a href="/claude-cowork/" class="text-gray-900 underline hover:no-underline">Claude Co-Work</a> is an agentic mode inside Claude Desktop that handles multi-step knowledge work on its own. It reads and writes files, connects to 38+ business tools through connectors, runs on a schedule, and improves over time through skills.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed max-w-3xl mx-auto">
+        The platform is flexible enough to handle almost anything. But "anything" isn't helpful when you're trying to figure out where to start. The 12 examples below show specific workflows that real users have built, how they work, and which Co-Work features they use.
+      </p>
+    </div>
+  </section>
+
+  <!-- USE CASES GRID -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">12 Real Co-Work Examples</h2>
+      <p class="text-gray-500 text-center mb-14 max-w-2xl mx-auto">Each workflow was built by an actual Co-Work user. We've set up similar systems for our clients.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. Banner Uploads -->
+        <div class="use-case-card">
+          <span class="use-case-tag">Marketing / SEO</span>
+          <h3 class="font-semibold text-lg mb-2">Banner Uploads at Scale</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            Co-Work analyzes banner image content, generates metadata (alt text, descriptions, tags), and creates an import-ready CSV for affiliate networks. A task that took hours now finishes in minutes. The user built a self-improving skill that gets more accurate with each batch.
+          </p>
+          <a href="/claude-cowork/skills" class="text-sm font-medium text-gray-900 hover:underline">Learn about skills &rarr;</a>
+        </div>
+
+        <!-- 2. Product Feed Optimization -->
+        <div class="use-case-card">
+          <span class="use-case-tag">E-commerce / SEO</span>
+          <h3 class="font-semibold text-lg mb-2">Product Feed Optimization</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            Loaded 25 product feeds with roughly 100,000 products each. Co-Work analyzed quality issues, flagged missing columns, and identified inconsistencies between feeds. The output was a prioritized fix list with specific product IDs and recommended values.
+          </p>
+          <a href="/claude-cowork/ecommerce" class="text-sm font-medium text-gray-900 hover:underline">Co-Work for e-commerce &rarr;</a>
+        </div>
+
+        <!-- 3. Self-Improving Skills -->
+        <div class="use-case-card">
+          <span class="use-case-tag">Advanced</span>
+          <h3 class="font-semibold text-lg mb-2">Self-Improving Workflow Skills</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            A meta-skill watches other skills perform, logs corrections you make, and rewrites the skill's instructions to avoid repeating mistakes. Each run produces better output than the last. The concept is open-sourced at <a href="https://github.com/rebelytics/one-skill-to-rule-them-all" class="text-gray-900 underline hover:no-underline" target="_blank" rel="noopener">github.com/rebelytics/one-skill-to-rule-them-all</a>.
+          </p>
+          <a href="/claude-cowork/skills" class="text-sm font-medium text-gray-900 hover:underline">Skills deep dive &rarr;</a>
+        </div>
+
+        <!-- 4. GnuCash Bookkeeping -->
+        <div class="use-case-card">
+          <span class="use-case-tag">Finance</span>
+          <h3 class="font-semibold text-lg mb-2">GnuCash Small Business Bookkeeping</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            A user found a GnuCash MCP project and connected it to Co-Work. Now they do the books for several small businesses in minutes: importing transactions, categorizing expenses, reconciling accounts. What used to take an afternoon per client takes a single Co-Work session.
+          </p>
+          <a href="/claude-cowork/accounting-firms" class="text-sm font-medium text-gray-900 hover:underline">Co-Work for accounting &rarr;</a>
+        </div>
+
+        <!-- 5. Twitter to LinkedIn Migration -->
+        <div class="use-case-card">
+          <span class="use-case-tag">Networking</span>
+          <h3 class="font-semibold text-lg mb-2">Twitter to LinkedIn Migration</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            Scraped Twitter mutuals using a Chrome extension, then set up a daily scheduled task that surfaces 20 matching LinkedIn profiles. Connection requests are sent manually to avoid detection. The entire pipeline runs on schedule with zero daily effort.
+          </p>
+          <a href="/claude-cowork/chrome-extension" class="text-sm font-medium text-gray-900 hover:underline">Chrome extension guide &rarr;</a>
+        </div>
+
+        <!-- 6. Contract Markup -->
+        <div class="use-case-card">
+          <span class="use-case-tag">Legal</span>
+          <h3 class="font-semibold text-lg mb-2">Contract Markup with Tracked Changes</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            Co-Work opens .docx files at the XML level and writes exact tracked changes attributed to a specific lawyer's name. NDA batch processing that used to take a paralegal half a day now runs in one session. The output looks identical to manual Word edits.
+          </p>
+          <a href="/claude-cowork/legal" class="text-sm font-medium text-gray-900 hover:underline">Co-Work for legal &rarr;</a>
+        </div>
+
+        <!-- 7. Weekly Market Reports -->
+        <div class="use-case-card">
+          <span class="use-case-tag">Real Estate</span>
+          <h3 class="font-semibold text-lg mb-2">Weekly Market Reports</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            A scheduled skill pulls active listings, calculates median prices by neighborhood, identifies notable sales, checks mortgage rate trends, formats the data into a report, and drafts a newsletter. Runs every Monday morning before the agent's first coffee.
+          </p>
+          <a href="/claude-cowork/real-estate" class="text-sm font-medium text-gray-900 hover:underline">Co-Work for real estate &rarr;</a>
+        </div>
+
+        <!-- 8. Document Inbox Sorting -->
+        <div class="use-case-card">
+          <span class="use-case-tag">File Management</span>
+          <h3 class="font-semibold text-lg mb-2">Document Inbox Sorting</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            A morning scheduled task scans a drop folder, reads each document, sorts files into categorized subfolders (invoices, contracts, receipts, correspondence), and generates a daily summary with file counts and flagged items. Set it once, never think about it again.
+          </p>
+          <a href="/claude-cowork/scheduled-tasks" class="text-sm font-medium text-gray-900 hover:underline">Scheduled tasks guide &rarr;</a>
+        </div>
+
+        <!-- 9. Sales Tracking Discrepancy -->
+        <div class="use-case-card">
+          <span class="use-case-tag">Finance</span>
+          <h3 class="font-semibold text-lg mb-2">Sales Tracking Discrepancy Analysis</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            Compared transaction data from a shop system against analytics data across tens of thousands of rows. Co-Work found patterns in discrepancies by payment provider, country, and order status. The output was a structured report showing exactly where and why numbers diverged.
+          </p>
+          <a href="/claude-cowork/accounting-firms" class="text-sm font-medium text-gray-900 hover:underline">Co-Work for accounting &rarr;</a>
+        </div>
+
+        <!-- 10. Dev Tickets for Schema -->
+        <div class="use-case-card">
+          <span class="use-case-tag">SEO / Dev</span>
+          <h3 class="font-semibold text-lg mb-2">Dev Tickets for Schema Implementation</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            A Chrome extension analyzes a website, identifies page types (product, article, FAQ, local business), extracts existing structured data, and generates developer tickets for missing schema markup. Uses a self-improving skill that learns your site's patterns.
+          </p>
+          <a href="/claude-cowork/chrome-extension" class="text-sm font-medium text-gray-900 hover:underline">Chrome extension guide &rarr;</a>
+        </div>
+
+        <!-- 11. Presentation Generation -->
+        <div class="use-case-card">
+          <span class="use-case-tag">Business</span>
+          <h3 class="font-semibold text-lg mb-2">Presentation Generation</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            Connected Notion and Jira via connectors, pulled project status and sprint data, and generated a PowerPoint deck for a short-notice executive presentation. Formatting, slide layout, and talking points included. From request to finished .pptx in one session.
+          </p>
+          <a href="/claude-cowork/connectors" class="text-sm font-medium text-gray-900 hover:underline">Connectors overview &rarr;</a>
+        </div>
+
+        <!-- 12. Flight Price Tracking -->
+        <div class="use-case-card">
+          <span class="use-case-tag">Personal</span>
+          <h3 class="font-semibold text-lg mb-2">Flight Price Tracking</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">
+            A scheduled task monitors flight prices for specific routes daily. When the price drops below a threshold, Co-Work sends an alert. Simple to set up, runs in the background, and has saved users hundreds of dollars on flights they were already planning to book.
+          </p>
+          <a href="/claude-cowork/scheduled-tasks" class="text-sm font-medium text-gray-900 hover:underline">Scheduled tasks guide &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">We Build These Workflows For You</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10 text-center max-w-2xl mx-auto">
+        Every use case above requires the right plugin configuration, connector setup, and skill design. We handle all of it.
+      </p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">1</div>
+          <h3 class="font-semibold mb-2">Workflow Design</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We map your current process, identify which steps Co-Work can handle, and design the skill and connector architecture. You'll know exactly what gets automated before we build anything.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">2</div>
+          <h3 class="font-semibold mb-2">Custom Setup</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We build your plugins, configure connectors (Google Workspace, Slack, CRM, accounting tools), write folder instructions, and set up scheduled tasks. Everything tuned to your specific data and tools.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">3</div>
+          <h3 class="font-semibold mb-2">Training and Support</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Your team gets hands-on <a href="/claude-cowork/training" class="text-gray-900 underline hover:no-underline">training</a> on running workflows, editing skills, and troubleshooting. We handle plugin updates as Anthropic evolves the platform.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What kinds of tasks can Claude Co-Work handle?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work handles multi-step knowledge work across industries: file processing, data analysis, document generation, scheduled reporting, CRM updates, bookkeeping, contract markup, and more. If the task involves reading files, connecting to business tools, or following a repeatable process, Co-Work can likely automate it.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can Co-Work process thousands of files or rows at once?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. Co-Work runs inside an isolated VM with access to your local filesystem. Users regularly process product feeds with 100,000+ rows, batch-analyze banner images, and sort hundreds of documents in a single session. The main constraint is your Claude plan's usage limits.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How do self-improving skills work?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            A self-improving skill includes a meta-layer that watches the skill perform its task, logs corrections you make, and updates the skill's instructions over time. Each run gets more accurate. The open-source project <a href="https://github.com/rebelytics/one-skill-to-rule-them-all" class="text-gray-900 underline hover:no-underline" target="_blank" rel="noopener">one-skill-to-rule-them-all</a> on GitHub provides a starting template for building these.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Do I need separate tools for each use case?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            No. Co-Work uses <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">connectors</a> to link to the tools you already use: Google Workspace, Notion, Slack, QuickBooks, Salesforce, and 30+ others. A single Co-Work setup can handle multiple workflows across different tools. Skills and plugins define the logic; connectors provide the access.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can NYC Claw build a custom workflow for my specific use case?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. We build custom plugins, skills, and connector configurations for specific business workflows. <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=use-cases--discovery" target="_blank" class="text-gray-900 underline hover:no-underline">Book a free 15-minute call</a> and walk us through what you need automated. We'll tell you whether Co-Work can handle it and what the setup looks like.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Build Your Workflow?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. Walk us through your process, and we'll show you exactly which Co-Work skills, connectors, and plugins fit your use case.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=use-cases--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">No commitment. No sales pitch. Just a straight look at what's possible.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

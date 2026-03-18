@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Plugins for Claude Co-Work | NYC Claw</title>
+  <meta name="description" content="We build custom Claude Co-Work plugins tailored to your business workflows. Skills, commands, connectors, agents, and hooks designed for how your team actually works.">
+  <meta property="og:title" content="Custom Plugins for Claude Co-Work | NYC Claw">
+  <meta property="og:description" content="We build custom Claude Co-Work plugins tailored to your business workflows. Skills, commands, connectors, agents, and hooks designed for how your team actually works.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/custom-plugins">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/custom-plugins">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+    .plugin-tree {
+      background: #1e1e2e;
+      color: #cdd6f4;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      overflow-x: auto;
+    }
+    .plugin-tree .comment { color: #6c7086; }
+    .plugin-tree .folder { color: #89b4fa; }
+    .plugin-tree .file { color: #a6e3a1; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Plugin Development for Claude Co-Work",
+    "description": "We build custom Claude Co-Work plugins tailored to your business workflows, including skills, commands, connectors, agents, and hooks.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a custom Claude Co-Work plugin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most custom plugins take 1-2 weeks from kickoff to deployment. That includes discovery, workflow mapping, building all components, testing with your team, and installation. More complex plugins with multiple MCP server connections or extensive skill libraries may take 3 weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need technical skills to use a custom plugin once it's built?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Once installed, a custom plugin works like any other Co-Work plugin. You interact with Claude in natural language, and the plugin's skills, commands, and connectors work behind the scenes. We also train your team on how to use every component."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you modify or fork one of Anthropic's official plugins instead of building from scratch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Forking an official plugin and customizing it is often the fastest path. We take the closest official plugin, keep what works, replace what doesn't, and add your industry-specific skills and connectors on top."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens when Anthropic updates Co-Work and my plugin breaks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work is still in research preview and Anthropic ships updates regularly. We offer ongoing maintenance to keep your plugins compatible. When something changes, we update the affected components so your team's workflows keep running."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a single plugin connect to multiple external tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A plugin's .mcp.json file can define connections to as many MCP servers as needed. For example, a single sales plugin could connect to HubSpot for CRM data, Gmail for email drafting, and Google Sheets for pipeline tracking, all through scoped OAuth permissions."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=custom-plugins--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="pt-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Custom Plugins</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-4 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Custom Plugin Development
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Custom Plugins for<br>
+        <span class="text-gray-500">Claude Co-Work</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        We build <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">Co-Work plugins</a> tailored to your specific workflows. <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">Skills</a>, commands, <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">connectors</a>, agents, and hooks designed for how your team actually works.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">One-time setup. Ongoing value without ongoing consulting fees.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=custom-plugins--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free 15-Minute Call
+        </a>
+        <a href="#architecture" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How Plugins Work
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CUSTOM PLUGINS -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Why Generic Plugins Fall Short</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        Anthropic ships 11 official plugins covering broad roles like Sales, Marketing, and Productivity. They're solid starting points. But your business doesn't run on generic processes.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        A <a href="/claude-cowork/real-estate" class="text-gray-900 underline hover:no-underline">real estate brokerage</a> needs a plugin that follows their specific CMA template, writes in their brand voice, and pulls comps from their MLS system. A <a href="/claude-cowork/legal" class="text-gray-900 underline hover:no-underline">law firm</a> needs contract review skills trained on their clause library, not generic legal templates. An <a href="/claude-cowork/finance" class="text-gray-900 underline hover:no-underline">accounting firm</a> needs reconciliation workflows that match their chart of accounts, not a one-size-fits-all ledger format.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-2">Generic Plugin</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Produces output that's close but never quite right. Your team spends 20 minutes editing every deliverable to match your standards, templates, and terminology. The time savings erode fast.</p>
+        </div>
+        <div class="p-6 rounded-xl border-2 border-gray-900 bg-white">
+          <h3 class="font-semibold text-lg mb-2">Custom Plugin</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Produces work that matches how your team already operates. Your CMA template. Your clause library. Your chart of accounts. Your brand voice. Output that needs minimal revision because it was built around your process from the start.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLUGIN ARCHITECTURE -->
+  <section id="architecture" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">How a Co-Work Plugin Is Structured</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        Every plugin is a folder of markdown and JSON files. No compiled code, no infrastructure to maintain, no build steps. Here's what goes inside.
+      </p>
+
+      <div class="plugin-tree mb-10">
+<span class="folder">plugin-name/</span>
+<span class="file">  .claude-plugin/plugin.json</span>   <span class="comment"># Manifest (metadata)</span>
+<span class="file">  .mcp.json</span>                      <span class="comment"># Tool connections (MCP servers)</span>
+<span class="folder">  commands/</span>                     <span class="comment"># Slash commands (explicit user actions)</span>
+<span class="folder">  skills/</span>                       <span class="comment"># Domain knowledge (auto-invoked)</span>
+<span class="folder">  agents/</span>                       <span class="comment"># Specialized sub-agents</span>
+<span class="folder">  hooks/</span>                        <span class="comment"># Event handlers</span>
+      </div>
+
+      <div class="space-y-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Skills</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Domain expertise that Claude draws on automatically when relevant. Each skill is a SKILL.md file with YAML frontmatter defining when it should activate. Your CMA formatting rules, your contract review checklist, your brand voice guidelines. Claude applies them without being asked. <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">Full skills guide</a>.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Commands</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Explicit actions your team triggers with a slash. Type <code class="text-xs bg-gray-200 px-1.5 py-0.5 rounded">/sales:call-prep</code> and Claude pulls the prospect's data from your CRM, checks recent email threads, and generates a briefing doc. Type <code class="text-xs bg-gray-200 px-1.5 py-0.5 rounded">/finance:reconciliation</code> and it walks through your monthly close checklist step by step.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Connectors</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">MCP server configurations in a single <code class="text-xs bg-gray-200 px-1.5 py-0.5 rounded">.mcp.json</code> file. These wire Claude to your external tools: HubSpot, Salesforce, QuickBooks, Google Drive, Slack, Jira, and dozens more. Each connection uses OAuth with scoped permissions. <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">Full connectors guide</a>.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Agents</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Specialized sub-agents for specific tasks. Claude invokes them automatically when a task matches their scope. For example, a drafting agent that writes in your firm's style, or a review agent that checks output against your quality standards before delivering it.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Hooks</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Event handlers that fire before or after specific actions. JSON configuration files with matchers and actions. Use PreToolUse hooks to add guardrails before Claude sends an email. Use PostToolUse hooks to log every CRM update. Use SessionStart hooks to load context at the beginning of every conversation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Custom Plugins We Build</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10">
+        Every industry has workflows that don't fit neatly into a generic template. Here's what custom plugins look like in practice.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-3">Real Estate</h3>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Weekly market report skill with your brokerage's data sources
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              CMA template skill that follows your firm's exact format
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Listing description generator with brand voice enforcement
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Lead follow-up automation connected to your CRM
+            </li>
+          </ul>
+          <p class="mt-3 text-sm"><a href="/claude-cowork/real-estate" class="text-gray-900 underline hover:no-underline">Real estate plugins</a></p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-3">Legal</h3>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Contract review with your firm's clause library
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              NDA triage workflow that flags non-standard terms
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Discovery document organization by matter type
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Client intake processing connected to your practice management system
+            </li>
+          </ul>
+          <p class="mt-3 text-sm"><a href="/claude-cowork/legal" class="text-gray-900 underline hover:no-underline">Legal plugins</a></p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-3">Finance and Accounting</h3>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Journal entry skills tied to your specific chart of accounts
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Reconciliation workflows for your banks and platforms
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Variance analysis with custom thresholds by account
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Monthly close checklist automation
+            </li>
+          </ul>
+          <p class="mt-3 text-sm"><a href="/claude-cowork/finance" class="text-gray-900 underline hover:no-underline">Finance plugins</a></p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-3">Marketing</h3>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Brand voice enforcement skill across all content types
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Campaign brief generator connected to HubSpot
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              SEO content workflow with Ahrefs data integration
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&bull;</span>
+              Social media calendar builder with platform-specific formatting
+            </li>
+          </ul>
+          <p class="mt-3 text-sm"><a href="/claude-cowork/marketing" class="text-gray-900 underline hover:no-underline">Marketing plugins</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PROCESS -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">How a Custom Plugin Engagement Works</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10">
+        Building a plugin that actually fits your workflows takes back-and-forth with your team. Here's how we do it.
+      </p>
+
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">1</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Discovery Call</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We start with a 15-minute call to understand your workflows, the tools you use daily, and where you're losing time. This tells us whether a custom plugin is the right fit or if configuration of existing plugins would solve the problem.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">2</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Workflow Mapping</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We map each task to the right plugin component. Repeatable processes become <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills</a>. User-triggered actions become commands. Tool integrations become <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">connector</a> configurations. Guardrails and logging become hooks. This mapping is the blueprint for your plugin.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">3</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Build</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We write every component: skill files with YAML frontmatter, command definitions, MCP server configs, agent specs, and hook handlers. Most plugins take 1-2 weeks to build. Everything is file-based, so you can read and understand every piece of it.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">4</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Test and Iterate</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Your team runs the plugin against real work and provides feedback. We tune the skills, adjust command prompts, and refine output quality until the deliverables meet your standards.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">5</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Deploy and Connect</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We install the plugin, wire up all connector OAuth flows, configure permissions, and verify everything works end to end. For <a href="/claude-cowork/enterprise" class="text-gray-900 underline hover:no-underline">enterprise teams</a>, we add the plugin to your organization marketplace with the right installation preferences.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">6</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Train Your Team</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We run a <a href="/claude-cowork/training" class="text-gray-900 underline hover:no-underline">training session</a> covering every command, when skills activate, and how to customize the plugin yourself. Your team leaves the session able to use every feature independently.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">7</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Maintain</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Co-Work is still evolving. Anthropic ships platform updates regularly, and those updates sometimes change how plugins work. We keep your plugin compatible so your team never wakes up to a broken workflow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY YOU NEED HELP -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Why Not Build It Yourself?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        You could. The plugin system is open and file-based. But there are reasons most teams hire us instead.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">MCP Expertise</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Configuring MCP servers, scoping permissions, and handling OAuth flows across multiple platforms takes specific knowledge. We've done it dozens of times across HubSpot, Salesforce, QuickBooks, and more.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Skill Crafting</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">The difference between mediocre and excellent plugin output comes down to how well the skills and global instructions are written. We've iterated on enough plugins to know what works and what doesn't.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Time</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Learning the plugin system from scratch takes weeks of experimentation. Your team has work to do. We handle the setup so you can go straight to the value.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-3">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does it take to build a custom plugin?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Most plugins take 1-2 weeks from kickoff to deployment. That includes discovery, workflow mapping, building all components, testing with your team, and installation. Plugins with extensive connector configurations or large skill libraries may take closer to 3 weeks.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Do I need technical skills to use a custom plugin?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            No. Once installed, a custom plugin works like any other Co-Work plugin. You interact with Claude in natural language, and the plugin's skills, commands, and connectors operate behind the scenes. We also <a href="/claude-cowork/training" class="text-gray-900 underline hover:no-underline">train your team</a> on every component during deployment.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can you fork an official Anthropic plugin instead of building from scratch?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes, and it's often the fastest path. We take the closest official plugin, keep the parts that work for your use case, replace what doesn't fit, and layer your industry-specific skills and connectors on top. This gives you a head start without sacrificing customization. <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">Read the full plugins guide</a>.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What happens when Anthropic updates Co-Work and my plugin breaks?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work is still in research preview, so platform changes happen regularly. We offer ongoing maintenance to keep your plugins compatible. When Anthropic changes something that affects your plugin, we update the affected components so your workflows keep running without interruption.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can a single plugin connect to multiple external tools?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. A plugin's <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">.mcp.json</code> file can define connections to as many MCP servers as you need. A single sales plugin could connect to HubSpot for CRM data, Gmail for email drafting, and Google Sheets for pipeline tracking. Each connection uses scoped OAuth permissions. <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">Read the connectors guide</a>.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Build Your Custom Plugin?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll walk through your workflows, identify which tasks fit the plugin model, and outline what a custom build would look like for your team.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=custom-plugins--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">No commitment. No sales pitch. Just a straight look at what we can build for you.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

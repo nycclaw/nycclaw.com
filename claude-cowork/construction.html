@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work for Construction: Permit Tracking, Bid Prep &amp; Safety Compliance | NYC Claw</title>
+  <meta name="description" content="Claude Co-Work for construction companies. Permit tracking, bid document preparation, safety compliance documentation, change order processing, and subcontractor management.">
+  <meta property="og:title" content="Claude Co-Work for Construction: Permit Tracking, Bid Prep &amp; Safety Compliance | NYC Claw">
+  <meta property="og:description" content="Claude Co-Work for construction companies. Permit tracking, bid document preparation, safety compliance documentation, change order processing, and subcontractor management.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/construction">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/construction">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work for Construction",
+    "description": "Done-for-you Claude Co-Work setup for construction companies. Permit tracking, bid document preparation, safety compliance documentation, change order processing, and subcontractor management.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does Co-Work track permits across multiple jurisdictions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work maintains a centralized permit tracking database for all your active projects. You input the jurisdictions and permit types for each project, and Co-Work runs scheduled checks to track status, flag upcoming deadlines, and identify missing applications. It generates weekly status reports organized by project, so your team always knows where every permit stands across every agency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Co-Work help with bid preparation for government contracts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Give Co-Work an RFP or ITB and it extracts every requirement into a compliance checklist. It then pulls relevant cost data, project references, safety records, and certifications from your files and assembles a draft bid package. Government bids have strict formatting and compliance requirements. Co-Work ensures nothing gets missed. You review and refine instead of building from scratch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the safety compliance workflow handle OSHA requirements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work runs daily scheduled tasks for safety documentation. It generates toolbox talk agendas based on current project hazards, tracks training certification expirations for every worker on site, maintains OSHA 300 log entries, and compiles monthly safety summary reports. When an incident occurs, Co-Work helps generate the required documentation in the correct OSHA format, including the 301 Incident Report form."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens when a change order needs to be processed mid-project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When a scope change happens, you tell Co-Work what changed. It documents the change, calculates the cost impact based on your rate sheets and material costs, determines the schedule impact on dependent tasks, and generates a change order document in your standard format. The document routes for approval, and once signed, Co-Work updates the project budget and schedule automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take for a construction company?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Initial setup takes one session. We configure your connectors (Slack, Microsoft 365, Google Drive, Jira), build your first custom skills for permit tracking and bid prep, and set up scheduled tasks for safety logs and subcontractor document audits. Over the following two weeks, we refine the workflows based on real usage and train your project managers and field staff on the system."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=construction--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Construction</span>
+      </nav>
+      <div class="text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-500"></span>
+          For Construction Companies
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+          Claude Co-Work for Construction<br>
+          <span class="text-gray-500">Your projects run on documents. Permits, bids, schedules, safety reports. Co-Work handles the paper.</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+          Construction companies manage thousands of documents per project. Permit applications, bid packages, RFIs, change orders, safety logs. Most of this work is reading, compiling, and formatting. Co-Work does it faster.
+        </p>
+        <p class="text-sm text-gray-400 mb-10">Powered by <a href="/claude-cowork/" class="underline hover:text-gray-600">Claude Co-Work</a>. Set up by NYC Claw.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=construction--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+            Book a Free 15-Minute Call
+          </a>
+          <a href="#how-cowork-solves-it" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+            See the Workflows
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">The real problem with construction documentation</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Your crews build. Your office drowns in paperwork.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Permit tracking is scattered across jurisdictions</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Every project needs permits from multiple agencies, each with different forms, timelines, and requirements. Tracking status across 5-10 active projects means hundreds of permit deadlines. One missed permit stops a project cold.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Bid documents take days to assemble</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Responding to an RFP or ITB means pulling cost data, subcontractor quotes, project references, safety records, and insurance certificates into a single package. Each bid is custom. Each takes 20-40 hours to assemble.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Safety compliance documentation never stops</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OSHA logs, toolbox talk records, incident reports, safety training certifications. The paperwork is constant. Fall behind and you face fines, stop-work orders, or worse.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Change orders create billing disputes</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Scope changes happen on every project. Documenting what changed, who approved it, what it costs, and how it affects the schedule is critical but time-consuming. Disputes over undocumented changes can cost six figures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW CO-WORK SOLVES IT -->
+  <section id="how-cowork-solves-it" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How Claude Co-Work solves it</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Workflows built for how construction companies actually operate. Tested on real projects.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Workflow 1 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Permit Tracking and Status Monitoring</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work maintains a permit tracking database across all active projects. Scheduled tasks check status weekly, flag upcoming deadlines, identify missing applications, and generate status reports by project. You'll know where every permit stands without checking manually.</p>
+        </div>
+        <!-- Workflow 2 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Bid Document Preparation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Give Co-Work an RFP and it extracts requirements, creates a compliance checklist, pulls relevant cost data and project references from your files, and assembles a draft bid package. You review and refine instead of starting from scratch. Cuts bid prep time from days to hours.</p>
+        </div>
+        <!-- Workflow 3 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Project Schedule Management</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work reads project schedules, tracks milestones against actual progress, flags items falling behind, and generates weekly status reports. When a delay hits, it calculates downstream impact on dependent tasks.</p>
+        </div>
+        <!-- Workflow 4 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Safety Compliance Documentation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Scheduled daily: Co-Work generates toolbox talk agendas, tracks training certification expirations, maintains OSHA log entries, and compiles monthly safety reports. When an incident occurs, it helps generate the required documentation in the correct format.</p>
+        </div>
+        <!-- Workflow 5 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Change Order Processing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When a scope change happens, Co-Work documents it: what changed, the cost impact, schedule impact, and who authorized it. Generates the change order document in your standard format, routes for approval, and updates the project budget and schedule.</p>
+        </div>
+        <!-- Workflow 6 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Subcontractor Management</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work tracks subcontractor documents (insurance certs, licenses, W-9s), flags expirations, compares quotes across subs for new work, and maintains performance records. You always know which subs are compliant and which need attention.</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-8">Every setup is configured for your company's specific project types, document standards, and tools.</p>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD FOR YOU -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">What we build for your company</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10 text-center max-w-2xl mx-auto">A generic AI tool doesn't know the difference between an RFI and an RFP. We configure Co-Work for your project types, your document templates, and your reporting structure.</p>
+
+      <div class="space-y-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Custom Skills</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Skills are reusable commands your team runs daily. We build <a href="/claude-cowork/skills/" class="text-gray-900 underline hover:no-underline">custom skills</a> for permit tracking commands, bid compliance checkers, safety report generators, and change order templates. Your project managers run a single command and get output formatted to your company's standards.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Plugins</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">We configure <a href="/claude-cowork/plugins/" class="text-gray-900 underline hover:no-underline">plugins</a> based on your needs: <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/productivity</code> for project tracking workflows and <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/legal</code> for contract review on subcontractor agreements and owner contracts. The right tools are loaded when your team needs them.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Connectors</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">We connect Co-Work to the tools your team already uses: Slack for team communication, Microsoft 365 for documents and email, Google Drive for file sharing, and Jira for project tracking. Your team keeps using the same tools. Co-Work just ties them together.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Scheduled Tasks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Set up recurring workflows that run automatically: weekly permit status checks, daily safety log maintenance, monthly subcontractor document audits, and deadline monitoring across all active projects. Co-Work runs these on schedule and delivers results to your team's Slack channel or email.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">We train your team. Remote or in-person.</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4 max-w-2xl mx-auto">
+        Your project managers and estimators need to know how this fits into their day. We run hands-on <a href="/claude-cowork/training/" class="text-gray-900 underline hover:no-underline">training sessions</a> where your team practices real workflows: permit tracking, bid assembly, safety reporting, and change order processing.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
+        Remote sessions work for most teams. For companies in NYC, we train at your office or job site trailer. After training, your team handles everything without calling us.
+      </p>
+    </div>
+  </section>
+
+  <!-- CROSS-LINKS -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-lg font-semibold mb-4 text-center">Related pages</h3>
+      <div class="grid sm:grid-cols-3 gap-4 text-sm">
+        <a href="/claude-cowork/property-management" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Co-Work for Property Management &rarr;</a>
+        <a href="/claude-cowork/startups" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Co-Work for Startups &rarr;</a>
+        <a href="/claude-cowork/" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Claude Co-Work Overview &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Stop losing days to bid prep and permit paperwork</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll walk through your company's specific workflows and show you exactly what Co-Work can handle.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=construction--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does Co-Work track permits across multiple jurisdictions?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work maintains a centralized permit tracking database for all your active projects. You input the jurisdictions and permit types for each project, and Co-Work runs scheduled checks to track status, flag upcoming deadlines, and identify missing applications. It generates weekly status reports organized by project, so your team always knows where every permit stands across every agency.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can Co-Work help with bid preparation for government contracts?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. Give Co-Work an RFP or ITB and it extracts every requirement into a compliance checklist. It then pulls relevant cost data, project references, safety records, and certifications from your files and assembles a draft bid package. Government bids have strict formatting and compliance requirements. Co-Work ensures nothing gets missed. You review and refine instead of building from scratch.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does the safety compliance workflow handle OSHA requirements?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work runs daily scheduled tasks for safety documentation. It generates toolbox talk agendas based on current project hazards, tracks training certification expirations for every worker on site, maintains OSHA 300 log entries, and compiles monthly safety summary reports. When an incident occurs, Co-Work helps generate the required documentation in the correct OSHA format, including the 301 Incident Report form.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What happens when a change order needs to be processed mid-project?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            When a scope change happens, you tell Co-Work what changed. It documents the change, calculates the cost impact based on your rate sheets and material costs, determines the schedule impact on dependent tasks, and generates a change order document in your standard format. The document routes for approval, and once signed, Co-Work updates the project budget and schedule automatically.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does setup take for a construction company?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Initial setup takes one session. We configure your connectors (Slack, Microsoft 365, Google Drive, Jira), build your first custom skills for permit tracking and bid prep, and set up scheduled tasks for safety logs and subcontractor document audits. Over the following two weeks, we refine the workflows based on real usage and train your project managers and field staff on the system.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work for Real Estate: Listings, CMAs &amp; Market Reports | NYC Claw</title>
+  <meta name="description" content="Claude Co-Work for real estate agents. Listing descriptions in minutes, automated market reports, CMA templates, client follow-ups, and transaction management.">
+  <meta property="og:title" content="Claude Co-Work for Real Estate: Listings, CMAs &amp; Market Reports | NYC Claw">
+  <meta property="og:description" content="Claude Co-Work for real estate agents. Listing descriptions in minutes, automated market reports, CMA templates, client follow-ups, and transaction management.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/real-estate">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/real-estate">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none; position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%); padding-top: 0.75rem; z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white; border: 1px solid #e5e7eb; border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); padding: 1.25rem; width: 32rem;
+    }
+    .industries-dropdown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem; }
+    .industries-dropdown-grid a {
+      display: block; padding: 0.375rem 0.5rem; border-radius: 0.375rem;
+      font-size: 0.875rem; color: #374151; text-decoration: none; transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work for Real Estate",
+    "description": "Done-for-you Claude Co-Work setup for real estate agents and brokerages. Listing descriptions, CMA templates, market reports, client follow-ups, and transaction management.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does Claude Co-Work write listing descriptions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You provide the property details (beds, baths, square footage, standout features, neighborhood) and Co-Work generates a formatted MLS-ready listing description in your voice. What used to take 30 to 45 minutes per property takes about 5 minutes, including your review and edits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Co-Work pull live market data for reports?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We set up a scheduled task that pulls new listings, calculates median price changes by neighborhood, and checks mortgage rate trends on a weekly basis. The output is a client-ready market report delivered to your inbox or Slack channel every Monday morning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Co-Work integrate with my CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We configure connectors for HubSpot, Salesforce, Google Drive, Gmail, Google Calendar, and Slack. Co-Work can pull contact details from your CRM, draft follow-up emails, and log activity without you switching between platforms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I already have CMA templates I like?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That's the point. You upload your existing CMA template, and we build a custom skill so Claude fills in the data and formats it consistently every time. Your branding, your layout, your comps structure. Co-Work just handles the data entry and formatting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to get set up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Initial setup takes one session. We connect your tools (HubSpot or Salesforce, Gmail, Google Drive, Slack), build your first custom skills for listings and CMAs, and walk you through the workflows. Over the next two weeks we refine everything based on how you actually use it."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=real-estate--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Real Estate</span>
+      </nav>
+      <div class="text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-500"></span>
+          For Real Estate Agents
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+          Claude Co-Work for Real Estate<br>
+          <span class="text-gray-500">Listings, CMAs, and market reports on autopilot.</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+          You got into real estate to show homes and close deals, not to spend 45 minutes writing listing descriptions. Co-Work handles the writing, the data, and the follow-ups so you can focus on clients.
+        </p>
+        <p class="text-sm text-gray-400 mb-10">Powered by <a href="/claude-cowork/" class="underline hover:text-gray-600">Claude Co-Work</a>. Set up by NYC Claw.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=real-estate--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+            Book a Free 15-Minute Call
+          </a>
+          <a href="#how-cowork-solves-it" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+            See the Workflows
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">The real problem with real estate work in 2026</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Your highest-value hours go to admin work that doesn't require a license.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Listing descriptions take 30 to 45 minutes each</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Every new listing needs a polished MLS description. You're staring at a blank document, trying to make "3 bed / 2 bath in a good school district" sound compelling. With five active listings, that's half a day just on copywriting. Time you could spend on showings, negotiations, or prospecting.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Client follow-ups fall through the cracks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">After every showing, buyers expect a recap: what they saw, the pros and cons of each property, next steps. When you're running four showings a day, writing personalized follow-ups for each client gets pushed to "later." Later turns into never. Leads go cold.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Market reports are manual and outdated before you send them</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Pulling comps, calculating median price changes, checking mortgage rate trends, formatting everything into something a client can actually read. By the time you finish the report on Friday, the data is from Tuesday. Your clients deserve current information. You don't have the hours to provide it manually.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Transaction paperwork buries you in admin</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Inspection response letters, extension requests, repair negotiations, closing coordination. Each transaction generates dozens of documents that need to be drafted, reviewed, and sent. You're an agent, not a paralegal, but the paperwork doesn't know the difference.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW CO-WORK SOLVES IT -->
+  <section id="how-cowork-solves-it" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How Claude Co-Work solves it</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">These are real workflows running for real estate agents today. Not demos.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Workflow 1: Listing Descriptions -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Listing Descriptions in Minutes</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Feed Co-Work the property details: beds, baths, square footage, standout features, neighborhood context. It generates a formatted MLS-ready listing description in your voice and style. A 30-to-45-minute task becomes a 5-minute review. Run <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/write-listing</code> and you're done.</p>
+        </div>
+        <!-- Workflow 2: Client Follow-Ups -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Client Follow-Up Emails</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">After a showing, give Co-Work your notes on what the client liked and didn't like about each property. It drafts a personalized recap email with specific pros and cons, pricing context, and suggested next steps. Your clients get a thoughtful follow-up the same evening, not three days later.</p>
+        </div>
+        <!-- Workflow 3: Market Analysis -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Market Analysis Summaries</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Give Co-Work raw comp data and it produces a client-ready narrative with pricing strategy recommendations. Not a spreadsheet dump. A clear summary your buyer or seller can actually understand, with your analysis baked in.</p>
+        </div>
+        <!-- Workflow 4: Transaction Management -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Transaction Document Drafting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Inspection response letters, extension requests, repair request letters. Tell Co-Work the situation and it drafts the document in the right format with the right tone. You review, adjust, and send. The paperwork that used to eat your afternoons takes minutes.</p>
+        </div>
+        <!-- Workflow 5: Lead Gen Content -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Lead Generation Content</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Instagram captions, blog outlines, email newsletters that position you as the local market expert. Co-Work knows your market, your voice, and your audience. Run <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/draft-newsletter</code> and get a polished draft you can publish in minutes, not hours.</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-8">Every setup is configured for your specific market, listing style, and tools.</p>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD FOR YOU -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">What we build for your business</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10 text-center max-w-2xl mx-auto">We don't hand you a generic AI chatbot. We configure Co-Work specifically for how you sell real estate.</p>
+
+      <div class="space-y-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Custom Skills</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Skills are reusable commands built around your workflows. We create <a href="/claude-cowork/skills/" class="text-gray-900 underline hover:no-underline">custom skills</a> for listing descriptions in your voice, CMA formatting with your template, showing follow-up emails, and market report generation. You run a single command like <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/write-listing</code> or <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/build-cma</code> and get consistent, on-brand output every time.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Plugins</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Co-Work supports <a href="/claude-cowork/plugins/" class="text-gray-900 underline hover:no-underline">plugins</a> that extend what Claude can do. We configure the right ones for real estate: document generation, data analysis, web research for comp gathering, and content creation tools. The plugins load automatically when you need them.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Connectors</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">We connect Co-Work to the tools you already use: HubSpot or Salesforce for your CRM, Google Drive for documents, Gmail for email, Google Calendar for scheduling, and Slack for team communication. Co-Work pulls client data and sends follow-ups without you switching between tabs.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Scheduled Tasks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Set up recurring workflows that run on their own. The weekly market report skill pulls new listings, calculates median price changes by neighborhood, checks mortgage rate trends, and delivers a client-ready report to your inbox every Monday morning. No manual data gathering. No stale numbers.</p>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-gray-500 mt-8">Already using NYC Claw for your real estate business? See our <a href="/for/real-estate" class="text-gray-900 underline hover:no-underline">real estate setup page</a> for the full picture.</p>
+    </div>
+  </section>
+
+  <!-- TRAINING -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">We train your team. Remote or in-person.</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4 max-w-2xl mx-auto">
+        Setting up Co-Work is only half the job. You and your team need to know how to use it. We run hands-on <a href="/claude-cowork/training/" class="text-gray-900 underline hover:no-underline">training sessions</a> where agents practice real workflows: writing listings, drafting follow-ups, building CMAs, and generating market reports.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
+        Remote sessions work for most teams. For brokerages in NYC, we offer in-person training at your office. Either way, your team walks away ready to use Co-Work independently on day one.
+      </p>
+    </div>
+  </section>
+
+  <!-- CROSS-LINKS -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-lg font-semibold mb-4 text-center">Related pages</h3>
+      <div class="grid sm:grid-cols-3 gap-4 text-sm">
+        <a href="/claude-cowork/legal" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Co-Work for Legal &rarr;</a>
+        <a href="/claude-cowork/marketing" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Co-Work for Marketing &rarr;</a>
+        <a href="/claude-cowork/finance" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Co-Work for Finance &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Stop spending hours on work Claude can do in minutes</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll walk through your specific workflows and show you exactly what Co-Work can handle for your real estate business.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=real-estate--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does Claude Co-Work write listing descriptions?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            You provide the property details (beds, baths, square footage, standout features, neighborhood) and Co-Work generates a formatted MLS-ready listing description in your voice. What used to take 30 to 45 minutes per property takes about 5 minutes, including your review and edits. We build a custom skill that knows your writing style so every listing sounds like you wrote it.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can Co-Work pull live market data for reports?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. We set up a scheduled task that pulls new listings, calculates median price changes by neighborhood, and checks mortgage rate trends on a weekly basis. The output is a client-ready market report delivered to your inbox or Slack channel every Monday morning. No manual data gathering, no stale numbers.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Does Co-Work integrate with my CRM?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            We configure connectors for HubSpot, Salesforce, Google Drive, Gmail, Google Calendar, and Slack. Co-Work can pull contact details from your CRM, draft follow-up emails, and log activity without you switching between platforms. If your CRM isn't on that list, we'll figure out a connector during the discovery call.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What if I already have CMA templates I like?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            That's the point. You upload your existing CMA template, and we build a custom skill so Claude fills in the data and formats it consistently every time. Your branding, your layout, your comps structure. Co-Work just handles the data entry and formatting so you don't have to.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does it take to get set up?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Initial setup takes one session. We connect your tools (HubSpot or Salesforce, Gmail, Google Drive, Slack), build your first custom skills for listings and CMAs, and walk you through the workflows. Over the next two weeks we refine everything based on how you actually use it and train your team on the workflows that matter most.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

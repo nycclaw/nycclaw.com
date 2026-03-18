@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work for Enterprise and Teams | NYC Claw</title>
+  <meta name="description" content="Deploy Claude Co-Work across your entire organization. Team plan at $20/seat/mo for 5-75 people. Enterprise with custom pricing, admin controls, org-wide plugin management, and OpenTelemetry tracking.">
+  <meta property="og:title" content="Claude Co-Work for Enterprise and Teams | NYC Claw">
+  <meta property="og:description" content="Deploy Claude Co-Work across your entire organization. Team plan at $20/seat/mo for 5-75 people. Enterprise with custom pricing, admin controls, and org-wide plugin management.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/enterprise">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/enterprise">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work Enterprise and Team Deployment",
+    "description": "Org-wide Claude Co-Work deployment including admin controls, custom plugin development, connector configuration, OpenTelemetry tracking setup, and team training.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between Claude Team and Enterprise plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Team costs $20/seat/month for 5-75 people and includes self-serve management, the Slack connector, standard and premium seats, and full Co-Work access. Enterprise offers custom pricing for larger organizations with admin controls like org-wide Co-Work toggles, curated plugin marketplaces, and dedicated support from Anthropic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I enable Co-Work for only some team members?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not currently. The Co-Work toggle on Enterprise and Team plans is org-wide: it's on for all members or off for all members. There's no per-user granularity without contacting Anthropic directly to discuss custom arrangements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Co-Work conversation data stored on Anthropic's servers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Co-Work runs in an isolated virtual machine on each user's local computer. Conversation history stays on that machine. Co-Work data does not appear in Anthropic's audit logs, compliance API, or data exports, and it is not subject to Anthropic's standard data retention policies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an organization plugin marketplace?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Organization owners can create curated collections of plugins and distribute them to all members. You control which plugins are auto-installed for everyone, which are available to browse, and which are hidden. Plugins can be official Anthropic plugins, forked and customized versions, or fully custom builds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does an enterprise Co-Work rollout take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A typical rollout takes 2-4 weeks from kickoff to full deployment. We start with 2-3 pilot teams, build custom plugins for their workflows, configure connectors, write global instructions, train the teams, and set up scheduled tasks. Ongoing plugin updates continue as the platform evolves."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=enterprise--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="pt-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Enterprise</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-4 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Enterprise &amp; Teams
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Claude Co-Work for<br>
+        <span class="text-gray-500">Enterprise and Teams</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Deploy Co-Work across your entire organization. Every team member gets access to <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugins</a>, <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">connectors</a>, <a href="/claude-cowork/scheduled-tasks" class="text-gray-900 underline hover:no-underline">scheduled tasks</a>, and autonomous workflows, with admin controls that keep IT in charge.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">Team plan from $20/seat/mo. Enterprise pricing is custom.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=enterprise--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free 15-Minute Call
+        </a>
+        <a href="#plans" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          Compare Plans Below
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM VS ENTERPRISE PLANS -->
+  <section id="plans" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Team vs. Enterprise Plans</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Both plans include full Co-Work access with connectors, plugins, and scheduled tasks. The difference is scale and control.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Team -->
+        <div class="p-8 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-2xl font-bold mb-2">Team</h3>
+          <p class="text-3xl font-bold text-gray-900 mb-1">$20<span class="text-base font-normal text-gray-500">/seat/mo</span></p>
+          <p class="text-sm text-gray-400 mb-6">5 to 75 people</p>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full Co-Work access for all members
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Slack connector included
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Self-serve team management
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Standard + premium seat types
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              OpenTelemetry usage tracking
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              All <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugins</a> and <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Enterprise -->
+        <div class="p-8 rounded-xl border-2 border-gray-900 bg-white">
+          <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+          <p class="text-3xl font-bold text-gray-900 mb-1">Custom</p>
+          <p class="text-sm text-gray-400 mb-6">75+ people, dedicated support</p>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Team
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Org-wide Co-Work toggle (all members or none)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Organization plugin marketplace
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Plugin installation preferences (auto-install, available, hidden)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Managed plugin scopes (org-wide, read-only)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Advanced admin controls
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-8">Per-user Co-Work granularity isn't available on either plan without contacting Anthropic directly.</p>
+    </div>
+  </section>
+
+  <!-- ADMIN CONTROLS -->
+  <section id="admin-controls" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Admin Controls and Management</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        IT teams need visibility and control. Both Team and Enterprise plans give admins tools to manage how Co-Work runs across the organization.
+      </p>
+
+      <div class="space-y-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Org-Wide Co-Work Toggle</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Admins flip a single switch to enable or disable Co-Work for the entire organization. There's no per-user toggle. If you need Co-Work for only certain teams, you'll need to contact Anthropic to discuss options.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Plugin Installation Preferences</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Control how plugins appear to your team. Set any plugin to <strong>auto-install</strong> (deployed to every member automatically), <strong>available</strong> (visible in the marketplace for members to install themselves), or <strong>hidden</strong> (not shown at all). This gives IT full control over which tools your team can access.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Plugin Installation Scopes</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Plugins can be installed at four scopes: <strong>user</strong> (applies to one person across all projects), <strong>project</strong> (applies to a specific project folder), <strong>local</strong> (applies only to the current conversation), or <strong>managed</strong> (org-wide, read-only, controlled by admins). Managed scope is what makes Enterprise deployments consistent across hundreds of users.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">OpenTelemetry Tracking</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Both Team and Enterprise plans support OpenTelemetry for monitoring usage, cost, and tool calls. Track which connectors your team uses most, how many scheduled tasks run each week, and where compute is being spent. This data helps you optimize your rollout and justify ROI to leadership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORGANIZATION PLUGIN MARKETPLACES -->
+  <section id="plugin-marketplace" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Organization Plugin Marketplaces</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        Your organization's <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugin</a> marketplace is a curated collection of tools built for your specific workflows. Organization owners create and manage it through Organization settings, under the Plugins section.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        You're not limited to Anthropic's 11 official plugins. Fork an official plugin and customize it for your industry. Build something entirely new for a workflow that doesn't have a plugin yet. Or mix and match: use the official Sales plugin for prospecting, then add a custom plugin for your proprietary quoting process.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Auto-Install</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Deployed to every team member the moment they open Claude Desktop. No action required from the user. Best for core plugins your whole org needs.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Available</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Visible in the organization marketplace for members to browse and install. Good for department-specific plugins that not everyone needs.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Hidden</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Not shown in the marketplace. Use this for plugins still in development, deprecated plugins you haven't removed yet, or tools restricted to admins only.</p>
+        </div>
+      </div>
+
+      <p class="text-gray-500 text-base leading-relaxed mt-8">
+        For example, a <a href="/for/law-firms" class="text-gray-900 underline hover:no-underline">law firm</a> might auto-install the Legal plugin for all attorneys, make the Productivity plugin available for paralegals to install themselves, and hide an experimental contract-analysis plugin that's still being tested. An <a href="/for/accounting-firms" class="text-gray-900 underline hover:no-underline">accounting firm</a> could auto-install a custom tax-prep plugin during filing season, then hide it after April 15.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section id="security" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Security for Enterprise</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        Co-Work's architecture keeps sensitive data on your machines. Here's what enterprise IT teams need to know.
+      </p>
+
+      <div class="space-y-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Local Execution</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Co-Work runs inside an isolated virtual machine on each user's local computer. Conversation history is stored locally, not on Anthropic's servers. This means Co-Work data does not appear in Anthropic's audit logs, compliance API, or data exports. It's also not subject to Anthropic's standard data retention policies.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Connector Permissions</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">All <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">connectors</a> use OAuth with scoped permissions. When Claude connects to HubSpot, Google Drive, Jira, or any other tool, it gets only the access you authorize. Your CRM credentials never pass through Anthropic's infrastructure.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Action Approval</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Claude shows you its plan before taking significant actions. File edits, connector calls, and scheduled task changes all surface for review. You approve or reject before anything executes.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">No Audit Logging (Yet)</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Because Co-Work data lives locally, it doesn't currently appear in centralized audit logs. If your compliance team requires server-side logging of all AI interactions, this is a gap to be aware of. OpenTelemetry tracking provides usage metrics, but full conversation-level audit trails aren't available today.</p>
+        </div>
+      </div>
+
+      <div class="mt-8 p-6 rounded-xl border border-gray-200 bg-white">
+        <h3 class="font-semibold text-lg mb-3">Best Practices for Enterprise Deployments</h3>
+        <ul class="space-y-2 text-sm text-gray-500">
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 mt-0.5">1.</span>
+            Create dedicated working folders for Co-Work. Don't give it access to your entire home directory.
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 mt-0.5">2.</span>
+            Limit browser access to only the sites Claude needs for specific tasks.
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 mt-0.5">3.</span>
+            Review <a href="/claude-cowork/scheduled-tasks" class="text-gray-900 underline hover:no-underline">scheduled tasks</a> carefully before enabling them. Each task runs with full access to your connectors and plugins.
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 mt-0.5">4.</span>
+            Use only verified plugins from your organization marketplace or Anthropic's official library.
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 mt-0.5">5.</span>
+            Monitor OpenTelemetry data weekly to catch unexpected usage patterns early.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLLOUT STRATEGY -->
+  <section id="rollout" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">How We Roll Out Co-Work for Your Team</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10">
+        We've deployed Co-Work for <a href="/for/real-estate" class="text-gray-900 underline hover:no-underline">real estate teams</a>, law firms, accounting practices, and consulting groups. Here's the process we follow every time.
+      </p>
+
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">1</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Identify Pilot Teams</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We pick 2-3 teams with repeatable, high-volume workflows. Sales teams doing weekly pipeline reports. Paralegals drafting the same contract templates. Accountants reconciling monthly financials. These are the workflows where Co-Work delivers the fastest ROI.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">2</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Build Custom Plugins</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We create <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugins</a> tailored to each pilot team's specific processes. A plugin bundles <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills</a>, connectors, slash commands, and sub-agents into a single package. Instead of configuring everything from scratch, users install one plugin and they're ready to go.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">3</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Configure Connectors</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We connect Co-Work to your CRM (HubSpot, Salesforce), project management tools (Jira, Asana, Linear), communication platforms (Slack, Gmail), and file storage (Google Drive, Dropbox). Each <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">connector</a> uses OAuth with scoped permissions so Claude only accesses what it needs.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">4</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Write Global and Folder Instructions</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Quality output depends on context. We write global instructions that define your company's tone, formatting standards, and common terminology. Then we add folder-level instructions for specific project types. This is the difference between generic AI output and work that sounds like your team wrote it.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">5</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Train Your Teams</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We run <a href="/claude-cowork/training" class="text-gray-900 underline hover:no-underline">training sessions</a> (remote or in-person) covering how to use Co-Work, how to write good prompts for autonomous tasks, and how to review Claude's work before approving actions. Every team member leaves the session able to run their first Co-Work workflow independently.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">6</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Set Up Scheduled Tasks</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">For recurring deliverables, we configure <a href="/claude-cowork/scheduled-tasks" class="text-gray-900 underline hover:no-underline">scheduled tasks</a>. Monday morning pipeline summaries. Friday afternoon timesheet reminders. Monthly client report drafts. These run automatically so your team doesn't have to remember to start them.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">7</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Ongoing Plugin Updates</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Co-Work is still in research preview. Anthropic ships updates regularly, and those updates sometimes break existing plugin configurations. We maintain your plugins as the platform evolves, so your team never wakes up to a broken workflow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES BY INDUSTRY -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Who Uses Co-Work at the Team Level?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        Any team with repeatable knowledge work benefits from Co-Work. Here are the verticals where we see the most demand.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-5 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold mb-2">Law Firms</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Contract drafting, case research summaries, client intake processing, deadline tracking across matters. <a href="/for/law-firms" class="text-gray-900 underline hover:no-underline">Learn more</a>.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold mb-2">Accounting Firms</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Monthly close checklists, client communication drafts, tax document organization, financial report generation. <a href="/for/accounting-firms" class="text-gray-900 underline hover:no-underline">Learn more</a>.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold mb-2">Real Estate Teams</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Listing descriptions, CMA report prep, lead follow-up sequences, transaction coordination checklists. <a href="/for/real-estate" class="text-gray-900 underline hover:no-underline">Learn more</a>.</p>
+        </div>
+      </div>
+      <p class="text-center mt-8">
+        <a href="/claude-cowork/use-cases" class="text-sm font-medium text-gray-900 underline hover:no-underline">View all Co-Work use cases &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-3">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What's the difference between Claude Team and Enterprise plans?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Team costs $20/seat/month for 5-75 people. It includes self-serve management, the Slack connector, standard and premium seat types, and full Co-Work access. Enterprise is custom-priced for larger organizations and adds admin controls like org-wide Co-Work toggles, curated plugin marketplaces, managed plugin scopes, and dedicated support from Anthropic.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can I enable Co-Work for only some team members?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Not currently. The Co-Work toggle is org-wide on both Team and Enterprise plans: it's on for all members or off for all members. There's no per-user granularity. If you need selective rollout, you'd need to contact Anthropic directly to discuss custom arrangements.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is Co-Work conversation data stored on Anthropic's servers?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            No. Co-Work runs in an isolated VM on each user's local computer. Conversation history stays on that machine. Co-Work data doesn't appear in Anthropic's audit logs, compliance API, or data exports. It's also not subject to Anthropic's standard data retention policies. This is great for privacy but means centralized audit logging isn't available yet.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What is an organization plugin marketplace?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Organization owners can create curated plugin collections and distribute them to all members through Organization settings. You control which plugins are auto-installed for everyone, which are available to browse, and which are hidden. You can include official Anthropic plugins, forked and customized versions, or fully custom builds. <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">Read the full plugins guide</a>.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does an enterprise Co-Work rollout take?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            A typical rollout takes 2-4 weeks from kickoff to full deployment. We start with 2-3 pilot teams, build custom plugins for their workflows, configure connectors, write global and folder instructions, train the teams, and set up scheduled tasks. After launch, we provide ongoing plugin maintenance as the platform evolves. <a href="/claude-cowork/consulting" class="text-gray-900 underline hover:no-underline">Learn about our consulting process</a>.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Deploy Co-Work Across Your Team?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll map your team's workflows to Co-Work's capabilities and outline a rollout plan specific to your organization.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=enterprise--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">No commitment. No sales pitch. Just a straight look at what's possible.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work for E-commerce: Review Analysis, Product Optimization &amp; Ad Briefs | NYC Claw</title>
+  <meta name="description" content="Claude Co-Work for e-commerce teams. Review sentiment analysis, product listing optimization, competitive pricing reports, and ad creative brief generation.">
+  <meta property="og:title" content="Claude Co-Work for E-commerce: Review Analysis, Product Optimization &amp; Ad Briefs | NYC Claw">
+  <meta property="og:description" content="Claude Co-Work for e-commerce teams. Review sentiment analysis, product listing optimization, competitive pricing reports, and ad creative brief generation.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/ecommerce">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/ecommerce">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work for E-commerce",
+    "description": "Done-for-you Claude Co-Work setup for e-commerce teams. Review sentiment analysis, product listing optimization, competitive pricing monitoring, and ad creative brief generation.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does Co-Work pull reviews from different platforms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work uses web research tools and platform connectors to pull review data from Amazon, Shopify, Etsy, and other marketplaces. It aggregates them into a single dataset, categorizes by sentiment and issue type, and generates structured reports. You can run this on demand or schedule it weekly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Co-Work optimize listings for Amazon, Shopify, and Etsy at the same time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Co-Work reads your current listings across platforms, compares them against top-performing competitors on each channel, and rewrites titles, descriptions, and bullet points optimized for each platform's search algorithm. It runs as a batch command across your entire catalog, so you don't need to update each SKU manually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Mouthology-style creative intelligence?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mouthology-style creative intelligence means using your customers' actual language as the basis for ad copy and marketing. Co-Work analyzes review data to find the exact phrases, complaints, and praise your customers use, then turns those into ad hooks and value propositions. Your ads speak the way your customers already talk about your products."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does competitive pricing monitoring work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work runs a scheduled task that monitors competitor pricing via web research. It generates daily or weekly pricing reports showing where you're priced above or below market. It flags products where you could increase margin and products where you're losing sales on price. You get actionable data, not just raw numbers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take for an e-commerce team?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Initial setup takes one session. We configure your connectors (HubSpot, Intercom, Slack, Klaviyo, Google Drive), install relevant plugins, and build your first custom skills for review analysis and listing optimization. Over the following two weeks, we refine the setup based on real usage and train your team on the workflows that matter most."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=ecommerce--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">E-commerce</span>
+      </nav>
+      <div class="text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-500"></span>
+          For E-commerce Teams
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+          Claude Co-Work for E-commerce<br>
+          <span class="text-gray-500">Customer data is everywhere. Your insights shouldn't be.</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+          Your team is drowning in review data across Amazon, Shopify, and Etsy. Product feeds are inconsistent across channels. Ad performance lives in six different dashboards. Co-Work pulls it all together: review sentiment analysis, listing optimization, competitive pricing reports, and ad creative briefs built from your customers' own words.
+        </p>
+        <p class="text-sm text-gray-400 mb-10">Powered by <a href="/claude-cowork/" class="underline hover:text-gray-600">Claude Co-Work</a>. Set up by NYC Claw.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=ecommerce--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+            Book a Free 15-Minute Call
+          </a>
+          <a href="#how-cowork-solves-it" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+            See the Workflows
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">The real problem with e-commerce operations in 2026</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">You're sitting on a mountain of customer data. Most of it goes unread.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Review volume overwhelms manual analysis</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Thousands of reviews across Amazon, Shopify, Etsy, and your own storefront. Nobody has time to read them all. Sentiment patterns, recurring complaints, and product issues get buried. You're making decisions about products and marketing without knowing what your customers are actually saying.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Product listings are inconsistent and unoptimized</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Titles, descriptions, and bullet points differ across channels. Amazon's algorithm wants different things than Shopify's search. Nobody has time to A/B test copy across hundreds of SKUs. Your listings were written once, maybe twice, and haven't been updated since. Meanwhile, competitors are optimizing weekly.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Competitive pricing requires constant monitoring</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Competitors change prices daily. By the time you notice, you've either lost margin by staying too low or lost sales by staying too high. Manual price checks on 50 competitors across 200 SKUs isn't a real strategy. It's a full-time job that nobody has bandwidth for.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Ad creative briefs take hours to write</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Every product launch needs creative briefs. Someone pulls product specs, audience data, competitor positioning, and review highlights. Then they write value props, audience hooks, and visual direction. It's largely mechanical work, but it still takes hours per brief. Multiply that by your product catalog and you're buried.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW CO-WORK SOLVES IT -->
+  <section id="how-cowork-solves-it" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How Claude Co-Work solves it</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Real workflows your e-commerce team can run today. Not demos. Not mockups.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Workflow 1 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Review Aggregation and Sentiment Analysis</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work pulls reviews from multiple platforms, categorizes by sentiment, product, and issue type. Recurring complaints and praise patterns that you'd never catch manually come through clearly. Weekly scheduled reports show sentiment trends over time. Think of it as Mouthology-style creative intelligence: analyzing your customers' actual language so you can use it in ad copy and product decisions.</p>
+        </div>
+        <!-- Workflow 2 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Product Listing Optimization</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work reads your current listings, compares them against top-performing competitors, and rewrites titles, descriptions, and bullet points optimized for each platform's algorithm. Run it as a batch command across your entire catalog. Amazon, Shopify, Etsy: each gets platform-specific copy, not generic descriptions pasted everywhere.</p>
+        </div>
+        <!-- Workflow 3 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Competitive Pricing Analysis</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A scheduled task monitors competitor pricing via web research. It generates daily or weekly pricing reports showing where you're priced above or below market. Co-Work flags products where margin could increase and products where you're losing on price. You get the data you need before your Monday pricing meeting, not after.</p>
+        </div>
+        <!-- Workflow 4 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Ad Creative Briefs</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Give Co-Work a product and target audience. It pulls product specs, review sentiment data, competitor positioning, and generates a complete creative brief: value props, audience hooks, USP framing, visual direction suggestions. Mouthology-style creative intelligence means your briefs use the exact phrases your customers already use to describe your products.</p>
+        </div>
+        <!-- Workflow 5 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Inventory and Fulfillment Reporting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work reads inventory data files, flags low-stock items, calculates reorder points, and generates fulfillment status reports. Scheduled daily to catch issues before they become stockouts. You get a morning briefing on what needs attention, not a surprise email from your 3PL.</p>
+        </div>
+        <!-- Workflow 6 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Customer Support Triage</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Incoming support tickets analyzed, categorized by urgency and issue type, with draft responses generated automatically. Connects to Intercom or HubSpot via connectors. Your support team reviews and sends instead of writing from scratch every time.</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-8">Every setup is configured for your store's specific products, platforms, and tools.</p>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD FOR YOU -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">What we build for your team</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10 text-center max-w-2xl mx-auto">This isn't a one-size-fits-all setup. We configure Co-Work around your catalog, your platforms, and your team's workflow.</p>
+
+      <div class="space-y-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Custom Skills</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">We build <a href="/claude-cowork/skills/" class="text-gray-900 underline hover:no-underline">custom skills</a> for review analysis commands that work with your specific product categories, listing optimization formatted for each platform you sell on, and creative brief generation that matches your brand voice. Your team runs a single command and gets output ready to use.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Plugins</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">We configure the <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/marketing</code> <a href="/claude-cowork/plugins/" class="text-gray-900 underline hover:no-underline">plugin</a> for ad creative generation, plus Ahrefs and SimilarWeb integrations for competitive intel. The <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/customer-support</code> plugin handles ticket triage and draft responses. Your Co-Work instance has the right tools loaded for e-commerce from day one.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Connectors</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">We connect Co-Work to the tools you already use: HubSpot for CRM, Intercom for support tickets, Slack for team communication, Google Drive for shared documents, and Klaviyo for email marketing data. Your team keeps using the same tools. Co-Work just connects them.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Scheduled Tasks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Set up recurring workflows that run automatically: weekly review sentiment reports delivered to Slack, daily competitive pricing checks, inventory alerts before stockouts happen. Co-Work runs these on schedule and delivers results where your team will actually see them.</p>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-gray-500 mt-8">Already using NYC Claw for your e-commerce brand? See our <a href="/for/ecommerce" class="text-gray-900 underline hover:no-underline">e-commerce setup page</a> for the full picture.</p>
+    </div>
+  </section>
+
+  <!-- TRAINING -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">We train your team. Remote or in-person.</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4 max-w-2xl mx-auto">
+        Installing Co-Work is the easy part. Knowing what to do with it is where most teams stall. We run hands-on <a href="/claude-cowork/training/" class="text-gray-900 underline hover:no-underline">training sessions</a> where your e-commerce team practices real workflows: review analysis, listing optimization, creative brief generation, and pricing reports.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
+        Remote sessions work for most teams. For teams in NYC, we come to your office. After training, your team can run every workflow without us.
+      </p>
+    </div>
+  </section>
+
+  <!-- CROSS-LINKS -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-lg font-semibold mb-4 text-center">Related pages</h3>
+      <div class="grid sm:grid-cols-3 gap-4 text-sm">
+        <a href="/claude-cowork/startups" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Co-Work for Startups &rarr;</a>
+        <a href="/claude-cowork/insurance" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Co-Work for Insurance &rarr;</a>
+        <a href="/claude-cowork/" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Claude Co-Work Overview &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Stop guessing what your customers want. Let their own words tell you.</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll walk through your specific workflows and show you exactly what Co-Work can handle for your store.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=ecommerce--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does Co-Work pull reviews from different platforms?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work uses web research tools and platform connectors to pull review data from Amazon, Shopify, Etsy, and other marketplaces. It aggregates them into a single dataset, categorizes by sentiment and issue type, and generates structured reports. You can run this on demand or schedule it weekly.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can Co-Work optimize listings for Amazon, Shopify, and Etsy at the same time?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. Co-Work reads your current listings across platforms, compares them against top-performing competitors on each channel, and rewrites titles, descriptions, and bullet points optimized for each platform's search algorithm. It runs as a batch command across your entire catalog, so you don't need to update each SKU manually.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What is Mouthology-style creative intelligence?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Mouthology-style creative intelligence means using your customers' actual language as the basis for ad copy and marketing. Co-Work analyzes review data to find the exact phrases, complaints, and praise your customers use, then turns those into ad hooks and value propositions. Your ads speak the way your customers already talk about your products.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does competitive pricing monitoring work?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work runs a scheduled task that monitors competitor pricing via web research. It generates daily or weekly pricing reports showing where you're priced above or below market. It flags products where you could increase margin and products where you're losing sales on price. You get actionable data, not just raw numbers.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does setup take for an e-commerce team?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Initial setup takes one session. We configure your connectors (HubSpot, Intercom, Slack, Klaviyo, Google Drive), install relevant plugins, and build your first custom skills for review analysis and listing optimization. Over the following two weeks, we refine the setup based on real usage and train your team on the workflows that matter most.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

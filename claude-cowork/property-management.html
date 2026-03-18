@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work for Property Management: Lease Analysis, Maintenance Triage &amp; Tenant Comms | NYC Claw</title>
+  <meta name="description" content="Claude Co-Work for property management. Lease analysis and renewal tracking, maintenance request triage, tenant communications, and financial reporting per property.">
+  <meta property="og:title" content="Claude Co-Work for Property Management: Lease Analysis, Maintenance Triage &amp; Tenant Comms | NYC Claw">
+  <meta property="og:description" content="Claude Co-Work for property management. Lease analysis and renewal tracking, maintenance request triage, tenant communications, and financial reporting per property.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/property-management">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/property-management">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work for Property Management",
+    "description": "Done-for-you Claude Co-Work setup for property management companies. Lease analysis, maintenance triage, tenant communications, and financial reporting per property.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does Co-Work read and extract data from lease documents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work reads lease documents in PDF, Word, and scanned formats. It extracts key terms including rent amounts, expiration dates, renewal options, escalation clauses, security deposits, and special conditions. The extracted data populates a structured spreadsheet you can sort, filter, and act on. For scanned documents, Co-Work uses OCR to read the text before extraction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Co-Work connect to my property management software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Co-Work connects to your existing tools through Slack, Microsoft 365, Google Drive, and email. For property management platforms like AppFolio, Buildium, or Yardi, we configure connectors that pull data from exports or API integrations where available. Your existing workflows don't change. Co-Work works alongside them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the maintenance triage workflow handle emergencies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work categorizes incoming maintenance requests into three tiers: emergency (water leaks, no heat, gas smell, electrical hazards), urgent (broken appliances, HVAC issues, plumbing problems), and routine (cosmetic repairs, minor fixes). Emergency requests trigger immediate notifications to your on-call team and the tenant gets an instant acknowledgment. You define the rules for what counts as each tier."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What financial reports can Co-Work generate automatically?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work generates monthly P&L statements by property, occupancy rate reports, rent roll summaries, expense variance analyses, and owner distribution statements. Each report includes written explanations of significant variances, not just numbers. Reports are formatted and delivered on schedule to property owners or your internal team."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take for a property management company?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Initial setup takes one session. We configure your connectors, build your first lease extraction and maintenance triage skills, and set up scheduled tasks for reporting. Over the following two weeks, we refine the workflows based on real usage, add additional skills for your specific portfolio, and train your team on every workflow."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=property-management--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Property Management</span>
+      </nav>
+      <div class="text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-500"></span>
+          For Property Managers
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+          Claude Co-Work for Property Management<br>
+          <span class="text-gray-500">Every building runs on paperwork. Yours doesn't have to.</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+          Property managers juggle lease renewals, maintenance requests, tenant comms, and financial reporting across dozens or hundreds of units. Most of this is repetitive document work.
+        </p>
+        <p class="text-sm text-gray-400 mb-10">Powered by <a href="/claude-cowork/" class="underline hover:text-gray-600">Claude Co-Work</a>. Set up by NYC Claw.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=property-management--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+            Book a Free 15-Minute Call
+          </a>
+          <a href="#how-cowork-solves-it" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+            See the Workflows
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">The real problem with property management in 2026</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">You're managing buildings, but most of your day is spent managing documents.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Lease renewals slip through the cracks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">With 50+ units, tracking which leases expire when, what terms to offer, and when to start negotiations is a spreadsheet nightmare. One missed renewal means a tenant goes month-to-month or leaves. Either way, you're losing money or scrambling to fill a vacancy you didn't plan for.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Maintenance requests pile up without triage</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Tenants submit requests by email, text, portal, and phone call. Sorting by urgency, assigning to the right vendor, and tracking completion is manual and error-prone. A leaking pipe sits in the same queue as a squeaky door. By the time you get to it, the leak has caused real damage.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Financial reporting per property is a manual assembly job</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Owners want monthly P&L by property. You're copying data from accounting software, formatting spreadsheets, and writing variance explanations. Every month. For every property. It's the same process each time, but it still takes hours because the data lives in five different places.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Tenant communications are repetitive but can't be generic</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lease violation notices, move-in packets, seasonal reminders, rent increase letters. Each needs to reference the specific unit, tenant, and terms. Templates only get you halfway. You still spend time filling in details, double-checking clause numbers, and making sure notice periods are correct.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW CO-WORK SOLVES IT -->
+  <section id="how-cowork-solves-it" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How Claude Co-Work solves it</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Workflows property managers can run right now. Tested in real portfolios.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Workflow 1 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Lease Analysis and Renewal Tracking</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work reads your lease documents, extracts key terms (rent, expiration, renewal options, escalation clauses), and builds a tracking spreadsheet. A scheduled task runs monthly, flags leases expiring in 30, 60, or 90 days, and drafts renewal offers based on market rates and current terms. No more spreadsheet archaeology.</p>
+        </div>
+        <!-- Workflow 2 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Maintenance Request Triage</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Incoming maintenance requests are analyzed and categorized by urgency: emergency, urgent, or routine. Co-Work drafts a tenant acknowledgment, assigns to the appropriate vendor based on issue type, and creates tracking records. Connects via Slack, email, or your property management platform.</p>
+        </div>
+        <!-- Workflow 3 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Tenant Communications</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work generates unit-specific and tenant-specific communications: lease violation notices that reference exact clause numbers, rent increase letters with correct notice periods, move-in packets with property-specific rules. Each one pulls from your templates and lease data. No more manual fill-in-the-blank.</p>
+        </div>
+        <!-- Workflow 4 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Financial Reporting Per Property</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Monthly scheduled task: Co-Work pulls income and expense data, generates P&L by property, calculates occupancy rates, flags unusual expenses, and writes variance explanations. Owners get a formatted report without you touching a spreadsheet. Same quality every month, zero assembly time.</p>
+        </div>
+        <!-- Workflow 5 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Vendor Management and Invoice Processing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work processes vendor invoices: extracts line items, matches to work orders, flags discrepancies, and compiles into payment batches. It also tracks vendor performance over time, including response time, completion rates, and cost per job type. You see which vendors deliver and which don't.</p>
+        </div>
+        <!-- Workflow 6 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Occupancy and Market Rate Analysis</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Scheduled weekly: Co-Work researches comparable rental rates in your properties' areas, compares to your current rents, and identifies units priced below or above market. You get a summary showing revenue optimization opportunities, so renewal conversations start with data, not guesswork.</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-8">Every setup is configured for your specific portfolio, property types, and management workflow.</p>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD FOR YOU -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">What we build for your company</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10 text-center max-w-2xl mx-auto">Every portfolio is different. We configure Co-Work for your properties, your vendors, and your reporting requirements.</p>
+
+      <div class="space-y-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Custom Skills</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Skills are reusable commands your team runs daily. We build <a href="/claude-cowork/skills/" class="text-gray-900 underline hover:no-underline">custom skills</a> for lease extraction, maintenance triage rules, and financial report templates. Your property managers run a single command and get consistent output, whether they're handling 20 units or 200.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Plugins</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">We configure the <a href="/claude-cowork/plugins/" class="text-gray-900 underline hover:no-underline">plugins</a> your workflows need: <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/legal</code> for lease analysis, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/finance</code> for reporting, and <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/productivity</code> for task management. Each plugin adds specific capabilities that match your day-to-day operations.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Connectors</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">We connect Co-Work to the tools you already use: Slack for team communication, Microsoft 365 for email and documents, Google Drive for file storage, and HubSpot for tenant and owner relationships. No new platforms to learn. Co-Work plugs into what you're already using.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Scheduled Tasks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Set up recurring workflows that run without you: monthly lease renewal alerts, daily maintenance triage, monthly financial reports for owners, and weekly market rate checks. Co-Work runs these on schedule and delivers results to your Slack channel, email, or dashboard.</p>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-gray-500 mt-8">Already using NYC Claw for your properties? See our <a href="/for/property-management" class="text-gray-900 underline hover:no-underline">property management setup page</a> for the full picture.</p>
+    </div>
+  </section>
+
+  <!-- TRAINING -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">We train your team. Remote or in-person.</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4 max-w-2xl mx-auto">
+        The tool does nothing if your team doesn't know how to use it. We run hands-on <a href="/claude-cowork/training/" class="text-gray-900 underline hover:no-underline">training sessions</a> where your property managers practice real workflows: lease extraction, maintenance triage, tenant communications, financial reporting, and whatever else your operation needs.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
+        Remote sessions work for most teams. For companies in NYC, we train at your office. Your team leaves the session able to run every workflow on their own.
+      </p>
+    </div>
+  </section>
+
+  <!-- CROSS-LINKS -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-lg font-semibold mb-4 text-center">Related pages</h3>
+      <div class="grid sm:grid-cols-3 gap-4 text-sm">
+        <a href="/claude-cowork/construction" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Co-Work for Construction &rarr;</a>
+        <a href="/claude-cowork/insurance" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Co-Work for Insurance &rarr;</a>
+        <a href="/claude-cowork/" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Claude Co-Work Overview &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Stop assembling reports by hand every month</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll walk through your specific portfolio and show you exactly what Co-Work can handle for your properties.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=property-management--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does Co-Work read and extract data from lease documents?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work reads lease documents in PDF, Word, and scanned formats. It extracts key terms including rent amounts, expiration dates, renewal options, escalation clauses, security deposits, and special conditions. The extracted data populates a structured spreadsheet you can sort, filter, and act on. For scanned documents, Co-Work uses OCR to read the text before extraction.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can Co-Work connect to my property management software?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. Co-Work connects to your existing tools through Slack, Microsoft 365, Google Drive, and email. For property management platforms like AppFolio, Buildium, or Yardi, we configure connectors that pull data from exports or API integrations where available. Your existing workflows don't change. Co-Work works alongside them.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does the maintenance triage workflow handle emergencies?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work categorizes incoming maintenance requests into three tiers: emergency (water leaks, no heat, gas smell, electrical hazards), urgent (broken appliances, HVAC issues, plumbing problems), and routine (cosmetic repairs, minor fixes). Emergency requests trigger immediate notifications to your on-call team and the tenant gets an instant acknowledgment. You define the rules for what counts as each tier.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What financial reports can Co-Work generate automatically?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work generates monthly P&L statements by property, occupancy rate reports, rent roll summaries, expense variance analyses, and owner distribution statements. Each report includes written explanations of significant variances, not just numbers. Reports are formatted and delivered on schedule to property owners or your internal team.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does setup take for a property management company?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Initial setup takes one session. We configure your connectors, build your first lease extraction and maintenance triage skills, and set up scheduled tasks for reporting. Over the following two weeks, we refine the workflows based on real usage, add additional skills for your specific portfolio, and train your team on every workflow.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

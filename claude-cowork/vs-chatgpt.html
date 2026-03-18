@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work vs ChatGPT: Which AI Agent Is Right for You? | NYC Claw</title>
+  <meta name="description" content="Honest comparison of Claude Co-Work and ChatGPT for business workflows. Local file access, scheduled tasks, and 38+ connectors vs web browsing, DALL-E, and millions of GPTs.">
+  <meta property="og:title" content="Claude Co-Work vs ChatGPT: Which AI Agent Is Right for You? | NYC Claw">
+  <meta property="og:description" content="Honest comparison of Claude Co-Work and ChatGPT for business workflows. Local file access, scheduled tasks, and 38+ connectors vs web browsing, DALL-E, and millions of GPTs.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/vs-chatgpt">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/vs-chatgpt">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work Setup and Consulting",
+    "description": "White-glove Claude Co-Work configuration including custom plugin development, connector setup, scheduled task automation, and team training for businesses switching from ChatGPT.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can Claude Co-Work browse the web like ChatGPT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not natively. Co-Work can access the web through the Claude in Chrome extension or a web search tool, but it requires extra setup. ChatGPT has built-in web browsing with no configuration needed. If web research is your primary use case, ChatGPT is simpler out of the box."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Claude Co-Work more private than ChatGPT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Co-Work runs in an isolated virtual machine on your local computer. Your files and conversation history stay on your machine, not on Anthropic's servers. ChatGPT processes everything in OpenAI's cloud. For businesses handling sensitive client data, contracts, or financial records, that difference matters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use both Claude Co-Work and ChatGPT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Many users keep ChatGPT for quick web lookups and image generation, then use Co-Work for file-heavy workflows, recurring tasks, and tool integrations. They solve different problems well."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ChatGPT have anything like Co-Work's plugins and connectors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ChatGPT has GPTs (custom assistants) and can connect to some tools via custom actions. But Co-Work's plugin system is more structured: each plugin bundles skills, connectors, slash commands, and sub-agents into a single package. Co-Work also connects to 38+ business tools via OAuth through the MCP protocol, including HubSpot, Salesforce, Jira, Slack, and Google Drive."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=vs-chatgpt--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="pt-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Co-Work vs ChatGPT</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-4 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+        Comparison
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Claude Co-Work vs<br>
+        <span class="text-gray-500">ChatGPT</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Both tools can draft emails and answer questions. The real differences show up when you need an AI that works with your local files, connects to your business tools, and runs tasks on a schedule. Here's how they compare.
+      </p>
+    </div>
+  </section>
+
+  <!-- QUICK COMPARISON TABLE -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Side-by-Side Comparison</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">The features that matter most for business workflows.</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="text-left p-4 font-semibold text-gray-700">Feature</th>
+              <th class="text-center p-4 font-semibold text-gray-700">Claude Co-Work</th>
+              <th class="text-center p-4 font-semibold text-gray-700">ChatGPT</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr>
+              <td class="p-4 text-gray-700 font-medium">Where it runs</td>
+              <td class="p-4 text-center text-gray-600">Local VM on your computer</td>
+              <td class="p-4 text-center text-gray-600">OpenAI's cloud servers</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-700 font-medium">Local file access</td>
+              <td class="p-4 text-center text-green-600 font-semibold">Yes. Reads, edits, creates files</td>
+              <td class="p-4 text-center text-gray-400">Cloud sandbox only</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-700 font-medium">Scheduled tasks</td>
+              <td class="p-4 text-center text-green-600 font-semibold">Daily, weekly, monthly</td>
+              <td class="p-4 text-center text-gray-400">Scheduled messages (limited)</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-700 font-medium">Business tool connectors</td>
+              <td class="p-4 text-center text-green-600 font-semibold">38+ via MCP protocol</td>
+              <td class="p-4 text-center text-gray-600">Custom actions (fewer options)</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-700 font-medium">Plugin/extension system</td>
+              <td class="p-4 text-center text-gray-600">11 official plugins, custom builds</td>
+              <td class="p-4 text-center text-green-600 font-semibold">Millions of GPTs</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-700 font-medium">Web browsing</td>
+              <td class="p-4 text-center text-gray-400">Via Chrome extension</td>
+              <td class="p-4 text-center text-green-600 font-semibold">Built-in, no setup</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-700 font-medium">Image generation</td>
+              <td class="p-4 text-center text-gray-400">Not available</td>
+              <td class="p-4 text-center text-green-600 font-semibold">DALL-E built-in</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-700 font-medium">Voice mode</td>
+              <td class="p-4 text-center text-gray-400">Not available</td>
+              <td class="p-4 text-center text-green-600 font-semibold">Advanced voice</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-700 font-medium">Mobile task assignment</td>
+              <td class="p-4 text-center text-green-600 font-semibold">Phone to desktop</td>
+              <td class="p-4 text-center text-gray-400">Mobile app (cloud only)</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-700 font-medium">Privacy</td>
+              <td class="p-4 text-center text-green-600 font-semibold">Data stays on your machine</td>
+              <td class="p-4 text-center text-gray-600">Processed on OpenAI servers</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-700 font-medium">Requires desktop app</td>
+              <td class="p-4 text-center text-gray-600">Yes (Claude Desktop)</td>
+              <td class="p-4 text-center text-green-600 font-semibold">No. Web-only works</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE CO-WORK WINS -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Where Co-Work Wins</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10">
+        <a href="/claude-cowork/" class="text-gray-900 underline hover:no-underline">Claude Co-Work</a> is built for people who need an AI agent that actually does work on their computer. Not just answers questions. Does the work.
+      </p>
+
+      <div class="space-y-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Real File System Access</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Co-Work reads, edits, creates, and organizes files in folders you specify on your machine. A <a href="/claude-cowork/real-estate" class="text-gray-900 underline hover:no-underline">real estate agent</a> can point Co-Work at a folder of property photos and listing data, and it'll generate formatted MLS descriptions. A <a href="/claude-cowork/legal" class="text-gray-900 underline hover:no-underline">lawyer</a> can drop a stack of contracts in a folder and get a risk assessment memo. ChatGPT's agent runs in a cloud sandbox. It can't touch the files sitting on your desktop.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Scheduled Recurring Tasks</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Set up a Monday morning pipeline summary. A Friday afternoon timesheet reminder. A monthly client report draft. Co-Work runs these automatically at the cadence you choose: daily, weekly, or monthly. Each scheduled task has access to all your <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">connectors</a> and <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugins</a>. ChatGPT can schedule messages, but it can't execute multi-step workflows on a timer.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">38+ Business Tool Connectors</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Co-Work connects to HubSpot, Salesforce, Jira, Slack, Google Drive, Notion, Linear, Asana, Gmail, and dozens more through the <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">MCP protocol</a>. All OAuth-based, all respecting your existing account permissions. ChatGPT has some integrations, but fewer connectors and less structure around how they work.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Privacy by Architecture</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Co-Work runs in an isolated virtual machine on your local computer. Conversation history stays on your machine. It doesn't appear in Anthropic's audit logs, compliance API, or data exports. For <a href="/claude-cowork/legal" class="text-gray-900 underline hover:no-underline">law firms</a> handling privileged documents, <a href="/for/financial-advisors" class="text-gray-900 underline hover:no-underline">financial advisors</a> with client portfolios, or any business with sensitive data, that's not a nice-to-have. It's a requirement.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Structured Plugin System</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Co-Work's <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugins</a> bundle <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills</a>, connectors, slash commands, and sub-agents into a single package. There are 11 official plugins (Sales, Legal, Marketing, Finance, and more), and you can build custom ones for your specific workflows. Everything is file-based: markdown and JSON, no code. ChatGPT has GPTs, but they're more limited in what they can actually do on your behalf.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE CHATGPT WINS -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Where ChatGPT Wins</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10">
+        ChatGPT isn't the wrong choice. For certain workflows, it's the better one. Here's where OpenAI is ahead.
+      </p>
+
+      <div class="space-y-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-2">Web Browsing, Built In</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">ChatGPT browses the web natively. No extensions, no extra configuration. Ask it to research a competitor, pull recent news, or check a website, and it just works. Co-Work can do web research through the Claude in Chrome extension or a web search tool, but it requires setup. For quick lookups and live research, ChatGPT is faster to start with.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-2">Image Generation with DALL-E</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Need a social media graphic or a product mockup? ChatGPT generates images directly in the conversation. Co-Work doesn't generate images. If visual content creation is a core part of your <a href="/claude-cowork/marketing" class="text-gray-900 underline hover:no-underline">marketing workflow</a>, ChatGPT handles that in one place.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-2">Massive GPT Ecosystem</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">There are millions of custom GPTs in OpenAI's store. For niche tasks, there's probably a GPT already built for it. Co-Work's plugin marketplace is growing but much smaller. The 11 official plugins cover the major business roles, and you can build custom ones, but the number of pre-built options favors ChatGPT.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-2">No Desktop App Required</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">ChatGPT works entirely in your browser. Nothing to download or install. Co-Work requires Claude Desktop on macOS or Windows (and it doesn't support Linux or web-only access). If your team uses Chromebooks or heavily restricted machines, ChatGPT is the easier option.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-2">Advanced Voice Mode</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">ChatGPT's voice mode lets you have natural spoken conversations, hands-free. Co-Work doesn't have voice input. If you think better out loud or need to multitask while giving instructions, that matters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO SHOULD USE WHICH -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Who Should Use Which?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10">
+        The answer depends on what you're actually trying to accomplish day to day.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-8 rounded-xl border-2 border-gray-900 bg-white">
+          <h3 class="text-2xl font-bold mb-4">Choose Co-Work If You...</h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Work with local files daily (contracts, reports, spreadsheets, documents)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Need recurring automated tasks (weekly reports, daily file sorting, monthly summaries)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Handle sensitive client data that can't leave your machine
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Use business tools like HubSpot, Jira, Salesforce, Slack, or Google Drive
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Want autonomous multi-step execution, not just answers
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Want to assign tasks from your phone that execute on your desktop
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-2xl font-bold mb-4">Choose ChatGPT If You...</h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Primarily need quick web research and information lookups
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Create images and visual content regularly
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Want a browser-only tool with no desktop app
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Use AI mostly for casual questions and brainstorming
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Prefer voice conversations over typed instructions
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Need access from Chromebooks or restricted devices
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-center text-gray-500 text-base mt-8 leading-relaxed max-w-2xl mx-auto">
+        Many teams use both. ChatGPT for quick research and image generation, Co-Work for the heavy lifting: file management, recurring deliverables, and multi-tool workflows that connect your CRM to your project tracker to your documents folder.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">We'll Set Up Co-Work for Your Specific Needs</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        Switching from ChatGPT to Co-Work (or adding Co-Work alongside it) takes more than just downloading the app. The real value comes from configuring it for your workflows, and that's where we come in.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Custom Plugin Development</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We build <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugins</a> that match your exact workflows. A real estate plugin that generates listing descriptions in your brand voice. A legal plugin that triages NDAs against your firm's risk criteria. Each plugin bundles <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills</a>, connectors, and commands into one install.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Connector Configuration</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We connect Co-Work to the tools you already use: your CRM, project management platform, communication tools, and file storage. All via OAuth with scoped permissions. Your credentials never pass through Anthropic's infrastructure.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Scheduled Task Setup</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We configure the recurring tasks that save hours every week. Morning inbox sorting, weekly pipeline reports, monthly client summaries. Each task runs automatically with full access to your connectors and plugins.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Training for Your Team</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Remote or in-person <a href="/claude-cowork/training" class="text-gray-900 underline hover:no-underline">training sessions</a> covering how to use Co-Work effectively, how to write good prompts for autonomous tasks, and how to review Claude's work before approving actions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-3">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can Claude Co-Work browse the web like ChatGPT?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Not natively. Co-Work can access the web through the Claude in Chrome extension or a web search tool, but it requires extra setup. ChatGPT has built-in web browsing with no configuration needed. If web research is your primary use case, ChatGPT is simpler out of the box.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is Claude Co-Work more private than ChatGPT?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. Co-Work runs in an isolated virtual machine on your local computer. Your files and conversation history stay on your machine, not on Anthropic's servers. ChatGPT processes everything in OpenAI's cloud. For businesses handling sensitive client data, contracts, or financial records, that difference matters.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can I use both Claude Co-Work and ChatGPT?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. Many users keep ChatGPT for quick web lookups and image generation, then use Co-Work for file-heavy workflows, recurring tasks, and tool integrations. They solve different problems well.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Does ChatGPT have anything like Co-Work's plugins and connectors?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            ChatGPT has GPTs (custom assistants) and can connect to some tools via custom actions. But Co-Work's plugin system is more structured: each plugin bundles skills, connectors, slash commands, and sub-agents into a single package. Co-Work also connects to 38+ business tools via OAuth through the MCP protocol, including HubSpot, Salesforce, Jira, Slack, and Google Drive. <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">Read the full plugins guide</a>.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to See What Co-Work Can Do for You?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll look at your current workflows, figure out where Co-Work fits, and show you exactly what we'd build for your business.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=vs-chatgpt--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">No commitment. We'll tell you if Co-Work isn't the right fit.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

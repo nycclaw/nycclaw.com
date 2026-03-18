@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work for Healthcare: Intake, Pre-Auth &amp; Clinical Notes | NYC Claw</title>
+  <meta name="description" content="Claude Co-Work for healthcare practices. Patient intake processing, insurance pre-authorization workflows, clinical note synthesis, and HIPAA-conscious compliance documentation.">
+  <meta property="og:title" content="Claude Co-Work for Healthcare: Intake, Pre-Auth &amp; Clinical Notes | NYC Claw">
+  <meta property="og:description" content="Claude Co-Work for healthcare practices. Patient intake processing, insurance pre-authorization workflows, clinical note synthesis, and HIPAA-conscious compliance documentation.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/healthcare">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/healthcare">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none; position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%); padding-top: 0.75rem; z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white; border: 1px solid #e5e7eb; border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); padding: 1.25rem; width: 32rem;
+    }
+    .industries-dropdown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem; }
+    .industries-dropdown-grid a {
+      display: block; padding: 0.375rem 0.5rem; border-radius: 0.375rem;
+      font-size: 0.875rem; color: #374151; text-decoration: none; transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work for Healthcare",
+    "description": "Done-for-you Claude Co-Work setup for healthcare practices. Patient intake processing, insurance pre-authorization, clinical note synthesis, and compliance documentation.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Claude Co-Work HIPAA compliant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work runs locally on your computer. Patient data never leaves your machine and no PHI is stored on Anthropic's servers. Conversation history stays local. You control exactly which folders Claude can access, and we configure permissions so it only sees what it needs. That said, Co-Work is not a replacement for a compliant EHR. It's a productivity layer for administrative work like intake processing, pre-auth drafting, and compliance tracking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Co-Work handle patient intake forms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work reads intake PDFs and scanned forms, then extracts patient demographics, insurance information, and medical history into structured formats your practice management system can use. It flags missing fields, inconsistent dates, and insurance details that don't match. Staff reviews the extracted data instead of typing it from scratch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Co-Work draft insurance pre-authorization letters?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Co-Work compiles the relevant clinical documentation, identifies the correct CPT codes, and drafts pre-auth letters with the medical necessity language insurers expect. It pulls from your existing notes and lab results to build the supporting case. Your staff reviews and submits rather than writing from scratch each time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What clinical documentation can Co-Work help with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After appointments, Co-Work pulls notes from multiple sources like dictation, lab results, and imaging reports into structured SOAP notes or visit summaries. It also generates personalized post-visit instructions, medication reminders, and follow-up scheduling recommendations based on visit type and patient history."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take for a healthcare practice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Initial setup takes one session. We configure folder permissions, build your first custom skills for intake and pre-auth workflows, and set up scheduled compliance tasks. Over the following two weeks, we refine based on real usage and train your staff on every workflow. Remote or in-person."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=healthcare--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Healthcare</span>
+      </nav>
+      <div class="text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-500"></span>
+          For Healthcare Practices
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+          Claude Co-Work for Healthcare<br>
+          <span class="text-gray-500">Less admin. More patients.</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+          Your staff spends hours on intake data entry, pre-auth paperwork, and after-hours charting. Co-Work handles the administrative burden so your team can focus on patient care. Runs locally on your machine. No PHI leaves your computer.
+        </p>
+        <p class="text-sm text-gray-400 mb-10">Powered by <a href="/claude-cowork/" class="underline hover:text-gray-600">Claude Co-Work</a>. Set up by NYC Claw.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=healthcare--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+            Book a Free 15-Minute Call
+          </a>
+          <a href="#how-cowork-solves-it" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+            See the Workflows
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">The real problem with healthcare admin in 2026</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Your clinical staff is drowning in paperwork that has nothing to do with patient care.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">2+ hours per day on insurance pre-authorizations</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Every pre-auth requires compiling clinical notes, identifying the right CPT codes, writing medical necessity language, and tracking the submission. Staff members juggle dozens of these daily. Each one is a 15 to 30 minute task that adds up fast, and a single missing detail means a denial.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Patient intake is still paper-based at many practices</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Patients fill out paper forms in the waiting room. Staff then manually types demographics, insurance info, and medical history into the system. It's slow, error-prone, and creates a bottleneck at the front desk. Missed fields and typos cause downstream billing problems that take even more time to fix.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Clinical documentation eats 1 to 2 hours after hours</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Providers call it "pajama time" because that's when it happens: at home, after the kids are in bed, finishing chart notes from the day's appointments. Dictation helps, but the notes still need to be structured into SOAP format, cross-referenced with lab results, and finalized. It's the number one driver of provider burnout.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Compliance tracking lives in spreadsheets and filing cabinets</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">HIPAA training logs, incident reports, policy updates, audit documentation. It's scattered across email, shared drives, and physical folders. When an auditor asks for a specific record, finding it takes hours. Keeping everything current is a full-time job nobody has time for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIPAA NOTICE -->
+  <section class="py-12 px-6 bg-blue-50 border-y border-blue-100">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0 mt-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">A note on HIPAA and patient data</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-3">Claude Co-Work runs locally on your computer. Your data never leaves your machine, and no PHI is stored on Anthropic's servers. Conversation history stays on your local drive. You control exactly which folders Claude can access, and we configure permissions so it only sees the directories it needs.</p>
+          <p class="text-gray-600 text-sm leading-relaxed">Co-Work is <strong>not</strong> a replacement for a compliant EHR. It's a productivity layer for administrative work: intake processing, pre-auth drafting, note structuring, compliance tracking. The clinical system of record stays where it is.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW CO-WORK SOLVES IT -->
+  <section id="how-cowork-solves-it" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How Claude Co-Work solves it</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">These are specific workflows we configure for healthcare practices. Not generic demos.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Workflow 1 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Patient Intake Form Processing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work reads intake PDFs and scanned forms, then extracts patient demographics, insurance details, and medical history into structured data. It flags missing fields, inconsistent dates, and insurance numbers that don't match expected formats. Staff reviews the extracted data instead of retyping every field by hand.</p>
+        </div>
+        <!-- Workflow 2 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Insurance Pre-Authorization Workflows</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work compiles the relevant clinical documentation from your local files, identifies the correct CPT codes, and drafts pre-auth letters with the medical necessity language insurers expect. It pulls from existing notes and lab results to build the supporting case. Your staff reviews and submits instead of writing each letter from scratch.</p>
+        </div>
+        <!-- Workflow 3 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Clinical Note Synthesis</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">After appointments, Co-Work pulls notes from multiple sources: dictation transcripts, lab results, imaging reports. It structures everything into SOAP notes or visit summaries in your preferred format. Providers review and sign off rather than spending an hour at home reconstructing the visit from memory.</p>
+        </div>
+        <!-- Workflow 4 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Appointment Follow-Ups</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work generates personalized post-visit instructions, medication reminders, and follow-up scheduling recommendations. Content is based on visit type and patient history, not a generic template. Your staff reviews the output before sending, but the drafting is done in seconds instead of minutes per patient.</p>
+        </div>
+        <!-- Workflow 5 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Compliance Documentation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">HIPAA training logs, incident tracking, policy updates. Co-Work maintains structured records locally and runs scheduled audits of documentation completeness. When something's missing or expired, it flags the gap. When an auditor visits, your records are organized and current instead of scattered across three systems.</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-8">Every setup is configured for your practice's specific workflows, documentation standards, and tools.</p>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD FOR YOU -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">What we build for your practice</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10 text-center max-w-2xl mx-auto">We don't hand you a generic tool and wish you luck. We configure Co-Work for how your practice actually runs.</p>
+
+      <div class="space-y-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Custom Skills</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Skills are reusable commands that encode your practice's specific processes. We build <a href="/claude-cowork/skills/" class="text-gray-900 underline hover:no-underline">custom skills</a> for intake form extraction, pre-auth letter drafting, SOAP note formatting, and follow-up generation. Your staff runs a single command like <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded">/draft-preauth</code> and gets output that matches your documentation standards.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Plugins</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We configure the right <a href="/claude-cowork/plugins/" class="text-gray-900 underline hover:no-underline">plugins</a> for healthcare workflows: document analysis for intake forms, structured data extraction for lab results, and compliance checklist management. Each plugin adds specific capabilities that your custom skills can use.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Folder Permissions</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We configure exactly which directories Claude can access on your machine. Intake forms folder? Yes. Billing templates? Yes. Personal files or unrelated patient records? No. You see the full permission list and approve it before anything runs. This isn't just a feature; it's how we make Co-Work practical for healthcare environments.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-3">Scheduled Tasks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Set up recurring workflows that run on schedule: daily compliance documentation checks, weekly audit of training log completeness, end-of-day reminders for unsigned notes. Co-Work runs these automatically and flags anything that needs attention.</p>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-gray-500 mt-8">Already using NYC Claw for your practice? See our <a href="/for/healthcare" class="text-gray-900 underline hover:no-underline">healthcare industry page</a> for the full picture.</p>
+    </div>
+  </section>
+
+  <!-- TRAINING -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">We train your team. Remote or in-person.</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4 max-w-2xl mx-auto">
+        Setting up Co-Work is only half the job. Your front desk staff, billing team, and providers all need to know how to use it. We run hands-on <a href="/claude-cowork/training/" class="text-gray-900 underline hover:no-underline">training sessions</a> where your team practices real workflows: processing intake forms, drafting pre-auths, structuring clinical notes, running compliance checks.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
+        Remote sessions work for most practices. For those in NYC, we offer in-person training at your office. Either way, your team walks away ready to use Co-Work independently on day one.
+      </p>
+    </div>
+  </section>
+
+  <!-- CROSS-LINKS -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-lg font-semibold mb-4 text-center">Related pages</h3>
+      <div class="grid sm:grid-cols-3 gap-4 text-sm">
+        <a href="/claude-cowork/legal" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Co-Work for Legal &rarr;</a>
+        <a href="/claude-cowork/finance" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Co-Work for Finance &rarr;</a>
+        <a href="/claude-cowork/" class="p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all text-gray-600 hover:text-gray-900">Claude Co-Work Overview &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Your staff deserves to spend time on patients, not paperwork</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll walk through your practice's specific workflows and show you exactly what Co-Work can handle.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=healthcare--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is Claude Co-Work HIPAA compliant?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work runs locally on your computer. Patient data never leaves your machine, and no PHI is stored on Anthropic's servers. Conversation history stays local. You control exactly which folders Claude can access, and we configure permissions so it only sees what it needs. That said, Co-Work is not a replacement for a compliant EHR. It's a productivity layer for administrative work like intake processing, pre-auth drafting, and compliance tracking.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does Co-Work handle patient intake forms?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work reads intake PDFs and scanned forms, then extracts patient demographics, insurance information, and medical history into structured formats your practice management system can use. It flags missing fields, inconsistent dates, and insurance details that don't match. Staff reviews the extracted data instead of typing it from scratch.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can Co-Work draft insurance pre-authorization letters?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. Co-Work compiles the relevant clinical documentation, identifies the correct CPT codes, and drafts pre-auth letters with the medical necessity language insurers expect. It pulls from your existing notes and lab results to build the supporting case. Your staff reviews and submits rather than writing from scratch each time.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What clinical documentation can Co-Work help with?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            After appointments, Co-Work pulls notes from multiple sources like dictation, lab results, and imaging reports into structured SOAP notes or visit summaries. It also generates personalized post-visit instructions, medication reminders, and follow-up scheduling recommendations based on visit type and patient history.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does setup take for a healthcare practice?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Initial setup takes one session. We configure folder permissions, build your first custom skills for intake and pre-auth workflows, and set up scheduled compliance tasks. Over the following two weeks, we refine based on real usage and train your staff on every workflow. Remote or in-person.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work Plugins: 11 Official Plugins, Marketplace & Custom Development | NYC Claw</title>
+  <meta name="description" content="Complete guide to Claude Co-Work plugins. 11 official Anthropic plugins, marketplace browsing, custom plugin development, and org distribution.">
+  <meta property="og:title" content="Claude Co-Work Plugins: 11 Official Plugins, Marketplace & Custom Development | NYC Claw">
+  <meta property="og:description" content="Complete guide to Claude Co-Work plugins. 11 official Anthropic plugins, marketplace browsing, custom plugin development, and org distribution.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/plugins">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/plugins">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work Plugin Development",
+    "description": "Custom Claude Co-Work plugin development, setup, and training for businesses. Build plugins tailored to your industry and workflows.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are Claude Co-Work plugins?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claude Co-Work plugins are bundles of skills, connectors, slash commands, and sub-agents packaged together for a specific role or workflow. They're file-based, built with markdown and JSON, and require no coding. Anthropic offers 11 official plugins covering roles like Sales, Legal, Finance, Marketing, and more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I install a Claude Co-Work plugin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open a Co-Work session, type /plugin, and browse the Discover tab. Select a plugin and click install. You can also install from the command line with /plugin install plugin-name@claude-plugins-official. Plugins can be scoped to a single user, a project, or an entire organization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I build my own Claude Co-Work plugin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can build a plugin from scratch using the Plugin Create plugin, or fork any of the 11 official plugins from Anthropic's GitHub repository at github.com/anthropics/knowledge-work-plugins. Plugins are just markdown and JSON files in a specific directory structure, so no programming is required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between plugins and skills in Claude Co-Work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A skill is a single SKILL.md file that teaches Claude one capability or workflow. A plugin is a complete package that bundles multiple skills together with connectors, slash commands, sub-agents, and hooks. Think of skills as individual tools and plugins as full toolboxes for a specific role."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can my company create a private plugin marketplace?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. On Team and Enterprise plans, organization owners can create curated plugin marketplaces. You set per-plugin installation preferences: auto-install for all members, available for optional install, or hidden. This is managed through Organization settings in the Plugins section."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches & Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=plugins--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <nav class="text-sm text-gray-500 mb-6">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Plugins</span>
+      </nav>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Feature Guide
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Claude Co-Work Plugins:<br>
+        <span class="text-gray-500">The Complete Guide</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Plugins turn Claude Co-Work from a general assistant into a role-specific operator. 11 official plugins, a marketplace with more added regularly, and the ability to build your own.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=plugins--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free 15-Minute Call
+        </a>
+        <a href="#official-plugins" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See All 11 Plugins
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT ARE PLUGINS -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">What Claude Co-Work Plugins Actually Are</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">A plugin is a bundle of everything Claude needs to do a specific job well. Each one packages together <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills</a> (domain knowledge Claude draws on automatically), connectors (links to tools like Slack, HubSpot, or Jira), slash commands (explicit actions you trigger), and sub-agents (specialized AI helpers for specific tasks).</p>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">Plugins are just files. Markdown and JSON. No code, no infrastructure, no build steps. You can read every instruction a plugin gives Claude, edit it, or write your own from scratch. This is what makes Co-Work plugins different from traditional software extensions. They're transparent and editable.</p>
+      <p class="text-gray-500 text-lg leading-relaxed">Without a plugin, Claude Co-Work is a general assistant. With the right plugin installed, it becomes a sales rep who knows your CRM, a support agent who follows your escalation rules, or a finance analyst who runs your reconciliation workflow. The plugin tells Claude what to do, how to do it, and which tools to use.</p>
+    </div>
+  </section>
+
+  <!-- PLUGIN ARCHITECTURE -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Plugin Architecture: How They're Built</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">Every plugin follows the same directory structure. Once you understand it, you can read, modify, or build any plugin.</p>
+
+      <div class="bg-white rounded-xl border border-gray-200 p-6 mb-8">
+        <pre class="text-sm text-gray-700 leading-relaxed font-mono whitespace-pre">plugin-name/
+├── .claude-plugin/plugin.json   # Manifest: name, version, description
+├── .mcp.json                    # Connector configs (MCP servers)
+├── commands/                    # Slash commands you trigger manually
+├── skills/                      # Domain knowledge Claude uses automatically
+├── agents/                      # Specialized sub-agents for complex tasks
+└── hooks/                       # Event handlers (runs on specific triggers)</pre>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">plugin.json</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">The manifest file. Contains the plugin's name, version, description, and metadata. This is what shows up in the marketplace when someone browses for plugins.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">.mcp.json</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Connector configurations. This file tells Claude which external tools to connect to via the Model Context Protocol. Each connector entry specifies how to authenticate and communicate with a tool like Slack, Notion, or Snowflake.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">commands/</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Slash commands are actions you trigger explicitly. For example, <code class="text-gray-700">/sales:call-prep</code> or <code class="text-gray-700">/finance:reconciliation</code>. Each command is a markdown file with step-by-step instructions Claude follows when you invoke it.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">skills/</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">SKILL.md files that give Claude domain expertise. Unlike commands, skills fire automatically when Claude detects they're relevant. A contract review skill activates when you drop a contract into the conversation. <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">Read more about skills.</a></p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">agents/</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Sub-agents are specialized AI helpers with their own context, tools, and permissions. A plugin might include a research agent that only reads data, or a triage agent that sorts incoming tickets. Claude invokes them automatically based on the task.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">hooks/</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Event handlers that run on specific triggers. A hook might auto-format documents after Claude writes them, or validate data before Claude sends it to a connector. Events include PreToolUse, PostToolUse, SessionStart, TaskCompleted, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 OFFICIAL PLUGINS -->
+  <section id="official-plugins" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">The 11 Official Anthropic Plugins</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Anthropic ships these plugins in the official marketplace. Each is built for a specific role and pre-configured with the connectors that role needs most.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Productivity -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Productivity</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Task management, calendar coordination, daily workflows, and personal context. The general-purpose plugin for anyone who manages work across multiple tools.</p>
+          <p class="text-xs text-gray-400"><strong class="text-gray-600">Connectors:</strong> Slack, Notion, Asana, Linear, Jira, Monday.com, ClickUp, Microsoft 365</p>
+        </div>
+        <!-- Sales -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Sales</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Prospect research, call prep, pipeline review, outreach drafts, and competitive battlecards. Built for SDRs, AEs, and sales managers who live in their CRM.</p>
+          <p class="text-xs text-gray-400"><strong class="text-gray-600">Connectors:</strong> Slack, HubSpot, Close, Clay, ZoomInfo, Notion, Jira, Fireflies, Microsoft 365</p>
+        </div>
+        <!-- Customer Support -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Customer Support</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Ticket triage, response drafting, escalation routing, and knowledge base article creation. Pulls context from your help docs and past tickets to draft accurate replies.</p>
+          <p class="text-xs text-gray-400"><strong class="text-gray-600">Connectors:</strong> Slack, Intercom, HubSpot, Guru, Jira, Notion, Microsoft 365</p>
+        </div>
+        <!-- Product Management -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Product Management</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Specs, roadmaps, user research synthesis, and stakeholder updates. Connects to your issue tracker, design tools, and analytics to keep product work grounded in data.</p>
+          <p class="text-xs text-gray-400"><strong class="text-gray-600">Connectors:</strong> Slack, Linear, Asana, Monday.com, ClickUp, Jira, Notion, Figma, Amplitude, Pendo, Intercom, Fireflies</p>
+        </div>
+        <!-- Marketing -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Marketing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Content drafting, campaign planning, brand voice enforcement, and competitive briefs. Connects to your SEO tools, design platform, and email marketing system.</p>
+          <p class="text-xs text-gray-400"><strong class="text-gray-600">Connectors:</strong> Slack, Canva, Figma, HubSpot, Amplitude, Notion, Ahrefs, SimilarWeb, Klaviyo</p>
+        </div>
+        <!-- Legal -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Legal</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Contract review, NDA triage, compliance workflows, and risk assessment. Reads documents from cloud storage and generates summary memos with risk levels and recommended changes. Used by firms like those on our <a href="/for/law-firms" class="text-gray-900 underline hover:no-underline">law firm setup page</a>.</p>
+          <p class="text-xs text-gray-400"><strong class="text-gray-600">Connectors:</strong> Slack, Box, Egnyte, Jira, Microsoft 365</p>
+        </div>
+        <!-- Finance -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Finance</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Journal entries, reconciliation, financial statement generation, and variance analysis. Connects directly to your data warehouse for calculations grounded in real numbers.</p>
+          <p class="text-xs text-gray-400"><strong class="text-gray-600">Connectors:</strong> Snowflake, Databricks, BigQuery, Slack, Microsoft 365</p>
+        </div>
+        <!-- Data -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Data</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">SQL queries, statistical analysis, dashboard creation, and data validation. For analysts who need to pull, clean, and present data without switching between five different tools.</p>
+          <p class="text-xs text-gray-400"><strong class="text-gray-600">Connectors:</strong> Snowflake, Databricks, BigQuery, Hex, Amplitude, Jira</p>
+        </div>
+        <!-- Enterprise Search -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Enterprise Search</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Cross-platform search across email, chat, docs, and wikis. Finds information buried across your organization's tools and returns it in one place.</p>
+          <p class="text-xs text-gray-400"><strong class="text-gray-600">Connectors:</strong> Slack, Notion, Guru, Jira, Asana, Microsoft 365</p>
+        </div>
+        <!-- Bio Research -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Bio Research</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Literature search, genomics analysis, and target prioritization. Connects to scientific databases and rendering tools used by biotech and pharmaceutical researchers.</p>
+          <p class="text-xs text-gray-400"><strong class="text-gray-600">Connectors:</strong> PubMed, BioRender, bioRxiv, ClinicalTrials.gov, ChEMBL, Benchling</p>
+        </div>
+        <!-- Plugin Create -->
+        <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all bg-gray-50">
+          <h3 class="text-lg font-semibold mb-2">Plugin Create</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">The meta-plugin. Use it to build new plugins from scratch. Generates the directory structure, skill files, connector configs, and command templates for you.</p>
+          <p class="text-xs text-gray-400"><strong class="text-gray-600">Connectors:</strong> None (it builds them)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLUGIN MARKETPLACE -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">The Plugin Marketplace</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-6">The 11 official plugins are just the starting point. Claude Co-Work has a marketplace of plugins built by Anthropic, third-party companies, and the community.</p>
+
+      <div class="space-y-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">Official Marketplace</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">The <code class="text-gray-700">claude-plugins-official</code> marketplace is built into Claude Co-Work. Browse it by typing <code class="text-gray-700">/plugin</code> and selecting the Discover tab. Install any plugin with one click, or use the command <code class="text-gray-700">/plugin install plugin-name@claude-plugins-official</code>. You can also submit your own plugins for inclusion at claude.ai/settings/plugins/submit.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">External Integration Plugins</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Beyond the 11 official role-based plugins, there are integration plugins for specific platforms:</p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-3">
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">GitHub</span>
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">GitLab</span>
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">Figma</span>
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">Slack</span>
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">Atlassian (Jira/Confluence)</span>
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">Asana</span>
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">Linear</span>
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">Notion</span>
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">Vercel</span>
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">Firebase</span>
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">Supabase</span>
+            <span class="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg">Sentry</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">Custom Marketplaces</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Any GitHub repo, Git URL, or local directory can serve as a plugin marketplace. Add one with <code class="text-gray-700">/plugin marketplace add owner/repo</code>. This is useful for teams that build internal plugins and want a centralized place to browse and install them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM PLUGIN DEVELOPMENT -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Building Custom Plugins</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">The official plugins cover common roles. But your business isn't generic. Custom plugins encode the workflows, terminology, and tools specific to your business into something Claude follows every time.</p>
+
+      <div class="space-y-6 mb-10">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Start from Scratch</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Install the Plugin Create plugin and describe what you need. It generates the full directory structure: plugin.json, .mcp.json, commands, skills, agents, and hooks. You fill in the details. Since everything is markdown and JSON, you don't need a developer to maintain it.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Fork an Official Plugin</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">All 11 official plugins are open source at <code class="text-gray-700">github.com/anthropics/knowledge-work-plugins</code>. Fork the one closest to your role, then customize it. Swap connectors in .mcp.json, add company-specific skill files, modify command workflows, or remove things you don't need.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Installation Scopes</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Plugins can be installed at four levels, each with a different reach:</p>
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-gray-200">
+                  <th class="text-left py-2 pr-4 font-semibold text-gray-700">Scope</th>
+                  <th class="text-left py-2 pr-4 font-semibold text-gray-700">Settings File</th>
+                  <th class="text-left py-2 font-semibold text-gray-700">Use Case</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-500">
+                <tr class="border-b border-gray-100">
+                  <td class="py-2 pr-4">User</td>
+                  <td class="py-2 pr-4"><code class="text-gray-600">~/.claude/settings.json</code></td>
+                  <td class="py-2">Personal use across all projects</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2 pr-4">Project</td>
+                  <td class="py-2 pr-4"><code class="text-gray-600">.claude/settings.json</code></td>
+                  <td class="py-2">Team-wide, shared via git</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2 pr-4">Local</td>
+                  <td class="py-2 pr-4"><code class="text-gray-600">.claude/settings.local.json</code></td>
+                  <td class="py-2">Project-specific, gitignored</td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-4">Managed</td>
+                  <td class="py-2 pr-4">Enterprise settings</td>
+                  <td class="py-2">Org-wide, read-only for members</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-gray-500 text-lg leading-relaxed">A <a href="/for/real-estate" class="text-gray-900 underline hover:no-underline">real estate team</a> might fork the Productivity plugin and add skills for listing descriptions, comp analysis, and client follow-up. A <a href="/for/law-firms" class="text-gray-900 underline hover:no-underline">law firm</a> might start with the Legal plugin and add skills encoding their specific contract review checklist and citation formatting rules. The <a href="/claude-cowork/setup-guide" class="text-gray-900 underline hover:no-underline">setup guide</a> covers the full process.</p>
+    </div>
+  </section>
+
+  <!-- ORGANIZATION MARKETPLACES -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Organization Marketplaces for Teams</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-6">On Team and Enterprise plans, organization owners can create curated plugin marketplaces for their members. This gives you control over which plugins your team uses and how they're distributed.</p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-5 rounded-xl border border-gray-200 bg-white text-center">
+          <div class="w-10 h-10 rounded-lg bg-green-600 text-white flex items-center justify-center mb-3 mx-auto">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="font-semibold mb-1">Auto-Install</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Plugin installs automatically for every member. Use this for must-have plugins that encode company standards.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white text-center">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-3 mx-auto">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          </div>
+          <h3 class="font-semibold mb-1">Available</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Plugin is visible in the marketplace but optional. Members install it if it's relevant to their role.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white text-center">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-600 flex items-center justify-center mb-3 mx-auto">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L6.59 6.59m7.532 7.532l3.29 3.29M3 3l18 18"/></svg>
+          </div>
+          <h3 class="font-semibold mb-1">Hidden</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Plugin exists in the org marketplace but isn't shown to members. Useful for plugins still in testing.</p>
+        </div>
+      </div>
+
+      <p class="text-gray-500 text-lg leading-relaxed mt-8">Manage all of this through Organization settings, in the Plugins section. For details on Co-Work plan options, see the <a href="/claude-cowork/pricing-guide" class="text-gray-900 underline hover:no-underline">pricing guide</a>.</p>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">How NYC Claw Helps With Plugins</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">You could learn the plugin system yourself. But most businesses don't have time to study MCP configs, skill file syntax, and connector authentication flows. We handle all of it so you get a working system, not a learning project.</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Custom Plugin Development</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We build plugins specific to your business. Your workflows, your tools, your terminology. Every skill file, command, and connector config is written for how your team actually works.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Official Plugin Customization</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Already using an official plugin but need it tuned? We fork it, swap connectors, add your company context, and adjust workflows so it fits your process instead of a generic template.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Connector Setup</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Getting 38+ connectors configured correctly, with the right permissions and authentication, takes time. We set up your CRM, project management, document storage, and communication tools so they're ready from day one.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Team Training</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Remote or in-person. We walk your team through using their plugins, triggering commands, understanding what Claude is doing, and making simple edits to skill files when workflows change.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Get Your Plugins Built Right</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll look at your current tools and workflows, then tell you exactly which plugins you need and what custom work would look like.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=plugins--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">No commitment &middot; We'll map your plugin needs in 15 minutes</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What are Claude Co-Work plugins?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Claude Co-Work plugins are bundles of skills, connectors, slash commands, and sub-agents packaged together for a specific role or workflow. They're file-based, built with markdown and JSON, and require no coding. Anthropic offers 11 official plugins covering roles like Sales, Legal, Finance, Marketing, and more.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How do I install a Claude Co-Work plugin?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Open a Co-Work session, type <code>/plugin</code>, and browse the Discover tab. Select a plugin and click install. You can also install from the command line with <code>/plugin install plugin-name@claude-plugins-official</code>. Plugins can be scoped to a single user, a project, or an entire organization.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can I build my own Claude Co-Work plugin?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. You can build a plugin from scratch using the Plugin Create plugin, or fork any of the 11 official plugins from Anthropic's GitHub repository at github.com/anthropics/knowledge-work-plugins. Plugins are just markdown and JSON files in a specific directory structure, so no programming is required.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What's the difference between plugins and skills?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            A skill is a single SKILL.md file that teaches Claude one capability or workflow. A plugin is a complete package that bundles multiple skills together with connectors, slash commands, sub-agents, and hooks. Think of skills as individual tools and plugins as full toolboxes for a specific role. Learn more on the <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills page</a>.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can my company create a private plugin marketplace?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. On Team and Enterprise plans, organization owners can create curated plugin marketplaces. You set per-plugin installation preferences: auto-install for all members, available for optional install, or hidden. This is managed through Organization settings in the Plugins section.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

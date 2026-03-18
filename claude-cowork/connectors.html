@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work Connectors | All 38+ MCP Integrations | NYC Claw</title>
+  <meta name="description" content="Claude Co-Work connects to 38+ tools via MCP connectors. Slack, HubSpot, Google Drive, Jira, Salesforce, GitHub, and more. One-time OAuth setup, scoped permissions, no data stored on Anthropic servers.">
+  <meta property="og:title" content="Claude Co-Work Connectors | All 38+ MCP Integrations | NYC Claw">
+  <meta property="og:description" content="Claude Co-Work connects to 38+ tools via MCP connectors. Slack, HubSpot, Google Drive, Jira, Salesforce, GitHub, and more. One-time OAuth setup, scoped permissions.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/connectors">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/connectors">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+    .connector-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid #e5e7eb;
+      background: white;
+      font-size: 0.875rem;
+      color: #374151;
+      transition: border-color 0.15s;
+    }
+    .connector-tag:hover { border-color: #9ca3af; }
+    .connector-tag .connector-note {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-left: 0.375rem;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work Connector Setup and Configuration",
+    "description": "Setup, configuration, and custom development for Claude Co-Work MCP connectors. Connect Claude to Slack, HubSpot, Google Drive, Jira, Salesforce, GitHub, and 30+ other tools.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Claude Co-Work connector?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A connector is an MCP (Model Context Protocol) server that lets Claude interact with an external tool like Slack, HubSpot, or Google Drive. Each connector authenticates via OAuth or API keys and respects the permissions of your underlying account. Claude can only see and do what you can see and do."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many connectors can I use at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There's no limit on the number of connected tools. You can authenticate Slack, Google Drive, HubSpot, Jira, and any other available connector simultaneously. Each stays active across sessions after the initial one-time OAuth setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do connectors share my credentials with Anthropic?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Co-Work runs in an isolated virtual machine on your local computer. OAuth tokens are stored locally, and your credentials never pass through Anthropic's infrastructure. Claude only gets scoped access to the specific permissions you authorize during the OAuth flow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I build a custom connector for an internal tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. MCP is an open specification maintained at modelcontextprotocol.io. Anyone can build a custom MCP server for any tool or API. We build custom connectors for clients who need to connect Co-Work to proprietary systems, internal databases, or niche SaaS tools that don't have an official connector yet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if a connector loses its authentication?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If an OAuth token expires or is revoked, Claude will prompt you to re-authorize the next time a plugin tries to use that connector. The re-auth process takes about 30 seconds and follows the same browser-based OAuth flow as the initial setup. No data is lost when a connector disconnects."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=connectors--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="pt-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Connectors</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-4 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        38+ Connectors
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Claude Co-Work<br>
+        <span class="text-gray-500">Connectors</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Connect Claude to the tools your team already uses. Slack, HubSpot, Google Drive, Jira, Salesforce, GitHub, and 30+ more. One-time OAuth setup, scoped permissions, and no data stored on Anthropic's servers.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">Built on the open MCP protocol. Works alongside <a href="/claude-cowork/plugins" class="text-gray-500 underline hover:no-underline">plugins</a> and <a href="/claude-cowork/skills" class="text-gray-500 underline hover:no-underline">skills</a>.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=connectors--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free 15-Minute Call
+        </a>
+        <a href="#all-connectors" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          Browse All Connectors
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT ARE CONNECTORS -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">What Are Co-Work Connectors?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        A connector links Claude to an external tool. It lets Claude pull data from and take actions inside apps like your CRM, project tracker, email, or file storage. Without connectors, Claude can only work with what you paste into the conversation. With them, it goes straight to the source.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        Under the hood, every connector is an MCP server. MCP stands for Model Context Protocol, an open standard created by Anthropic and maintained at <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener" class="text-gray-900 underline hover:no-underline">modelcontextprotocol.io</a>. It's the same protocol that powers tool use across the Claude ecosystem. Each MCP server exposes a set of actions (like "search contacts" or "create issue") that Claude can call during a conversation.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed">
+        The key detail: connectors respect your existing account permissions. If you can't access a certain HubSpot deal or Google Drive folder, neither can Claude. There's no elevated access, no admin backdoor. Claude sees exactly what you see.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW CONNECTORS WORK -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">How Connectors Work</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10">
+        Setting up a connector takes about 30 seconds.
+      </p>
+
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">1</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Open a Co-Work Session</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Launch Claude Desktop and start a Co-Work conversation. If you've installed a <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugin</a> that requires a connector, Claude will prompt you to authenticate the first time it needs access.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">2</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Authorize via OAuth</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">A browser window opens with the standard OAuth flow for that tool. You log in with your existing credentials and approve the specific permissions Claude is requesting. For tools that don't support OAuth, you'll provide an API key instead.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">3</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">One-Time Setup</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Authentication persists across sessions. You won't need to re-authorize unless you revoke the token or it expires. The connection details are stored locally in your <code>.mcp.json</code> configuration file, not on Anthropic's servers.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold">4</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Use It</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Done. Claude can now pull data from and take actions in the connected tool. Ask it to summarize your Slack threads, update a Jira ticket, draft an email in Gmail, or pull a contact list from HubSpot. No limit on how many tools you connect.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 p-6 rounded-xl border border-gray-200 bg-gray-50">
+        <h3 class="font-semibold text-lg mb-2">Technical Details</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Connectors can run as local servers (via stdio) or remote servers (via HTTP). They're configured through <code>.mcp.json</code> files at the user, project, or managed scope. On <a href="/claude-cowork/enterprise" class="text-gray-900 underline hover:no-underline">Enterprise plans</a>, admins can pre-configure connectors and distribute them across the organization through the plugin marketplace.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL CONNECTORS -->
+  <section id="all-connectors" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">All 38+ Connectors by Category</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Every connector listed below is available today in Claude Co-Work. New connectors are added regularly as Anthropic and the MCP community build more servers.</p>
+      </div>
+
+      <!-- Communication -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-4">Communication</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="connector-tag">Slack <span class="connector-note">works with 8 plugins</span></span>
+          <span class="connector-tag">Gmail</span>
+          <span class="connector-tag">Microsoft 365 <span class="connector-note">Outlook, OneDrive, SharePoint, Teams</span></span>
+        </div>
+      </div>
+
+      <!-- Project Management -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-4">Project Management</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="connector-tag">Jira <span class="connector-note">works with 6 plugins</span></span>
+          <span class="connector-tag">Asana</span>
+          <span class="connector-tag">Linear</span>
+          <span class="connector-tag">Monday.com</span>
+          <span class="connector-tag">ClickUp</span>
+        </div>
+      </div>
+
+      <!-- Content & Knowledge -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-4">Content and Knowledge</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="connector-tag">Notion <span class="connector-note">works with 6 plugins</span></span>
+          <span class="connector-tag">Google Drive <span class="connector-note">Docs, Sheets, Slides; works with 5 plugins</span></span>
+          <span class="connector-tag">WordPress.com</span>
+          <span class="connector-tag">Guru</span>
+        </div>
+      </div>
+
+      <!-- CRM & Sales -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-4">CRM and Sales</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="connector-tag">HubSpot <span class="connector-note">contacts, deals, campaigns, tickets; works with 3 plugins</span></span>
+          <span class="connector-tag">Salesforce</span>
+          <span class="connector-tag">Close</span>
+          <span class="connector-tag">Clay</span>
+          <span class="connector-tag">ZoomInfo</span>
+          <span class="connector-tag">LinkedIn</span>
+        </div>
+      </div>
+
+      <!-- Design -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-4">Design</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="connector-tag">Canva</span>
+          <span class="connector-tag">Figma</span>
+        </div>
+      </div>
+
+      <!-- Data & Engineering -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-4">Data and Engineering</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="connector-tag">GitHub</span>
+          <span class="connector-tag">Snowflake</span>
+          <span class="connector-tag">Databricks</span>
+          <span class="connector-tag">BigQuery</span>
+          <span class="connector-tag">Hex</span>
+          <span class="connector-tag">Amplitude</span>
+          <span class="connector-tag">Pendo</span>
+        </div>
+      </div>
+
+      <!-- Productivity & Other -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-4">Productivity and Other Tools</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="connector-tag">Google Calendar</span>
+          <span class="connector-tag">Intercom</span>
+          <span class="connector-tag">Fireflies <span class="connector-note">meeting transcripts</span></span>
+          <span class="connector-tag">Box</span>
+          <span class="connector-tag">Egnyte</span>
+          <span class="connector-tag">DocuSign</span>
+          <span class="connector-tag">Klaviyo</span>
+          <span class="connector-tag">Ahrefs</span>
+          <span class="connector-tag">SimilarWeb</span>
+        </div>
+      </div>
+
+      <!-- Bio-Research -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">Bio-Research</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="connector-tag">BioRender</span>
+          <span class="connector-tag">PubMed</span>
+          <span class="connector-tag">ClinicalTrials.gov</span>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-400 mt-10 text-center">Don't see your tool? MCP is an open protocol. We can build a <a href="/claude-cowork/custom-plugins" class="text-gray-500 underline hover:no-underline">custom connector</a> for any tool with an API.</p>
+    </div>
+  </section>
+
+  <!-- CONNECTORS BY INDUSTRY -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Connectors by Industry</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10">
+        Your connector setup depends on your tools. Here are the stacks we see most often.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Real Estate</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">HubSpot or Salesforce for lead management, Google Drive for transaction documents, Gmail for follow-up sequences, Google Calendar for showings and closings.</p>
+          <a href="/claude-cowork/real-estate" class="text-sm font-medium text-gray-900 underline hover:no-underline">Co-Work for Real Estate &rarr;</a>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Legal</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">Box or Egnyte for document storage and version control, Jira for matter tracking and deadlines, Microsoft 365 for drafting and collaboration, DocuSign for signatures.</p>
+          <a href="/claude-cowork/legal" class="text-sm font-medium text-gray-900 underline hover:no-underline">Co-Work for Legal &rarr;</a>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Finance and Accounting</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">Snowflake or BigQuery for financial data, Slack for team communication, Google Sheets for reporting, HubSpot for client management.</p>
+          <a href="/claude-cowork/finance" class="text-sm font-medium text-gray-900 underline hover:no-underline">Co-Work for Finance &rarr;</a>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold text-lg mb-2">Marketing</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-3">HubSpot for campaigns and contacts, Ahrefs and SimilarWeb for competitive research, Canva for design assets, Klaviyo for email automation, WordPress for content publishing.</p>
+          <a href="/claude-cowork/marketing" class="text-sm font-medium text-gray-900 underline hover:no-underline">Co-Work for Marketing &rarr;</a>
+        </div>
+      </div>
+
+      <p class="text-center mt-8">
+        <a href="/claude-cowork/" class="text-sm font-medium text-gray-900 underline hover:no-underline">View all Co-Work features &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">How We Help with Connector Setup</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        Most connectors take under a minute to set up on your own. But when you're connecting 10+ tools across a team, or you need a connector for a tool that doesn't have one yet, that's where we come in.
+      </p>
+
+      <div class="space-y-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-2">Connector Configuration</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We set up all your connectors, test them against your actual accounts, and configure the right scopes so Claude has access to what it needs without overreaching. For <a href="/claude-cowork/enterprise" class="text-gray-900 underline hover:no-underline">Enterprise teams</a>, we pre-configure connectors in the managed scope so every team member gets the same setup.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-2">Custom Connector Development</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">If your team relies on a tool that doesn't have an official MCP connector, we'll build one. We've created custom connectors for proprietary CRMs, internal databases, and niche SaaS tools. The connector becomes part of your <a href="/claude-cowork/custom-plugins" class="text-gray-900 underline hover:no-underline">custom plugin</a> package.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-2">Connector + Plugin Integration</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">A connector gives Claude access to a tool. A <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugin</a> or <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skill</a> tells it what to do with that access. We wire them together so Claude follows your actual workflows, not generic ones.</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold text-lg mb-2">Training</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We run <a href="/claude-cowork/training" class="text-gray-900 underline hover:no-underline">training sessions</a> covering which connectors are active, what Claude can access, and how to manage permissions. Your team leaves knowing how to connect new tools and fix common problems on their own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-3">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What is a Claude Co-Work connector?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            A connector is an MCP (Model Context Protocol) server that lets Claude interact with an external tool like Slack, HubSpot, or Google Drive. Each connector authenticates via OAuth or API keys and respects the permissions of your underlying account. Claude can only see and do what you can see and do.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How many connectors can I use at once?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            There's no limit on the number of connected tools. You can authenticate Slack, Google Drive, HubSpot, Jira, and any other available connector simultaneously. Each stays active across sessions after the initial one-time OAuth setup.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Do connectors share my credentials with Anthropic?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            No. Co-Work runs in an isolated virtual machine on your local computer. OAuth tokens are stored locally, and your credentials never pass through Anthropic's infrastructure. Claude only gets scoped access to the specific permissions you authorize during the OAuth flow.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can I build a custom connector for an internal tool?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. MCP is an open specification maintained at modelcontextprotocol.io. Anyone can build a custom MCP server for any tool or API. We build <a href="/claude-cowork/custom-plugins" class="text-gray-900 underline hover:no-underline">custom connectors</a> for clients who need to connect Co-Work to proprietary systems, internal databases, or niche SaaS tools that don't have an official connector yet.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What happens if a connector loses its authentication?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            If an OAuth token expires or is revoked, Claude will prompt you to re-authorize the next time a plugin tries to use that connector. The re-auth process takes about 30 seconds and follows the same browser-based OAuth flow as the initial setup. No data is lost when a connector disconnects.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Need Help Connecting Your Tools?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll look at what tools you use and tell you which connectors to set up.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=connectors--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">No commitment. We'll map your tools to Co-Work connectors in 15 minutes.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

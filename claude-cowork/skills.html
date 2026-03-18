@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work Skills: What They Are, SKILL.md Anatomy &amp; Custom Examples | NYC Claw</title>
+  <meta name="description" content="Claude Co-Work skills teach Claude new capabilities via markdown files. Learn SKILL.md anatomy, skill types, scope hierarchy, and custom skill examples.">
+  <meta property="og:title" content="Claude Co-Work Skills: What They Are, SKILL.md Anatomy &amp; Custom Examples | NYC Claw">
+  <meta property="og:description" content="Claude Co-Work skills teach Claude new capabilities via markdown files. Learn SKILL.md anatomy, skill types, scope hierarchy, and custom skill examples.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/skills">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/skills">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+    code {
+      background: #f3f4f6;
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+      font-size: 0.875em;
+      font-family: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, monospace;
+    }
+    pre {
+      background: #1f2937;
+      color: #e5e7eb;
+      padding: 1.25rem;
+      border-radius: 0.75rem;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      font-family: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, monospace;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 12rem 1fr;
+      gap: 1rem;
+      padding: 0.875rem 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    @media (max-width: 640px) {
+      .field-row {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work Skills Setup and Custom Development",
+    "description": "Custom Claude Co-Work skill development for businesses. We identify your repetitive workflows and build SKILL.md files that automate them.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need to know how to code to create Claude Co-Work skills?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Skills are written entirely in markdown with YAML frontmatter. There's no programming language, no build step, and no infrastructure to manage. If you can write a checklist in a text file, you can write a skill. That said, getting the instructions right so Claude produces consistent, high-quality output takes iteration and domain knowledge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between a skill and a plugin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A plugin is a package that bundles skills, commands, connectors, sub-agents, and hooks together. A skill is one component inside a plugin (or standalone in your .claude/skills/ directory). Think of plugins as the container and skills as one type of content inside it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can skills connect to external tools like my CRM or email?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skills themselves are instruction files. They tell Claude what to do. The actual connections to external tools come from connectors configured in the plugin's .mcp.json file. When a skill runs, it can use any connector that's been set up, such as HubSpot, Slack, Google Drive, or Salesforce."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many skills can I have active at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There's no hard limit. Skills load into Claude's context only when relevant, so having 20 skills installed won't slow anything down. The scope hierarchy (enterprise, personal, project, plugin) determines which skills are available in which context and which take priority when names conflict."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Claude improve its own skills over time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. One well-known pattern is the self-improving meta-skill, where Claude watches its own sessions, logs corrections you make, and updates the skill file with those learnings. The open-source 'one-skill-to-rule-them-all' project on GitHub demonstrates this approach. NYC Claw can set this up so your skills get better the more you use them."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=skills--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <nav class="text-sm text-gray-500 mb-6">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Skills</span>
+      </nav>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Feature Deep Dive
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Claude Co-Work Skills:<br>
+        <span class="text-gray-500">How They Work and How to Build Your Own</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Skills are markdown files that teach Claude new capabilities. No code, no infrastructure, no build steps. Write instructions in plain English, and Claude follows them every time.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=skills--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free 15-Minute Call
+        </a>
+        <a href="#what-are-skills" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          Read the Guide
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT ARE SKILLS -->
+  <section id="what-are-skills" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">What Are Claude Co-Work Skills?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        A skill is a <code>SKILL.md</code> file with YAML frontmatter and markdown instructions. You write what you want Claude to do, and Claude adds it to its toolkit. When a relevant task comes up, Claude reads the skill and follows the instructions automatically. You can also trigger skills directly by typing <code>/skill-name</code> in any Co-Work session.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        Skills follow the <strong>Agent Skills open standard</strong> from agentskills.io. This means your skills aren't locked into Claude. They work across multiple AI tools that support the same specification.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed">
+        Everything is file-based. Markdown and JSON. No programming languages, no APIs to call, no servers to run. If you can write a checklist, you can write a skill. The hard part isn't the format. It's knowing which workflows to encode and how to write instructions that produce consistent results. That's where <a href="/claude-cowork/" class="text-gray-900 underline hover:no-underline">working with a specialist</a> makes a difference.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILL TYPES -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Two Types of Skills</h2>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto text-center mb-14">Skills fall into two categories based on how Claude uses them.</p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-8 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Reference Skills</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Domain knowledge Claude applies to whatever it's currently working on. Conventions, patterns, style guides, terminology. These run inline alongside conversation context.</p>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3"><strong>Examples:</strong></p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-1">&#8226;</span>
+              Brand voice and formatting guidelines
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-1">&#8226;</span>
+              Industry terminology definitions
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-1">&#8226;</span>
+              Code conventions and naming standards
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-1">&#8226;</span>
+              Regulatory compliance checklists
+            </li>
+          </ul>
+          <p class="text-xs text-gray-400 mt-4">Typically set <code>user-invocable: false</code> so they stay hidden from the / menu. Claude draws on them automatically.</p>
+        </div>
+        <div class="p-8 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Task Skills</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Step-by-step instructions for specific actions. Generating reports, reviewing documents, processing data. Usually triggered by typing <code>/skill-name</code> in your session.</p>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3"><strong>Examples:</strong></p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-1">&#8226;</span>
+              Weekly market report generation
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-1">&#8226;</span>
+              Contract review and risk assessment
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-1">&#8226;</span>
+              Invoice processing and data extraction
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-1">&#8226;</span>
+              Competitive analysis briefings
+            </li>
+          </ul>
+          <p class="text-xs text-gray-400 mt-4">Often set <code>disable-model-invocation: true</code> so they only run when you ask for them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILL.MD ANATOMY -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">SKILL.md Anatomy: Every Field Explained</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        Every skill starts with a YAML frontmatter block (between <code>---</code> markers) followed by markdown instructions. Here's a complete example:
+      </p>
+      <pre><code>---
+name: weekly-report
+description: Generates weekly performance reports. Use when asked for weekly summaries.
+argument-hint: [date-range]
+disable-model-invocation: false
+user-invocable: true
+allowed-tools: Read, Grep
+context: fork
+model: sonnet
+---
+
+When generating a weekly report:
+1. Pull data from connected sources
+2. Organize by department
+3. Highlight anomalies
+4. Format as PDF using company template</code></pre>
+
+      <h3 class="text-2xl font-bold mt-12 mb-6">Frontmatter Fields</h3>
+
+      <div class="border-t border-gray-200">
+        <div class="field-row">
+          <div>
+            <code class="text-sm font-semibold">name</code>
+          </div>
+          <div class="text-sm text-gray-500 leading-relaxed">
+            The skill's display name and <code>/command</code> trigger. Lowercase, hyphens allowed, 64 characters max. This is what appears in the autocomplete menu and what you type to invoke the skill. Example: <code>weekly-report</code> becomes <code>/weekly-report</code>.
+          </div>
+        </div>
+        <div class="field-row">
+          <div>
+            <code class="text-sm font-semibold">description</code>
+          </div>
+          <div class="text-sm text-gray-500 leading-relaxed">
+            What the skill does, in plain language. Claude reads this to decide when to auto-invoke the skill. Write it like you're telling a colleague when to use this tool. Be specific: "Generates weekly performance reports" is better than "Helps with reports."
+          </div>
+        </div>
+        <div class="field-row">
+          <div>
+            <code class="text-sm font-semibold">argument-hint</code>
+          </div>
+          <div class="text-sm text-gray-500 leading-relaxed">
+            Placeholder text shown in the autocomplete menu. Tells users what to type after the command. Example: <code>[date-range]</code> shows as <code>/weekly-report [date-range]</code> in the menu. Whatever the user types after the command gets captured as <code>$ARGUMENTS</code>.
+          </div>
+        </div>
+        <div class="field-row">
+          <div>
+            <code class="text-sm font-semibold">disable-model-invocation</code>
+          </div>
+          <div class="text-sm text-gray-500 leading-relaxed">
+            When <code>true</code>, the skill only runs if the user types <code>/skill-name</code>. Claude won't trigger it on its own. Set this for skills that make significant changes, send emails, or modify files. When <code>false</code> (the default), Claude can auto-invoke when it thinks the skill is relevant.
+          </div>
+        </div>
+        <div class="field-row">
+          <div>
+            <code class="text-sm font-semibold">user-invocable</code>
+          </div>
+          <div class="text-sm text-gray-500 leading-relaxed">
+            When <code>false</code>, the skill is hidden from the <code>/</code> menu entirely. It becomes background knowledge that Claude draws on silently. Good for reference skills like style guides, conventions, or domain terminology.
+          </div>
+        </div>
+        <div class="field-row">
+          <div>
+            <code class="text-sm font-semibold">allowed-tools</code>
+          </div>
+          <div class="text-sm text-gray-500 leading-relaxed">
+            Which tools Claude can use without asking permission while the skill is active. Normally Claude asks before reading or writing files. Setting <code>allowed-tools: Read, Grep</code> lets the skill search and read files without pausing for approval.
+          </div>
+        </div>
+        <div class="field-row">
+          <div>
+            <code class="text-sm font-semibold">context</code>
+          </div>
+          <div class="text-sm text-gray-500 leading-relaxed">
+            Controls where the skill runs. <code>inline</code> runs it in the main conversation, which is great for quick reference lookups. <code>fork</code> runs it in an isolated subagent with its own context window. Use <code>fork</code> for long tasks that produce large outputs, so they don't clutter your main thread.
+          </div>
+        </div>
+        <div class="field-row" style="border-bottom: none;">
+          <div>
+            <code class="text-sm font-semibold">model</code>
+          </div>
+          <div class="text-sm text-gray-500 leading-relaxed">
+            Override which Claude model runs this skill. Use a faster model like Haiku for simple lookups or quick formatting tasks. Use Sonnet or Opus for complex analysis. This keeps costs down without sacrificing quality where it matters.
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mt-12 mb-6">File Structure</h3>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        A skill can be a single <code>SKILL.md</code> file. Or it can be a folder with supporting files that Claude references when running the skill:
+      </p>
+      <pre><code>my-skill/
+├── SKILL.md           # Main instructions (required)
+├── template.md        # Template for Claude to fill in
+├── examples/
+│   └── sample.md      # Example output showing expected format
+└── scripts/
+    └── validate.sh    # Script Claude can execute</code></pre>
+      <p class="text-gray-500 text-sm leading-relaxed mt-4">
+        Only <code>SKILL.md</code> is required. The supporting files are optional but powerful. Templates enforce consistent output formatting. Examples show Claude what "good" looks like. Scripts let Claude validate its own work.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHERE SKILLS LIVE -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Where Skills Live: The Scope Hierarchy</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        Skills can exist in four locations. Higher-priority locations win when skill names conflict.
+      </p>
+      <div class="space-y-4">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Enterprise Managed Settings</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Highest priority. Set by organization admins. Apply to all users in the org. Read-only for individual team members. This is how companies enforce standard workflows across their team.</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Personal: <code>~/.claude/skills/</code></h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Your personal skills, available across all projects. Put your daily workflow skills here: your writing style guide, your preferred report format, your weekly review process.</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Project: <code>.claude/skills/</code></h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Shared with your team via git. Project-specific skills that everyone on the project uses. Good for team conventions, project templates, and shared workflows.</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">4</div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Plugin: <code>&lt;plugin&gt;/skills/</code></h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Skills bundled inside <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugins</a>. Available wherever that plugin is enabled. Namespaced as <code>plugin:skill-name</code> to avoid conflicts. The 11 official Anthropic plugins each ship with their own skills.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUNDLED SKILLS -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Bundled Skills That Ship with Claude</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        Five skills come pre-installed with Claude Code and Co-Work. You don't need to create or configure them.
+      </p>
+      <div class="space-y-4">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2"><code>/batch &lt;instruction&gt;</code></h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Runs large-scale changes in parallel. Claude spawns one sub-agent per unit of work. If you need to process 50 files the same way, <code>/batch</code> handles them concurrently instead of one at a time.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2"><code>/claude-api</code></h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Loads the Claude API reference for your programming language. Useful when you're building integrations or custom tools that call the Claude API.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2"><code>/debug [description]</code></h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Troubleshoots session issues by reading debug logs. When something isn't working right, <code>/debug</code> digs into the logs and tells you what went wrong.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2"><code>/loop [interval] &lt;prompt&gt;</code></h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Runs a prompt repeatedly on a schedule. Pair this with <code>/schedule</code> for recurring tasks like daily file organization, weekly report generation, or hourly data checks.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2"><code>/simplify [focus]</code></h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Reviews recent changes for quality. Spawns three parallel review agents that check your work from different angles. Think of it as an automated peer review.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM SKILL EXAMPLES -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Custom Skill Examples</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10">
+        The real power of claude cowork skills is building your own. Here are three examples from different industries.
+      </p>
+
+      <!-- Real Estate Example -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold mb-4">Weekly Market Report for <a href="/for/real-estate" class="text-gray-900 underline hover:no-underline">Real Estate Agents</a></h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">
+          A real estate agent runs this every Monday morning. It pulls new listings, calculates price changes by neighborhood, checks mortgage rate trends, and outputs a client-ready newsletter. What used to take 2 hours now takes 3 minutes.
+        </p>
+        <pre><code>---
+name: weekly-market-report
+description: Generates a weekly market analysis report for client distribution
+disable-model-invocation: true
+---
+
+Generate a weekly market report:
+1. Pull new listings from MLS connector (last 7 days)
+2. Calculate median price changes by neighborhood
+3. Identify notable sales (above/below ask)
+4. Check mortgage rate trends
+5. Format using the template in ./templates/market-report.md
+6. Save to ~/Reports/weekly/ with date in filename
+7. Draft email summary for client newsletter</code></pre>
+      </div>
+
+      <!-- Law Firm Example -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold mb-4">Contract Review for <a href="/for/law-firms" class="text-gray-900 underline hover:no-underline">Law Firms</a></h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">
+          Zack Shapiro's "Claude-Native Law Firm" approach: encode your analytical frameworks, preferred formats, and professional judgment into skills. Claude opens .docx files at the XML level and writes tracked changes attributed to the reviewing lawyer's name.
+        </p>
+        <pre><code>---
+name: contract-review
+description: Reviews contracts for standard issues and red flags
+---
+
+When reviewing a contract:
+1. Identify contract type (NDA, MSA, employment, lease, etc.)
+2. Check for missing standard clauses per ./reference/required-clauses.md
+3. Flag unusual liability provisions
+4. Note indemnification scope
+5. Check termination conditions
+6. Compare fee structure against market rates in ./reference/market-rates.md
+7. Generate a summary memo with: risk level (low/medium/high),
+   key terms, recommended changes</code></pre>
+      </div>
+
+      <!-- Self-Improving Meta-Skill -->
+      <div>
+        <h3 class="text-2xl font-bold mb-4">Self-Improving Meta-Skill</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">
+          This pattern, open-sourced at github.com/rebelytics/one-skill-to-rule-them-all, watches other skills perform and logs corrections you make. Over time, it updates skill files with those learnings. Your skills get better the more you use them. A marketing team used this approach to build banner upload, dev ticket generation, and image alt text skills that improved with each batch.
+        </p>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          The meta-skill observes each session, records when you correct Claude's output, identifies patterns in those corrections, and applies them to the source skill files. It's how you go from "good enough" to "exactly right" without rewriting skills from scratch.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DYNAMIC FEATURES -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Dynamic Features</h2>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto text-center mb-14">Skills aren't static checklists. Four features make them responsive to context.</p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2"><code>$ARGUMENTS</code></h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Captures whatever the user types after the command. When you type <code>/weekly-report Q1 2026</code>, the skill receives <code>$ARGUMENTS = "Q1 2026"</code>. Your instructions can reference this variable to customize the output based on user input.
+          </p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Supporting Files</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Reference templates, examples, and scripts from within your SKILL.md. Claude reads them when needed. A market report skill can reference <code>./templates/market-report.md</code> for formatting, and Claude fills in the template with fresh data each time.
+          </p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Progressive Disclosure</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Start with a brief SKILL.md and reference detailed docs in separate files. Claude loads them only when needed. This keeps token usage efficient. A complex compliance skill might have 10 pages of reference material, but Claude only reads the relevant section for each task.
+          </p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold mb-2">Subagent Execution</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Set <code>context: fork</code> to run a skill in an isolated subagent with its own context window. Long tasks won't clutter your main conversation. The subagent completes the work and returns results. Good for report generation, batch processing, and multi-step analysis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">How We Build Skills for Your Business</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        NYC Claw identifies your repetitive workflows and turns them into custom skills. One-time setup, ongoing value. No consulting retainer required.
+      </p>
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <div class="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">Identify your workflows</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We map what you do weekly and monthly. Which tasks take hours? Which follow the same pattern every time? Which require copying data between tools? Those are your skill candidates.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">Write the SKILL.md files</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Each workflow becomes a skill with step-by-step instructions, supporting templates, and example outputs. We configure the frontmatter so skills trigger at the right time with the right permissions.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">Connect your tools</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Skills work best with <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">connectors</a> wired up. We configure your CRM, project tracker, email, and document storage via MCP so skills can pull and push data automatically.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">4</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">Test, tune, and train</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We iterate on prompts until output quality matches your expectations. Then we train your team on using the skills, customizing them, and building new ones. See the <a href="/claude-cowork/setup-guide" class="text-gray-900 underline hover:no-underline">setup guide</a> for more on the process.</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-gray-500 text-sm leading-relaxed mt-8">
+        Want to understand pricing before the call? Check the <a href="/claude-cowork/pricing-guide" class="text-gray-900 underline hover:no-underline">Co-Work pricing guide</a> for plan details and what's included at each tier.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Your workflows, encoded in skills</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Every business has 5-10 tasks that follow the same pattern every week. Let's turn yours into skills that run in minutes instead of hours.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=skills--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; We'll map your top skill candidates</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Do I need to know how to code to create Claude Co-Work skills?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            No. Skills are written entirely in markdown with YAML frontmatter. There's no programming language, no build step, and no infrastructure to manage. If you can write a checklist in a text file, you can write a skill. That said, getting the instructions right so Claude produces consistent, high-quality output takes iteration and domain knowledge.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What's the difference between a skill and a plugin?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            A <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugin</a> is a package that bundles skills, commands, connectors, sub-agents, and hooks together. A skill is one component inside a plugin (or standalone in your <code>.claude/skills/</code> directory). Think of plugins as the container and skills as one type of content inside it.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can skills connect to external tools like my CRM or email?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Skills themselves are instruction files. They tell Claude what to do. The actual connections to external tools come from connectors configured in the plugin's <code>.mcp.json</code> file. When a skill runs, it can use any connector that's been set up: HubSpot, Slack, Google Drive, Salesforce, and 30+ others.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How many skills can I have active at once?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            There's no hard limit. Skills load into Claude's context only when relevant, so having 20 skills installed won't slow anything down. The scope hierarchy (enterprise, personal, project, plugin) determines which skills are available in which context and which take priority when names conflict.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can Claude improve its own skills over time?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. One well-known pattern is the self-improving meta-skill, where Claude watches its own sessions, logs corrections you make, and updates the skill file with those learnings. The open-source "one-skill-to-rule-them-all" project on GitHub demonstrates this approach. NYC Claw can set this up so your skills get better the more you use them.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

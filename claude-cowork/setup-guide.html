@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work Setup Guide: Step-by-Step Tutorial for Beginners | NYC Claw</title>
+  <meta name="description" content="Complete claude cowork setup guide. Six steps from install to productive: enable Co-Work, configure your workspace, connect tools, install plugins, and more.">
+  <meta property="og:title" content="Claude Co-Work Setup Guide: Step-by-Step Tutorial for Beginners | NYC Claw">
+  <meta property="og:description" content="Complete claude cowork setup guide. Six steps from install to productive: enable Co-Work, configure your workspace, connect tools, install plugins, and more.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/setup-guide">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/setup-guide">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .step-number {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      background: #111827;
+      color: white;
+      font-size: 1.125rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work Setup and Training",
+    "description": "Done-for-you Claude Co-Work setup, plugin configuration, connector integration, and team training for businesses.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need coding skills to set up Claude Co-Work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Co-Work is designed for non-technical knowledge workers. The entire setup happens through the Claude Desktop app interface. You pick folders, toggle settings, and connect tools through OAuth prompts in your browser. No terminal, no code, no configuration files to edit manually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Claude plan do I need for Co-Work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work is included on every paid plan starting at Pro ($20/month). Pro works for quick tasks, but Co-Work consumes usage faster than regular Chat because it runs multi-step tasks. For regular use, Max 5x ($100/month) gives you more room. Power users who delegate work throughout the day should consider Max 20x ($200/month). Teams of 5 or more can use the Team plan at $20 per seat per month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Co-Work on the web version of Claude?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Co-Work requires Claude Desktop for macOS or Windows. It runs in an isolated virtual machine on your local computer, which is why it needs the desktop app. The web version at claude.ai does not support Co-Work. You can assign tasks from the Claude mobile app on iOS or Android, but the work still executes on your desktop."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data safe when using Co-Work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work runs in an isolated virtual machine on your local computer. Conversation history is stored locally, not on Anthropic's servers. Claude can only access folders you explicitly grant permission to, and connectors respect your existing account permissions. Claude also shows you its plan before taking significant actions, so you stay in control."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I get stuck during setup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NYC Claw offers done-for-you Co-Work setup. We handle everything: workspace configuration, connector integration, plugin installation, custom skill development, scheduled task setup, and team training. Book a free 15-minute call and we will map out exactly what your business needs."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches & Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=setup-guide--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <nav class="text-sm text-gray-500 mb-6">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Setup Guide</span>
+      </nav>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Step-by-Step Tutorial
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Claude Co-Work Setup Guide:<br>
+        <span class="text-gray-500">Get Started in Minutes</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Six steps. That's all it takes to go from a fresh Claude Desktop install to a working Co-Work setup with connected tools, installed plugins, and scheduled tasks.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#step-1" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Start the Tutorial
+        </a>
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=setup-guide--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          Or Let Us Set It Up
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU NEED -->
+  <section class="py-16 px-6 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">What You Need Before Starting</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Claude Desktop</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Available on macOS and Windows. Co-Work doesn't run on the web version at claude.ai, and Linux isn't supported yet. Download it from <strong>claude.ai/download</strong> if you haven't already.</p>
+          <p class="text-gray-400 text-xs mt-3">Note: Windows arm64 is not supported.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">A Paid Claude Plan</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work is included on every paid tier. Pro ($20/month) works for light use, but Co-Work consumes usage faster than regular Chat. Max 5x ($100/month) is better for daily use. See our <a href="/claude-cowork/pricing-guide" class="text-gray-900 underline hover:no-underline">pricing guide</a> for help picking a plan.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Mobile (Optional)</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">The Claude app on iOS and Android lets you assign tasks from your phone. The work runs on your desktop. It's not required for setup, but it's worth installing if you want to hand off tasks while you're away from your computer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 1: ENABLE CO-WORK -->
+  <section id="step-1" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-start gap-5 mb-6">
+        <div class="step-number">1</div>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">Enable Co-Work Mode</h2>
+          <p class="text-gray-500 text-sm mt-1">Time: about 30 seconds</p>
+        </div>
+      </div>
+      <div class="ml-0 md:ml-[4.25rem]">
+        <p class="text-gray-600 text-base leading-relaxed mb-4">Claude Desktop has two modes: Chat and Co-Work. Chat is the standard back-and-forth conversation. Co-Work is the agentic mode where Claude can read files, edit documents, browse the web, and execute multi-step tasks on your behalf.</p>
+        <p class="text-gray-600 text-base leading-relaxed mb-6">Here's how to switch:</p>
+        <ol class="space-y-3 text-gray-600 text-base mb-6">
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">1.</span>
+            <span>Open Claude Desktop.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">2.</span>
+            <span>Look at the top of the conversation window. You'll see a toggle or dropdown that says "Chat." Click it.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">3.</span>
+            <span>Select "Co-Work" from the options.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">4.</span>
+            <span>You'll notice the interface changes. There's now a sidebar for scheduled tasks, and Claude's input area indicates it's ready for multi-step work.</span>
+          </li>
+        </ol>
+        <p class="text-gray-500 text-sm leading-relaxed">That's it. You're in Co-Work mode. The difference from Chat is immediate: Claude can now take actions instead of only describing them. It runs in an isolated virtual machine on your computer, so your files and data stay local.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2: SET UP YOUR WORKSPACE -->
+  <section id="step-2" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-start gap-5 mb-6">
+        <div class="step-number">2</div>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">Set Up Your Workspace</h2>
+          <p class="text-gray-500 text-sm mt-1">Time: 5 to 10 minutes</p>
+        </div>
+      </div>
+      <div class="ml-0 md:ml-[4.25rem]">
+        <p class="text-gray-600 text-base leading-relaxed mb-6">Co-Work needs two things to work well: folder access and instructions. Think of folder access as telling Claude where your files live, and instructions as telling Claude how you work.</p>
+
+        <h3 class="text-lg font-semibold mb-3">Grant Folder Access</h3>
+        <p class="text-gray-600 text-base leading-relaxed mb-4">Claude can only see files in folders you explicitly allow. Click the folder icon in your Co-Work session to add a local folder. A good starting point: create a dedicated working folder (something like <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">~/Claude-Work</code>) and point Claude there. You can always add more folders later.</p>
+        <p class="text-gray-600 text-base leading-relaxed mb-6">Avoid granting access to your entire home directory or sensitive folders like <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">~/.ssh</code> or <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">~/Documents/Financial</code>. Be specific. More on security best practices below.</p>
+
+        <h3 class="text-lg font-semibold mb-3">Write Global Instructions</h3>
+        <p class="text-gray-600 text-base leading-relaxed mb-4">Global instructions apply to every Co-Work session. Open them via Settings, then "Cowork instructions" (or the pencil icon in your Co-Work window). This is where you put standing context about yourself and your preferences:</p>
+        <ul class="space-y-2 text-gray-600 text-base mb-6">
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 flex-shrink-0">&bull;</span>
+            <span>Your role and industry (e.g., "I'm a real estate agent in Brooklyn" or "I run a small accounting firm")</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 flex-shrink-0">&bull;</span>
+            <span>Preferred output formats (bullet points vs. paragraphs, formal vs. casual tone)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 flex-shrink-0">&bull;</span>
+            <span>Tools you use daily (Google Workspace, HubSpot, Slack, etc.)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 flex-shrink-0">&bull;</span>
+            <span>Any recurring context Claude should always know</span>
+          </li>
+        </ul>
+
+        <h3 class="text-lg font-semibold mb-3">Add Folder Instructions (Optional)</h3>
+        <p class="text-gray-600 text-base leading-relaxed mb-4">Folder instructions are project-specific context that activates when Claude is working in a particular folder. If you have a folder for client proposals, you might add instructions like "Use our standard proposal template. Client names go in the header. Always include a pricing table." Claude can also update these on its own as it learns your patterns.</p>
+        <p class="text-gray-500 text-sm leading-relaxed">The better your instructions, the better your results. This is one of the areas where <a href="/claude-cowork/" class="text-gray-900 underline hover:no-underline">professional setup</a> makes the biggest difference. Well-crafted instructions can save hours of back-and-forth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3: CONNECT YOUR TOOLS -->
+  <section id="step-3" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-start gap-5 mb-6">
+        <div class="step-number">3</div>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">Connect Your Tools</h2>
+          <p class="text-gray-500 text-sm mt-1">Time: 2 to 5 minutes per tool</p>
+        </div>
+      </div>
+      <div class="ml-0 md:ml-[4.25rem]">
+        <p class="text-gray-600 text-base leading-relaxed mb-4">Co-Work connects to external tools through connectors built on the <strong>Model Context Protocol (MCP)</strong>, an open standard by Anthropic. There are 38+ connectors available, and they're all free. You just need an active account on the tool you're connecting.</p>
+
+        <h3 class="text-lg font-semibold mb-3">How to Connect a Tool</h3>
+        <ol class="space-y-3 text-gray-600 text-base mb-6">
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">1.</span>
+            <span>Start a Co-Work session and ask Claude to do something that requires the tool (e.g., "Check my latest Slack messages").</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">2.</span>
+            <span>Claude will prompt you to connect the tool. You can also set up connectors proactively in Settings.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">3.</span>
+            <span>An OAuth authorization flow opens in your browser. Sign in to the tool and grant Claude the requested permissions.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">4.</span>
+            <span>Done. The connection persists across sessions. You won't need to re-authorize unless you revoke access.</span>
+          </li>
+        </ol>
+
+        <h3 class="text-lg font-semibold mb-3">Popular Connectors by Category</h3>
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="p-4 rounded-lg border border-gray-200 bg-gray-50">
+            <p class="font-semibold text-sm text-gray-900 mb-1">Communication</p>
+            <p class="text-sm text-gray-500">Slack, Gmail, Microsoft 365 (Outlook, Teams)</p>
+          </div>
+          <div class="p-4 rounded-lg border border-gray-200 bg-gray-50">
+            <p class="font-semibold text-sm text-gray-900 mb-1">Project Management</p>
+            <p class="text-sm text-gray-500">Jira, Asana, Linear, Monday.com, ClickUp</p>
+          </div>
+          <div class="p-4 rounded-lg border border-gray-200 bg-gray-50">
+            <p class="font-semibold text-sm text-gray-900 mb-1">CRM &amp; Sales</p>
+            <p class="text-sm text-gray-500">HubSpot, Salesforce, Close, Clay, LinkedIn</p>
+          </div>
+          <div class="p-4 rounded-lg border border-gray-200 bg-gray-50">
+            <p class="font-semibold text-sm text-gray-900 mb-1">Content &amp; Knowledge</p>
+            <p class="text-sm text-gray-500">Notion, Google Drive, WordPress, Guru</p>
+          </div>
+        </div>
+        <p class="text-gray-500 text-sm leading-relaxed">Claude respects the permissions of your underlying accounts. It can only see what you can see. There's no limit on how many tools you can connect. You don't need to connect everything at once. Start with the one or two tools you use most.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 4: INSTALL PLUGINS -->
+  <section id="step-4" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-start gap-5 mb-6">
+        <div class="step-number">4</div>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">Install Plugins</h2>
+          <p class="text-gray-500 text-sm mt-1">Time: 2 to 3 minutes</p>
+        </div>
+      </div>
+      <div class="ml-0 md:ml-[4.25rem]">
+        <p class="text-gray-600 text-base leading-relaxed mb-4">Plugins customize how Claude works for specific roles and workflows. Each plugin bundles <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills</a>, connectors, slash commands, and sub-agents into a single installable package. Think of them as role kits: one for sales, one for marketing, one for legal, and so on.</p>
+
+        <h3 class="text-lg font-semibold mb-3">How to Browse and Install</h3>
+        <ol class="space-y-3 text-gray-600 text-base mb-6">
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">1.</span>
+            <span>Type <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">/plugin</code> in your Co-Work session.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">2.</span>
+            <span>Go to the Discover tab to browse available plugins in the official marketplace.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">3.</span>
+            <span>Pick a plugin and install it. For example: <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">/plugin install sales@claude-plugins-official</code></span>
+          </li>
+        </ol>
+
+        <h3 class="text-lg font-semibold mb-3">The 11 Official Plugins</h3>
+        <p class="text-gray-600 text-base leading-relaxed mb-4">Anthropic ships 11 official plugins. Each one is designed for a specific role:</p>
+        <div class="grid md:grid-cols-2 gap-2 mb-6">
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-sm"><strong>Productivity</strong> &ndash; Tasks, calendars, daily workflows</div>
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-sm"><strong>Sales</strong> &ndash; Prospect research, call prep, pipeline</div>
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-sm"><strong>Customer Support</strong> &ndash; Ticket triage, responses, KB articles</div>
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-sm"><strong>Product Management</strong> &ndash; Specs, roadmaps, user research</div>
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-sm"><strong>Marketing</strong> &ndash; Content, campaigns, brand voice</div>
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-sm"><strong>Legal</strong> &ndash; Contract review, NDA triage, compliance</div>
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-sm"><strong>Finance</strong> &ndash; Journal entries, reconciliation, statements</div>
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-sm"><strong>Data</strong> &ndash; SQL queries, dashboards, validation</div>
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-sm"><strong>Enterprise Search</strong> &ndash; Cross-platform search</div>
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-sm"><strong>Bio Research</strong> &ndash; Literature search, genomics</div>
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-sm"><strong>Plugin Create</strong> &ndash; Build new plugins from scratch</div>
+        </div>
+        <p class="text-gray-500 text-sm leading-relaxed">For a deeper look at what each plugin includes and how to customize them, see our <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">complete plugins guide</a>. You can also build entirely custom plugins. That's a core part of what <a href="/claude-cowork/" class="text-gray-900 underline hover:no-underline">NYC Claw builds for clients</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 5: SET UP SCHEDULED TASKS -->
+  <section id="step-5" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-start gap-5 mb-6">
+        <div class="step-number">5</div>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">Set Up Scheduled Tasks</h2>
+          <p class="text-gray-500 text-sm mt-1">Time: 5 minutes per task</p>
+        </div>
+      </div>
+      <div class="ml-0 md:ml-[4.25rem]">
+        <p class="text-gray-600 text-base leading-relaxed mb-4">Scheduled tasks are where Co-Work goes from helpful to indispensable. Instead of asking Claude to do something every day, you set it up once and it runs automatically at the cadence you choose: daily, weekly, or monthly.</p>
+
+        <h3 class="text-lg font-semibold mb-3">How to Create a Scheduled Task</h3>
+        <ol class="space-y-3 text-gray-600 text-base mb-6">
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">1.</span>
+            <span>Type <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">/schedule</code> in your Co-Work session, or open the "Scheduled" tab in the sidebar.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">2.</span>
+            <span>Describe what you want Claude to do. Be specific: "Every Monday at 9am, pull my latest Stripe transactions and create a revenue summary in ~/Reports/weekly."</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">3.</span>
+            <span>Set the cadence (daily, weekly, monthly) and time.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">4.</span>
+            <span>Confirm. Each scheduled task runs as its own Co-Work session with access to all your connectors, plugins, and folders.</span>
+          </li>
+        </ol>
+
+        <div class="p-5 rounded-xl border border-yellow-200 bg-yellow-50 mb-6">
+          <p class="text-sm text-yellow-800 leading-relaxed"><strong>Requirements:</strong> Scheduled tasks only run while your computer is awake and Claude Desktop is open. If your machine is asleep or the app is closed, the task won't fire. Plan accordingly. If you need tasks to run overnight, keep your machine awake.</p>
+        </div>
+
+        <h3 class="text-lg font-semibold mb-3">Good Tasks to Start With</h3>
+        <ul class="space-y-2 text-gray-600 text-base">
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 flex-shrink-0">&bull;</span>
+            <span><strong>Morning email briefing</strong> (daily): Summarize unread emails and flag anything urgent</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 flex-shrink-0">&bull;</span>
+            <span><strong>File inbox sorting</strong> (daily): Categorize files dropped into a designated folder</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 flex-shrink-0">&bull;</span>
+            <span><strong>Weekly market report</strong> (weekly): Pull data from connected sources and generate a client-ready summary</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 flex-shrink-0">&bull;</span>
+            <span><strong>Revenue reporting</strong> (weekly): Automated summaries from Stripe, invoicing tools, or spreadsheets</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gray-400 flex-shrink-0">&bull;</span>
+            <span><strong>Competitive monitoring</strong> (weekly): Track competitor websites, pricing, or content changes</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 6: TRY MOBILE TASK ASSIGNMENT -->
+  <section id="step-6" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-start gap-5 mb-6">
+        <div class="step-number">6</div>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">Try Mobile Task Assignment</h2>
+          <p class="text-gray-500 text-sm mt-1">Time: 2 minutes</p>
+        </div>
+      </div>
+      <div class="ml-0 md:ml-[4.25rem]">
+        <p class="text-gray-600 text-base leading-relaxed mb-4">This is one of Co-Work's most useful features. You send a task from your phone. Claude runs it on your desktop. You come back to finished work.</p>
+
+        <ol class="space-y-3 text-gray-600 text-base mb-6">
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">1.</span>
+            <span>Install the Claude app on your iPhone or Android device.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">2.</span>
+            <span>Sign in with the same account you use on desktop.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">3.</span>
+            <span>Open your Co-Work conversation (it syncs across devices) and type a task. Something like: "Draft a follow-up email to the Johnson showing notes and save it to ~/Client-Work/Johnson."</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-semibold text-gray-900 flex-shrink-0">4.</span>
+            <span>Claude executes the task on your desktop using your local files, connectors, and plugins. You can check back later to review the result.</span>
+          </li>
+        </ol>
+        <p class="text-gray-500 text-sm leading-relaxed">Your phone becomes a remote control for your desktop setup. The same conversation context carries across both devices. Your computer needs to be awake and Claude Desktop needs to be open for tasks to run.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">Tips for Getting the Most Out of Co-Work</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Write Clear Global Instructions</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Vague instructions produce vague results. Instead of "I work in finance," try "I'm a CFO at a 50-person SaaS company. We use NetSuite for accounting and Slack for internal communication. I prefer bullet-point summaries over long paragraphs." Specific context produces better output from the first task.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Use a Dedicated Working Folder</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Create a folder specifically for Co-Work (e.g., <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">~/Claude-Work</code>) and organize subfolders by project or client. This keeps Claude's file access contained, makes outputs easy to find, and prevents accidental changes to files you didn't intend to edit.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Start With One Workflow</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Pick the task that eats the most time in your week. Get that working well before adding more. A <a href="/for/real-estate" class="text-gray-900 underline hover:no-underline">real estate agent</a> might start with listing descriptions. A <a href="/for/law-firms" class="text-gray-900 underline hover:no-underline">law firm</a> might start with contract review. An <a href="/for/accounting-firms" class="text-gray-900 underline hover:no-underline">accounting firm</a> might start with invoice processing. Nail one workflow, then expand.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Follow Security Best Practices</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Co-Work is powerful, so be deliberate about what you grant access to. Limit browser access to trusted sites only. Don't give Claude access to folders with credentials or API keys. Review connector permissions before authorizing. Scheduled tasks run without you watching, so test them manually first.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4">Want Us to Handle the Setup?</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">This guide covers the basics. But getting Co-Work to produce great results for your specific business takes more than toggling settings. It takes well-crafted instructions, custom plugins, industry-specific skills, and properly configured connectors.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">Custom Setup</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We configure your workspace, connect your tools, install and customize plugins, build custom <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills</a> for your workflows, and set up scheduled tasks. Everything tuned for how you actually work.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">Training</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Remote or in-person sessions covering effective prompting, task delegation, plugin customization, and best practices. We train your team on the specific workflows we built for you, not generic tutorials.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-2">Ongoing Support</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Plugin updates as Anthropic evolves the platform. New connector setup as tools are added. Workflow optimization based on your usage. One-time setup, ongoing value.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Skip the Learning Curve</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll assess your current workflow and tell you exactly how Co-Work can help your business. No commitment required.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=setup-guide--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Do I need coding skills to set up Claude Co-Work?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            No. Co-Work is designed for non-technical knowledge workers. The entire setup happens through the Claude Desktop app interface. You pick folders, toggle settings, and connect tools through OAuth prompts in your browser. No terminal, no code, no configuration files to edit manually.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Which Claude plan do I need for Co-Work?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work is included on every paid plan starting at Pro ($20/month). Pro works for quick tasks, but Co-Work consumes usage faster than regular Chat because it runs multi-step tasks. For regular use, Max 5x ($100/month) gives you more room. Power users who delegate work throughout the day should consider Max 20x ($200/month). Teams of 5 or more can use the Team plan at $20/seat/month. See our <a href="/claude-cowork/pricing-guide" class="text-gray-900 underline hover:no-underline">pricing guide</a> for a full breakdown.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can I use Co-Work on the web version of Claude?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            No. Co-Work requires Claude Desktop for macOS or Windows. It runs in an isolated virtual machine on your local computer, which is why it needs the desktop app. The web version at claude.ai does not support Co-Work. You can assign tasks from the Claude mobile app on iOS or Android, but the work still runs on your desktop.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is my data safe when using Co-Work?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work runs in an isolated virtual machine on your local computer. Conversation history is stored locally, not on Anthropic's servers. Claude can only access folders you explicitly grant permission to, and connectors respect your existing account permissions. Claude also shows you its plan before taking significant actions, so you stay in control.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What if I get stuck during setup?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            NYC Claw offers done-for-you Co-Work setup. We handle everything: workspace configuration, connector integration, plugin installation, custom skill development, scheduled task setup, and team training. <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=setup-guide--discovery" class="text-gray-900 underline hover:no-underline">Book a free 15-minute call</a> and we'll map out exactly what your business needs.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/claude-cowork/" class="hover:text-gray-600 transition-colors">Claude Co-Work</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

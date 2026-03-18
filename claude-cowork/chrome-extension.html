@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work Chrome Extension: Reliable Web Access for Any Site | NYC Claw</title>
+  <meta name="description" content="The Claude Co-Work Chrome extension browses the web like a real user, bypassing Cloudflare and bot protection that block standard fetch tools. SEO audits, competitive research, data extraction, and more.">
+  <meta property="og:title" content="Claude Co-Work Chrome Extension: Reliable Web Access for Any Site | NYC Claw">
+  <meta property="og:description" content="The Claude Co-Work Chrome extension browses the web like a real user, bypassing Cloudflare and bot protection that block standard fetch tools. SEO audits, competitive research, data extraction, and more.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/chrome-extension">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/chrome-extension">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work Chrome Extension Setup",
+    "description": "Configuration and workflow development for the Claude Co-Work Chrome extension, enabling reliable web access for SEO audits, competitive research, data extraction, and automated browsing tasks.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need the Chrome extension for Claude Co-Work to work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Co-Work functions without the Chrome extension using its built-in web fetch tool. But the fetch tool gets blocked by Cloudflare, bot protection, and JavaScript-heavy sites. The Chrome extension handles those cases by browsing as a regular user, making it the more reliable option for web-based tasks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I install the Claude Co-Work Chrome extension?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Install the Claude extension from the Chrome Web Store, then open Claude Desktop. The extension automatically connects to your Co-Work sessions. No API keys or manual configuration required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the Chrome extension bypass CAPTCHAs and login walls?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Chrome extension navigates like a normal browser user, which means Cloudflare challenges and basic bot detection are handled automatically. It cannot solve CAPTCHAs that require human interaction, but most sites that use Cloudflare's standard protection will load normally through the extension."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the Chrome extension safe to use with sensitive websites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The extension runs in your local Chrome browser and doesn't send browsing data to third-party servers. However, any page content the extension reads is passed to Claude for processing. Limit browser access to trusted sites and avoid using it on pages with sensitive credentials or private financial data you don't want Claude to see."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the Chrome extension with scheduled tasks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Scheduled tasks can use the Chrome extension to fetch web data on a recurring basis. Your computer needs to be awake, Chrome needs to be open, and the extension needs to be active. This is ideal for daily competitive monitoring, regular SEO checks, or recurring data extraction jobs."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=chrome-extension--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="pt-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Chrome Extension</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-4 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Feature Guide
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Claude Co-Work<br>
+        <span class="text-gray-500">Chrome Extension</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed mb-8">
+        The built-in web fetch tool fails on most modern websites. The Chrome extension browses like a real user, giving Co-Work reliable access to pages that bot protection would otherwise block.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=chrome-extension--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+    </div>
+  </section>
+
+  <!-- WHY THE CHROME EXTENSION MATTERS -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Why the Chrome Extension Matters</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        Co-Work's default web fetch tool sends HTTP requests like a bot. That's fine for simple APIs and open pages. But Cloudflare, bot detection services, and JavaScript-rendered sites block those requests outright. Reddit power users flagged this early: the fetch tool fails on the majority of modern websites.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        The Chrome extension solves this by navigating pages as a normal browser user. It renders JavaScript, passes Cloudflare challenges, and loads dynamic content that the fetch tool simply can't reach. If your <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">Co-Work skills</a> depend on web data, the Chrome extension is the more reliable data source.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed">
+        This matters for any workflow that touches the open web: SEO audits, competitor monitoring, content research, price tracking, social media analysis. Without the extension, Co-Work is limited to the small fraction of sites that don't use bot protection.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">How It Works</h2>
+      <div class="grid md:grid-cols-3 gap-8 mt-10">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">1</div>
+          <h3 class="font-semibold mb-2">Install the Extension</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Install the Claude extension from the Chrome Web Store. It takes about 30 seconds. No API keys, no configuration files.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">2</div>
+          <h3 class="font-semibold mb-2">Connect to Co-Work</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Open Claude Desktop and start a Co-Work session. The Chrome extension detects the session automatically and connects. You'll see a green indicator when it's active.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">3</div>
+          <h3 class="font-semibold mb-2">Browse Like a Human</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">When Co-Work needs web data, it routes requests through the Chrome extension instead of the fetch tool. Pages load in a real browser session with full JavaScript rendering.</p>
+        </div>
+      </div>
+      <p class="text-gray-500 text-sm leading-relaxed mt-10 text-center max-w-2xl mx-auto">
+        The extension works with <a href="/claude-cowork/scheduled-tasks" class="text-gray-900 underline hover:no-underline">scheduled tasks</a> too. Set up a daily or weekly job that pulls web data, and the extension handles the browsing automatically each time the task runs.
+      </p>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">What People Are Building With It</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-12 text-center max-w-2xl mx-auto">
+        Real workflows from Co-Work users who rely on the Chrome extension for web-based tasks.
+      </p>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="border border-gray-200 rounded-xl bg-white p-6">
+          <h3 class="font-semibold mb-2">Website Analysis and SEO Auditing</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            The Chrome extension visits your site, identifies page types, extracts structured data, and checks on-page SEO elements. One user built a self-improving <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skill</a> that combines crawl exports with live Chrome extension verification for deeper analysis. The skill gets more accurate with each run.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-xl bg-white p-6">
+          <h3 class="font-semibold mb-2">Schema Markup Auditing</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Co-Work visits each page through the extension, checks existing structured data, identifies missing schema types (FAQ, Product, LocalBusiness, etc.), and generates developer tickets for implementation. Works across hundreds of pages in a single session.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-xl bg-white p-6">
+          <h3 class="font-semibold mb-2">Image Alt Text Generation</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Generates alt text for thousands of images by combining crawl data with Chrome extension verification. The extension loads each page, sees the actual images in context, and writes descriptions that match the surrounding content. Perfect for <a href="/for/ecommerce" class="text-gray-900 underline hover:no-underline">e-commerce</a> sites with large product catalogs.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-xl bg-white p-6">
+          <h3 class="font-semibold mb-2">Translation Verification</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Visits multilingual pages through the extension, checks translations in their actual layout context, and flags inconsistencies or missing translations. The extension renders the page exactly as users see it, so it catches issues that a raw HTML check would miss.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-xl bg-white p-6">
+          <h3 class="font-semibold mb-2">Competitive Intelligence</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Browses competitor websites to track pricing changes, new features, and product launches. Most competitor sites use Cloudflare or similar protection, which blocks the fetch tool completely. The Chrome extension loads these pages without issue. Pair it with <a href="/claude-cowork/scheduled-tasks" class="text-gray-900 underline hover:no-underline">scheduled tasks</a> for daily monitoring.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-xl bg-white p-6">
+          <h3 class="font-semibold mb-2">Data Extraction from Protected Sites</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Scrapes data from sites with bot protection (Cloudflare, CAPTCHA walls, rate limiters) that block standard web fetch tools. The extension navigates these protections the same way your browser does. Useful for price aggregation, directory scraping, and market research.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-xl bg-white p-6">
+          <h3 class="font-semibold mb-2">Social Media Profile Research</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            One user scraped their Twitter mutuals via the Chrome extension, then set up a daily <a href="/claude-cowork/scheduled-tasks" class="text-gray-900 underline hover:no-underline">scheduled task</a> that surfaces 20 LinkedIn profiles to connect with. The extension handles Twitter and LinkedIn's bot protection, which blocks every other approach.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-xl bg-white p-6">
+          <h3 class="font-semibold mb-2">Reverse-Engineering Internal APIs</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            When a public API had rate limits or missing endpoints, one user had Co-Work use the Chrome extension to reverse-engineer the UI's internal API. The extension observed network requests while navigating the app, mapped the endpoints, and documented them for direct use.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CHROME EXTENSION VS WEB FETCH -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Chrome Extension vs. Web Fetch</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10 text-center max-w-2xl mx-auto">
+        Both tools fetch web data for Co-Work, but they work differently. Here's when to use each.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="py-4 pr-6 text-sm font-semibold"></th>
+              <th class="py-4 pr-6 text-sm font-semibold">Web Fetch (Built-in)</th>
+              <th class="py-4 text-sm font-semibold">Chrome Extension</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-100">
+              <td class="py-4 pr-6 text-sm font-medium">How it works</td>
+              <td class="py-4 pr-6 text-sm text-gray-500">Sends HTTP requests directly</td>
+              <td class="py-4 text-sm text-gray-500">Navigates pages in a real Chrome browser</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-4 pr-6 text-sm font-medium">Cloudflare / bot protection</td>
+              <td class="py-4 pr-6 text-sm text-gray-500">Blocked on most sites</td>
+              <td class="py-4 text-sm text-gray-500">Passes like a normal user</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-4 pr-6 text-sm font-medium">JavaScript rendering</td>
+              <td class="py-4 pr-6 text-sm text-gray-500">No. Gets raw HTML only</td>
+              <td class="py-4 text-sm text-gray-500">Yes. Full browser rendering</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-4 pr-6 text-sm font-medium">Speed</td>
+              <td class="py-4 pr-6 text-sm text-gray-500">Faster (no browser overhead)</td>
+              <td class="py-4 text-sm text-gray-500">Slower (real page loads)</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-4 pr-6 text-sm font-medium">Best for</td>
+              <td class="py-4 pr-6 text-sm text-gray-500">Public APIs, open pages, RSS feeds</td>
+              <td class="py-4 text-sm text-gray-500">Protected sites, SPAs, social media, competitor pages</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-4 pr-6 text-sm font-medium">Setup required</td>
+              <td class="py-4 pr-6 text-sm text-gray-500">None (built into Co-Work)</td>
+              <td class="py-4 text-sm text-gray-500">Chrome extension install (30 seconds)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-500 text-sm leading-relaxed mt-8 text-center max-w-2xl mx-auto">
+        In practice, most users start with the fetch tool, hit Cloudflare blocks within minutes, then switch to the Chrome extension permanently. For any workflow involving real websites (not just APIs), the extension is the better default.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">How We Help</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10 text-center max-w-2xl mx-auto">
+        We configure the Chrome extension for your specific workflows and build the <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills</a> and <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">connectors</a> that make it useful from day one.
+      </p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">1</div>
+          <h3 class="font-semibold mb-2">Extension Configuration</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We set up the Chrome extension, configure site access permissions, and test it against your target websites. You'll know exactly which sites work before we build anything on top of them.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">2</div>
+          <h3 class="font-semibold mb-2">Custom Skill Development</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We build <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills</a> that use the Chrome extension for your specific tasks: SEO audits, competitive monitoring, data extraction, or whatever your workflow requires. Each skill is tested and documented.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">3</div>
+          <h3 class="font-semibold mb-2">Scheduled Web Tasks</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We set up <a href="/claude-cowork/scheduled-tasks" class="text-gray-900 underline hover:no-underline">scheduled tasks</a> that rely on the Chrome extension for web data. Daily competitor price checks, weekly SEO snapshots, or monthly content audits that run without your input.</p>
+        </div>
+      </div>
+      <p class="text-gray-500 text-sm leading-relaxed mt-10 text-center max-w-2xl mx-auto">
+        Whether you're an <a href="/for/ecommerce" class="text-gray-900 underline hover:no-underline">e-commerce brand</a> tracking competitor pricing or a <a href="/for/creative-agencies" class="text-gray-900 underline hover:no-underline">creative agency</a> running SEO audits for clients, we build the Chrome extension workflows that fit your business. Check out our full list of <a href="/claude-cowork/use-cases" class="text-gray-900 underline hover:no-underline">Co-Work use cases</a> for more ideas.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Do I need the Chrome extension for Co-Work to work?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            No. Co-Work functions without the Chrome extension using its built-in web fetch tool. But the fetch tool gets blocked by Cloudflare, bot protection, and JavaScript-heavy sites. The Chrome extension handles those cases by browsing as a regular user, making it the more reliable option for web-based tasks.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How do I install the Claude Co-Work Chrome extension?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Install the Claude extension from the Chrome Web Store, then open Claude Desktop. The extension automatically connects to your Co-Work sessions. No API keys or manual configuration required.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can the Chrome extension bypass CAPTCHAs and login walls?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            The Chrome extension navigates like a normal browser user, which means Cloudflare challenges and basic bot detection are handled automatically. It can't solve CAPTCHAs that require human interaction. But most sites using Cloudflare's standard protection will load normally through the extension.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is the Chrome extension safe to use with sensitive websites?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            The extension runs in your local Chrome browser and doesn't send browsing data to third-party servers. However, any page content the extension reads is passed to Claude for processing. Limit browser access to trusted sites and avoid using it on pages with sensitive credentials or private financial data you don't want Claude to see.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can I use the Chrome extension with scheduled tasks?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. Scheduled tasks can use the Chrome extension to fetch web data on a recurring basis. Your computer needs to be awake, Chrome needs to be open, and the extension needs to be active. This works well for daily competitive monitoring, regular SEO checks, or recurring data extraction jobs.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Put the Chrome Extension to Work?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll look at your web-based workflows and show you exactly how the Chrome extension fits into your Co-Work setup.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=chrome-extension--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">No commitment. No sales pitch. Just a straight look at what's possible.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

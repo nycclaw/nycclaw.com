@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work Pricing: Plan Comparison & Which One to Pick | NYC Claw</title>
+  <meta name="description" content="Claude Co-Work pricing breakdown. Compare Pro, Max 5x, Max 20x, Team, and Enterprise plans to find the right fit for your workflow and budget.">
+  <meta property="og:title" content="Claude Co-Work Pricing: Plan Comparison & Which One to Pick | NYC Claw">
+  <meta property="og:description" content="Claude Co-Work pricing breakdown. Compare Pro, Max 5x, Max 20x, Team, and Enterprise plans to find the right fit for your workflow and budget.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/pricing-guide">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/pricing-guide">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+    .plan-card { transition: box-shadow 0.2s, border-color 0.2s; }
+    .plan-card:hover { box-shadow: 0 4px 12px rgb(0 0 0 / 0.08); border-color: #d1d5db; }
+    .plan-table th { text-align: left; }
+    .plan-table td, .plan-table th { padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb; }
+    .plan-table tr:last-child td { border-bottom: none; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work Setup and Training",
+    "description": "NYC Claw helps businesses pick the right Claude plan, set up Co-Work, build custom plugins, and train teams to get the most from Claude Co-Work.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Claude Co-Work free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Co-Work is included with every paid Claude plan. There's no separate add-on fee. You get access on Pro ($20/mo or $17/mo annual), Max 5x ($100/mo), Max 20x ($200/mo), Team ($20/seat/mo), and Enterprise (custom pricing). The difference between plans is how much you can use Co-Work before hitting usage limits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does Co-Work use more of my usage allocation than regular Chat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In regular Chat, Claude reads your message and writes one response. In Co-Work, Claude breaks your task into steps, reads and edits files, searches the web, calls connectors, and checks its own work. Each of those steps uses tokens. A single Co-Work task might use 10 to 50 times more tokens than a Chat message, depending on complexity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Claude plan is best for daily Co-Work use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Max 5x at $100/mo is the sweet spot for most people who use Co-Work regularly. It gives you 5 times the usage of Pro, which is enough for several multi-step tasks per day. If Co-Work is your primary work tool and you're handing off tasks throughout the day, Max 20x at $200/mo gives you the headroom you need."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can my team share a single Claude plan for Co-Work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Each person needs their own seat. For teams of 5 to 75, the Team plan at $20/seat/mo is the best option. It includes the Slack connector, self-serve management, and shared plugin marketplaces. For larger organizations, Enterprise plans offer admin controls and org-wide plugin distribution."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Co-Work plugins and connectors included in the plan price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All 11 official Anthropic plugins, all 38+ connectors, scheduled tasks, and mobile task assignment are included at no extra cost on every plan. You just need an active subscription to the tools you want to connect (like HubSpot, Slack, or Jira). Claude's connectors use OAuth to link your existing accounts."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=pricing-guide--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <nav class="text-sm text-gray-500 mb-6">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Pricing Guide</span>
+      </nav>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Updated March 2026
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Claude Co-Work Pricing:<br>
+        <span class="text-gray-500">Which Plan Is Right for You?</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Co-Work is included with every Claude plan. No add-on fee. But the plan you choose determines how much you can actually use it before hitting limits.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">Five plans, very different usage caps. Here's how to pick.</p>
+    </div>
+  </section>
+
+  <!-- QUICK OVERVIEW -->
+  <section class="py-12 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">5</p>
+          <p class="text-sm text-gray-500 mt-1">plans that include Co-Work</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">$0</p>
+          <p class="text-sm text-gray-500 mt-1">extra for Co-Work access</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">38+</p>
+          <p class="text-sm text-gray-500 mt-1">free connectors on every plan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN COMPARISON -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Every plan, side by side</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">All five Claude plans include Co-Work. The difference is usage capacity and team features.</p>
+      </div>
+
+      <!-- CARD GRID -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+
+        <!-- Pro -->
+        <div class="plan-card p-6 rounded-xl border border-gray-200 bg-white flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">Pro</h3>
+          <div class="flex items-baseline gap-1 mb-1">
+            <span class="text-3xl font-bold">$20</span>
+            <span class="text-sm text-gray-500">/mo</span>
+          </div>
+          <p class="text-xs text-gray-400 mb-4">$17/mo on annual billing</p>
+          <p class="text-gray-500 text-sm mb-5 leading-relaxed">Good for trying Co-Work on quick, simple tasks. You'll burn through your usage allocation fast on anything multi-step.</p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Co-Work included
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              All connectors and plugins
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Scheduled tasks
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M12 3l9.5 16.5H2.5L12 3z"/></svg>
+              Limited usage for multi-step tasks
+            </li>
+          </ul>
+          <p class="text-xs text-gray-400 font-medium">Best for: occasional, lightweight use</p>
+        </div>
+
+        <!-- Max 5x (highlighted) -->
+        <div class="plan-card p-6 rounded-xl border-2 border-gray-900 bg-white shadow-lg relative flex flex-col">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gray-900 text-white text-xs font-semibold">Most Popular</div>
+          <h3 class="text-lg font-semibold mb-1">Max 5x</h3>
+          <div class="flex items-baseline gap-1 mb-1">
+            <span class="text-3xl font-bold">$100</span>
+            <span class="text-sm text-gray-500">/mo</span>
+          </div>
+          <p class="text-xs text-gray-400 mb-4">&nbsp;</p>
+          <p class="text-gray-500 text-sm mb-5 leading-relaxed">The sweet spot for daily Co-Work users. Five times the usage of Pro, which is enough for several multi-step tasks per day.</p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              5x Pro usage allocation
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              All connectors and plugins
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Scheduled tasks
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Comfortable for daily multi-step work
+            </li>
+          </ul>
+          <p class="text-xs text-gray-400 font-medium">Best for: everyday Co-Work on real tasks</p>
+        </div>
+
+        <!-- Max 20x -->
+        <div class="plan-card p-6 rounded-xl border border-gray-200 bg-white flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">Max 20x</h3>
+          <div class="flex items-baseline gap-1 mb-1">
+            <span class="text-3xl font-bold">$200</span>
+            <span class="text-sm text-gray-500">/mo</span>
+          </div>
+          <p class="text-xs text-gray-400 mb-4">&nbsp;</p>
+          <p class="text-gray-500 text-sm mb-5 leading-relaxed">For people who hand off work to Co-Work throughout the day. Twenty times the Pro allocation means you rarely hit limits.</p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              20x Pro usage allocation
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              All connectors and plugins
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Scheduled tasks
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Heavy, all-day usage without throttling
+            </li>
+          </ul>
+          <p class="text-xs text-gray-400 font-medium">Best for: power users, Co-Work as primary tool</p>
+        </div>
+
+        <!-- Team -->
+        <div class="plan-card p-6 rounded-xl border border-gray-200 bg-white flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">Team</h3>
+          <div class="flex items-baseline gap-1 mb-1">
+            <span class="text-3xl font-bold">$20</span>
+            <span class="text-sm text-gray-500">/seat/mo</span>
+          </div>
+          <p class="text-xs text-gray-400 mb-4">5 to 75 seats</p>
+          <p class="text-gray-500 text-sm mb-5 leading-relaxed">Built for teams. Every seat gets Co-Work access, plus the Slack connector, shared plugin marketplaces, and self-serve seat management.</p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Co-Work on standard and premium seats
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Slack connector included
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Shared plugin marketplace
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              OpenTelemetry for usage tracking
+            </li>
+          </ul>
+          <p class="text-xs text-gray-400 font-medium">Best for: small to mid-size teams</p>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="plan-card p-6 rounded-xl border border-gray-200 bg-white flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">Enterprise</h3>
+          <div class="flex items-baseline gap-1 mb-1">
+            <span class="text-3xl font-bold">Custom</span>
+          </div>
+          <p class="text-xs text-gray-400 mb-4">Contact Anthropic for pricing</p>
+          <p class="text-gray-500 text-sm mb-5 leading-relaxed">Full admin controls, org-wide Co-Work toggle, managed plugin distribution, and OpenTelemetry for cost and usage tracking.</p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Admin controls for Co-Work access
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Org-wide plugin marketplace
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Managed plugin distribution
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              OpenTelemetry for cost tracking
+            </li>
+          </ul>
+          <p class="text-xs text-gray-400 font-medium">Best for: large orgs needing compliance and control</p>
+        </div>
+
+      </div>
+
+      <p class="text-center text-sm text-gray-400">All prices are Anthropic's published rates. NYC Claw is not affiliated with Anthropic.</p>
+    </div>
+  </section>
+
+  <!-- USAGE CONSIDERATIONS -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Co-Work uses more tokens than Chat</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-6">This is the most important thing to understand about Claude Co-Work pricing. In regular Chat, Claude reads your message and writes one response. In Co-Work, Claude breaks your task into steps, reads and edits files, searches the web, calls connectors, and checks its own work. Each of those steps consumes tokens.</p>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">A single Co-Work task might use 10 to 50 times more tokens than a Chat message, depending on complexity. That's why Pro users often hit their limits within a few tasks. It's not a bug. Multi-step, agentic work is compute-intensive by nature.</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-3">Light tasks (fewer tokens)</h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 flex-shrink-0">&bull;</span>
+              Rename and organize a folder of files
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 flex-shrink-0">&bull;</span>
+              Draft a single email from notes
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 flex-shrink-0">&bull;</span>
+              Create a document from a template
+            </li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-semibold mb-3">Heavy tasks (more tokens)</h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 flex-shrink-0">&bull;</span>
+              Research a topic across multiple web sources
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 flex-shrink-0">&bull;</span>
+              Analyze a spreadsheet and generate a report
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 flex-shrink-0">&bull;</span>
+              Pull CRM data, cross-reference, and draft outreach
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DECISION FRAMEWORK -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Which plan fits your workflow?</h2>
+      <p class="text-gray-500 text-lg text-center max-w-2xl mx-auto mb-12">Skip the feature matrix. Here's a plain decision framework based on how you'll actually use Co-Work.</p>
+
+      <div class="space-y-4">
+        <!-- Pro -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div class="sm:w-28 flex-shrink-0">
+              <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-semibold">Pro</span>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900 mb-1">"I want to try Co-Work occasionally."</p>
+              <p class="text-sm text-gray-500">You're curious about Co-Work and want to test it on a few simple tasks. You don't plan to rely on it daily. $20/mo is a low-risk way to explore what's possible.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Max 5x -->
+        <div class="p-6 rounded-xl border-2 border-gray-900 bg-white shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div class="sm:w-28 flex-shrink-0">
+              <span class="inline-block px-3 py-1 rounded-full bg-gray-900 text-white text-sm font-semibold">Max 5x</span>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900 mb-1">"I use Co-Work daily for real work tasks."</p>
+              <p class="text-sm text-gray-500">You run Co-Work for research, drafting, data analysis, or file management most workdays. $100/mo gives you enough room for several multi-step tasks per day without constant limit warnings.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Max 20x -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div class="sm:w-28 flex-shrink-0">
+              <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-semibold">Max 20x</span>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900 mb-1">"Co-Work is my primary work tool."</p>
+              <p class="text-sm text-gray-500">You hand off tasks throughout the day: morning email triage, midday research, afternoon report generation. You've built <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">custom skills</a> and scheduled tasks. $200/mo keeps you running without interruption.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div class="sm:w-28 flex-shrink-0">
+              <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-semibold">Team</span>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900 mb-1">"My team needs Co-Work."</p>
+              <p class="text-sm text-gray-500">You want 5 to 75 people using Co-Work with shared <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugins</a>, Slack integration, and centralized seat management. $20/seat/mo is the entry point for team deployments.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div class="sm:w-28 flex-shrink-0">
+              <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-semibold">Enterprise</span>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900 mb-1">"We need admin controls and compliance."</p>
+              <p class="text-sm text-gray-500">Your organization requires an org-wide toggle, managed plugin distribution, and OpenTelemetry for cost and usage tracking. Custom pricing through Anthropic.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">What's included on every plan</h2>
+      <p class="text-gray-500 text-lg text-center max-w-2xl mx-auto mb-12">These features don't cost extra, no matter which plan you're on.</p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-green-600 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.102 1.101"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">38+ Connectors</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Slack, Gmail, Google Drive, HubSpot, Salesforce, Jira, Notion, and dozens more. All free. All use OAuth, so Claude only sees what your account can see. <a href="/claude-cowork/" class="text-gray-900 underline hover:no-underline">See the full list</a>.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">11 Official Plugins</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Productivity, Sales, Marketing, Legal, Finance, Data, Customer Support, Product Management, Enterprise Search, Bio Research, and Plugin Create. All free. <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">Learn about plugins</a>.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Scheduled Tasks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Set up daily, weekly, or monthly tasks that run automatically. Morning email briefings, file organization, revenue reports, competitive monitoring. All included.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Mobile Task Assignment</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Send a task from your phone. Claude executes it on your desktop using your files, connectors, and plugins. Come back to finished work.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Local File Access</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Claude reads, edits, creates, and organizes files in folders you specify. Everything runs in an isolated VM on your computer. Your data stays on your machine.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Custom Skills</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Build your own skills with markdown files. No code required. Teach Claude your specific workflows, templates, and processes. <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">Learn about skills</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">How NYC Claw helps you get more from your plan</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8 text-center max-w-2xl mx-auto">Picking a plan is the easy part. Getting real value from Co-Work takes the right setup. That's where we come in.</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Plan selection</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We'll look at your actual workflows and recommend the plan that fits. No point paying $200/mo if $100/mo covers your usage. No point saving $80/mo if you're hitting limits every afternoon.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Custom plugin development</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We build plugins tuned to your industry and role. A <a href="/for/real-estate" class="text-gray-900 underline hover:no-underline">real estate agent</a> needs different skills than a <a href="/for/law-firms" class="text-gray-900 underline hover:no-underline">law firm</a> or an <a href="/for/accounting-firms" class="text-gray-900 underline hover:no-underline">accounting practice</a>. One-size-fits-all plugins only get you halfway.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Connector setup</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We configure your CRM, email, project management, and document storage connectors. Proper OAuth setup, correct permission scoping, and testing to make sure everything works before you rely on it.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Training and ongoing support</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Remote or in-person training for you and your team. How to write good instructions, when to use scheduled tasks, how to build your own skills. Plus ongoing support as Anthropic updates the platform.</p>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-gray-500 mt-8">Ready to get started? Check out our <a href="/claude-cowork/setup-guide" class="text-gray-900 underline hover:no-underline">setup guide</a> or book a call below.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Not sure which plan to pick?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll look at how you work, recommend the right Claude plan, and show you what Co-Work can do for your specific role.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=pricing-guide--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">No commitment &middot; We'll map your workflow to the right plan</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is Claude Co-Work free?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Co-Work is included with every paid Claude plan. There's no separate add-on fee. You get access on Pro ($20/mo or $17/mo annual), Max 5x ($100/mo), Max 20x ($200/mo), Team ($20/seat/mo), and Enterprise (custom pricing). The difference between plans is how much you can use Co-Work before hitting usage limits.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Why does Co-Work use more of my usage allocation than regular Chat?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            In regular Chat, Claude reads your message and writes one response. In Co-Work, Claude breaks your task into steps, reads and edits files, searches the web, calls connectors, and checks its own work. Each of those steps uses tokens. A single Co-Work task might use 10 to 50 times more tokens than a Chat message, depending on complexity.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Which Claude plan is best for daily Co-Work use?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Max 5x at $100/mo is the sweet spot for most people who use Co-Work regularly. It gives you 5 times the usage of Pro, which is enough for several multi-step tasks per day. If Co-Work is your primary work tool and you're handing off tasks throughout the day, Max 20x at $200/mo gives you the headroom you need.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can my team share a single Claude plan for Co-Work?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            No. Each person needs their own seat. For teams of 5 to 75, the Team plan at $20/seat/mo is the best option. It includes the Slack connector, self-serve management, and shared plugin marketplaces. For larger organizations, Enterprise plans offer admin controls and org-wide plugin distribution.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Are Co-Work plugins and connectors included in the plan price?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. All 11 official Anthropic plugins, all 38+ connectors, scheduled tasks, and mobile task assignment are included at no extra cost on every plan. You just need an active subscription to the tools you want to connect (like HubSpot, Slack, or Jira). Claude's connectors use OAuth to link your existing accounts.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/claude-cowork/" class="hover:text-gray-600 transition-colors">Claude Co-Work</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

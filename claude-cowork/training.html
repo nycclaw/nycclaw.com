@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work Training: Remote &amp; In-Person Sessions | NYC Claw</title>
+  <meta name="description" content="Get your team up to speed on Claude Co-Work. Remote screen-share sessions or in-person workshops in NYC. Plugins, skills, connectors, scheduled tasks.">
+  <meta property="og:title" content="Claude Co-Work Training: Remote &amp; In-Person Sessions | NYC Claw">
+  <meta property="og:description" content="Get your team up to speed on Claude Co-Work. Remote screen-share sessions or in-person workshops in NYC. Plugins, skills, connectors, scheduled tasks.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/training">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/training">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work Training",
+    "description": "Remote and in-person Claude Co-Work training sessions. Learn plugins, skills, connectors, scheduled tasks, and security best practices.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long is a typical Claude Co-Work training session?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most sessions run 60 to 90 minutes. That's enough time to cover Co-Work fundamentals, install and configure plugins, set up connectors, and build at least one custom skill. Larger teams or more complex setups may need a second session."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer remote training or only in-person?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both. Remote training happens over screen-share (Zoom, Google Meet, or Teams). In-person training is available on-site in New York City, and we travel for larger engagements. The content is identical either way."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does my team need before the training session?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each team member needs Claude Desktop installed on macOS or Windows, plus a paid Claude plan (Pro, Max, Team, or Enterprise). We handle everything else during the session, including plugin installation, connector setup, and instruction configuration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you train just one person or does it have to be a full team?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We train individuals and teams of any size. Solo sessions are common for founders and freelancers. Team sessions work well for departments rolling out Co-Work across a group of 5 to 50 people."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if we need help after the training session?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer ongoing support packages for teams that want continued assistance. This includes plugin updates as Anthropic evolves the platform, new connector setup, and workflow optimization based on how your team actually uses Co-Work."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=training--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="pt-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Training</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-4 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Training Service
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Claude Co-Work Training<br>
+        <span class="text-gray-500">for Your Team</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Remote screen-share sessions or hands-on workshops in NYC. We walk your team through Co-Work setup, plugins, skills, connectors, and scheduled tasks. Everyone leaves the session with a working setup.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=training--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+    </div>
+  </section>
+
+  <!-- TWO FORMATS -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Two Ways to Train</h2>
+      <p class="text-gray-500 text-lg text-center max-w-2xl mx-auto mb-12">Same content, different delivery. Pick what works for your team.</p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Remote -->
+        <div class="p-8 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Remote Training</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">
+            Screen-share sessions over Zoom, Google Meet, or Microsoft Teams. We share our screen to demonstrate, then switch to yours so we can walk through setup together. Works for individuals and distributed teams.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Live screen-share with real-time Q&amp;A
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Your team gets set up during the call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              No travel needed, schedule at your convenience
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Recording available so absent team members can catch up
+            </li>
+          </ul>
+        </div>
+        <!-- In-Person -->
+        <div class="p-8 rounded-xl border border-gray-200 bg-white">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">In-Person Training</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">
+            On-site workshops at your office. We're based in New York City and travel for larger engagements. Hands-on format where every team member opens their laptop and follows along. Best for teams of 5 or more.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Hands-on workshop format at your office
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Walk around and help each person individually
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Based in NYC, available to travel
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Ideal for team-wide rollouts
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT A SESSION COVERS -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">What a Training Session Covers</h2>
+      <p class="text-gray-500 text-lg text-center max-w-2xl mx-auto mb-12">We adjust the agenda based on your team's tools and workflows. Here's what we typically cover.</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-5 rounded-xl border border-gray-200">
+          <h3 class="font-semibold mb-2">Co-Work Fundamentals</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">How Co-Work differs from Chat and Code. Task delegation, monitoring progress, and understanding what Claude can and can't do. We cover the core workflow: describe the outcome, review the plan, let Claude execute.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200">
+          <h3 class="font-semibold mb-2">Plugin Installation and Customization</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Installing official Anthropic <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugins</a> for your role: Sales, Marketing, Legal, Finance, or any of the 11 available. Then customizing them with your company's terminology, processes, and preferred output formats.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200">
+          <h3 class="font-semibold mb-2">Custom Skill Creation</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Building <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">custom skills</a> for your specific workflows. Each repetitive task becomes a SKILL.md file with step-by-step instructions, templates, and examples. We build at least one together during the session.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200">
+          <h3 class="font-semibold mb-2">Connector Setup</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Connecting Co-Work to your existing tools: Slack, HubSpot, Google Drive, Jira, Salesforce, and <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">35+ others</a>. OAuth authentication, scoped permissions, and verifying that Claude can read and write to the right places.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200">
+          <h3 class="font-semibold mb-2">Scheduled Task Configuration</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Setting up recurring tasks that run daily, weekly, or monthly. Morning email briefings, file organization, revenue reports, competitive monitoring. We configure at least one <a href="/claude-cowork/scheduled-tasks" class="text-gray-900 underline hover:no-underline">scheduled task</a> live during the session.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200">
+          <h3 class="font-semibold mb-2">Security Best Practices</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Which folders to grant access to (and which to keep off-limits). How to scope connector permissions. Prompt injection risks and how to reduce them. Safe setup for scheduled tasks that run without monitoring.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Who This Is For</h2>
+      <div class="grid md:grid-cols-3 gap-8 mt-10">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Individuals</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Freelancers, solo founders, and professionals who want to get the most out of their Claude subscription. One session, fully configured setup, ready to use the next day.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Teams Adopting Claude</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Teams on Claude's Team or Enterprise plan rolling out Co-Work for the first time. We get everyone on the same page with consistent plugins, shared skills, and standardized workflows.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Department Rollouts</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Companies deploying Co-Work to a specific department: sales, marketing, legal, finance, or operations. We tailor the session to that department's tools and daily tasks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">How It Works</h2>
+      <p class="text-gray-500 text-lg text-center max-w-2xl mx-auto mb-12">Three steps. No ongoing commitment required.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">1</div>
+          <h3 class="font-semibold mb-2">Book a Discovery Call</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Free 15-minute call. We learn about your team, the tools you use, and the workflows you want to automate. This helps us prepare a session tailored to your actual needs.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">2</div>
+          <h3 class="font-semibold mb-2">We Scope Your Session</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Based on the discovery call, we prepare the training agenda. Which plugins to install, which connectors to configure, which skills to build. Everything is ready before the session starts.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-4">3</div>
+          <h3 class="font-semibold mb-2">Training Delivered</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Remote or in-person, your team walks through every step with us. By the end, everyone has a working Co-Work setup configured for their role. Need a follow-up session? We offer <a href="/claude-cowork/consulting" class="text-gray-900 underline hover:no-underline">ongoing support</a> too.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES WE TRAIN -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Industries We Train</h2>
+      <p class="text-gray-500 text-lg text-center max-w-2xl mx-auto mb-12">We've built Co-Work setups for teams across these industries. Each training session is scoped to your industry's tools and daily workflows.</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <a href="/claude-cowork/real-estate" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">Real Estate</a>
+        <a href="/claude-cowork/legal" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">Legal</a>
+        <a href="/claude-cowork/finance" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">Finance</a>
+        <a href="/claude-cowork/healthcare" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">Healthcare</a>
+        <a href="/claude-cowork/marketing" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">Marketing</a>
+        <a href="/claude-cowork/ecommerce" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">E-commerce</a>
+        <a href="/claude-cowork/insurance" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">Insurance</a>
+        <a href="/claude-cowork/recruiting" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">Recruiting</a>
+        <a href="/claude-cowork/property-management" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">Property Management</a>
+        <a href="/claude-cowork/accounting" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">Accounting</a>
+        <a href="/claude-cowork/startups" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">Startups</a>
+        <a href="/claude-cowork/construction" class="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all text-center text-sm font-medium text-gray-700 hover:text-gray-900">Construction</a>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-6">Don't see your industry? We still train on it. <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=training--discovery" target="_blank" class="text-gray-900 underline hover:no-underline">Book a call</a> and tell us what you need.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long is a typical training session?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Most sessions run 60 to 90 minutes. That's enough time to cover Co-Work fundamentals, install and configure plugins, set up connectors, and build at least one custom skill. Larger teams or more complex setups may need a second session.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Do you offer remote training or only in-person?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Both. Remote training happens over screen-share (Zoom, Google Meet, or Teams). In-person training is available on-site in New York City, and we travel for larger engagements. The content is identical either way.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What does my team need before the session?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Each team member needs Claude Desktop installed on macOS or Windows, plus a paid Claude plan (Pro, Max, Team, or Enterprise). We handle everything else during the session, including plugin installation, connector setup, and instruction configuration.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can you train just one person or does it have to be a full team?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            We train individuals and teams of any size. Solo sessions are common for founders and freelancers. Team sessions work well for departments rolling out Co-Work across a group of 5 to 50 people.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What if we need help after the training session?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            We offer ongoing support packages for teams that want continued help. This includes plugin updates as Anthropic evolves the platform, new connector setup, and workflow optimization based on how your team actually uses Co-Work. We also offer full <a href="/claude-cowork/consulting" class="text-gray-900 underline hover:no-underline">done-for-you consulting</a> if you'd rather have us build everything.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Get Your Team Trained?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll learn about your team's tools and workflows, then scope a training session that gets everyone productive with Co-Work from day one.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=training--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">No commitment. No sales pitch. Just a straight look at what your team needs.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

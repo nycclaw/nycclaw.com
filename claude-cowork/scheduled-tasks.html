@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Co-Work Scheduled Tasks: Automate Recurring Work | NYC Claw</title>
+  <meta name="description" content="Set up Claude Co-Work scheduled tasks to automate email briefings, invoice processing, market reports, and more. Daily, weekly, or monthly. Full guide with examples.">
+  <meta property="og:title" content="Claude Co-Work Scheduled Tasks: Automate Recurring Work | NYC Claw">
+  <meta property="og:description" content="Set up Claude Co-Work scheduled tasks to automate email briefings, invoice processing, market reports, and more. Daily, weekly, or monthly. Full guide with examples.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/claude-cowork/scheduled-tasks">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/claude-cowork/scheduled-tasks">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Claude Co-Work Scheduled Tasks Setup",
+    "description": "Professional configuration of Claude Co-Work scheduled tasks for automated email briefings, invoice processing, market reports, file organization, and recurring business workflows.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are Claude Co-Work scheduled tasks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Scheduled tasks are recurring automations inside Claude Co-Work that run at a cadence you choose: daily, weekly, or monthly. Each task runs as its own Co-Work session with full access to your connectors, plugins, and local files. You set them up using the /schedule command or the Scheduled sidebar in Claude Desktop."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does my computer need to be on for scheduled tasks to run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Your computer must be awake and Claude Desktop must be open for scheduled tasks to execute. If your machine is asleep or the app is closed when a task is due, it won't run until the next scheduled window."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many scheduled tasks can I run at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each scheduled task runs as its own Co-Work session, so only one task executes at a time. You can queue multiple tasks at different times throughout the day. The number of tasks you can schedule depends on your Claude plan's usage limits, since each task consumes compute like any other Co-Work session."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can scheduled tasks connect to external tools like Slack, Google Drive, and HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Scheduled tasks have full access to any connectors you've configured in Claude Desktop. That means a morning briefing task can pull from Gmail, a revenue report can read Stripe data, and a team update can post directly to Slack. You configure connectors once, and every scheduled task can use them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if a scheduled task produces an error or bad output?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each scheduled task creates a full session log you can review in Co-Work's history. If a task fails or produces unexpected results, you can open the session, see exactly what Claude did at each step, and adjust the task instructions. We recommend reviewing output from new tasks for the first few runs before trusting them fully."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+          <a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=nav&amp;utm_content=scheduled-tasks--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="pt-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <nav class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-gray-700">Home</a> &rarr;
+        <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> &rarr;
+        <span class="text-gray-900">Scheduled Tasks</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-4 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Feature Guide
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Claude Co-Work<br>
+        <span class="text-gray-500">Scheduled Tasks</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Set up recurring automations that run on their own. Morning email briefings, weekly market reports, daily invoice processing, file cleanup. Define the task once, and Claude handles it on schedule.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">Works with all <a href="/claude-cowork/connectors" class="underline hover:text-gray-600">38+ connectors</a>, <a href="/claude-cowork/plugins" class="underline hover:text-gray-600">plugins</a>, and local files.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=scheduled-tasks--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free 15-Minute Call
+        </a>
+        <a href="#what-are-scheduled-tasks" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          Learn More Below
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT ARE SCHEDULED TASKS -->
+  <section id="what-are-scheduled-tasks" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">What Are Scheduled Tasks?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        Scheduled tasks are recurring automations inside <a href="/claude-cowork/" class="text-gray-900 underline hover:no-underline">Claude Co-Work</a>. You define a task once, pick a cadence (daily, weekly, or monthly), and Claude runs it automatically at the time you set.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        Each scheduled task spins up its own Co-Work session. That means it has full access to your <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">connectors</a> (Gmail, Slack, Google Drive, Stripe, HubSpot, and 30+ others), your installed <a href="/claude-cowork/plugins" class="text-gray-900 underline hover:no-underline">plugins</a>, and any local files or folders you've granted Co-Work access to.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">
+        You set them up using the <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm">/schedule</code> command in any Co-Work session, or through the "Scheduled" sidebar panel in Claude Desktop. The setup takes about 60 seconds.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed mb-6">
+        There's one requirement: your computer needs to be awake and Claude Desktop needs to be open for the task to execute. If your machine is asleep at the scheduled time, the task won't run until the next window. This isn't a cloud service. It's an automation running locally on your machine, which also means your data never leaves your computer unless a connector explicitly sends it somewhere.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-5 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold mb-2">Daily</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Morning briefings, inbox sorting, file cleanup. Tasks that keep you current every day.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold mb-2">Weekly</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Market reports, revenue summaries, competitive monitoring, team presentation prep.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold mb-2">Monthly</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Invoice reconciliation, trend analysis, compliance checks, portfolio reviews.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO SET UP -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">How to Set Up a Scheduled Task</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10">
+        Setup takes under a minute. Here's the step-by-step process.
+      </p>
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-sm">1</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Open Claude Co-Work</h3>
+            <p class="text-gray-500 leading-relaxed">Launch Claude Desktop and start a new Co-Work session (not a regular Chat session).</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-sm">2</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Open the scheduler</h3>
+            <p class="text-gray-500 leading-relaxed">Type <code class="bg-white px-1.5 py-0.5 rounded text-sm border border-gray-200">/schedule</code> in the message bar, or click "Scheduled" in the left sidebar panel.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-sm">3</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Choose your cadence</h3>
+            <p class="text-gray-500 leading-relaxed">Select daily, weekly, or monthly. Pick the specific time and, for weekly tasks, the day of the week.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-sm">4</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Define the task</h3>
+            <p class="text-gray-500 leading-relaxed">Write clear instructions for what Claude should do. Be specific: name the connectors, files, folders, and output format you want. The more detail you provide, the better the results.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-sm">5</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Confirm and review</h3>
+            <p class="text-gray-500 leading-relaxed">Claude shows you a summary of the task, schedule, and connectors it'll use. Confirm to activate. You can edit or delete any scheduled task later from the Scheduled sidebar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMPLE SCHEDULED TASKS -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">10 Scheduled Tasks You Can Set Up Today</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Real examples from businesses using Co-Work. Each one runs hands-free at the cadence you choose.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Morning Email Briefing -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="font-bold text-lg mb-2">Morning Email Briefing</h3>
+          <p class="text-sm text-gray-400 mb-3">Daily, 7:30 AM</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Connects to Gmail, scans unread messages, and produces a one-page briefing. Surfaces high-priority items at the top, groups the rest by sender or topic, and drafts quick replies for routine messages. You start your day with a clear picture instead of a cluttered inbox.</p>
+        </div>
+
+        <!-- Document Inbox Sorting -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="font-bold text-lg mb-2">Document Inbox Sorting</h3>
+          <p class="text-sm text-gray-400 mb-3">Daily, 6:00 PM</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Monitors a designated inbox folder on your desktop. Sorts new files into categorized subfolders: clients, finances, projects, contracts. Renames files to follow your naming convention. Generates a daily summary report listing every file moved and where it went.</p>
+        </div>
+
+        <!-- File Cleanup and Deduplication -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="font-bold text-lg mb-2">File Cleanup and Deduplication</h3>
+          <p class="text-sm text-gray-400 mb-3">Weekly, Sunday 9:00 PM</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Scans specified folders for duplicate files, outdated versions, and naming inconsistencies. Flags exact duplicates for removal, renames files that don't match your conventions, and produces a cleanup report. Keeps your file system organized without manual effort.</p>
+        </div>
+
+        <!-- Weekly Market Reports -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="font-bold text-lg mb-2">Weekly Market Reports</h3>
+          <p class="text-sm text-gray-400 mb-3">Weekly, Monday 8:00 AM</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Built for <a href="/claude-cowork/real-estate" class="text-gray-900 underline hover:no-underline">real estate teams</a>. Pulls new listings from connected data sources, calculates median price changes by neighborhood, identifies notable sales above or below ask, formats everything using your template, and drafts a newsletter-ready report. Takes 2 minutes instead of 2 hours.</p>
+        </div>
+
+        <!-- Stripe Revenue Reporting -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="font-bold text-lg mb-2">Stripe Revenue Reporting</h3>
+          <p class="text-sm text-gray-400 mb-3">Weekly, Monday 7:00 AM</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Connects to Stripe via the Finance plugin connector. Pulls the past week's charges, refunds, and subscription changes. Calculates MRR, churn rate, and net new revenue. Outputs a formatted report to a Google Sheet or local spreadsheet. Useful for <a href="/claude-cowork/accounting-firms" class="text-gray-900 underline hover:no-underline">accounting firms</a> managing client billing.</p>
+        </div>
+
+        <!-- Invoice Processing -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="font-bold text-lg mb-2">Invoice Processing</h3>
+          <p class="text-sm text-gray-400 mb-3">Daily, 5:00 PM</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Scans an invoices folder for new PDFs and images. Extracts vendor name, date, amount, and line items from varying formats. Compiles everything into a master billing spreadsheet. Flags invoices with missing fields or amounts that look unusual. Saves hours of manual data entry each week.</p>
+        </div>
+
+        <!-- Competitive Monitoring -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="font-bold text-lg mb-2">Competitive Monitoring</h3>
+          <p class="text-sm text-gray-400 mb-3">Weekly, Friday 3:00 PM</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Uses the <a href="/claude-cowork/chrome-extension" class="text-gray-900 underline hover:no-underline">Chrome extension</a> and web <a href="/claude-cowork/skills" class="text-gray-900 underline hover:no-underline">skills</a> to check competitor websites for pricing changes, new features, updated messaging, and blog posts. Compiles a weekly brief comparing what changed versus last week. Keeps your sales and product teams informed without anyone spending time on manual research.</p>
+        </div>
+
+        <!-- Flight Price Tracking -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="font-bold text-lg mb-2">Flight Price Tracking</h3>
+          <p class="text-sm text-gray-400 mb-3">Daily, 10:00 AM</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Monitors flight prices for specific routes and dates you care about. Logs daily prices to a spreadsheet, calculates the trend, and sends you an alert (via Slack or email connector) when prices drop below your target. Particularly useful for teams booking frequent business travel.</p>
+        </div>
+
+        <!-- Weekly Team Presentation Prep -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="font-bold text-lg mb-2">Weekly Team Presentation Prep</h3>
+          <p class="text-sm text-gray-400 mb-3">Weekly, Thursday 4:00 PM</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Connects to Notion for project notes and Jira for sprint progress. Pulls completed tasks, blockers, and upcoming milestones. Generates a PowerPoint deck using your company template with one slide per project. Your Friday standup deck is ready before you leave on Thursday.</p>
+        </div>
+
+        <!-- Trending Topics Research -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <h3 class="font-bold text-lg mb-2">Trending Topics Research</h3>
+          <p class="text-sm text-gray-400 mb-3">Weekly, Monday 9:00 AM</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Scans industry news sources and social platforms for trending topics in your niche. Classifies each topic by content potential and business impact. References previous weeks' results so coverage builds over time instead of repeating the same ground. Outputs a ranked list with suggested angles for your content team.</p>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-10">
+        <p class="text-gray-500 mb-4">These are starting points. The real value comes from tasks built around your specific workflows.</p>
+        <a href="/claude-cowork/use-cases" class="text-gray-900 font-medium underline hover:no-underline">See more Co-Work use cases</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUIREMENTS AND LIMITATIONS -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Requirements and Limitations</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        Scheduled tasks are powerful, but they run with some constraints worth knowing upfront.
+      </p>
+      <div class="space-y-6">
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Your computer must be awake</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Scheduled tasks run locally, not in the cloud. If your machine is asleep, shut down, or in hibernation mode when a task is due, it won't execute. For daily morning tasks, set your computer's energy settings to wake before the scheduled time.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Claude Desktop must be open</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">The app doesn't need to be in the foreground, but it does need to be running. Add Claude Desktop to your login items so it launches automatically when your computer starts.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Tasks run without active monitoring</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">You won't be prompted to approve each step during a scheduled run. Claude follows the instructions you gave during setup. Review your task definitions carefully before activating them, especially tasks that create, move, or delete files. Test with a manual run first.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-white">
+          <h3 class="font-semibold mb-2">Usage counts against your plan</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Each scheduled task consumes compute like any other Co-Work session. If you're on a Pro plan with limited usage, be mindful of how many tasks you schedule and how complex they are. Max and Enterprise plans give more headroom.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">How We Help</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-8">
+        Setting up one scheduled task is simple. Building a system of 5 to 10 tasks that work together, use the right connectors, and produce reliable output takes more thought. That's where we come in.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-5 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold mb-2">Task Configuration</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We design scheduled tasks around your specific workflows. We write the task instructions, set the cadence, and configure which connectors and folders each task accesses.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold mb-2">Connector and Plugin Setup</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Most scheduled tasks need at least one connector (Gmail, Slack, Stripe, Google Sheets) to be useful. We handle the authentication flows, permission scoping, and testing to make sure everything works before the first scheduled run.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-gray-200 bg-gray-50">
+          <h3 class="font-semibold mb-2">Team <a href="/claude-cowork/training" class="text-gray-900 underline hover:no-underline">Training</a></h3>
+          <p class="text-sm text-gray-500 leading-relaxed">We train your team on creating, editing, and troubleshooting scheduled tasks. You'll know how to adjust cadences, update instructions, review session logs, and build new tasks on your own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What are Claude Co-Work scheduled tasks?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Scheduled tasks are recurring automations inside Claude Co-Work that run at a cadence you choose: daily, weekly, or monthly. Each task runs as its own Co-Work session with full access to your connectors, plugins, and local files. You set them up using the <code class="bg-gray-100 px-1 py-0.5 rounded">/schedule</code> command or the Scheduled sidebar in Claude Desktop.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Does my computer need to be on for scheduled tasks to run?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. Your computer must be awake and Claude Desktop must be open for scheduled tasks to execute. If your machine is asleep or the app is closed when a task is due, it won't run until the next scheduled window. For morning tasks, configure your computer's energy settings to wake a few minutes before the scheduled time.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How many scheduled tasks can I run at once?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Each scheduled task runs as its own Co-Work session, so only one task executes at a time. You can queue multiple tasks at different times throughout the day. The number of tasks you can schedule depends on your Claude plan's usage limits, since each task consumes compute like any other Co-Work session.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can scheduled tasks connect to external tools like Slack and Google Drive?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. Scheduled tasks have full access to any <a href="/claude-cowork/connectors" class="text-gray-900 underline hover:no-underline">connectors</a> you've configured in Claude Desktop. A morning briefing can pull from Gmail, a revenue report can read Stripe data, and a team update can post directly to Slack. You configure connectors once, and every scheduled task can use them.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">What happens if a scheduled task produces an error?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Each scheduled task creates a full session log you can review in Co-Work's history. If a task fails or produces unexpected results, open the session to see exactly what Claude did at each step. Then adjust the task instructions. We recommend reviewing output from new tasks for the first few runs before trusting them fully.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Automate Your Recurring Work?</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free 15-minute call. We'll look at your current workflows, identify which tasks belong on a schedule, and configure everything so it runs without you.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&amp;utm_medium=website&amp;utm_campaign=claude-cowork&amp;utm_content=scheduled-tasks--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book a Free 15-Minute Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">No commitment. No sales pitch. Just a straight look at what's possible.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
