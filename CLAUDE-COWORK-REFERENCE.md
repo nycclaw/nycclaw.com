@@ -1,22 +1,22 @@
-# Claude Co-Work — Complete Reference for nycclaw.com Content
+# Claude Cowork — Complete Reference for nycclaw.com Content
 
 _Last updated: 2026-03-17. Source: Official Anthropic docs, support articles, plugin repos, and product pages._
 
 ---
 
-## What Is Co-Work?
+## What Is Cowork?
 
-Co-Work brings Claude Code's agentic architecture to Claude Desktop for **non-coding knowledge work**. Instead of responding to prompts one at a time, Claude takes on complex, multi-step tasks and executes them autonomously.
+Cowork brings Claude Code's agentic architecture to Claude Desktop for **non-coding knowledge work**. Instead of responding to prompts one at a time, Claude takes on complex, multi-step tasks and executes them autonomously.
 
 - **Launched:** January 12, 2026 (research preview)
 - **Status:** Research preview — still evolving, some enterprise features missing
 - **Tagline:** "Claude Code power for knowledge work"
-- **How it differs from Chat:** In Chat, Claude responds but can't access files. In Co-Work, Claude can read, edit, and create files in folders you specify — it completes tasks, not just describes them.
-- **How it differs from Claude Code:** Claude Code is a CLI for developers. Co-Work is the same agentic architecture in the desktop app, no terminal required.
+- **How it differs from Chat:** In Chat, Claude responds but can't access files. In Cowork, Claude can read, edit, and create files in folders you specify — it completes tasks, not just describes them.
+- **How it differs from Claude Code:** Claude Code is a CLI for developers. Cowork is the same agentic architecture in the desktop app, no terminal required.
 
 ## Availability & Pricing
 
-| Plan | Price | Co-Work Access | Notes |
+| Plan | Price | Cowork Access | Notes |
 |------|-------|---------------|-------|
 | Pro | $17/mo (annual) or $20/mo | Included | Quick tasks. Consumes limits faster than Chat. |
 | Max 5x | $100/mo | Included | Great for everyday use on longer tasks |
@@ -24,7 +24,7 @@ Co-Work brings Claude Code's agentic architecture to Claude Desktop for **non-co
 | Team | $20/seat/mo | Included (standard + premium seats) | Teams of 5-75. Includes Slack connector + self-serve management |
 | Enterprise | Custom | Included | Admin controls. Cowork toggle is org-wide. |
 
-**Usage note:** Co-Work consumes significantly more usage allocation than regular Chat because multi-step tasks are compute-intensive and require more tokens.
+**Usage note:** Cowork consumes significantly more usage allocation than regular Chat because multi-step tasks are compute-intensive and require more tokens.
 
 ## Platforms
 
@@ -35,7 +35,7 @@ Co-Work brings Claude Code's agentic architecture to Claude Desktop for **non-co
 
 ## How It Works — Technical Architecture
 
-1. **Runs in a VM** — Co-Work runs in an isolated virtual machine on your local computer
+1. **Runs in a VM** — Cowork runs in an isolated virtual machine on your local computer
 2. **Local execution** — Code runs safely in an isolated space, but Claude can make real changes to your files
 3. **Conversation history stored locally** — NOT on Anthropic's servers
 4. **Process:** You describe outcome → Claude breaks into steps → executes each → shows plan before significant actions → delivers finished work
@@ -59,7 +59,7 @@ Co-Work brings Claude Code's agentic architecture to Claude Desktop for **non-co
 - Set up via `/schedule` command or "Scheduled" sidebar
 - Runs automatically at chosen cadence (daily, weekly, monthly)
 - Only runs while computer is awake and Claude Desktop is open
-- Each scheduled task runs as its own Co-Work session
+- Each scheduled task runs as its own Cowork session
 - Has access to same connectors, plugins, and file access as regular tasks
 
 ### Mobile Task Assignment
@@ -189,7 +189,7 @@ plugin-name/
 ## Instructions & Customization
 
 ### Global Instructions
-- Standing instructions that apply to every Co-Work session
+- Standing instructions that apply to every Cowork session
 - Set via Settings > "Cowork instructions" (or pencil icon in Cowork)
 - Use for: preferred tone, output format, role context, background info
 
@@ -303,7 +303,7 @@ plugin-name/
 ## Training & Service Offering Context
 
 ### What NYC Claw Offers (for page CTAs)
-NYC Claw provides white-glove Claude Co-Work setup and training:
+NYC Claw provides white-glove Claude Cowork setup and training:
 
 **Setup Services:**
 - Custom plugin development for your specific industry and workflow
@@ -313,7 +313,7 @@ NYC Claw provides white-glove Claude Co-Work setup and training:
 - Security best practices and permission setup
 
 **Training Services (Remote or In-Person):**
-- How to use Co-Work effectively (prompting, task delegation, monitoring)
+- How to use Cowork effectively (prompting, task delegation, monitoring)
 - Plugin customization for your team
 - Building scheduled automated workflows
 - Connector setup and management
@@ -421,7 +421,7 @@ Higher-priority locations win when names conflict.
 
 **Subagent execution** — Set `context: fork` to run skill in an isolated subagent with its own context window. Good for long tasks that shouldn't pollute the main conversation.
 
-### Bundled Skills (Ship with Claude Code/Co-Work)
+### Bundled Skills (Ship with Claude Code/Cowork)
 
 | Skill | Purpose |
 |-------|---------|

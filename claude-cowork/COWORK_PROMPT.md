@@ -1,4 +1,4 @@
-# Claude Co-Work Page Build Instructions
+# Claude Cowork Page Build Instructions
 
 _Master prompt for sub-agents building pages in /claude-cowork/_
 
@@ -15,15 +15,15 @@ Use `side-projects/nycclaw/for/real-estate.html` as your HTML/CSS template. Matc
 - Schema markup pattern (FAQPage + Service)
 - Mobile responsiveness classes
 
-**But adapt the content structure** for Co-Work pages as specified below.
+**But adapt the content structure** for Cowork pages as specified below.
 
 ---
 
 ## Page Types & Content Structure
 
 ### Pillar Page (`index.html`)
-1. Hero — "Claude Co-Work: The Complete Guide" + subheading
-2. What is Co-Work — brief explainer (how it differs from Chat and Claude Code)
+1. Hero — "Claude Cowork: The Complete Guide" + subheading
+2. What is Cowork — brief explainer (how it differs from Chat and Claude Code)
 3. Key capabilities overview (file management, web research, scheduled tasks, mobile assignment)
 4. Plugins & skills section — what they are, link to `/claude-cowork/plugins` and `/claude-cowork/skills`
 5. Connectors overview — 38+ integrations, link to `/claude-cowork/connectors`
@@ -33,16 +33,16 @@ Use `side-projects/nycclaw/for/real-estate.html` as your HTML/CSS template. Matc
 9. FAQ — 6-8 questions with schema markup
 
 ### Industry Spoke Pages
-1. Hero — "Claude Co-Work for [Industry]" + one-line hook
+1. Hero — "Claude Cowork for [Industry]" + one-line hook
 2. The Problem — 3-4 specific pain points for this industry (be concrete, not generic)
-3. How Co-Work Solves It — 3-5 specific workflows with real detail
+3. How Cowork Solves It — 3-5 specific workflows with real detail
 4. What We Build For You — Custom skills, plugins, connectors, scheduled tasks for this vertical
 5. Training — "We train your team. Remote or in-person."
 6. CTA — "Book a Free 15-Minute Call"
 7. FAQ — 4-5 industry-specific questions with schema markup
 
 ### Feature/Use Case Pages
-1. Hero — "Claude Co-Work [Feature]" + value prop
+1. Hero — "Claude Cowork [Feature]" + value prop
 2. What it is — Technical explanation made accessible
 3. How it works — Step-by-step with examples
 4. Use cases — 4-6 real examples (pull from CLAUDE-COWORK-REFERENCE.md research section)
@@ -51,12 +51,12 @@ Use `side-projects/nycclaw/for/real-estate.html` as your HTML/CSS template. Matc
 7. FAQ — 4-5 questions with schema markup
 
 ### Comparison Pages
-1. Hero — "Claude Co-Work vs [Competitor]"
+1. Hero — "Claude Cowork vs [Competitor]"
 2. Quick comparison table — features side by side
-3. Where Co-Work wins — specific advantages
+3. Where Cowork wins — specific advantages
 4. Where [Competitor] wins — be honest, builds trust
 5. Who should use which — decision framework
-6. How we help — "We'll set up Co-Work for your specific needs"
+6. How we help — "We'll set up Cowork for your specific needs"
 7. CTA — "Book a Free 15-Minute Call"
 8. FAQ — 3-4 questions
 
@@ -157,7 +157,7 @@ Replace `[slug]` with the page slug (e.g., `real-estate`, `legal`, `plugins`).
 ```html
 <nav class="text-sm text-gray-500 mb-4">
   <a href="/" class="hover:text-gray-700">Home</a> →
-  <a href="/claude-cowork/" class="hover:text-gray-700">Claude Co-Work</a> →
+  <a href="/claude-cowork/" class="hover:text-gray-700">Claude Cowork</a> →
   <span class="text-gray-900">Page Title</span>
 </nav>
 ```
@@ -167,7 +167,7 @@ Replace `[slug]` with the page slug (e.g., `real-estate`, `legal`, `plugins`).
 ## Reference Material
 
 The sub-agent MUST read this file before writing any content:
-- `side-projects/nycclaw/CLAUDE-COWORK-REFERENCE.md` — comprehensive reference on Co-Work features, plugins, skills, connectors, real-world workflows, and use cases
+- `side-projects/nycclaw/CLAUDE-COWORK-REFERENCE.md` — comprehensive reference on Cowork features, plugins, skills, connectors, real-world workflows, and use cases
 
 This is the source of truth for technical accuracy. Do NOT make up features or capabilities not documented in this file.
 
@@ -175,9 +175,9 @@ This is the source of truth for technical accuracy. Do NOT make up features or c
 
 ## Nav Update
 
-Every page should include the standard NYC Claw nav with an ADDED "Co-Work" link:
+Every page should include the standard NYC Claw nav with an ADDED "Cowork" link:
 ```html
-<a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Co-Work</a>
+<a href="/claude-cowork/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Claude Cowork</a>
 ```
 Place this between "Industries" and "Book a Call" in the nav.
 
