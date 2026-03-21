@@ -521,4 +521,9 @@
   <url><loc>https://nycclaw.com/integrations/redtail</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://nycclaw.com/integrations/wealthbox</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://nycclaw.com/integrations/riskalyze</loc><lastmod>2026-03-21</lastmod></url>
+  <url>
+    <loc>https://nycclaw.com/for/personal-injury</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
