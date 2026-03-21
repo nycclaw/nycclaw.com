@@ -11,11 +11,13 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenClaw for Lofty (Chime) | Real Estate CRM Integration & AI Automation | NYC Claw</title>
-  <meta name="description" content="Connect OpenClaw to Lofty and let AI handle your leads, Smart Plans, and follow-ups. We set up the full integration so your real estate CRM runs itself.">
-  <meta property="og:title" content="OpenClaw for Lofty | Real Estate CRM Integration & AI Automation | NYC Claw">
-  <meta property="og:description" content="OpenClaw connects to Lofty's REST API. Leads, Smart Plans, IDX activity, conversations. Your real estate CRM finally has a brain.">
+  <title>OpenClaw for Lofty (formerly Chime) | IDX Website + CRM Automation | NYC Claw</title>
+  <meta name="description" content="Connect OpenClaw to Lofty CRM and automate lead routing, Smart Plans, IDX follow-ups, and transaction management. Your Lofty account gets an AI operator that works 24/7.">
+  <meta property="og:title" content="OpenClaw for Lofty (formerly Chime) | IDX Website + CRM Automation | NYC Claw">
+  <meta property="og:description" content="OpenClaw connects to Lofty's API and runs your lead follow-up, Smart Plans, and pipeline so you can focus on closings.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta name="twitter:image" content="https://nycclaw.com/og-image.png">
   <meta property="og:url" content="https://nycclaw.com/integrations/lofty">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#111827">
@@ -71,8 +73,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "OpenClaw for Lofty - Real Estate CRM Integration & AI Automation",
-    "description": "Professional OpenClaw integration with Lofty (formerly Chime) real estate CRM. AI-powered lead management, Smart Plan automation, and IDX visitor tracking through Lofty's REST API.",
+    "name": "OpenClaw for Lofty (formerly Chime) - IDX Website + CRM Automation",
+    "description": "Professional OpenClaw integration with Lofty CRM. AI-powered lead routing, Smart Plan automation, IDX website follow-up, and transaction management for real estate agents and teams.",
     "provider": {
       "@type": "ProfessionalService",
       "name": "NYC Claw",
@@ -114,15 +116,15 @@
         "name": "Does OpenClaw replace Lofty?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. OpenClaw connects to Lofty through the API and operates it for you. Your Lofty account, leads, Smart Plans, and IDX website stay exactly where they are. OpenClaw adds a layer of intelligence on top of the system you already pay for."
+          "text": "No. OpenClaw connects to Lofty through its API and operates it for you. Your IDX website, CRM data, Smart Plans, and lead routing rules all stay in place. OpenClaw adds a layer of intelligence on top, handling the follow-up and decision-making that Lofty's built-in tools can't do on their own."
         }
       },
       {
         "@type": "Question",
-        "name": "What Lofty features can OpenClaw access?",
+        "name": "How is OpenClaw different from Lofty's built-in AI Assistant?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "OpenClaw connects through Lofty's REST API using OAuth 2.0. It can read and update leads, trigger and manage Smart Plans, track IDX website activity, handle conversations via text and email, update lead scores and tags, and coordinate with integrations like Zillow, Realtor.com, and Dotloop."
+          "text": "Lofty's AI Assistant handles basic chatbot responses on your IDX website. It can answer simple property questions and capture contact info. OpenClaw goes further: it reads the full CRM record, continues conversations over SMS and email, qualifies leads on your specific criteria, updates pipeline stages, triggers Smart Plans based on behavior, and coordinates across tools outside of Lofty. They're complementary. Lofty's AI captures the lead. OpenClaw works it."
         }
       },
       {
@@ -130,7 +132,7 @@
         "name": "How long does the integration setup take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most Lofty integrations are fully running within 3 to 5 days. The API connection goes live on day one. The rest of the time is spent configuring the AI for your specific lead sources, qualifying criteria, and follow-up style."
+          "text": "Most Lofty integrations are running within 3 to 5 days. The API connection goes live on day one. The rest of the time is spent configuring OpenClaw for your lead routing rules, Smart Plan triggers, qualifying criteria, and communication style."
         }
       },
       {
@@ -138,15 +140,15 @@
         "name": "Which Lofty plan do I need?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Any Lofty plan that includes API access works. You can find your API key under Settings > Integrations > API in your Lofty account. If you're unsure whether your plan includes it, check with Lofty support or ask us during the discovery call."
+          "text": "You need a Lofty plan that includes API access. The Platform plan and above include it. If you're on a team plan managed by your brokerage, check with your admin to confirm API access is enabled for your account."
         }
       },
       {
         "@type": "Question",
-        "name": "What about Lofty's built-in AI Assistant?",
+        "name": "Will OpenClaw interfere with my existing Smart Plans?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Lofty's AI Assistant handles basic text follow-ups within the platform. OpenClaw goes further: it reads lead behavior across your entire pipeline, makes decisions about which Smart Plan to trigger, updates records based on real conversation context, and coordinates actions across Lofty and your other tools like email and calendar. They can work alongside each other."
+          "text": "No. OpenClaw works alongside your existing Smart Plans and drip campaigns. It can trigger them, pause them, or switch leads between plans based on how conversations are going. But it won't delete or overwrite anything you've already set up."
         }
       }
     ]
@@ -209,13 +211,13 @@
         Platform Integration
       </div>
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-        You have the leads.<br>
-        <span class="text-gray-500">Nobody's working them.</span>
+        Lofty generates the leads.<br>
+        <span class="text-gray-500">Nobody's working them fast enough.</span>
       </h1>
       <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
-        Lofty captures leads from Zillow, Realtor.com, your IDX site, and paid ads. But those leads still need someone to respond, qualify, and follow up. That someone is now OpenClaw.
+        Lofty (formerly Chime) gives you IDX websites, Smart Plans, lead routing, and a full CRM. But the leads still need someone to respond, qualify, and follow up. OpenClaw does that part automatically.
       </p>
-      <p class="text-sm text-gray-400 mb-10">OpenClaw connects to Lofty's REST API via OAuth 2.0. Leads, Smart Plans, conversations, IDX activity. All of it.</p>
+      <p class="text-sm text-gray-400 mb-10">OpenClaw connects to Lofty's API. Contacts, lead activity, listing alerts, Smart Plans, transaction stages. All of it.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=lofty--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
           Book a Free Discovery Call
@@ -232,8 +234,8 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <p class="text-3xl font-bold text-gray-900">OAuth 2.0</p>
-          <p class="text-sm text-gray-500 mt-1">secure API connection to your Lofty account</p>
+          <p class="text-3xl font-bold text-gray-900">5 min</p>
+          <p class="text-sm text-gray-500 mt-1">is all it takes for lead response rates to drop 80%</p>
         </div>
         <div>
           <p class="text-3xl font-bold text-gray-900">24/7</p>
@@ -244,8 +246,8 @@
           <p class="text-sm text-gray-500 mt-1">average response time to new Lofty leads</p>
         </div>
         <div>
-          <p class="text-3xl font-bold text-gray-900">50+</p>
-          <p class="text-sm text-gray-500 mt-1">lead sources supported (Zillow, Realtor.com, IDX, ads)</p>
+          <p class="text-3xl font-bold text-gray-900">Full API</p>
+          <p class="text-sm text-gray-500 mt-1">contacts, Smart Plans, listings, transactions</p>
         </div>
       </div>
     </div>
@@ -256,24 +258,24 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">Lofty does a lot. You're still doing the hard part.</h2>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">The platform captures leads and scores them. But someone still has to act on all of it.</p>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">The platform handles lead capture and drip campaigns. But the real work happens between those steps.</p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">Smart Plans run, but they're not smart enough</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Lofty's Smart Plans can drip emails and texts on a schedule. That works until a lead replies with a real question. "What's the HOA fee on that listing?" Your Smart Plan doesn't know. So the lead waits for you. And if you're showing houses or in a meeting, they wait a long time.</p>
+          <h3 class="text-lg font-semibold mb-2">Smart Plans send messages. They can't read replies.</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lofty's Smart Plans are solid for drip campaigns. They'll send a text on day 1, an email on day 3, another text on day 7. But when a lead replies "I'm looking in the $500K range, what's available in Greenpoint?" the Smart Plan has no idea what to do with that. It just keeps dripping. Someone has to actually read the reply and respond. That someone is usually you, hours later.</p>
         </div>
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">Lead scores pile up with no one acting on them</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Lofty scores your leads based on website behavior, property views, and contact validity. Great. But a lead score of 85 means nothing if nobody calls them within the hour. You log in, see a list of hot leads from last night, and half of them have already gone cold. The data was there. The action wasn't.</p>
+          <h3 class="text-lg font-semibold mb-2">Lead routing gets them there. Then what?</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lofty's round-robin and performance-based lead routing is useful for teams. The lead lands in the right agent's queue. But "in the queue" and "actively being worked" are two different things. If that agent is showing a house, on a call, or just having lunch, the lead sits. And sits. Studies show response time is the single biggest factor in lead conversion. Every minute counts.</p>
         </div>
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">Portal leads arrive at 11 PM and sit until morning</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A Zillow inquiry hits your Lofty account at 11:14 PM. Lofty sends an auto-text. The buyer replies "Is this still available?" Silence until you wake up. By 9 AM, they've already talked to two other agents. Speed to lead isn't a suggestion in real estate. It's the difference between getting the client and losing them.</p>
+          <h3 class="text-lg font-semibold mb-2">Your IDX site captures leads. It doesn't convert them.</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Someone registers on your Lofty IDX site at 11 PM because they're browsing listings from their couch. They get a registration confirmation email. Maybe a Smart Plan kicks in tomorrow. But right now, while they're actively looking, nobody's engaging them. They save three properties, look at mortgage calculators, and by morning they've registered on two other sites too.</p>
         </div>
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">IDX visitors browse but nobody follows up</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Lofty tracks every property view, saved search, and favorite on your IDX site. You can see that a lead looked at 12 listings in Williamsburg last Tuesday. But turning that browsing behavior into a timely, relevant follow-up? That takes reading the activity, writing a personalized message, and actually sending it. Most agents never get to it.</p>
+          <h3 class="text-lg font-semibold mb-2">Transaction management is manual data entry in disguise</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lofty has transaction management tools, but moving a deal from "Under Contract" to "Inspection" to "Clear to Close" still requires you to update the record by hand. Add in the notes, update the timeline, notify the right people. It's bookkeeping dressed up as technology. And it falls behind the moment you get busy with the next deal.</p>
         </div>
       </div>
     </div>
@@ -284,50 +286,50 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">OpenClaw + Lofty Integration</h2>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">OpenClaw connects to Lofty through the REST API and acts on your leads in real time. Here's what that looks like in practice.</p>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">OpenClaw connects to Lofty through the API and acts on what's happening in your CRM. It reads lead activity, responds to messages, manages Smart Plans, and keeps your pipeline moving. Here's what that looks like.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
-          <h3 class="font-semibold mb-2">Instant lead response from any source</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Zillow inquiry, Realtor.com lead, IDX registration, Facebook ad form. Doesn't matter where it comes from. OpenClaw picks up the new lead through Lofty's API, reads the source and details, and sends a personalized text or email within seconds. Not a template. A real response based on what they asked about.</p>
+          <h3 class="font-semibold mb-2">Instant IDX lead follow-up</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Someone registers on your Lofty IDX site. Within seconds, OpenClaw picks up the new contact, checks which listings they viewed, and sends a personalized text or email referencing those specific properties. Not a generic "Thanks for registering." A message like "I saw you were looking at the 2-bed on Bedford Ave. That one just had a price drop. Want me to set up a showing?"</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
           </div>
-          <h3 class="font-semibold mb-2">Qualifies leads through real conversation</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">When a lead texts back, OpenClaw keeps the conversation going. It asks about their timeline, budget, pre-approval status, and neighborhood preferences. Based on your criteria, it figures out if they're ready to tour or just browsing. Qualified leads get pushed toward booking. Everyone else gets nurtured.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-          </div>
-          <h3 class="font-semibold mb-2">Triggers the right Smart Plan automatically</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw reads the lead's behavior and conversation context, then enrolls them in the appropriate Lofty Smart Plan. A buyer looking at condos under $500K gets a different drip than an investor asking about multi-family. No manual sorting. The right sequence starts based on what the lead actually told you.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-          </div>
-          <h3 class="font-semibold mb-2">Books showings and consultations</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Once a lead is qualified, OpenClaw checks your calendar and suggests times. The lead picks one, gets a confirmation, and you get a notification with everything you need to know: who they are, what they're looking for, budget, pre-approval status, and the full conversation history.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
-          </div>
-          <h3 class="font-semibold mb-2">Updates lead records as it learns</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw adds tags, updates custom fields, and writes notes to lead records in Lofty as conversations happen. When you open a lead's profile, their budget, timeline, neighborhood preferences, and qualification status are already filled in. No data entry on your end.</p>
+          <h3 class="font-semibold mb-2">Conversations that qualify, not just respond</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When a lead replies to a message, OpenClaw reads their response and continues the conversation. It asks about budget, timeline, pre-approval status, and neighborhood preferences based on the qualifying criteria you define. If they mention they need to sell first, OpenClaw adjusts its approach. It's not running a script. It's having a real conversation with your business logic built in.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
           </div>
-          <h3 class="font-semibold mb-2">Acts on IDX browsing behavior</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Lofty tracks every property view and saved search on your IDX site. OpenClaw reads that activity and follows up based on what the lead actually looked at. "I noticed you saved three listings near Prospect Park. Want me to set up showings this weekend?" Specific, timely, and relevant.</p>
+          <h3 class="font-semibold mb-2">Smart Plans triggered by behavior, not timers</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lofty's Smart Plans run on schedules. OpenClaw can switch leads between plans based on what's actually happening. A lead who just viewed 15 listings in one session gets moved to your "hot buyer" plan immediately. A lead who hasn't opened an email in 30 days gets switched to a re-engagement sequence. The right plan at the right time, without you checking in.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Lead routing with actual follow-through</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lofty routes leads to agents. OpenClaw makes sure they actually get worked. If a lead is assigned to an agent and nobody responds within your defined window (say, 10 minutes), OpenClaw steps in and starts the conversation. The agent gets notified with full context when they're available. No lead falls through the cracks because someone was at a showing.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Listing alert follow-up that converts</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lofty sends listing alerts based on saved searches. Most go unopened. OpenClaw monitors which alerts a lead actually clicks on, then follows up on those specific properties. "I noticed you looked at the new listing on 5th Street. It's in your price range and has the garage you mentioned. Want to see it this weekend?" That kind of follow-up is what turns browsers into buyers.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Transaction stages that update themselves</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When a deal moves forward, OpenClaw updates the transaction record in Lofty. Offer accepted? Stage moves to "Under Contract" and the buyer gets a congratulations message with next steps. Inspection scheduled? Stage updates, notes get added, and the relevant parties get notified. You stop spending 15 minutes per deal on status updates that could happen automatically.</p>
         </div>
       </div>
     </div>
@@ -346,8 +348,79 @@
     </div>
   </section>
 
-  <!-- USE CASES -->
+  <!-- LOFTY AI vs OPENCLAW -->
   <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Lofty AI Assistant vs. OpenClaw</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Lofty has a built-in AI Assistant. OpenClaw does something different. Here's how they compare and why most agents end up using both.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <h3 class="font-semibold text-lg mb-4">Lofty's AI Assistant</h3>
+          <ul class="space-y-3 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&#8226;</span>
+              Chatbot on your IDX website
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&#8226;</span>
+              Answers basic property questions from visitors
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&#8226;</span>
+              Captures contact info from website visitors
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&#8226;</span>
+              Works only on the Lofty website itself
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&#8226;</span>
+              Follows pre-built conversation scripts
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-400 mt-0.5">&#8226;</span>
+              Good at: initial capture and basic engagement
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-xl border-2 border-gray-900">
+          <h3 class="font-semibold text-lg mb-4">OpenClaw</h3>
+          <ul class="space-y-3 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <span class="text-gray-900 mt-0.5">&#8226;</span>
+              Operates your entire CRM through the API
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-900 mt-0.5">&#8226;</span>
+              Continues conversations over SMS, email, and phone
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-900 mt-0.5">&#8226;</span>
+              Qualifies leads on your specific criteria (budget, timeline, pre-approval)
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-900 mt-0.5">&#8226;</span>
+              Works across Lofty and your other tools (email, calendar, other CRMs)
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-900 mt-0.5">&#8226;</span>
+              Makes decisions based on lead behavior and CRM data
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-900 mt-0.5">&#8226;</span>
+              Good at: everything that happens after capture
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">They're complementary. Lofty's AI captures the lead on your website. OpenClaw takes over from there: qualifying, following up, updating your pipeline, and booking appointments. You don't need to choose between them.</p>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">What this looks like in practice</h2>
@@ -356,25 +429,25 @@
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Solo Agent</div>
-          <h3 class="font-semibold mb-3">The Zillow lead at midnight</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A buyer submits an inquiry on Zillow at 11:42 PM. It flows into Lofty. OpenClaw picks it up, sees they asked about a 2-bed in Park Slope, and texts them within 30 seconds. The buyer replies asking about the school district. OpenClaw answers, asks if they're pre-approved, and books a showing for Saturday. You wake up to a qualified appointment with full context.</p>
+          <h3 class="font-semibold mb-3">The late-night IDX registration that books a showing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A buyer registers on your Lofty IDX site at 10:30 PM. They save four listings in Park Slope, all 3-beds under $1.2M. OpenClaw picks up the new contact within seconds, sees the saved listings, and texts: "Hi Sarah, I see you're looking at 3-bedrooms in Park Slope. A couple of those just hit the market this week. Are you pre-approved yet?" Sarah replies she's working with a lender. OpenClaw asks a few more questions, confirms she's qualified, and books a Saturday showing. You wake up to a full lead profile and a confirmed appointment.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Team Lead</div>
-          <h3 class="font-semibold mb-3">Round-robin that actually works</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Your team gets 40 leads a week from Facebook ads. They land in Lofty and get assigned via round-robin. Half of them never get a first call because your agents are busy with active clients. OpenClaw handles the initial outreach for every lead, qualifies them through text conversation, and only passes the ready-to-tour ones to the assigned agent. Your team spends time on closeable deals, not cold calls.</p>
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Team Leader</div>
+          <h3 class="font-semibold mb-3">Lead routing that doesn't let leads go cold</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your Lofty account routes a new Zillow lead to one of your agents via round-robin. The agent is at a closing and doesn't respond for 20 minutes. OpenClaw notices the lead hasn't been contacted, steps in, and starts the conversation. It qualifies the buyer, learns they need to sell their current place first, and tags them as "sell-to-buy" in Lofty. When the agent checks in an hour later, the lead is warm, qualified, and has full notes attached. No cold follow-up needed.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Listing Agent</div>
-          <h3 class="font-semibold mb-3">Open house follow-up on autopilot</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">You host an open house on Sunday. Twenty people sign in through your Lofty form. By Sunday evening, OpenClaw has texted every one of them a personalized follow-up based on the property they saw. It asks about their search criteria, qualifies their timeline, and enrolls serious buyers into your active Smart Plan. Monday morning, you have three showing requests waiting.</p>
+          <h3 class="font-semibold mb-3">Open house leads that actually get worked</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You add 15 open house visitors to Lofty on Sunday afternoon. Normally, you'd spend Monday morning texting each one. With OpenClaw, every new contact gets a personalized follow-up within minutes of being added. "Thanks for coming by the open house at 412 Atlantic. What did you think of the layout? Is that neighborhood at the top of your list?" By Monday morning, OpenClaw has qualified eight of them, identified three serious buyers, and booked two showings for other properties they'd like.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section id="how-it-works" class="py-20 px-6">
+  <section id="how-it-works" class="py-20 px-6 bg-gray-50">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
@@ -385,21 +458,21 @@
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">1</div>
           <div>
             <h3 class="text-lg font-semibold mb-1">We connect OpenClaw to your Lofty account</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">We set up OAuth 2.0 authentication and configure the API connection so OpenClaw can read your leads, track IDX activity, and act on new inquiries from Zillow, Realtor.com, Facebook, and your website. This happens on day one.</p>
+            <p class="text-gray-500 text-sm leading-relaxed">We set up API access so OpenClaw can read and write to your Lofty CRM. Contacts, lead activity, Smart Plans, listing data, transaction records. Everything OpenClaw needs to operate your account is connected on day one. Your existing setup stays exactly as it is.</p>
           </div>
         </div>
         <div class="flex gap-6 items-start">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">2</div>
           <div>
-            <h3 class="text-lg font-semibold mb-1">We configure the AI for your market</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Your qualifying questions. Your neighborhoods. Your price points. Your tone of voice. We train OpenClaw on how you work so it responds the way you would. A luxury agent in Manhattan gets a different setup than a first-time buyer specialist in Queens.</p>
+            <h3 class="text-lg font-semibold mb-1">We configure the AI for your business</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Your qualifying questions. Your market area. Your tone of voice. Whether you focus on buyers, sellers, or both. Which Smart Plans should trigger based on which behaviors. We configure OpenClaw so it responds and makes decisions the way you would. Specific to your brokerage, your price points, your neighborhoods.</p>
           </div>
         </div>
         <div class="flex gap-6 items-start">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">3</div>
           <div>
-            <h3 class="text-lg font-semibold mb-1">OpenClaw starts working your leads</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Leads come in. OpenClaw responds, qualifies, updates your Lofty records, triggers the right Smart Plans, and books showings. You review the first few days, tell us what to adjust, and we fine-tune. Within a week, it's running on its own.</p>
+            <h3 class="text-lg font-semibold mb-1">OpenClaw starts operating your Lofty</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Leads come in through your IDX site, Zillow, Realtor.com, or wherever you're generating them. OpenClaw responds, qualifies, updates records, triggers the right Smart Plans, and books appointments. You review the first few days, tell us what to adjust, and we fine-tune. Within a week, it's handling your lead follow-up on its own.</p>
           </div>
         </div>
       </div>
@@ -407,7 +480,7 @@
   </section>
 
   <!-- PRICING -->
-  <section id="pricing" class="py-20 px-6 bg-gray-50">
+  <section id="pricing" class="py-20 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
@@ -417,7 +490,7 @@
         <!-- Free -->
         <div class="bg-white p-8 rounded-xl border border-gray-200">
           <h3 class="font-bold text-lg mb-1">Discovery Call</h3>
-          <p class="text-gray-500 text-sm mb-4">See if this makes sense for your setup.</p>
+          <p class="text-gray-500 text-sm mb-4">See if this makes sense for your Lofty setup.</p>
           <p class="text-4xl font-extrabold mb-6">Free</p>
           <ul class="space-y-3 mb-8 text-sm text-gray-600">
             <li class="flex items-start gap-2">
@@ -426,7 +499,7 @@
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Review your Lofty setup and lead sources
+              Review your Lofty setup and lead flow
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -450,11 +523,11 @@
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Lead source routing and Smart Plan triggers
+              Smart Plan triggers and lead routing rules
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              AI configured for your market and voice
+              AI configured for your market and criteria
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -497,55 +570,55 @@
   </section>
 
   <!-- FAQ -->
-  <section class="py-20 px-6">
+  <section class="py-20 px-6 bg-gray-50">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">Common questions</h2>
       </div>
       <div class="space-y-4">
-        <details class="border border-gray-200 rounded-xl overflow-hidden">
+        <details class="border border-gray-200 rounded-xl overflow-hidden bg-white">
           <summary class="flex items-center justify-between p-6 cursor-pointer">
             <span class="font-semibold text-sm">Does OpenClaw replace Lofty?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            No. OpenClaw connects to Lofty through the API and operates it for you. Your Lofty account, leads, Smart Plans, and IDX website stay exactly where they are. OpenClaw adds a layer of intelligence on top of the system you already pay for. Think of it as giving your CRM a brain, not swapping it out.
+            No. OpenClaw connects to Lofty through its API and operates it for you. Your IDX website, CRM data, Smart Plans, and lead routing rules all stay in place. OpenClaw adds a layer of intelligence on top, handling the follow-up and decision-making that Lofty's built-in tools can't do on their own.
           </div>
         </details>
-        <details class="border border-gray-200 rounded-xl overflow-hidden">
+        <details class="border border-gray-200 rounded-xl overflow-hidden bg-white">
           <summary class="flex items-center justify-between p-6 cursor-pointer">
-            <span class="font-semibold text-sm">What Lofty features can OpenClaw access?</span>
+            <span class="font-semibold text-sm">How is OpenClaw different from Lofty's built-in AI Assistant?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            OpenClaw connects through Lofty's REST API using OAuth 2.0. It can read and update leads, trigger and manage Smart Plans, track IDX website activity, handle conversations via text and email, update lead scores and tags, and coordinate with integrations like Zillow, Realtor.com, and Dotloop. If Lofty exposes it through the API, OpenClaw can act on it.
+            Lofty's AI Assistant handles basic chatbot responses on your IDX website. It can answer simple property questions and capture contact info. OpenClaw goes further: it reads the full CRM record, continues conversations over SMS and email, qualifies leads on your specific criteria, updates pipeline stages, triggers Smart Plans based on behavior, and coordinates across tools outside of Lofty. They're complementary. Lofty's AI captures the lead. OpenClaw works it.
           </div>
         </details>
-        <details class="border border-gray-200 rounded-xl overflow-hidden">
+        <details class="border border-gray-200 rounded-xl overflow-hidden bg-white">
           <summary class="flex items-center justify-between p-6 cursor-pointer">
             <span class="font-semibold text-sm">How long does the integration setup take?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            Most Lofty integrations are fully running within 3 to 5 days. The API connection goes live on day one. The rest of the time is spent configuring the AI for your specific lead sources, qualifying criteria, and follow-up style. Within a week, it's handling leads on its own.
+            Most Lofty integrations are running within 3 to 5 days. The API connection goes live on day one. The rest of the time is spent configuring OpenClaw for your specific lead routing rules, Smart Plan triggers, qualifying criteria, and communication style. Within a week, it's handling leads on its own.
           </div>
         </details>
-        <details class="border border-gray-200 rounded-xl overflow-hidden">
+        <details class="border border-gray-200 rounded-xl overflow-hidden bg-white">
           <summary class="flex items-center justify-between p-6 cursor-pointer">
             <span class="font-semibold text-sm">Which Lofty plan do I need?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            Any Lofty plan that includes API access works. You can find your API key under Settings > Integrations > API in your Lofty account. If you're unsure whether your plan includes it, check with Lofty support or ask us during the discovery call. We'll confirm before you commit to anything.
+            You need a Lofty plan that includes API access. The Platform plan and above include it. If you're on a team plan managed by your brokerage, check with your admin to confirm API access is enabled for your account. That's the only requirement on the Lofty side.
           </div>
         </details>
-        <details class="border border-gray-200 rounded-xl overflow-hidden">
+        <details class="border border-gray-200 rounded-xl overflow-hidden bg-white">
           <summary class="flex items-center justify-between p-6 cursor-pointer">
-            <span class="font-semibold text-sm">What about Lofty's built-in AI Assistant?</span>
+            <span class="font-semibold text-sm">Will OpenClaw interfere with my existing Smart Plans?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            Lofty's AI Assistant handles basic text follow-ups within the platform. OpenClaw goes further: it reads lead behavior across your entire pipeline, makes decisions about which Smart Plan to trigger, updates records based on real conversation context, and coordinates actions across Lofty and your other tools like email and calendar. They can work alongside each other.
+            No. OpenClaw works alongside your existing Smart Plans and drip campaigns. It can trigger them, pause them, or switch leads between plans based on how conversations are going. But it won't delete or overwrite anything you've already set up. Your current automations keep running. OpenClaw just makes smarter decisions about when to use them.
           </div>
         </details>
       </div>
@@ -555,13 +628,19 @@
   <!-- RELATED INDUSTRIES -->
   <section class="py-12 px-6 border-t border-gray-100">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-sm text-gray-400 mb-4">Lofty is built for real estate. See how OpenClaw works for your specialty:</p>
-      <div class="flex flex-wrap justify-center gap-3">
+      <p class="text-sm text-gray-400 mb-4">OpenClaw + Lofty works great for real estate. See related pages:</p>
+      <div class="flex flex-wrap justify-center gap-3 mb-4">
         <a href="/for/real-estate" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Real Estate</a>
-        <a href="/for/insurance-agencies" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Insurance</a>
-        <a href="/for/financial-advisors" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Financial Advisors</a>
-        <a href="/for/startup-founders" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Startups</a>
+        <a href="/for/real-estate-investors" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Real Estate Investors</a>
+        <a href="/for/mortgage-brokers" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Mortgage Brokers</a>
         <a href="/industries" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Industries &rarr;</a>
+      </div>
+      <p class="text-sm text-gray-400 mb-4">Compare with other real estate CRM integrations:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/integrations/followupboss" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Follow Up Boss</a>
+        <a href="/integrations/kvcore" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">kvCORE</a>
+        <a href="/integrations/liondesk" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">LionDesk</a>
+        <a href="/integrations/dealmachine" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">DealMachine</a>
       </div>
     </div>
   </section>
@@ -569,7 +648,7 @@
   <!-- FINAL CTA -->
   <section class="py-20 px-6 bg-gray-900 text-white">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Your leads deserve better than a drip campaign.</h2>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Your Lofty account is generating leads. Let's make sure they get worked.</h2>
       <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your Lofty setup together and figure out where OpenClaw can take work off your plate.</p>
       <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=lofty--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg">
         Book a Free Discovery Call

@@ -12,10 +12,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenClaw for Buildium | Property Management AI Automation | NYC Claw</title>
-  <meta name="description" content="Connect OpenClaw to Buildium and let AI handle tenant communications, maintenance requests, lease tracking, and accounting updates. We set up the full integration so your property management runs itself.">
+  <meta name="description" content="Connect OpenClaw to Buildium and automate maintenance triage, lease renewals, owner reports, and tenant communications. Your property management software finally thinks for itself.">
   <meta property="og:title" content="OpenClaw for Buildium | Property Management AI Automation | NYC Claw">
-  <meta property="og:description" content="OpenClaw connects to Buildium's Open API. Tenants, leases, maintenance, accounting. Your property management software finally has a brain.">
+  <meta property="og:description" content="Buildium manages your properties. OpenClaw manages the work Buildium can't think about. Maintenance triage, lease renewals, owner reports, vendor coordination.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta name="twitter:image" content="https://nycclaw.com/og-image.png">
   <meta property="og:url" content="https://nycclaw.com/integrations/buildium">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#111827">
@@ -72,7 +74,7 @@
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "OpenClaw for Buildium - Property Management AI Automation",
-    "description": "Professional OpenClaw integration with Buildium property management software. AI-powered tenant communication, maintenance coordination, lease tracking, and accounting automation through Buildium's Open API.",
+    "description": "Professional OpenClaw integration with Buildium property management software. AI-powered maintenance triage, lease renewal automation, owner reporting, and tenant communication.",
     "provider": {
       "@type": "ProfessionalService",
       "name": "NYC Claw",
@@ -114,15 +116,7 @@
         "name": "Does OpenClaw replace Buildium?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. OpenClaw connects to Buildium through its Open API and operates it for you. Your Buildium account, data, and workflows stay exactly where they are. OpenClaw just adds a layer of intelligence so you spend less time clicking around inside the platform."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What Buildium features can OpenClaw access?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "OpenClaw connects to Buildium's full Open API: rental properties, units, tenants, leases, maintenance requests, ownership accounts, accounting (general ledger, bills, bank accounts, transactions), association management, and more. Buildium also supports webhooks, so OpenClaw gets notified in real time when things change."
+          "text": "No. Buildium stays exactly where it is. OpenClaw connects to Buildium through its API and handles the decision-making and communication tasks that Buildium wasn't designed to do. Your tenant data, lease records, and accounting all stay in Buildium. OpenClaw just reads that data and acts on it."
         }
       },
       {
@@ -130,7 +124,7 @@
         "name": "How long does the integration setup take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most Buildium integrations are running within 3 to 5 days. The API connection and webhook subscriptions go live on day one. The rest of the time is spent configuring the AI for your specific properties, communication style, and operational rules."
+          "text": "Most Buildium integrations are fully running within 5 to 7 days. The API connection goes live on day one. The remaining time is spent configuring OpenClaw for your specific properties, vendor list, lease terms, and communication preferences."
         }
       },
       {
@@ -138,15 +132,23 @@
         "name": "Which Buildium plan do I need?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You need Buildium's Premium plan or higher to get Open API access. The Essential and Growth plans don't include it. If you're not sure which plan you're on, check your Buildium account settings or ask their support team."
+          "text": "You need a Buildium plan that includes API access. The Growth and Premium plans include it. If you're on the Essential plan, you may need to upgrade or contact Buildium about API access for your account."
         }
       },
       {
         "@type": "Question",
-        "name": "Can OpenClaw handle multiple properties and associations?",
+        "name": "Can OpenClaw handle multiple properties with different rules?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The Buildium API gives OpenClaw access to all properties, units, and associations in your account. It can manage communications and operations across your entire portfolio from a single integration."
+          "text": "Yes. OpenClaw reads each property's configuration from Buildium and applies property-specific rules. Different vendor preferences per building, different lease renewal strategies per market, different owner reporting formats. Each property can have its own logic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens when OpenClaw isn't sure about something?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It asks you. OpenClaw is configured with escalation rules. If a maintenance request looks like it could be an emergency, it flags you immediately. If a lease renewal situation is unusual, it drafts a recommendation and waits for your approval. You set the boundaries for what it handles alone and what needs your sign-off."
         }
       }
     ]
@@ -209,13 +211,13 @@
         Platform Integration
       </div>
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-        You manage properties.<br>
-        <span class="text-gray-500">Not software.</span>
+        Buildium manages your properties.<br>
+        <span class="text-gray-500">Nobody manages the rest.</span>
       </h1>
       <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
-        Buildium tracks your tenants, leases, and accounting. But someone still has to respond to maintenance requests at 11 PM, chase late rent, and keep records updated. That someone is now OpenClaw.
+        Maintenance requests pile up. Lease renewals sneak past you. Owner reports take half a day. Buildium holds all the data, but you're still the one doing the thinking. OpenClaw changes that.
       </p>
-      <p class="text-sm text-gray-400 mb-10">OpenClaw connects to Buildium's Open API. Properties, tenants, leases, work orders, accounting. All of it.</p>
+      <p class="text-sm text-gray-400 mb-10">OpenClaw connects to Buildium's API. Tenants, leases, maintenance, vendors, financials. It reads the data and acts on it.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=buildium--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
           Book a Free Discovery Call
@@ -232,20 +234,20 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <p class="text-3xl font-bold text-gray-900">200+</p>
-          <p class="text-sm text-gray-500 mt-1">API endpoints across Buildium's platform</p>
+          <p class="text-3xl font-bold text-gray-900">4.2hrs</p>
+          <p class="text-sm text-gray-500 mt-1">average daily time PMs spend on repetitive tasks</p>
         </div>
         <div>
-          <p class="text-3xl font-bold text-gray-900">24/7</p>
-          <p class="text-sm text-gray-500 mt-1">tenant response, including nights and weekends</p>
+          <p class="text-3xl font-bold text-gray-900">60 days</p>
+          <p class="text-sm text-gray-500 mt-1">ahead of expiration, OpenClaw starts lease renewals</p>
         </div>
         <div>
-          <p class="text-3xl font-bold text-gray-900">&lt;60s</p>
-          <p class="text-sm text-gray-500 mt-1">average response to new maintenance requests</p>
+          <p class="text-3xl font-bold text-gray-900">&lt;2min</p>
+          <p class="text-sm text-gray-500 mt-1">from maintenance request to vendor work order</p>
         </div>
         <div>
           <p class="text-3xl font-bold text-gray-900">Full API</p>
-          <p class="text-sm text-gray-500 mt-1">rentals, associations, accounting, leases</p>
+          <p class="text-sm text-gray-500 mt-1">tenants, leases, maintenance, vendors, accounting</p>
         </div>
       </div>
     </div>
@@ -255,25 +257,25 @@
   <section class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Great software. Still too much manual work.</h2>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Buildium handles the data. You're still handling everything else.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Buildium tracks everything. You still do everything.</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">The software stores the data. But you're still the one reading it, deciding what to do, and doing it.</p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">Maintenance requests pile up after hours</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A tenant submits a work order at 9 PM about a leaking faucet. Buildium logs it. Nobody responds until the next morning. By then the tenant has called twice, left a voicemail, and posted a review. The request was in your system the whole time. It just sat there.</p>
+          <h3 class="text-lg font-semibold mb-2">Maintenance requests sit in a queue until you read them</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A tenant submits a request at 7 AM. It sits in Buildium until you open the dashboard, read the description, figure out if it's urgent, find the right vendor, send the work order, and update the tenant. That's 15 minutes per request. Multiply that by the dozen requests you get each week. Meanwhile, the tenant is wondering if anyone even saw their message.</p>
         </div>
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">Late rent follow-ups eat your mornings</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Rent is due on the first. By the fifth, you're pulling up the outstanding balances report and sending individual messages to each delinquent tenant. Some need a gentle nudge. Some need a formal notice. You know the difference, but Buildium doesn't. So you do it manually, every single month.</p>
+          <h3 class="text-lg font-semibold mb-2">Lease renewals catch you by surprise</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You know you should start the renewal process 60 to 90 days before expiration. Buildium has the lease end dates. But nobody is watching them for you. So you notice at 30 days out, scramble to check market rents, draft a renewal letter, and hope the tenant doesn't leave. Some months, one slips past entirely.</p>
         </div>
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">Lease renewals sneak up on you</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A lease expires in 60 days. You meant to start the renewal conversation last month. Now you're scrambling to reach the tenant, discuss terms, and get paperwork going before they start looking elsewhere. The data was in Buildium. Nobody was watching it.</p>
+          <h3 class="text-lg font-semibold mb-2">Owner reports consume half your month</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Every owner wants a monthly report. Buildium has the financials, but pulling them, formatting them, adding context about vacancies or maintenance costs, and sending them to each owner individually takes hours. Some PMs spend an entire day on this every month. It's the kind of work that makes you question your career choice.</p>
         </div>
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">Vendor coordination falls through the cracks</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A work order gets approved. Now someone needs to contact the plumber, confirm availability, update the tenant, and log the cost when it's done. That's four steps across two days, and none of them happen automatically. Buildium tracks the work order. You track everything around it.</p>
+          <h3 class="text-lg font-semibold mb-2">Vendor coordination is a full-time job nobody hired for</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A toilet breaks. You need a plumber. But which one? The one who's fast but expensive? The one who's cheap but never answers? The one who did great work at 123 Main but has never been to the other building? Buildium stores vendor info, but it can't match the right vendor to the right job based on specialty, past performance, and availability. That's all you.</p>
         </div>
       </div>
     </div>
@@ -284,50 +286,50 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">OpenClaw + Buildium Integration</h2>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">OpenClaw connects to Buildium through the Open API and webhooks. It reads your property data, makes decisions, and takes action. Here's what that looks like.</p>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">OpenClaw connects to Buildium through the API, reads your property data, and handles the decision-making work that eats your day. Here's what that looks like.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
-          <h3 class="font-semibold mb-2">Instant maintenance triage</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">When a tenant submits a maintenance request, OpenClaw picks it up through a webhook within seconds. It reads the description, assesses urgency (burst pipe vs. squeaky door), responds to the tenant with a realistic timeline, and flags emergencies for your immediate attention. No more requests sitting unread overnight.</p>
+          <h3 class="font-semibold mb-2">Maintenance request triage in under two minutes</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Tenant submits a request in Buildium. OpenClaw reads the description, categorizes the severity (emergency vs. routine vs. cosmetic), finds the right vendor based on specialty and past performance at that property, sends the work order, and texts the tenant a confirmation. All before you've finished your coffee.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           </div>
-          <h3 class="font-semibold mb-2">Automated rent follow-ups</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw checks outstanding balances through Buildium's ownership account transactions API. On day 3, it sends a friendly reminder. On day 7, a firmer notice. On day 14, a formal communication. Each message is tailored to the tenant's history and your policies. You set the rules once.</p>
+          <h3 class="font-semibold mb-2">Lease renewals that start themselves</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">60 days before a lease expires, OpenClaw checks comparable rents in the area, reviews the tenant's payment history in Buildium, drafts a renewal letter with a proposed rent adjustment, and flags you for approval. You review the letter, hit approve, and it goes out. No more missed renewals. No more last-minute scrambles.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           </div>
-          <h3 class="font-semibold mb-2">Lease renewal tracking</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw monitors lease expiration dates across your portfolio via the leases API. Sixty days out, it starts the renewal conversation with the tenant. It can present new terms, answer questions about rent adjustments, and flag tenants who seem likely to leave so you can plan ahead.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-          </div>
-          <h3 class="font-semibold mb-2">Property records stay current</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw writes notes, updates unit details, and logs communication history directly in Buildium through the API. When you open a tenant or property record, everything is already there. Move-in notes, maintenance history, payment conversations. No data entry on your end.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          </div>
-          <h3 class="font-semibold mb-2">Accounting entries without the busywork</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Buildium's API exposes the full general ledger, bank accounts, bills, and transaction history. OpenClaw can create charges, log payments, record vendor bills, and reconcile transactions. When a maintenance job is completed, it logs the cost against the right property automatically.</p>
+          <h3 class="font-semibold mb-2">Owner reports generated and sent automatically</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">On the first of each month, OpenClaw pulls financials from Buildium for every property. Income, expenses, maintenance costs, vacancy status. It formats a clean report for each owner, adds context about notable items (that roof repair, the new tenant in unit 3B), and sends it. Your owners get professional reports without you spending a full day on them.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
-          <h3 class="font-semibold mb-2">HOA and association management</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">For association managers, OpenClaw handles owner communications, processes architectural requests, tracks board member changes, and monitors ownership account balances. It reads the association data through dedicated API endpoints and acts on it the same way it does for rental properties.</p>
+          <h3 class="font-semibold mb-2">Tenant screening follow-up on autopilot</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A rental application comes in through Buildium. OpenClaw sends the applicant a confirmation, checks if any documents are missing, and follows up to collect them. It sends status updates as the application moves through your review process. The applicant feels informed. You didn't write a single email.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Smart vendor matching and coordination</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When a maintenance request comes in, OpenClaw doesn't just pick any vendor. It checks the issue type, reviews which vendors have done similar work at that property before, factors in response times and ratings, and selects the best match. If the first choice is unavailable, it moves to the next. The vendor gets a detailed work order. You get a notification that it's handled.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Tenant communication that doesn't wait for you</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Tenant asks when the plumber is coming. OpenClaw checks the work order status in Buildium, sees the vendor confirmed for Thursday between 10 and 12, and replies to the tenant with the details. Rent payment reminders go out three days before due date. Late notices follow your exact policy. Every message is logged in Buildium automatically.</p>
         </div>
       </div>
     </div>
@@ -351,23 +353,23 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">What this looks like in practice</h2>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three real scenarios where OpenClaw and Buildium work together.</p>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three scenarios where OpenClaw and Buildium work together to get hours back in your week.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Property Manager</div>
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Residential PM</div>
           <h3 class="font-semibold mb-3">The midnight pipe burst</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A tenant submits a maintenance request at 11:43 PM: "Water is pouring from under the kitchen sink." OpenClaw picks it up through a Buildium webhook, recognizes "water pouring" as an emergency, texts the tenant within 30 seconds with instructions to shut off the valve under the sink, and alerts your on-call plumber. It creates notes in the Buildium property record and sends you a summary. You wake up to a resolved situation, not a crisis.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">A tenant submits an emergency maintenance request at 11:43 PM: "Water leaking from ceiling in bedroom." OpenClaw reads the request, flags it as emergency severity, texts the tenant with instructions to shut off the water valve, and dispatches your emergency plumber with the property address and unit number. The plumber confirms they're en route. You get a notification with full details. By the time you see it, the situation is already being handled.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Portfolio Owner</div>
-          <h3 class="font-semibold mb-3">Rent collection across 40 units</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">It's the 5th. OpenClaw pulls outstanding balances from Buildium's transactions API and finds 8 tenants who haven't paid. It checks each tenant's payment history. Three are usually a few days late (gentle reminder). Two are first-time late (friendly check-in). Three are chronic (formal notice with late fee reference). Each gets the right message. You review the summary over coffee instead of spending an hour writing individual texts.</p>
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Multi-property Owner</div>
+          <h3 class="font-semibold mb-3">Renewal season without the chaos</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You manage 85 units across six buildings. Seventeen leases expire in the next 90 days. OpenClaw identifies each one in Buildium, pulls comparable rents, reviews each tenant's payment history and maintenance request frequency, and drafts 17 renewal letters with individualized rent adjustments. Good tenants get modest increases. Problem tenants get market rate. Each letter lands in your inbox for a quick review and one-click approval.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">HOA Manager</div>
-          <h3 class="font-semibold mb-3">Architectural request processing</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">An owner submits an architectural request through Buildium to replace their front door. OpenClaw reads the request details via the API, checks it against your association's guidelines, and sends the owner an acknowledgment with the expected review timeline. It flags the request for the next board meeting and adds the relevant details to the agenda notes. The owner feels heard. You didn't lift a finger.</p>
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Property Management Company</div>
+          <h3 class="font-semibold mb-3">Owner reporting that writes itself</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You manage properties for 12 different owners. Each wants a monthly report. OpenClaw pulls Buildium financials on the first of the month, generates a report for each owner that includes income, expenses, occupancy rates, and maintenance summaries. It flags anything unusual (a spike in repairs at one property, a vacancy that's been open too long) and includes a note explaining it. The reports go out by the 3rd. You spent zero hours on them.</p>
         </div>
       </div>
     </div>
@@ -385,21 +387,21 @@
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">1</div>
           <div>
             <h3 class="text-lg font-semibold mb-1">We connect OpenClaw to your Buildium account</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">We generate API keys in your Buildium account and set up webhook subscriptions for the events that matter: new maintenance requests, lease changes, payment activity, tenant updates. OpenClaw starts listening on day one.</p>
+            <p class="text-gray-500 text-sm leading-relaxed">We configure API access so OpenClaw can read and write to your Buildium account: tenants, leases, maintenance requests, vendors, and financials. We set up webhooks to notify OpenClaw the moment something changes. This happens on day one.</p>
           </div>
         </div>
         <div class="flex gap-6 items-start">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">2</div>
           <div>
-            <h3 class="text-lg font-semibold mb-1">We configure the AI for your properties</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Your maintenance escalation rules. Your rent collection timeline. Your lease renewal terms. Your communication tone. We configure OpenClaw to operate the way you would, across your specific portfolio. Not generic. Tuned to how you run things.</p>
+            <h3 class="text-lg font-semibold mb-1">We configure it for your properties and workflows</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Your vendor preferences. Your maintenance escalation rules. Your lease renewal strategy. Your owner report format. We set up OpenClaw to match how you actually run your business, property by property if needed. Not a generic template. Your specific operations.</p>
           </div>
         </div>
         <div class="flex gap-6 items-start">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">3</div>
           <div>
-            <h3 class="text-lg font-semibold mb-1">OpenClaw starts operating your Buildium</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Maintenance requests get triaged. Late rent gets followed up. Lease renewals get initiated. You review the first few days, tell us what to adjust, and we fine-tune. Within a week, your Buildium is running with far less of your time.</p>
+            <h3 class="text-lg font-semibold mb-1">OpenClaw starts operating alongside Buildium</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Maintenance requests get triaged. Lease renewals start on schedule. Owner reports go out on time. You review the first week, tell us what to adjust, and we fine-tune the rules. Within two weeks, it's running your day-to-day operations while you focus on growing the portfolio.</p>
           </div>
         </div>
       </div>
@@ -426,7 +428,7 @@
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Review your Buildium setup and goals
+              Review your Buildium setup and pain points
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -450,11 +452,11 @@
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Webhook subscriptions for your key events
+              Maintenance triage and vendor matching rules
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              AI configured for your portfolio and rules
+              Lease renewal and owner report automation
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -509,16 +511,7 @@
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            No. OpenClaw connects to Buildium through its Open API and operates it for you. Your Buildium account, data, and workflows stay exactly where they are. OpenClaw adds a layer of intelligence so you spend less time clicking around inside the platform and more time on the work that actually grows your portfolio.
-          </div>
-        </details>
-        <details class="border border-gray-200 rounded-xl overflow-hidden">
-          <summary class="flex items-center justify-between p-6 cursor-pointer">
-            <span class="font-semibold text-sm">What Buildium features can OpenClaw access?</span>
-            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            OpenClaw connects to Buildium's full Open API: rental properties, units, tenants, leases, maintenance requests, ownership accounts, the general ledger, bank accounts, bills, transactions, associations, board members, architectural requests, and more. Buildium also supports webhooks, so OpenClaw gets real-time notifications when data changes. Over 200 API endpoints are available.
+            No. Buildium stays exactly where it is. OpenClaw connects to Buildium through its API and handles the decision-making and communication tasks that Buildium wasn't designed to do. Your tenant data, lease records, and accounting all stay in Buildium. OpenClaw reads that data and acts on it.
           </div>
         </details>
         <details class="border border-gray-200 rounded-xl overflow-hidden">
@@ -527,7 +520,7 @@
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            Most Buildium integrations are running within 3 to 5 days. The API connection and webhook subscriptions go live on day one. The rest is configuring the AI for your specific properties, escalation rules, communication style, and accounting preferences. Within a week, it's handling operations on its own.
+            Most Buildium integrations are fully running within 5 to 7 days. The API connection goes live on day one. The remaining time is spent configuring OpenClaw for your specific properties, vendor list, lease terms, and communication preferences. Within two weeks, it's handling your daily operations independently.
           </div>
         </details>
         <details class="border border-gray-200 rounded-xl overflow-hidden">
@@ -536,16 +529,25 @@
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            You need Buildium's Premium plan or higher. The Essential and Growth plans don't include Open API access. If you're not sure which plan you're on, check your Buildium account settings or contact their support team. The Premium plan is the only requirement on the Buildium side.
+            You need a Buildium plan that includes API access. The Growth and Premium plans include it. If you're on the Essential plan, you may need to upgrade or contact Buildium about enabling API access for your account. That's the only requirement on the Buildium side.
           </div>
         </details>
         <details class="border border-gray-200 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between p-6 cursor-pointer">
-            <span class="font-semibold text-sm">Can OpenClaw handle multiple properties and associations?</span>
+            <span class="font-semibold text-sm">Can OpenClaw handle multiple properties with different rules?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            Yes. The Buildium API gives OpenClaw access to every property, unit, and association in your account. It manages communications and operations across your entire portfolio from a single integration. Whether you have 10 units or 500, the setup is the same.
+            Yes. OpenClaw reads each property's configuration from Buildium and applies property-specific rules. Different vendor preferences per building, different lease renewal strategies per market, different owner reporting formats. Each property gets its own logic without you managing separate systems.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">What happens when OpenClaw isn't sure about something?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            It asks you. OpenClaw is configured with escalation rules. If a maintenance request looks like it could be an emergency, it flags you immediately. If a lease renewal situation is unusual (long-term tenant, below-market rent, complicated history), it drafts a recommendation and waits for your approval. You set the boundaries for what it handles alone and what needs your sign-off.
           </div>
         </details>
       </div>
@@ -555,12 +557,13 @@
   <!-- RELATED INDUSTRIES -->
   <section class="py-12 px-6 border-t border-gray-100">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-sm text-gray-400 mb-4">OpenClaw + Buildium is built for property management. See setup details for related industries:</p>
+      <p class="text-sm text-gray-400 mb-4">OpenClaw + Buildium works great for property managers and investors. See more:</p>
       <div class="flex flex-wrap justify-center gap-3">
-        <a href="/for/real-estate" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Real Estate</a>
-        <a href="/for/accounting-firms" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Accounting Firms</a>
-        <a href="/for/law-firms" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Law Firms</a>
-        <a href="/for/financial-advisors" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Financial Advisors</a>
+        <a href="/for/property-management" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Property Management</a>
+        <a href="/for/real-estate-investors" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Real Estate Investors</a>
+        <a href="/integrations/appfolio" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">AppFolio</a>
+        <a href="/integrations/guesty" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Guesty</a>
+        <a href="/integrations/quickbooks" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">QuickBooks</a>
         <a href="/industries" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Industries &rarr;</a>
       </div>
     </div>
@@ -569,8 +572,8 @@
   <!-- FINAL CTA -->
   <section class="py-20 px-6 bg-gray-900 text-white">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to stop babysitting your property management software?</h2>
-      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your Buildium setup together and figure out where OpenClaw can take work off your plate.</p>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Stop being the smartest part of your software stack.</h2>
+      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your Buildium setup and figure out which tasks OpenClaw should handle first.</p>
       <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=buildium--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg">
         Book a Free Discovery Call
       </a>
