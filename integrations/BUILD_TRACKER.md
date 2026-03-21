@@ -32,23 +32,27 @@
 
 | # | Platform | Category | Slug | Status |
 |---|----------|----------|------|--------|
-| 11 | Dentrix | Dental PM | dentrix | ⬜ |
-| 12 | Eaglesoft | Dental PM | eaglesoft | ⬜ |
-| 13 | Open Dental | Dental PM | open-dental | ⬜ |
-| 14 | Redtail CRM | Financial CRM | redtail | ⬜ |
-| 15 | Wealthbox | Financial CRM | wealthbox | ⬜ |
-| 16 | Riskalyze/Nitrogen | Financial Tools | riskalyze | ⬜ |
+| 11 | Dentrix | Dental PM | dentrix | ✅ deployed Mar 21 |
+| 12 | Eaglesoft | Dental PM | eaglesoft | ✅ deployed Mar 21 |
+| 13 | Open Dental | Dental PM | open-dental | ✅ deployed Mar 21 |
+| 14 | Redtail CRM | Financial CRM | redtail | ✅ deployed Mar 21 |
+| 15 | Wealthbox | Financial CRM | wealthbox | ✅ deployed Mar 21 |
+| 16 | Riskalyze/Nitrogen | Financial Tools | riskalyze | ✅ deployed Mar 21 |
 
-### Content Refresh
+### Content Rewrites (Completed Mar 21)
 
 | # | Platform | Action | Status |
 |---|----------|--------|--------|
-| 17 | **Lofty** | Full rewrite: deeper use cases, "Lofty AI vs OpenClaw" section, FAQ, internal links | ⬜ |
+| 17 | **Lofty** | Full rewrite: Smart Plans, IDX, lead routing, Lofty AI vs OpenClaw | ✅ deployed Mar 21 |
+| 18 | **GoHighLevel** | Full rewrite: orchestration-layer framing, Workflows v2, sub-accounts, SaaS Mode | ✅ deployed Mar 21 |
+| 19 | **kvCORE** | Full rewrite: speed-to-lead, lead triage, behavioral triggers | ✅ deployed Mar 21 |
+| 20 | **Buildium** | Full rewrite: PM workflows, maintenance triage, lease renewal, owner reporting | ✅ deployed Mar 21 |
 
 ### Vertical Page Updates
 
 | # | Page | Action | Status |
 |---|------|--------|--------|
+| — | Integrations index | Added 6 new tools to directory | ✅ Mar 21 |
 | — | `/for/dental-practices` | Add links to Dentrix, Eaglesoft, Open Dental | ⬜ |
 | — | `/for/financial-advisors` | Add links to Redtail, Wealthbox, Riskalyze | ⬜ |
 | — | `/for/real-estate` | Add prominent Lofty link | ⬜ |

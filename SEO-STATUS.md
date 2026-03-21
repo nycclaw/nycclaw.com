@@ -1,53 +1,57 @@
 # NYC Claw — SEO & Analytics Status
 
-_Last updated: March 20, 2026_
+_Last updated: March 21, 2026_
+
+## Current State
+
+- **109 pages live** (57 integration + 16 vertical + 8 claude-cowork + 4 core + rest)
+- **DR: 0** (Ahrefs — still too new for domain rating)
+- **~200 organic clicks/month**, ~7,000+ impressions (28-day window)
+- **Google Indexing API:** Working — pages crawled within 24 hours of submission
+- **OG image:** Updated Mar 21, added site-wide to all integration pages
+
+## What We Did (March 21, 2026)
+
+### New Integration Pages (6)
+- **Dental:** Dentrix, Eaglesoft, Open Dental → support `/for/dental-practices`
+- **Financial Advisor:** Redtail CRM, Wealthbox, Riskalyze → support `/for/financial-advisors`
+
+### Content Rewrites (4)
+- **GoHighLevel** — orchestration-layer framing (not vs GHL AI), Workflows v2, sub-accounts, SaaS Mode
+- **Lofty** — deep RE content, Smart Plans, IDX, "Lofty AI vs OpenClaw" positioning
+- **kvCORE** — speed-to-lead angle, lead triage, behavioral triggers
+- **Buildium** — PM workflow automation, maintenance triage, lease renewal, owner reporting
+
+### Site-Wide Improvements
+- **OG image updated** — removed "In person." from social card
+- **og:image + twitter:image** added to all 57 integration pages (was missing)
+- **Integrations index** updated with 6 new tools
+- **Sitemap** updated (109 URLs)
+- All 10 URLs submitted to Google Indexing API
+
+### Strategy Docs Created
+- `research/integration-expansion-q2-2026.md` — full Q2 expansion plan
+- `integrations/BUILD_TRACKER.md` — updated with all planned builds
 
 ## What We Did (March 20, 2026)
 
 ### Google Search Console Setup
 - OAuth'd with webmasters + indexing + cloud-platform scopes
-- Created service account `gsc-indexing@ai-agent-auth-488416.iam.gserviceaccount.com` for Indexing API
-- Added as Owner in GSC for nycclaw.com
-- **42 missing pages submitted** for indexing via Google Indexing API (0 failures)
+- Created service account for Indexing API, added as Owner in GSC
+- **42 missing pages submitted** for indexing (0 failures)
 - Skills created: `google-search-console`, `google-analytics`
 
-### Google Analytics Event Tracking
-- **`book_call_click` event** — fires on every Cal.com button click
-  - Tracks: `page_source`, `cta_type`, `campaign`, `link_url`
-- **GA client ID + source page** passed to Cal.com via `metadata[]` URL params
-  - `metadata[ga_client_id]`, `metadata[source_page]`, `metadata[source_content]`
-- Injected into all 103 HTML pages
-
-### GA4 Measurement Protocol (Server-Side Conversions)
-- **Measurement Protocol API secret:** stored as `GA4_MP_API_SECRET` env var on `calcom-webhook` CF Worker
-- **Measurement ID:** `G-DBW292SFKX`
-- **Flow:** Cal.com BOOKING_CREATED webhook → CF Worker extracts metadata → fires `booking_confirmed` event to GA4 with original client ID
-- **Worker:** `calcom-webhook.giovannimail-aa.workers.dev` (updated in `side-projects/calcom-webhook-worker/`)
-- **Conversion value:** $1,200 for bookings from `/integrations/` pages
+### GA4 Event Tracking
+- `book_call_click` event on every Cal.com button
+- Measurement Protocol for server-side `booking_confirmed` events
+- Conversion value: $1,200 for bookings from `/integrations/` pages
 
 ### Cowork Branding Fix
-- Renamed all "Co-Work" → "Cowork" across 33 HTML pages (1,250 instances) to match Anthropic's official branding
+- Renamed all "Co-Work" → "Cowork" across 33 pages
 
-## TODO — Needs Testing
+## Top Performing Pages (GSC, Feb 21 – Mar 20)
 
-- [ ] **Test the full conversion pipeline end-to-end:**
-  1. Visit an integration page on nycclaw.com
-  2. Click "Book a Call" — verify `book_call_click` shows in GA4 Realtime
-  3. Complete a test booking — verify `booking_confirmed` shows in GA4
-  4. Check that `metadata.ga_client_id` and `metadata.source_page` come through in the Cal.com booking
-- [ ] Verify Cal.com actually passes `metadata[]` URL params into the booking payload (untested — previous bookings all had `metadata: {}`)
-- [ ] If metadata doesn't pass through, consider alternative: Cal.com embed with JS metadata injection
-
-## SEO Deep Dive Findings
-
-### Current State (as of March 20)
-- **DR: 0** (Ahrefs has no data — too new)
-- **67 pages** getting impressions out of 103
-- **~200 clicks, ~7,000+ impressions** over 28 days
-- Almost all traffic is **branded** ("openclaw + industry")
-- **100% bounce rate** in GA4 (only 2 days of data)
-
-### Top Performing Pages (GSC, 28 days)
+### Vertical Pages
 | Page | Clicks | Impressions | Position |
 |------|--------|-------------|----------|
 | / | 33 | 491 | 5.1 |
@@ -58,42 +62,84 @@ _Last updated: March 20, 2026_
 | /for/ecommerce | 12 | 352 | 7.5 |
 | /for/healthcare | 10 | 570 | 7.0 |
 | /for/real-estate | 10 | 578 | 6.7 |
+
+### Integration Pages
+| Page | Clicks | Impressions | Position |
+|------|--------|-------------|----------|
 | /integrations/xero | 7 | 77 | 5.4 |
-| /integrations/clay | 5 | 48 | 4.3 |
+| /integrations/clay | 5 | 49 | 4.3 |
+| /integrations/clio | 3 | 50 | 3.8 |
+| /integrations/followupboss | 3 | 191 | 4.2 |
+| /integrations/gohighlevel | 3 | 588 | 8.0 |
+| /integrations/jobber | 2 | 23 | 2.7 |
 
-### High Impression / Zero Click Pages (title/meta issue)
-| Page | Impressions | Position |
-|------|-------------|----------|
-| /for/dental-practices | 111 | 5.3 |
-| /integrations/gohighlevel | 542 | 7.9 |
-| /integrations/athenahealth | 66 | 6.9 |
-| /integrations/buildium | 64 | 20.9 |
-| /for/mortgage-brokers | 61 | 9.8 |
-| /integrations/wave | 35 | 3.5 |
-| /integrations/guesty | 33 | 5.0 |
+### Traffic Sources (Last 24h — Mar 21)
+- Direct: 20 sessions
+- Organic Search (Google): 17 sessions
+- Unassigned: 13 sessions
+- Referral: 2 (Perplexity + ChatGPT — AI search engines citing us)
 
-### Recommended Next Steps
+## Expansion Pipeline (Q2 2026)
 
-**Quick wins:**
-- [ ] Rewrite titles/metas on `/for/` and `/integrations/` pages — lead with value, not "OpenClaw"
-  - ❌ "OpenClaw Setup for Dental Practices — AI Transformation"
-  - ✅ "AI for Dental Practices: Automate Scheduling, Insurance & Recalls | NYC Claw"
+### ⏸️ ON HOLD: CTR Fixes
+10 existing pages ranking page 1 with 0 clicks. Parked — not convinced it's the right priority yet.
 
-**Blog / Content Strategy (non-branded keyword targets):**
-| Keyword | Volume | Difficulty | Priority |
-|---------|--------|-----------|----------|
-| ai agent for small business | 80 | 0 | 🔴 Write first |
-| ai automation consulting | 300 | 7 | 🔴 Easy win |
-| ai for property management | 350 | 30 | 🟡 |
-| how to use ai in real estate | 200 | 36 | 🟡 |
-| ai integration consultant | 60 | 28 | 🟡 |
-| claude for business | 250 | — | 🟡 |
-| openclaw alternatives | 250 | — | 🟡 Defensive |
-| ai automation agency | 1,800 | 33 | 🟢 Harder but huge |
-| ai tools for insurance agents | 150 | — | 🟢 |
-| ai consulting for small business | 100 | — | 🟢 |
+### Next Builds (Tier 1B — Trades + Messaging + Core)
+- **Trades:** FieldEdge, ServiceM8, Vonigo, JobNimbus + new `/for/contractors` vertical
+- **Messaging:** Telegram (350/mo), WhatsApp (200/mo), Microsoft Teams
+- **Core:** Stripe, Shopify, Google Workspace, Airtable
 
-**Other:**
-- [ ] Expand GoHighLevel page into comprehensive guide (542 impressions)
-- [ ] Write at least one case study
+### Content/Hub Pages (Tier 1C)
+- `/claude-for-business` (250/mo keyword)
+- `/integrations/mcp` (60/mo)
+- `/guides/ai-scheduling` (1,700/mo!)
+- `/guides/ai-small-business` (90/mo, KD 14)
+
+### Tier 2: New Verticals
+- Vet (eVetPractice, Shepherd, Cornerstone)
+- PT/Chiro (Jane App, ChiroTouch, WebPT, Mindbody)
+- Additional CRMs (Keap, Copper, ActiveCampaign)
+
+### Tier 3: Untapped Verticals (Researched Mar 21)
+| Vertical | Volume | KD | CPC | Notes |
+|----------|--------|-----|-----|-------|
+| Nonprofits | 800 | 42 | $4.00 | Huge volume. Donor mgmt, grants, volunteer coord. |
+| Restaurants | 350 | 57 | $4.50 | High CPC. Reservations, inventory, staff. Harder to rank. |
+| Logistics | 300 | 53 | $3.50 | Fleet, dispatch, route optimization. Enterprise. |
+| Architects | 250 | 55 | $1.60 | Already have vertical page! Validate it's ranking. |
+| Interior Designers | 200 | 47 | — | Project mgmt + client comms. |
+| Photographers | 200 | 33 | $1.20 | Low KD. Booking, editing, client delivery. |
+| Car Dealerships | 150 | 22 | $10.00 | Low KD + highest CPC. Lead follow-up, inventory. |
+| Staffing Agencies | 150 | 4 | — | KD 4! Free to rank. Candidate matching, timesheets. |
+| Churches | 100 | 30 | $2.00 | Volunteer coord, member comms. Low competition. |
+| Electricians | 80 | — | — | Extends trades cluster. |
+| Bookkeepers | 80 | — | — | Extends accounting cluster. |
+| Event Planners | 60 | — | — | Venue, vendor, timeline automation. |
+| Gyms/Fitness | 50 | — | $1.00 | Pairs with Mindbody integration. |
+
+## Conversion Pipeline
+
+### Status: Untested
+- [ ] Test full pipeline: visit page → click CTA → `book_call_click` in GA4 → complete booking → `booking_confirmed` in GA4
+- [ ] Verify Cal.com passes `metadata[]` URL params into booking payload
+- [ ] If metadata doesn't pass, consider embed with JS metadata injection
+
+## Key Metrics Targets
+
+| Metric | Current (Mar 2026) | Target (Jun 2026) |
+|--------|-------------------|-------------------|
+| Total pages | 109 | 137+ |
+| Monthly organic clicks | ~200 | 500+ |
+| Monthly impressions | ~7,000 | 20,000+ |
+| Integration pages with clicks | 12 of 57 (21%) | 40 of 75 (53%) |
+| Pages ranking top 5 | ~15 | 35+ |
+| Cal.com bookings from organic | 0 confirmed | 3+/month |
+
+## Pending Actions
+- [ ] Check if `/for/architecture-firms` is ranking (250/mo keyword validated)
+- [ ] Test conversion pipeline end-to-end
+- [ ] Build Tier 1B pages (trades, messaging, core tools)
+- [ ] Create staffing agencies + car dealerships verticals (easy wins)
+- [ ] Write first case study (Corey/SERHANT)
 - [ ] Build backlinks
+- [ ] Blog content targeting non-branded keywords

@@ -338,4 +338,41 @@ Worth noting: both nycclaw.com and purepeptideclinic.com are already being cited
 
 ---
 
+---
+
+## Part 6: Untapped Verticals (Researched Mar 21)
+
+New industry verticals with validated search demand that we don't have pages for yet.
+
+### 🔥 Priority Targets (High ROI)
+
+| Vertical | Keyword Volume | KD | CPC | Rationale |
+|----------|---------------|-----|-----|-----------|
+| **Staffing Agencies** | 150/mo | **4** | — | KD 4 = free to rank. High-volume repetitive workflows (candidate sourcing, client matching, timesheet follow-up). Perfect OpenClaw use case. |
+| **Car Dealerships** | 150/mo | 22 | **$10.00** | Low KD + highest CPC on the board. Dealerships spend money. Internet lead follow-up, inventory management, service reminders. |
+| **Nonprofits** | 800/mo | 42 | $4.00 | Massive volume. Donor management, grant deadline tracking, volunteer coordination, event follow-up. Budget-conscious but automation-hungry. |
+| **Photographers** | 200/mo | 33 | $1.20 | Low KD. Creative professionals who hate admin. Booking, contracts, gallery delivery, client follow-up. |
+| **Churches** | 100/mo | 30 | $2.00 | Surprisingly strong demand. Volunteer scheduling, member communications, event coordination, sermon prep. Low competition. |
+
+### 🟡 Secondary Targets
+
+| Vertical | Keyword Volume | KD | CPC | Rationale |
+|----------|---------------|-----|-----|-----------|
+| **Restaurants** | 350/mo | 57 | $4.50 | High volume + CPC but harder to rank (KD 57). Reservations, inventory, staff scheduling. |
+| **Logistics** | 300/mo | 53 | $3.50 | Fleet management, dispatch, route optimization. Enterprise-adjacent, longer sales cycle. |
+| **Interior Designers** | 200/mo | 47 | — | Project management, client mood boards, vendor coordination, invoicing. |
+| **Event Planners** | 60/mo | — | — | Venue coordination, vendor management, timeline automation. |
+| **Bookkeepers** | 80/mo | — | — | Different buyer than "accountants" — extends existing cluster. |
+| **Electricians** | 80/mo | — | — | Extends trades/contractors cluster. |
+| **Gyms/Fitness** | 50/mo | — | $1.00 | Member retention, class scheduling. Pairs with Mindbody integration. |
+| **Dermatology** | 40/mo | — | — | Extends healthcare cluster. Patient follow-up, treatment reminders. |
+| **Construction** | 40/mo | — | — | Extends trades cluster. Project management, permit tracking, subcontractor coordination. |
+| **Appraisers** | 30/mo | — | — | Extends RE cluster. Report generation, scheduling, comparable data. |
+
+### Existing Vertical Validation
+
+`/for/architecture-firms` already exists — "ai for architects" gets **250/mo at KD 55**. Need to check if it's ranking and optimize if not.
+
+---
+
 _This document supersedes the Phase 3 section of `integration-strategy-final.md` for new page priorities. The original strategy doc remains the source of truth for content templates, URL structure, and overall SEO approach._
