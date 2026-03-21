@@ -4,7 +4,7 @@ _Last updated: March 21, 2026_
 
 ## Current State
 
-- **109 pages live** (57 integration + 16 vertical + 8 claude-cowork + 4 core + rest)
+- **110 pages live** (57 integration + 17 vertical + 8 claude-cowork + 4 core + rest)
 - **DR: 0** (Ahrefs — still too new for domain rating)
 - **~200 organic clicks/month**, ~7,000+ impressions (28-day window)
 - **Google Indexing API:** Working — pages crawled within 24 hours of submission
@@ -15,6 +15,27 @@ _Last updated: March 21, 2026_
 ### New Integration Pages (6)
 - **Dental:** Dentrix, Eaglesoft, Open Dental → support `/for/dental-practices`
 - **Financial Advisor:** Redtail CRM, Wealthbox, Riskalyze → support `/for/financial-advisors`
+
+### New Vertical Page: Personal Injury
+- **`/for/personal-injury`** — targets "ai for personal injury lawyers" (350/mo, KD 2)
+- Uses "AI for X" title framing (test vs existing "OpenClaw Setup for X" pattern)
+- Leads with medical records + demand letter automation (validated by actual lead feedback)
+- Includes: case valuation at intake, lien tracking, mass tort intake, client status updates
+- Mentions CASEpeer, SmartAdvocate, CloudLex (PI-specific CMS tools)
+- Cross-linked to/from: Filevine, Litify, Clio, MyCase, PracticePanther, Smokeball, law-firms
+- Research report: `research/personal-injury-research.md`
+- Submitted to Google Indexing API, added to sitemap (110 URLs)
+
+### GA4 Client ID Bug Fix
+- Cookie regex only matched legacy `_ga` cookie, not GA4 `_ga_DBW292SFKX` format
+- Fixed across all 109 HTML files: `/_ga(?:_[A-Z0-9]+)?=GA\d+\.\d+\.([^;]+)/`
+- Also fixed calcom-webhook worker to fire `booking_confirmed` even without ga_client_id
+- Full attribution pipeline now working: page visit → CTA click → booking confirmed
+
+### First Booking from Law Firms Page
+- **John Casey** (jcasey6591@gmail.com) booked 15-min discovery for Mon 3/24 11AM ET
+- Source: `/for/law-firms` page (organic traffic)
+- Second PI attorney lead — validated PI as a vertical worth targeting
 
 ### Content Rewrites (4)
 - **GoHighLevel** — orchestration-layer framing (not vs GHL AI), Workflows v2, sub-accounts, SaaS Mode

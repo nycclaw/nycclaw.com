@@ -53,6 +53,11 @@
 | # | Page | Action | Status |
 |---|------|--------|--------|
 | — | Integrations index | Added 6 new tools to directory | ✅ Mar 21 |
+| — | `/for/personal-injury` | NEW: "AI for PI lawyers" (350/mo, KD 2). Medical records, demand letters, intake, case valuation, lien tracking, mass tort. Cross-linked to 7 legal integration pages. | ✅ deployed Mar 21 |
+| — | `/for/law-firms` | Added PI cross-link | ✅ Mar 21 |
+| — | Filevine | Added PI-specific content + cross-link to /for/personal-injury | ✅ Mar 21 |
+| — | Litify | Added PI-specific content + cross-link to /for/personal-injury | ✅ Mar 21 |
+| — | Clio, MyCase, PracticePanther, Smokeball | Added PI cross-links | ✅ Mar 21 |
 | — | `/for/dental-practices` | Add links to Dentrix, Eaglesoft, Open Dental | ⬜ |
 | — | `/for/financial-advisors` | Add links to Redtail, Wealthbox, Riskalyze | ⬜ |
 | — | `/for/real-estate` | Add prominent Lofty link | ⬜ |
@@ -129,7 +134,7 @@
 apollo, appfolio, applied-epic, athenahealth, attio, bench, buildium, calendly, clay, clio, close, cosmolex, dealmachine, drchrono, filevine, followupboss, freshbooks, freshsales, gohighlevel, greenhouse, guesty, hawksoft, housecallpro, hubspot, instantly, jobber, kareo, kvcore, lindy, liondesk, litify, lofty, mailchimp, make, monday, mycase, n8n, notion, pipedrive, practicepanther, quickbooks, rocketmatter, salesforce, servicetitan, slack, smokeball, wave, xero, zapier, zendesk, zoho
 
 ### Vertical Pages ✅
-accounting-firms, architecture-firms, coaches-consultants, creative-agencies, dental-practices, ecommerce, financial-advisors, healthcare, insurance-agencies, law-firms, mortgage-brokers, property-management, real-estate, real-estate-investors, recruiting-agencies, startup-founders
+accounting-firms, architecture-firms, coaches-consultants, creative-agencies, dental-practices, ecommerce, financial-advisors, healthcare, insurance-agencies, law-firms, mortgage-brokers, personal-injury, property-management, real-estate, real-estate-investors, recruiting-agencies, startup-founders
 
 ---
 
@@ -138,9 +143,9 @@ accounting-firms, architecture-firms, coaches-consultants, creative-agencies, de
 | Category | Current | Adding | Target |
 |----------|---------|--------|--------|
 | Integration pages | 51 | 24 | 75 |
-| Vertical pages | 16 | 6 | 22 |
+| Vertical pages | 17 | 5 | 22 |
 | Guide/hub pages | ~8 | 4 | 12 |
-| **All pages** | **~103** | **~34** | **~137** |
+| **All pages** | **~110** | **~27** | **~137** |
 
 ---
 
