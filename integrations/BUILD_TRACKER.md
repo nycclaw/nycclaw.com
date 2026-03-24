@@ -70,23 +70,23 @@
 
 | # | Platform | Category | Slug | Status |
 |---|----------|----------|------|--------|
-| 18 | FieldEdge | Home Services | fieldedge | ⬜ |
-| 19 | ServiceM8 | Home Services | servicem8 | ⬜ |
-| 20 | Vonigo | Home Services | vonigo | ⬜ |
-| 21 | JobNimbus | Roofing/Contractors | jobnimbus | ⬜ |
-| 22 | Telegram | Messaging | telegram | ⬜ |
-| 23 | WhatsApp | Messaging | whatsapp | ⬜ |
-| 24 | Microsoft Teams | Messaging | microsoft-teams | ⬜ |
-| 25 | Stripe | Payments | stripe | ⬜ |
-| 26 | Shopify | E-commerce | shopify | ⬜ |
-| 27 | Google Workspace | Productivity | google-workspace | ⬜ |
-| 28 | Airtable | Database/PM | airtable | ⬜ |
+| 18 | FieldEdge | Home Services | fieldedge | ✅ deployed Mar 24 |
+| 19 | ServiceM8 | Home Services | servicem8 | ✅ deployed Mar 24 |
+| 20 | Vonigo | Home Services | vonigo | ✅ deployed Mar 24 |
+| 21 | JobNimbus | Roofing/Contractors | jobnimbus | ✅ deployed Mar 24 |
+| 22 | Telegram | Messaging | telegram | ✅ deployed Mar 24 |
+| 23 | WhatsApp | Messaging | whatsapp | ✅ deployed Mar 24 |
+| 24 | Microsoft Teams | Messaging | microsoft-teams | ✅ deployed Mar 24 |
+| 25 | Stripe | Payments | stripe | ✅ deployed Mar 24 |
+| 26 | Shopify | E-commerce | shopify | ✅ deployed Mar 24 |
+| 27 | Google Workspace | Productivity | google-workspace | ✅ deployed Mar 24 |
+| 28 | Airtable | Database/PM | airtable | ✅ deployed Mar 24 |
 
 ### New Vertical Page
 
 | # | Page | Slug | Status |
 |---|------|------|--------|
-| 29 | Contractors | `/for/contractors` | ⬜ |
+| 29 | Contractors | `/for/contractors` | ✅ deployed Mar 24 |
 
 ---
 
