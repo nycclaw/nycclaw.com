@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBW292SFKX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DBW292SFKX');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw + Procore | Connect Your Jobsite Data to the Rest of Your Business | NYC Claw</title>
+  <meta name="description" content="OpenClaw sits on top of Procore and connects it to QuickBooks, Sage, Slack, payroll, and everything else your construction company runs on. RFI routing, daily log automation, budget sync, and real orchestration for GCs, subs, and owners.">
+  <meta property="og:title" content="OpenClaw + Procore | Connect Your Jobsite Data to the Rest of Your Business | NYC Claw">
+  <meta property="og:description" content="Procore runs your projects. OpenClaw connects it to accounting, payroll, Slack, and every other tool Procore doesn't talk to natively.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta name="twitter:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:url" content="https://nycclaw.com/integrations/procore">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/integrations/procore">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw for Procore - Construction Project Orchestration & External Integration",
+    "description": "OpenClaw connects Procore to external tools like QuickBooks, Sage, Slack, payroll systems, and client portals. Daily log automation, RFI routing beyond Procore, budget sync with accounting software, and cross-platform orchestration for GCs, subcontractors, and owners.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does this replace Procore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Procore stays your project management platform. OpenClaw sits on top and connects Procore to the external tools it doesn't talk to natively: accounting software, payroll systems, Slack, client portals, and more. Your projects, RFIs, daily logs, and budgets stay exactly where they are."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most integrations are running within 3 to 5 days. Day one covers the Procore API connection and webhook configuration. The remaining time goes toward mapping your specific workflows, connecting external tools like QuickBooks or Sage, and testing the full chain from Procore event to external action."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can OpenClaw work across multiple Procore projects?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw connects to your Procore company account and can read data, trigger actions, and generate reports across all your active projects. Cross-project reporting, multi-project budget monitoring, and centralized daily log aggregation are all standard configurations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work with Procore's permission system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw respects Procore's existing roles and permission levels. The API access is scoped to whatever permissions your Procore admin configures, so sensitive data stays protected. Your project-level access controls carry over to any automated workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What accounting systems does this connect to?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most common setups are QuickBooks (Online and Desktop), Sage 300 CRE, Sage Intacct, and Xero. OpenClaw can also connect to other accounting platforms that have an API. Budget data, cost codes, change orders, and invoice information can all flow between Procore and your accounting system."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/auto-dealerships">Auto Dealerships</a>
+                  <a href="/for/coaches-consultants">Coaches & Consultants</a>
+                  <a href="/for/construction">Construction</a>
+                  <a href="/for/contractors">Contractors</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/event-planners">Event Planners</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/fitness-studios">Fitness Studios</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/home-services">Home Services</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/logistics">Logistics</a>
+                  <a href="/for/med-spas">Med Spas</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/pest-control">Pest Control</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/restaurants">Restaurants</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/veterinary">Veterinary</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=nav&utm_content=procore--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Platform Integration
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Procore runs your projects.<br>
+        <span class="text-gray-500">But your data stops at its walls.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Procore is great at what it does: RFIs, submittals, daily logs, budgets, punch lists. But the moment you need that data in QuickBooks, Sage, your payroll system, or a Slack channel, you're stuck exporting CSVs and copying numbers by hand. OpenClaw bridges that gap.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">OpenClaw sits on top of Procore as the orchestration layer that connects your jobsite data to the rest of your tech stack.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=procore--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">200+</p>
+          <p class="text-sm text-gray-500 mt-1">Procore REST API endpoints available</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">40+</p>
+          <p class="text-sm text-gray-500 mt-1">webhook event types OpenClaw can act on</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">&lt;60s</p>
+          <p class="text-sm text-gray-500 mt-1">from Procore event to external action</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">Multi</p>
+          <p class="text-sm text-gray-500 mt-1">project orchestration across your portfolio</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Procore manages the project. Everything else is on you.</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Your construction business doesn't live entirely inside Procore. But your project data does.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">RFIs and submittals don't reach people outside Procore</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your architect uses email. The owner isn't on Procore. The structural engineer checks their inbox, not your project portal. So you're the middleman, forwarding RFIs manually, copying submittal responses into emails, and chasing down answers across two or three communication channels that don't talk to each other.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Daily logs stay trapped in Procore</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your field crew logs hours, equipment usage, and materials every day in Procore. That data is gold for payroll, accounting, and client reporting. But it sits in Procore until someone exports it, reformats it, and manually enters it into QuickBooks or your payroll system. That's hours of admin work every week.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Budget data doesn't sync with your accounting system</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You track budgets and cost codes in Procore. You also track them in QuickBooks, Sage, or Xero. Two systems, same numbers, entered twice. When a change order comes through, someone has to update both. The double-entry creates delays, errors, and a constant question of which system has the right number.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Change orders require manual handoffs across systems</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A change order gets approved in Procore. Now someone needs to update the contract value in accounting, adjust the project schedule, notify the subcontractor, and revise the budget forecast. That's four systems and at least three people involved in what should be a single triggered workflow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What OpenClaw adds on top of Procore</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Procore stays your project hub. OpenClaw connects it to everything else and handles the cross-platform logic Procore can't.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">RFI and submittal routing to external stakeholders</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">An RFI gets created in Procore. OpenClaw picks it up and forwards it to the architect via email, posts it to the engineering team's Slack channel, or pushes it to the owner's client portal. Responses flow back the same way. No one outside Procore needs a Procore login to stay in the loop.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Daily log data flowing to payroll and accounting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Field crews log hours, equipment, and materials in Procore. OpenClaw reads the daily log data via webhook, maps it to the right cost codes, and pushes it to your payroll system (ADP, Paychex) and accounting software (QuickBooks, Sage). No more re-entering the same numbers into three systems.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Budget and cost code sync with accounting software</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Two-way sync between Procore budgets and QuickBooks, Sage, or Xero. When a budget line item changes in Procore, it updates in your accounting system. When a payment posts in QuickBooks, the committed cost in Procore reflects it. One source of truth instead of two competing spreadsheets.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Change order workflow across systems</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A change order gets approved in Procore. OpenClaw picks up the webhook and handles the downstream work: updates the contract value in your accounting system, adjusts the budget forecast, notifies the subcontractor via email, and posts a summary to your project Slack channel. One approval, four external actions, zero manual steps.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Safety incident alerts and escalation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When a safety incident gets logged in Procore, OpenClaw triggers instant notifications: a Slack message to the safety director, an email to the project executive, and a record in your compliance tracking system. Severity-based routing means critical incidents get escalated immediately, while near-misses follow a standard review flow.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Punch list and closeout automation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Punch list items in Procore get pushed to subcontractor portals or email threads automatically. When items are marked complete, OpenClaw updates the closeout tracker, notifies the owner's rep, and triggers warranty document generation. The last 10% of a project stops feeling like 50% of the work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">What is OpenClaw?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-3">
+        OpenClaw is an open-source AI assistant that connects to the tools you already use and operates them for you. Email, calendar, CRM, messaging, accounting, file storage. It reads, it responds, it takes action. It runs on your own devices, so your data stays yours.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed">
+        For Procore users, OpenClaw is the bridge between your project management platform and everything else your construction company relies on. Accounting, payroll, client communication, compliance tracking, subcontractor coordination. The data that lives in Procore finally flows to the systems that need it, without someone manually moving it there.
+      </p>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What this looks like in practice</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three scenarios where OpenClaw extends Procore into the rest of your construction business.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">General Contractor</div>
+          <h3 class="font-semibold mb-3">Daily log automation that eliminates double-entry</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">It's 5 PM and your field crews just submitted daily logs in Procore. Hours worked, equipment used, materials delivered. OpenClaw reads the log data, maps labor hours to cost codes, and pushes them to your payroll system. The same data updates your budget tracking in QuickBooks. Your office manager used to spend two hours a day re-entering this. Now it happens automatically before she gets to the office.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Owner's Rep</div>
+          <h3 class="font-semibold mb-3">Cross-project reporting without the CSV marathon</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You're managing six active projects in Procore for one owner. Every Friday, they want a consolidated update: budget status, schedule progress, open RFIs, safety incidents. OpenClaw pulls data from all six projects overnight, compiles it into a formatted Google Sheet with a summary page, and drops it in your shared Drive folder. You used to spend Friday mornings building this by hand.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Subcontractor</div>
+          <h3 class="font-semibold mb-3">RFI response tracking across teams</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">An RFI gets submitted in Procore that needs your structural engineer's input. OpenClaw notifies them in Slack with the full RFI details and a direct link. If they haven't responded in 24 hours, a follow-up goes out. When they reply in Slack, the response gets formatted and pushed back into Procore. Response time tracking happens automatically, so you know exactly where delays are coming from.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg">Three steps. We handle the technical work.</p>
+      </div>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">1</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We connect OpenClaw to Procore and your external tools</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We set up API access to your Procore company account, configure webhooks for the project events that matter (RFIs, daily logs, budget changes, change orders), and connect the external tools you need: QuickBooks, Sage, Slack, ADP, Google Drive, whatever your business runs on. This happens on day one.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">2</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We map the workflows that cross system boundaries</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Which Procore events should trigger actions in external tools? What daily log data needs to reach payroll? How should budget changes sync with accounting? We map out the logic, build the connections, and configure OpenClaw to handle the orchestration that Procore can't do on its own.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">3</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">OpenClaw starts orchestrating across your stack</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Procore events fire. OpenClaw handles the cross-platform actions. Daily logs flow to payroll. Budgets sync with accounting. RFIs reach the right people outside Procore. You review the first few days, tell us what to adjust, and we fine-tune. Within a week, the bridge between Procore and everything else is running on its own.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg">One-time setup. No monthly fees from us. No contracts.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Free -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">Discovery Call</h3>
+          <p class="text-gray-500 text-sm mb-4">See if this makes sense for your setup.</p>
+          <p class="text-4xl font-extrabold mb-6">Free</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              15-minute video call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Review your Procore setup and integration gaps
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Honest recommendation on next steps
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=procore--discovery" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Book a Call
+          </a>
+        </div>
+        <!-- Remote -->
+        <div class="bg-white p-8 rounded-xl border-2 border-gray-900 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</div>
+          <h3 class="font-bold text-lg mb-1">Remote Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">Full Procore + external tool integration over screen share.</p>
+          <p class="text-4xl font-extrabold mb-6">$1,200</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw + Procore API integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Connect up to 5 external tools
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Cross-platform workflow configuration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              14 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=procore--remote" target="_blank" class="block text-center py-3 px-4 rounded-lg bg-gray-900 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-md">
+            Get Started
+          </a>
+        </div>
+        <!-- In-Person -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">In-Person Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">We come to your office. NYC area.</p>
+          <p class="text-4xl font-extrabold mb-6">$2,400</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote, plus
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              On-site at your office in NYC
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full team training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              30 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=procore--inperson" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Common questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Does this replace Procore?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            No. Procore stays your project management platform. OpenClaw sits on top and connects Procore to the external tools it doesn't talk to natively: accounting software, payroll systems, Slack, client portals, and more. Your projects, RFIs, daily logs, and budgets stay exactly where they are. OpenClaw just makes them talk to everything else.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">How long does setup take?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Most integrations are running within 3 to 5 days. Day one covers the Procore API connection, webhook configuration, and external tool authentication. The remaining time goes toward mapping your specific cross-platform workflows and testing the full chain from Procore event to external action.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Can OpenClaw work across multiple Procore projects?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw connects to your Procore company account and can read data, trigger actions, and generate reports across all your active projects. Cross-project budget monitoring, centralized daily log aggregation, and multi-project reporting are all standard configurations.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Does this work with Procore's permission system?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw respects Procore's existing roles and permission levels. The API access is scoped to whatever permissions your Procore admin configures, so sensitive data stays protected. Your project-level access controls carry over to any automated workflows OpenClaw runs.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">What accounting systems does this connect to?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            The most common setups are QuickBooks (Online and Desktop), Sage 300 CRE, Sage Intacct, and Xero. OpenClaw can also connect to other accounting platforms that have an API. Budget data, cost codes, change orders, and invoice information can all flow between Procore and your accounting system in both directions.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED INDUSTRIES -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm text-gray-400 mb-4">OpenClaw + Procore works across the construction industry. See setup details for your role:</p>
+      <div class="flex flex-wrap justify-center gap-3 mb-4">
+        <a href="/for/construction" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Construction</a>
+        <a href="/industries" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Industries &rarr;</a>
+      </div>
+      <p class="text-sm text-gray-400 mb-4">Compare with other construction integrations:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/integrations/buildertrend" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Buildertrend</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-900 text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Procore runs your projects. Let's connect the rest of your operation.</h2>
+      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your Procore setup, identify the integration gaps, and figure out where OpenClaw can bridge them.</p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=procore--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg">
+        Book a Free Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-6 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Home</a>
+        <a href="/industries" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Industries</a>
+        <a href="/#pricing" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Pricing</a>
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=procore--discovery" target="_blank" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Book a Call</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+(function(){function g(){try{var m=document.cookie.match(/_ga(?:_[A-Z0-9]+)?=GA\d+\.\d+\.([^;]+)/);return m?m[1]:null}catch(e){return null}}document.addEventListener('click',function(e){var a=e.target.closest('a[href*="cal.com"]');if(!a)return;var u=new URL(a.href);var c=u.searchParams.get('utm_content')||'';var p=c.split('--');var cid=g();gtag('event','book_call_click',{page_source:p[0]||'',cta_type:p[1]||'',campaign:u.searchParams.get('utm_campaign')||'',link_url:a.href});if(cid)u.searchParams.set('metadata[ga_client_id]',cid);u.searchParams.set('metadata[source_page]',window.location.pathname);u.searchParams.set('metadata[source_content]',c);a.href=u.toString();});})();
+</script>
+</body>
+</html>

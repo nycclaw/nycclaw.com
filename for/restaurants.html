@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBW292SFKX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DBW292SFKX');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Setup for Restaurants &amp; Hospitality | NYC Claw</title>
+  <meta name="description" content="OpenClaw setup for restaurants and hospitality. Automated reservation management, review responses, supplier ordering, menu updates, staff scheduling, and delivery coordination.">
+  <meta property="og:title" content="OpenClaw Setup for Restaurants &amp; Hospitality | NYC Claw">
+  <meta property="og:description" content="OpenClaw setup for restaurants and hospitality. Automated reservation management, review responses, supplier ordering, menu updates, staff scheduling, and delivery coordination.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/for/restaurants">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/for/restaurants">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw Setup for Restaurants & Hospitality",
+    "description": "Done-for-you AI assistant setup for restaurants and hospitality businesses. Automated reservation management, review responses, supplier ordering, menu updates, staff scheduling, and delivery coordination.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does OpenClaw handle reservation management?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw connects to your reservation system (OpenTable, Resy, Yelp Reservations, or your own booking page) and monitors incoming requests. It confirms bookings, sends reminders, manages waitlists during peak hours, and handles cancellation rebooking automatically. Your host and managers get notified of every change."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this replace my POS or reservation system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OpenClaw works alongside your existing tools, including Toast, Square, Clover, OpenTable, Resy, and others. It connects via email, calendar, and API integrations to automate the operational tasks that pull your team away from guests. Your current systems stay exactly where they are."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most restaurant setups are completed in a single session of 2-3 hours. You'll have reservation management, review responses, and supplier ordering running by the end of day one. Fine-tuning happens over the following two weeks as we dial in menu updates, staff scheduling preferences, and delivery workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my restaurant data kept private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw runs on your own devices. Supplier pricing, recipes, financial data, and customer information never leave your control. The software is open-source, so you have full transparency into how everything works."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this work for a restaurant group with multiple locations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw can be configured across multiple locations with location-specific menus, supplier lists, staffing rules, and reservation settings. Each location gets its own workflows while you maintain centralized oversight of the whole operation."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/auto-dealerships">Auto Dealerships</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                  <a href="/for/construction">Construction</a>
+                  <a href="/for/contractors">Contractors</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/event-planners">Event Planners</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/fitness-studios">Fitness Studios</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/home-services">Home Services</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/logistics">Logistics</a>
+                  <a href="/for/med-spas">Med Spas</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/pest-control">Pest Control</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/restaurants">Restaurants</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/veterinary">Veterinary</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=nav&utm_content=restaurants--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        For Restaurants &amp; Hospitality
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Your kitchen runs on chaos.<br>
+        <span class="text-gray-500">Your operations don't have to.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Restaurants spend 15+ hours per week on tasks that never touch a plate. Reservation juggling, review responses, supplier calls, schedule changes. OpenClaw handles the back-office grind so your team can focus on guests.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">Powered by OpenClaw &mdash; open-source AI that runs on your devices.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=restaurants--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">20%</p>
+          <p class="text-sm text-gray-500 mt-1">of reservations are no-shows at the average restaurant</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">15+</p>
+          <p class="text-sm text-gray-500 mt-1">hours per week spent on admin tasks that aren't cooking or serving</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">53%</p>
+          <p class="text-sm text-gray-500 mt-1">of diners say online reviews influence where they eat</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">$5K+</p>
+          <p class="text-sm text-gray-500 mt-1">lost monthly from food waste tied to poor inventory tracking</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Sound familiar?</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">These aren't hypothetical problems. They're what restaurant operators deal with before the first ticket even prints.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Pain 1 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Friday night, 30 reservations, and 6 no-shows</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You prepped for a full house. Bought extra product, scheduled extra staff. Then six tables just didn't show up. That's $1,200+ in lost covers, wasted food, and servers standing around. Your host tried calling to confirm earlier in the day but got pulled into seating a walk-in party of eight. The confirmation texts never went out.</p>
+        </div>
+        <!-- Pain 2 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">A one-star review sits unanswered for three weeks</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Someone had a bad experience and left a detailed review on Google. You meant to respond. But between lunch service, a broken dishwasher, and two call-outs, it slipped. Now potential guests see a negative review with no reply. That looks worse than the review itself. Studies show 89% of consumers read the business response to reviews before deciding where to eat.</p>
+        </div>
+        <!-- Pain 3 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Supplier ordering happens on a sticky note and a prayer</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your chef calls one supplier, texts another, and emails a third. Orders get duplicated. Items arrive short. The walk-in is either overflowing or missing half of what you need for Saturday brunch. Last month you threw out $800 in produce that nobody tracked. Your food cost is running 34% when it should be 28%.</p>
+        </div>
+        <!-- Pain 4 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">The schedule takes three hours to build every week</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Someone can't work Saturday. Two servers swapped shifts but forgot to tell you. Your barback called out at 4pm for a 5pm shift. You're texting, calling, checking availability spreadsheets, and hoping someone picks up. By the time the schedule is done, it's already outdated. Then you spend the rest of the week fielding change requests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What OpenClaw does for your restaurant</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Not another tablet cluttering the host stand. OpenClaw runs in the background and handles the work that keeps falling through the cracks.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-green-600 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Reservation Management</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw monitors your booking channels (OpenTable, Resy, website, phone, email) and confirms every reservation automatically. It sends reminders at 24 hours and 2 hours before the seating. Cancellations trigger your waitlist so tables stay filled during peak hours.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Review Response Automation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">New reviews on Google, Yelp, or TripAdvisor get a draft response within minutes, written in your voice. Positive reviews get a warm thank-you. Negative ones get a thoughtful reply and flag your manager immediately so nothing festers in public.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Supplier Ordering</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Build orders from par levels, sales forecasts, and what's actually in the walk-in. OpenClaw drafts purchase orders for each supplier, tracks delivery confirmations, and flags price changes. No more guessing how much salmon to order for the weekend.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Menu Updates &amp; 86'd Items</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When you 86 a dish mid-service, OpenClaw updates your online menus, delivery platforms, and reservation notes in real time. Seasonal menu changes get pushed to your website, Google Business Profile, and third-party apps in one step instead of five.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Staff Scheduling</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw builds draft schedules based on availability, labor targets, and expected covers. When someone calls out, it texts available staff and fills the gap. Shift swaps get tracked automatically. You spend minutes on scheduling instead of hours.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Delivery Coordination</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Orders from DoorDash, Uber Eats, Grubhub, and your own site get consolidated into one view. OpenClaw tracks prep times, flags delays, and sends pickup-ready notifications. Your kitchen sees one clean queue instead of four competing tablets.</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-8">Every setup is configured for your specific restaurant, tools, and service flow.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">OpenClaw Setup for Restaurants: Your AI Operations Layer</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">OpenClaw is an open-source AI assistant that runs on your own devices. Unlike cloud-based platforms that store your recipes, pricing, and customer data on their servers, everything stays under your control. It connects to your POS, reservation system, email, delivery platforms, and scheduling tools to handle the operational work that buries managers every day.</p>
+      <p class="text-gray-500 text-lg leading-relaxed">We don't just install it. We <strong>configure it for restaurants</strong>. Your reservation rules, your supplier contacts, your menu structure, your labor targets, your service style. That's what separates this from a generic tool that doesn't know the difference between covers and plates. <a href="/" class="text-gray-900 underline hover:no-underline">Learn more about NYC Claw &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- THE MATH -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Do the math</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">This isn't about technology. It's about the revenue walking out your door (and the food going in your trash) right now.</p>
+      </div>
+      <div class="p-8 rounded-xl border border-gray-200 bg-gray-50">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold text-lg mb-4 text-red-500">Without OpenClaw</h3>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                20% no-show rate, 6+ empty tables on a busy night
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                Negative reviews sit unanswered for days or weeks
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                $5K+ per month in food waste from over-ordering
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                3+ hours per week building and rebuilding the schedule
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                86'd items still showing on delivery apps and your website
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-4 text-green-600">With OpenClaw</h3>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                No-show rate drops to 8-10% with automated confirmations
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Every review gets a response within hours, in your voice
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Supplier orders built from actual inventory and forecasts
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Menu changes pushed everywhere in one step
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Staff scheduling and call-out coverage handled automatically
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+          <p class="text-sm text-gray-500">Filling just 4 extra covers per night from reduced no-shows pays for the entire setup in under a month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three steps to a fully working AI assistant, configured for your restaurant.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">1</div>
+          <h3 class="text-lg font-semibold mb-2">Discovery Call</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We learn your operation: which POS you use, how reservations flow, what your biggest bottlenecks are, and where covers and revenue are slipping. 15 minutes, free, no commitment.</p>
+        </div>
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">2</div>
+          <h3 class="text-lg font-semibold mb-2">Configure &amp; Deploy</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We install OpenClaw, connect your POS, reservation platform, delivery apps, and scheduling tools. Set up reservation confirmations, review responses, supplier ordering, and menu update workflows specific to your restaurant.</p>
+        </div>
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">3</div>
+          <h3 class="text-lg font-semibold mb-2">Fill More Tables</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Walk through real scenarios together: a no-show cancels at 6pm, a bad review lands, a server calls out two hours before service. Two weeks of follow-up support to fine-tune everything until it runs like a well-oiled kitchen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Start with a discovery call. We'll tell you exactly what to expect.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Discovery -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">Discovery Call</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">Free</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">15-minute operations analysis. We'll map out exactly where your restaurant is bleeding time and revenue.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Operations workflow analysis
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Revenue leakage assessment
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Setup plan &amp; cost estimate
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              No commitment required
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=restaurants--discovery" target="_blank" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book Now</a>
+        </div>
+        <!-- Remote (highlighted) -->
+        <div class="p-8 rounded-xl border-2 border-gray-900 shadow-lg relative flex flex-col">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gray-900 text-white text-xs font-semibold">Most Popular</div>
+          <h3 class="text-lg font-semibold mb-1">Remote Setup</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$1,200</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">Full OpenClaw deployment over screen share. Everything configured for your restaurant's workflow.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Discovery Call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw installation &amp; configuration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Reservations + reviews + ordering setup
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              POS + delivery + scheduling integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              2 weeks of follow-up support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=restaurants--remote" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md">Book a Call</a>
+        </div>
+        <!-- In-Person -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">In-Person NYC</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$2,400</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">White-glove setup at your restaurant. Hands-on deployment, staff training, multi-device.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote Setup
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              In-person at your NYC restaurant
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Multi-device setup (host stand + kitchen + office)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Live staff training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              1 month of priority support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=restaurants--in-person" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does OpenClaw handle reservation management?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            OpenClaw connects to your reservation system (OpenTable, Resy, Yelp Reservations, or your own booking page) and monitors incoming requests. It confirms bookings, sends reminders, manages waitlists during peak hours, and handles cancellation rebooking automatically. Your host and managers get notified of every change.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Does this replace my POS or reservation system?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            No. OpenClaw works alongside your existing tools, including Toast, Square, Clover, OpenTable, Resy, and others. It connects via email, calendar, and API integrations to automate the operational tasks that pull your team away from guests. Your current systems stay exactly where they are.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does setup take?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Most restaurant setups are completed in a single session of 2-3 hours. You'll have reservation management, review responses, and supplier ordering running by the end of day one. Fine-tuning happens over the following two weeks as we dial in menu updates, staff scheduling preferences, and delivery workflows.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is my restaurant data kept private?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw runs on your own devices. Supplier pricing, recipes, financial data, and customer information never leave your control. The software is open-source, so you have full transparency into how everything works.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can this work for a restaurant group with multiple locations?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw can be configured across multiple locations with location-specific menus, supplier lists, staffing rules, and reservation settings. Each location gets its own workflows while you maintain centralized oversight of the whole operation.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR INTEGRATIONS -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm text-gray-400 mb-4">Popular integrations for restaurants:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/integrations/toast" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Toast</a>
+        <a href="/integrations/square" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Square</a>
+        <a href="/integrations/podium" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Podium</a>
+        <a href="/integrations" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Integrations &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Stop losing covers to no-shows and hours to admin work</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free discovery call. We'll map out exactly how OpenClaw fits your restaurant and where you're leaving revenue on the table.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=restaurants--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book Your Discovery Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+(function(){function g(){try{var m=document.cookie.match(/_ga(?:_[A-Z0-9]+)?=GA\d+\.\d+\.([^;]+)/);return m?m[1]:null}catch(e){return null}}document.addEventListener('click',function(e){var a=e.target.closest('a[href*="cal.com"]');if(!a)return;var u=new URL(a.href);var c=u.searchParams.get('utm_content')||'';var p=c.split('--');var cid=g();gtag('event','book_call_click',{page_source:p[0]||'',cta_type:p[1]||'',campaign:u.searchParams.get('utm_campaign')||'',link_url:a.href});if(cid)u.searchParams.set('metadata[ga_client_id]',cid);u.searchParams.set('metadata[source_page]',window.location.pathname);u.searchParams.set('metadata[source_content]',c);a.href=u.toString();});})();
+</script>
+</body>
+</html>

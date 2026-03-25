@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBW292SFKX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DBW292SFKX');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw + RingCentral | Turn Call and Message Data into Automated Action | NYC Claw</title>
+  <meta name="description" content="OpenClaw connects to RingCentral's API and turns call logs, SMS threads, voicemails, and video meetings into triggers that move data across your entire tech stack. No more manual call logging or siloed analytics.">
+  <meta property="og:title" content="OpenClaw + RingCentral | Turn Call and Message Data into Automated Action | NYC Claw">
+  <meta property="og:description" content="RingCentral handles your calls and messages. OpenClaw makes sure that data actually goes somewhere useful, syncing it to your CRM, triggering follow-ups, and routing voicemails automatically.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta name="twitter:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:url" content="https://nycclaw.com/integrations/ringcentral">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/integrations/ringcentral">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw for RingCentral - Business Communications Orchestration",
+    "description": "OpenClaw connects to RingCentral's API and turns call logs, SMS threads, voicemails, video meetings, and IVR data into automated workflows across your CRM, project management, and billing tools.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does this replace RingCentral?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. RingCentral stays your phone system, your video platform, and your messaging hub. OpenClaw is the automation layer that takes data from RingCentral and moves it into your CRM, your project management tool, your billing system, and anywhere else it needs to go. Your RingCentral account, extensions, and call flows stay exactly as they are."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most integrations are running within 3 to 5 days. Day one covers the RingCentral API connection and webhook subscriptions. The remaining time goes toward mapping your specific call routing logic, configuring which events trigger which actions, and testing the full chain from RingCentral event to external tool response."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What RingCentral data can OpenClaw access?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw connects through RingCentral's REST API and can access call logs, call recordings, SMS and MMS messages, voicemail audio and transcriptions, fax history, video meeting metadata, presence status, call queue statistics, and IVR menu selections. Basically, if RingCentral's API exposes it, OpenClaw can read it and act on it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work with RingCentral's call queues and IVR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw can monitor call queue events in real time, including wait times, abandoned calls, and agent performance. For IVR, OpenClaw reads the menu selections callers make and uses that data to route information to the right team, update CRM records, or trigger follow-up workflows based on what the caller selected."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can OpenClaw handle multiple RingCentral extensions or locations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw connects at the account level and can monitor activity across all extensions, departments, and sites within your RingCentral instance. Multi-location businesses can set up location-specific routing rules so that calls to your NYC office trigger different workflows than calls to your LA office."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/auto-dealerships">Auto Dealerships</a>
+                  <a href="/for/coaches-consultants">Coaches & Consultants</a>
+                  <a href="/for/construction">Construction</a>
+                  <a href="/for/contractors">Contractors</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/event-planners">Event Planners</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/fitness-studios">Fitness Studios</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/home-services">Home Services</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/logistics">Logistics</a>
+                  <a href="/for/med-spas">Med Spas</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/pest-control">Pest Control</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/restaurants">Restaurants</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/veterinary">Veterinary</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=nav&utm_content=ringcentral--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Platform Integration
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        RingCentral captures every call.<br>
+        <span class="text-gray-500">Then that data sits there.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        RingCentral gives you VoIP, video, SMS, fax, IVR, and call queues in one place. But the call logs, voicemails, and message threads it generates don't automatically reach your CRM, your project tracker, or your billing system. You're still copying caller details by hand. OpenClaw fixes that.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">OpenClaw connects to RingCentral's API and turns your comms data into automated workflows across your entire stack.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=ringcentral--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">300+</p>
+          <p class="text-sm text-gray-500 mt-1">RingCentral API endpoints OpenClaw can call</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">30+</p>
+          <p class="text-sm text-gray-500 mt-1">webhook event types for real-time triggers</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">&lt;5s</p>
+          <p class="text-sm text-gray-500 mt-1">from call event to automated action</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">6</p>
+          <p class="text-sm text-gray-500 mt-1">channels covered: voice, SMS, fax, video, team chat, voicemail</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">RingCentral handles your comms. Everything after that is on you.</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Your phone system generates valuable data all day long. Most of it never reaches the tools where it would actually be useful.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Call logs don't sync to your CRM</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Every inbound and outbound call gets logged in RingCentral. Duration, caller ID, time, extension. But that data stays in RingCentral. Your CRM has no idea the call happened. So your sales team logs the same call twice, once in RingCentral and once in Salesforce (or HubSpot, or Pipedrive). Or they skip the CRM entry entirely, and your pipeline data goes stale.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Voicemails pile up without action</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A prospect leaves a voicemail at 6 PM. Nobody listens to it until the next morning. By then, they've called your competitor. RingCentral transcribes the voicemail, but that transcription just sits in the voicemail inbox. It doesn't create a task, notify a specific person, or update a record anywhere. The data exists; nothing happens with it.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">SMS conversations live in a silo</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your team texts clients through RingCentral all day. Appointment confirmations, follow-ups, quick questions. Those conversations are invisible to your CRM, your project management tool, and your billing system. When a different team member picks up the account, they have no idea what was discussed over text because it's trapped in RingCentral's message log.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Call analytics don't connect to business outcomes</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">RingCentral shows you call volume, average handle time, and queue wait times. Useful numbers. But they're disconnected from revenue, from customer satisfaction scores, from project status. You can see that your team made 200 calls this week, but you can't easily tie those calls to closed deals without manually cross-referencing two or three systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What OpenClaw does with your RingCentral data</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">RingCentral stays your phone system. OpenClaw takes the data it produces and puts it to work across every other tool you use.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Call log monitoring and CRM sync</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw subscribes to RingCentral's call log webhooks and syncs every inbound, outbound, and missed call to your CRM in real time. Caller ID gets matched to existing contacts. Call duration, recording links, and timestamps attach to the right record automatically. Your sales team stops double-logging calls, and your CRM finally reflects what actually happened on the phone.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">SMS automation and thread tracking</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When a client texts your RingCentral number, OpenClaw reads the message via the SMS API and routes it based on content, sender, or keyword. Appointment confirmations update your calendar. Support requests create tickets in your helpdesk. Every SMS thread gets logged to the contact's CRM record so your whole team has visibility into text conversations.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Voicemail transcription routing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">RingCentral transcribes voicemails automatically. OpenClaw picks up those transcriptions through the API and routes them based on content. A voicemail mentioning "billing" goes to your accounting team in Slack. One mentioning a specific case number gets attached to that case in your project tool. Urgent keywords trigger immediate notifications instead of waiting for someone to check the inbox.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Call queue analytics and alerts</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw monitors your RingCentral call queues via the analytics API and sends alerts when things go wrong. Wait times exceed your threshold? Slack notification to the manager. Abandoned call rate spikes above 15%? Email alert with the queue stats attached. Daily summaries land in a Google Sheet or your inbox with agent performance, peak hours, and service level metrics.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">IVR data extraction and routing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When callers navigate your IVR menu ("Press 1 for sales, 2 for support"), RingCentral logs their selections. OpenClaw reads that data and uses it to pre-populate CRM records, route information to the right department's tools, or trigger department-specific follow-up sequences. A caller who pressed "3 for billing" gets a different automated follow-up than one who pressed "1 for new service."</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Video meeting follow-ups</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A RingCentral Video meeting ends. OpenClaw picks up the event, pulls the participant list and duration from the API, and triggers your post-meeting workflow. Meeting notes template created in Google Docs. Follow-up tasks assigned in your project tool. Attendee records updated in your CRM with the meeting date and a link to the recording. No one has to remember to do any of it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">What is OpenClaw?</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-3">
+        OpenClaw is an open-source AI assistant that connects to the tools you already use and operates them for you. Email, calendar, CRM, messaging, accounting, file storage. It reads, it responds, it takes action. It runs on your own devices, so your data stays yours.
+      </p>
+      <p class="text-gray-500 text-lg leading-relaxed">
+        For RingCentral users, OpenClaw is the automation layer that turns raw call and message data into action. It's the bridge between your phone system and your CRM, your helpdesk, your project tracker, and your billing tools. RingCentral generates the data; OpenClaw makes sure it reaches the right place and triggers the right response.
+      </p>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What this looks like in practice</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three scenarios where OpenClaw turns RingCentral activity into automated workflows.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Law Firm</div>
+          <h3 class="font-semibold mb-3">Missed calls that don't stay missed</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A potential client calls your firm at 5:45 PM. Nobody picks up. RingCentral logs the missed call and captures the voicemail. OpenClaw reads the transcription, identifies it as a new inquiry (not an existing client), creates a lead in your case management system, sends the caller an SMS saying "We received your message and will call you back by 10 AM tomorrow," and posts the voicemail details to your intake team's Slack channel. By morning, the lead is already in your system with context attached.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Healthcare Practice</div>
+          <h3 class="font-semibold mb-3">Appointment confirmations that actually confirm</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your front desk sends appointment reminders via RingCentral SMS. When a patient replies "Yes" or "Confirmed," OpenClaw reads the response, matches it to the appointment in your scheduling system, and marks it confirmed. A "No" or "Reschedule" reply creates a task for your front desk to call the patient back. Your staff stops manually checking RingCentral messages against the schedule, and your no-show rate drops because nothing slips through the cracks.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Sales Team</div>
+          <h3 class="font-semibold mb-3">Call routing tied to deal stage</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A prospect calls in. RingCentral's caller ID matches a number in your CRM. OpenClaw checks the deal stage: this person is in "Proposal Sent," assigned to Sarah. Instead of the call going through the general queue, OpenClaw has already updated the routing context so the receptionist sees "Proposal stage, Sarah's deal" on their screen before answering. After the call, the call log, duration, and recording link automatically attach to the deal record. Sarah gets a Slack message with a summary.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg">Three steps. We handle the technical work.</p>
+      </div>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">1</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We connect OpenClaw to RingCentral and your other tools</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We set up OAuth access to your RingCentral account, subscribe to the webhook events that matter (call logs, SMS, voicemail, presence, call queues), and connect the external tools you need: your CRM, Slack, Google Workspace, project management tool, or whatever else your business runs on. This happens on day one.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">2</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">We configure the routing logic for your workflows</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Which call events should trigger CRM updates? How should voicemails be categorized and routed? What happens when an SMS contains a specific keyword? We map out the rules, build the connections between RingCentral events and external tool actions, and configure OpenClaw to handle the automation your phone system can't do on its own.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">3</div>
+          <div>
+            <h3 class="text-lg font-semibold mb-1">OpenClaw starts processing your comms data automatically</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Calls come in. OpenClaw syncs the logs. Voicemails get routed. SMS threads update your CRM. Call queue alerts fire when thresholds are hit. You review the first few days, tell us what to adjust, and we fine-tune. Within a week, your RingCentral data is flowing to every tool that needs it without anyone touching a thing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg">One-time setup. No monthly fees from us. No contracts.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Free -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">Discovery Call</h3>
+          <p class="text-gray-500 text-sm mb-4">See if this makes sense for your setup.</p>
+          <p class="text-4xl font-extrabold mb-6">Free</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              15-minute video call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Review your RingCentral setup and integration gaps
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Honest recommendation on next steps
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=ringcentral--discovery" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Book a Call
+          </a>
+        </div>
+        <!-- Remote -->
+        <div class="bg-white p-8 rounded-xl border-2 border-gray-900 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</div>
+          <h3 class="font-bold text-lg mb-1">Remote Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">Full RingCentral + external tool integration over screen share.</p>
+          <p class="text-4xl font-extrabold mb-6">$1,200</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw + RingCentral API integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Connect up to 5 external tools
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Call log, SMS, and voicemail workflow configuration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              14 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=ringcentral--remote" target="_blank" class="block text-center py-3 px-4 rounded-lg bg-gray-900 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-md">
+            Get Started
+          </a>
+        </div>
+        <!-- In-Person -->
+        <div class="bg-white p-8 rounded-xl border border-gray-200">
+          <h3 class="font-bold text-lg mb-1">In-Person Setup</h3>
+          <p class="text-gray-500 text-sm mb-4">We come to your office. NYC area.</p>
+          <p class="text-4xl font-extrabold mb-6">$2,400</p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote, plus
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              On-site at your office in NYC
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full team training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              30 days of post-setup support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=ringcentral--inperson" target="_blank" class="block text-center py-3 px-4 rounded-lg border border-gray-300 font-semibold text-sm hover:border-gray-900 transition-all">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Common questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Does this replace RingCentral?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            No. RingCentral stays your phone system, your video platform, and your messaging hub. OpenClaw is the automation layer that takes data from RingCentral and moves it into your CRM, your project management tool, your billing system, and anywhere else it needs to go. Your RingCentral account, extensions, and call flows stay exactly as they are. OpenClaw just makes sure the data they generate reaches the rest of your tools.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">How long does setup take?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Most integrations are running within 3 to 5 days. Day one covers the RingCentral API connection and webhook subscriptions. The remaining time goes toward mapping your specific call routing logic, configuring which events trigger which actions, and testing the full chain from RingCentral event to external tool response.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">What RingCentral data can OpenClaw access?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            OpenClaw connects through RingCentral's REST API and can access call logs, call recordings, SMS and MMS messages, voicemail audio and transcriptions, fax history, video meeting metadata, presence status, call queue statistics, and IVR menu selections. If RingCentral's API exposes it, OpenClaw can read it and act on it.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Does this work with RingCentral's call queues and IVR?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw can monitor call queue events in real time, including wait times, abandoned calls, and agent performance. For IVR, OpenClaw reads the menu selections callers make and uses that data to route information to the right team, update CRM records, or trigger follow-up workflows based on what the caller selected.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">Can OpenClaw handle multiple RingCentral extensions or locations?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw connects at the account level and can monitor activity across all extensions, departments, and sites within your RingCentral instance. Multi-location businesses can set up location-specific routing rules so that calls to your NYC office trigger different workflows than calls to your LA office.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED INDUSTRIES -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm text-gray-400 mb-4">OpenClaw + RingCentral works across industries. See setup details for yours:</p>
+      <div class="flex flex-wrap justify-center gap-3 mb-4">
+        <a href="/for/law-firms" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Law Firms</a>
+        <a href="/for/healthcare" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Healthcare</a>
+        <a href="/for/insurance-agencies" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Insurance Agencies</a>
+        <a href="/for/real-estate" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Real Estate</a>
+        <a href="/for/contractors" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Contractors</a>
+        <a href="/industries" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Industries &rarr;</a>
+      </div>
+      <p class="text-sm text-gray-400 mb-4">Compare with other communication integrations:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/integrations/microsoft-teams" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Microsoft Teams</a>
+        <a href="/integrations/intercom" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Intercom</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6 bg-gray-900 text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Your phone system generates the data. Let's make it work.</h2>
+      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your RingCentral setup, identify where comms data is getting stuck, and figure out where OpenClaw can bridge the gaps.</p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=ringcentral--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg">
+        Book a Free Discovery Call
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-6 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Home</a>
+        <a href="/industries" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Industries</a>
+        <a href="/#pricing" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Pricing</a>
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=ringcentral--discovery" target="_blank" class="text-sm text-gray-400 hover:text-gray-900 transition-colors">Book a Call</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+(function(){function g(){try{var m=document.cookie.match(/_ga(?:_[A-Z0-9]+)?=GA\d+\.\d+\.([^;]+)/);return m?m[1]:null}catch(e){return null}}document.addEventListener('click',function(e){var a=e.target.closest('a[href*="cal.com"]');if(!a)return;var u=new URL(a.href);var c=u.searchParams.get('utm_content')||'';var p=c.split('--');var cid=g();gtag('event','book_call_click',{page_source:p[0]||'',cta_type:p[1]||'',campaign:u.searchParams.get('utm_campaign')||'',link_url:a.href});if(cid)u.searchParams.set('metadata[ga_client_id]',cid);u.searchParams.set('metadata[source_page]',window.location.pathname);u.searchParams.set('metadata[source_content]',c);a.href=u.toString();});})();
+</script>
+</body>
+</html>

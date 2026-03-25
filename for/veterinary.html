@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBW292SFKX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DBW292SFKX');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Setup for Veterinary Clinics - AI Automation | NYC Claw</title>
+  <meta name="description" content="OpenClaw setup for veterinary clinics. Automated appointment scheduling, vaccination reminders, client communication & inventory tracking. White-glove AI deployment in NYC.">
+  <meta property="og:title" content="OpenClaw Setup for Veterinary Clinics - AI Automation | NYC Claw">
+  <meta property="og:description" content="OpenClaw setup for veterinary clinics. Automated appointment scheduling, vaccination reminders, client communication & inventory tracking. White-glove AI deployment in NYC.">
+  <meta property="og:image" content="https://nycclaw.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nycclaw.com/for/veterinary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://nycclaw.com/for/veterinary">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; content: ""; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+    .industries-dropdown { position: relative; }
+    .industries-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      z-index: 60;
+    }
+    .industries-dropdown:hover .industries-dropdown-panel,
+    .industries-dropdown-panel:hover { display: block; }
+    .industries-dropdown-inner {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      padding: 1.25rem;
+      width: 32rem;
+    }
+    .industries-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .industries-dropdown-grid a {
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      color: #374151;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
+    .industries-dropdown-grid a .soon-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #d1d5db;
+      margin-left: 0.375rem;
+      vertical-align: middle;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OpenClaw Setup for Veterinary Clinics",
+    "description": "Done-for-you AI assistant setup for veterinary clinics. Automated appointment scheduling, vaccination reminders, client communication, lab results delivery, and inventory management.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "NYC Claw",
+      "url": "https://nycclaw.com"
+    },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Discovery Call",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Remote Setup",
+          "price": "1200",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Person NYC Setup",
+          "price": "2400",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does OpenClaw handle appointment scheduling for a vet clinic?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenClaw monitors your incoming calls, web forms, and emails. When a pet owner requests an appointment, it checks your practice management system for open slots based on appointment type and provider availability, confirms the booking, and sends reminders automatically. Your front desk and veterinarians get notified of every new appointment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this replace my practice management software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OpenClaw connects to your existing tools like Cornerstone, AVImark, eVetPractice, and others via email, calendar, and API integrations. It works alongside your current systems. Think of it as an extra team member that handles the repetitive tasks your staff shouldn't be spending time on."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take for a veterinary clinic?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most veterinary clinic setups are completed in a single session of 2-3 hours, with fine-tuning over the following two weeks. Your clinic will have automated scheduling, vaccination reminders, and client communication running within the first day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is client and patient data kept private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenClaw runs on your own devices. Client records, patient histories, and communications never leave your control. The software is open-source, so you have full transparency into how data is handled."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this work for a multi-location veterinary group?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. OpenClaw can be configured across multiple clinic locations with location-specific scheduling rules, provider availability, and reminder protocols. Each location gets its own workflows while you maintain centralized oversight."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="/" class="text-lg font-bold text-gray-900">NYC Claw</a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="industries-dropdown">
+            <button class="text-sm text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+              Industries
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="industries-dropdown-panel">
+              <div class="industries-dropdown-inner">
+                <div class="industries-dropdown-grid">
+                  <a href="/for/accounting-firms">Accounting Firms</a>
+                  <a href="/for/architecture-firms">Architecture Firms</a>
+                  <a href="/for/auto-dealerships">Auto Dealerships</a>
+                  <a href="/for/coaches-consultants">Coaches &amp; Consultants</a>
+                  <a href="/for/construction">Construction</a>
+                  <a href="/for/contractors">Contractors</a>
+                  <a href="/for/creative-agencies">Creative Agencies</a>
+                  <a href="/for/dental-practices">Dental Practices</a>
+                  <a href="/for/ecommerce">E-commerce</a>
+                  <a href="/for/event-planners">Event Planners</a>
+                  <a href="/for/financial-advisors">Financial Advisors</a>
+                  <a href="/for/fitness-studios">Fitness Studios</a>
+                  <a href="/for/healthcare">Healthcare</a>
+                  <a href="/for/home-services">Home Services</a>
+                  <a href="/for/insurance-agencies">Insurance Agencies</a>
+                  <a href="/for/law-firms">Law Firms</a>
+                  <a href="/for/logistics">Logistics</a>
+                  <a href="/for/med-spas">Med Spas</a>
+                  <a href="/for/mortgage-brokers">Mortgage Brokers</a>
+                  <a href="/for/pest-control">Pest Control</a>
+                  <a href="/for/property-management">Property Management</a>
+                  <a href="/for/real-estate">Real Estate</a>
+                  <a href="/for/real-estate-investors">Real Estate Investors</a>
+                  <a href="/for/recruiting-agencies">Recruiting Agencies</a>
+                  <a href="/for/restaurants">Restaurants</a>
+                  <a href="/for/startup-founders">Startup Founders</a>
+                  <a href="/for/veterinary">Veterinary</a>
+                </div>
+                <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
+                  <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/integrations" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Integrations</a>
+          <a href="/#pricing" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/#community" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Community</a>
+        </div>
+      </div>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=nav&utm_content=veterinary--discovery" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        For Veterinary Clinics
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Your team is buried in callbacks.<br>
+        <span class="text-gray-500">Your patients can't wait.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+        Vet clinics lose 30% of incoming calls to hold times and voicemail. Pet owners who can't get through call the next clinic on Google. OpenClaw handles what your front desk physically can't.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">Powered by OpenClaw, open-source AI that runs on your devices.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=veterinary--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+          Book a Free Discovery Call
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-700 rounded-lg border border-gray-300 hover:border-gray-900 transition-all">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-8 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">30%</p>
+          <p class="text-sm text-gray-500 mt-1">of client calls go unanswered during peak hours</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">15-20%</p>
+          <p class="text-sm text-gray-500 mt-1">of appointments are no-shows without reminders</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">40%</p>
+          <p class="text-sm text-gray-500 mt-1">of pets are overdue for vaccinations at any given time</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-gray-900">12+</p>
+          <p class="text-sm text-gray-500 mt-1">hours per week spent on manual client follow-ups</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Sound familiar?</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">These aren't hypothetical problems. They're what veterinary clinics deal with every single day.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Pain 1 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">New clients call while your staff is triaging an emergency</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A dog owner calls at 2pm to schedule a wellness exam. Your receptionist is on another line with a panicked cat owner, the vet tech is restraining a nervous Labrador, and two clients are waiting at the front desk to check out. That call goes to voicemail. The dog owner finds another clinic with online booking instead. Each lost new client represents $2,000+ in lifetime value when you factor in annual exams, vaccines, and dental cleanings.</p>
+        </div>
+        <!-- Pain 2 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">No-shows leave exam rooms empty and vets standing idle</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Without consistent reminders, veterinary clinics see a 15-20% no-show rate. That's 3-4 empty appointment slots per day in a busy practice. At $150-$300 per visit, you're losing $2,000-$5,000 every week. Your team tries to call and confirm appointments manually, but they're already juggling prescription refills, lab results, and walk-in emergencies.</p>
+        </div>
+        <!-- Pain 3 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Vaccination reminders fall through the cracks constantly</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Hundreds of patients in your system are overdue for rabies boosters, DHPP, bordetella, or feline FVRCP. Postcards cost $1-2 each with a tiny response rate. Your staff is supposed to call these clients but the list keeps growing because there's never enough time. These pets aren't switching vets. Their owners just forgot, and nobody followed up enough.</p>
+        </div>
+        <!-- Pain 4 -->
+        <div class="p-6 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-semibold mb-2">Prescription refills and lab results create a communication bottleneck</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Mrs. Garcia calls to refill her cat's thyroid medication. Your tech writes a sticky note. The vet approves it two hours later. Someone needs to call the pharmacy and then call Mrs. Garcia back. Meanwhile, bloodwork results came in for three patients and those owners are waiting to hear back. Each of these tasks takes 5-10 minutes of phone tag, and they pile up fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OPENCLAW DOES -->
+  <section id="capabilities" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What OpenClaw does for your clinic</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Not another app your team ignores. OpenClaw runs in the background and handles the work that keeps falling through the cracks.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-green-600 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Appointment Scheduling</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Client inquiries from your website, Google Business Profile, or email get a response in seconds. OpenClaw collects patient species, reason for visit, and preferred times, then books them into the right slot with the right provider. No more lost calls.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Vaccination &amp; Prescription Reminders</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Pets overdue for vaccines, heartworm prevention, or prescription refills trigger automatic outreach. OpenClaw sends personalized reminders at the right intervals via text and email. Clients book directly from the reminder.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Client Communication</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Automated appointment confirmations, post-visit follow-ups, and discharge instruction summaries. Clients get clear updates without your staff playing phone tag all afternoon. Happy clients leave better reviews, too.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Lab Results Delivery</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When bloodwork or diagnostic results come back, OpenClaw drafts a client-friendly summary for vet review and sends it once approved. No more sticky notes, no forgotten callbacks. Clients get their pet's results the same day instead of waiting 48 hours.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Telemedicine Support</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">For follow-up checks, minor concerns, or post-surgery monitoring, OpenClaw can schedule and coordinate virtual consultations. It sends the video link, collects pre-visit notes from the client, and files everything in the patient record automatically.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Inventory Tracking</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw monitors stock levels for medications, vaccines, and supplies. When inventory drops below your set thresholds, it flags the item and can draft reorder requests to your distributor. No more discovering you're out of Rimadyl mid-appointment.</p>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-8">Every setup is configured for your specific clinic, tools, and patient flow.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IS OPENCLAW -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">OpenClaw Setup for Veterinary Clinics: Your AI Transformation</h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-4">OpenClaw is an open-source AI assistant that runs on your own devices. Unlike cloud-based tools that store client data on their servers, everything stays under your control. It connects to your practice management software, email, phone system, and calendar to handle the operational work that buries your front desk every day.</p>
+      <p class="text-gray-500 text-lg leading-relaxed">We don't just install it. We <strong>configure it for veterinary</strong>. Your scheduling rules, your vaccination protocols, your prescription workflows, your client communication style. That's what separates this from a generic chatbot that doesn't know a DHPP from a bordetella. <a href="/" class="text-gray-900 underline hover:no-underline">Learn more about NYC Claw &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- THE MATH -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Do the math</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">This isn't about technology. It's about the revenue walking out your door right now.</p>
+      </div>
+      <div class="p-8 rounded-xl border border-gray-200 bg-gray-50">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold text-lg mb-4 text-red-500">Without OpenClaw</h3>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                30% of new client calls go to voicemail
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                15-20% no-show rate, 3-4 empty slots per day
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                Hundreds of pets overdue for vaccinations with no outreach
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                12+ hours/week on manual callbacks and follow-ups
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 flex-shrink-0 mt-0.5">&#x2715;</span>
+                $100K+ lost annually in missed and unfilled appointments
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-4 text-green-600">With OpenClaw</h3>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Every inquiry gets a response in under 60 seconds
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                No-show rate drops to 5-8% with automated reminders
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Vaccination and refill reminders sent automatically on schedule
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Lab results delivered to clients the same day
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Front desk freed up to focus on in-clinic patient care
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+          <p class="text-sm text-gray-500">Filling just 2 extra appointments per day pays for the entire setup in under two weeks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How setup works</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three steps to a fully working AI assistant, configured for veterinary.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">1</div>
+          <h3 class="text-lg font-semibold mb-2">Discovery Call</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We learn your clinic: which PMS you use, how your schedule is structured, what your biggest bottlenecks are, and where clients are falling through the cracks. 15 minutes, free, no commitment.</p>
+        </div>
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">2</div>
+          <h3 class="text-lg font-semibold mb-2">Configure &amp; Deploy</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We install OpenClaw, connect your practice management system, email, and phone. Set up appointment scheduling, vaccination reminders, client communication, and lab result workflows specific to your clinic.</p>
+        </div>
+        <div class="relative p-8 bg-white rounded-xl border border-gray-200 text-center">
+          <div class="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-bold flex items-center justify-center mx-auto mb-5">3</div>
+          <h3 class="text-lg font-semibold mb-2">See More Patients</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Walk through real scenarios together: a new client calls, someone cancels, a pet is overdue for vaccines. Two weeks of follow-up support to fine-tune everything until it runs like clockwork.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple pricing</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Start with a discovery call. We'll tell you exactly what to expect.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Discovery -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">Discovery Call</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">Free</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">15-minute clinic analysis. We'll map out exactly where your schedule is leaking revenue.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Clinic workflow analysis
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Revenue leakage assessment
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Setup plan &amp; cost estimate
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              No commitment required
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=veterinary--discovery" target="_blank" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book Now</a>
+        </div>
+        <!-- Remote (highlighted) -->
+        <div class="p-8 rounded-xl border-2 border-gray-900 shadow-lg relative flex flex-col">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gray-900 text-white text-xs font-semibold">Most Popular</div>
+          <h3 class="text-lg font-semibold mb-1">Remote Setup</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$1,200</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">Full OpenClaw deployment over screen share. Everything configured for your veterinary clinic workflow.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Discovery Call
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full OpenClaw installation &amp; configuration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Scheduling + vaccine reminders + client comms
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              PMS + email + calendar integration
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              2 weeks of follow-up support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=veterinary--remote" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md">Book a Call</a>
+        </div>
+        <!-- In-Person -->
+        <div class="p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all flex flex-col">
+          <h3 class="text-lg font-semibold mb-1">In-Person NYC</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-4xl font-bold">$2,400</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">White-glove setup at your clinic. Hands-on deployment, staff training, multi-device.</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Remote Setup
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              In-person at your NYC clinic
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Multi-device setup (front desk + exam rooms)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Live staff training session
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              1 month of priority support
+            </li>
+          </ul>
+          <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=veterinary--in-person" class="block text-center px-6 py-3 text-sm font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-sm">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How does OpenClaw handle appointment scheduling for a vet clinic?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            OpenClaw monitors your incoming calls, web forms, and emails. When a pet owner requests an appointment, it checks your practice management system for open slots based on appointment type and provider availability, confirms the booking, and sends reminders automatically. Your front desk and veterinarians get notified of every new appointment.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Does this replace my practice management software?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            No. OpenClaw connects to your existing tools like Cornerstone, AVImark, eVetPractice, and others via email, calendar, and API integrations. It works alongside your current systems. Think of it as an extra team member that handles the repetitive tasks your staff shouldn't be spending time on.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">How long does setup take for a veterinary clinic?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Most veterinary clinic setups are completed in a single session of 2-3 hours, with fine-tuning over the following two weeks. Your clinic will have automated scheduling, vaccination reminders, and client communication running within the first day.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Is client and patient data kept private?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Yes. OpenClaw runs on your own devices. Client records, patient histories, and communications never leave your control. The software is open-source, so you have full transparency into how data is handled.
+          </div>
+        </details>
+        <details class="group border border-gray-200 rounded-xl bg-white">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="font-medium text-gray-900">Can this work for a multi-location veterinary group?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+            Absolutely. OpenClaw can be configured across multiple clinic locations with location-specific scheduling rules, provider availability, and reminder protocols. Each location gets its own workflows while you maintain centralized oversight.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR INTEGRATIONS -->
+  <section class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm text-gray-400 mb-4">Popular integrations for veterinary clinics:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/integrations/google-workspace" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Google Workspace</a>
+        <a href="/integrations/ringcentral" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">RingCentral</a>
+        <a href="/integrations" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Integrations &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Stop losing clients to missed calls and forgotten reminders</h2>
+      <p class="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Book a free discovery call. We'll map out exactly how OpenClaw fits your veterinary clinic and where you're leaving revenue on the table.
+      </p>
+      <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=verticals&utm_content=veterinary--discovery" target="_blank" class="inline-flex items-center px-8 py-4 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
+        Book Your Discovery Call
+      </a>
+      <p class="text-sm text-gray-400 mt-4">15 minutes &middot; No commitment &middot; See exactly what's possible</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 py-12 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 NYC Claw. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a href="/" class="hover:text-gray-600 transition-colors">Home</a>
+          <a href="/privacy" class="hover:text-gray-600 transition-colors">Privacy</a>
+          <a href="/terms" class="hover:text-gray-600 transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+(function(){function g(){try{var m=document.cookie.match(/_ga(?:_[A-Z0-9]+)?=GA\d+\.\d+\.([^;]+)/);return m?m[1]:null}catch(e){return null}}document.addEventListener('click',function(e){var a=e.target.closest('a[href*="cal.com"]');if(!a)return;var u=new URL(a.href);var c=u.searchParams.get('utm_content')||'';var p=c.split('--');var cid=g();gtag('event','book_call_click',{page_source:p[0]||'',cta_type:p[1]||'',campaign:u.searchParams.get('utm_campaign')||'',link_url:a.href});if(cid)u.searchParams.set('metadata[ga_client_id]',cid);u.searchParams.set('metadata[source_page]',window.location.pathname);u.searchParams.set('metadata[source_content]',c);a.href=u.toString();});})();
+</script>
+</body>
+</html>
