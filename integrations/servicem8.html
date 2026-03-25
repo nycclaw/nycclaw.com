@@ -11,10 +11,10 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenClaw + ServiceM8 | Connect Field Service Jobs to Accounting, Reporting, and Client Communication | NYC Claw</title>
-  <meta name="description" content="OpenClaw connects ServiceM8 to your accounting software, reporting tools, and client communication systems. Automate job-to-invoice flows, sync client data across platforms, and build reports without CSV exports.">
-  <meta property="og:title" content="OpenClaw + ServiceM8 | Connect Field Service Jobs to the Rest of Your Business | NYC Claw">
-  <meta property="og:description" content="ServiceM8 handles field ops. OpenClaw connects it to your accounting, reporting, and communication tools so nothing falls through the cracks after a job is done.">
+  <title>OpenClaw + ServiceM8 | Automate Your Trade Business Operations | NYC Claw</title>
+  <meta name="description" content="OpenClaw connects ServiceM8 to your communication, reporting, and business tools. Automated job follow-ups, quote tracking, compliance alerts, and cross-platform workflows for trade businesses.">
+  <meta property="og:title" content="OpenClaw + ServiceM8 | Automate Your Trade Business Operations | NYC Claw">
+  <meta property="og:description" content="ServiceM8 manages your jobs. OpenClaw connects it to email, Slack, Google Drive, and everything else your trade business runs on.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nycclaw.com/og-image.png">
   <meta name="twitter:image" content="https://nycclaw.com/og-image.png">
@@ -69,12 +69,14 @@
     }
     .industries-dropdown-grid a:hover { background-color: #f3f4f6; }
   </style>
+
+  <!-- Schema: Service -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "OpenClaw for ServiceM8 - Field Service Orchestration & External Integration",
-    "description": "OpenClaw connects ServiceM8 to accounting software, reporting tools, and client communication platforms. Automated job-to-invoice flows, two-way client sync, cross-platform reporting, and workflow automation for field service businesses.",
+    "name": "OpenClaw for ServiceM8 - Trade Business Automation & Integration",
+    "description": "OpenClaw connects ServiceM8 to external tools like email platforms, Slack, Google Drive, and reporting dashboards. Automated job follow-ups, quote conversion tracking, form completion workflows, compliance badge monitoring, and cross-platform orchestration for trade businesses.",
     "provider": {
       "@type": "ProfessionalService",
       "name": "NYC Claw",
@@ -106,6 +108,8 @@
     }
   }
   </script>
+
+  <!-- Schema: FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -113,10 +117,18 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Does this replace ServiceM8?",
+        "name": "Does OpenClaw replace ServiceM8?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. ServiceM8 stays your field operations hub. OpenClaw is the layer that connects ServiceM8 to your accounting software, communication tools, and reporting systems. Your jobs, staff schedules, and client records stay exactly where they are."
+          "text": "No. ServiceM8 stays your job management and scheduling hub. OpenClaw is the automation layer that connects ServiceM8 to your other business tools: email, Slack, Google Drive, reporting dashboards, and anything else ServiceM8 doesn't talk to natively. Your job queue, client records, and invoicing stay exactly where they are."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from ServiceM8's built-in Xero/MYOB sync?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ServiceM8's accounting sync handles invoice and payment data with Xero or MYOB. OpenClaw handles everything else that crosses system boundaries. When a job completes, OpenClaw can send the customer a follow-up email through your marketing platform, update a Google Sheet with job metrics, notify your team in Slack, and flag any incomplete compliance forms. Accounting sync covers one connection. OpenClaw covers the rest."
         }
       },
       {
@@ -124,31 +136,23 @@
         "name": "How long does setup take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most integrations are running within 3 to 5 days. Day one covers the ServiceM8 API connection and webhook configuration. The remaining time goes toward mapping your job completion workflows, connecting accounting and communication tools, and testing the full chain from job status change to external action."
+          "text": "Most integrations are running within 3 to 5 days. Day one covers the ServiceM8 API connection and webhook configuration. The remaining time goes toward mapping your specific workflows, connecting your external tools, and testing the full chain from ServiceM8 trigger to external action."
         }
       },
       {
         "@type": "Question",
-        "name": "Will this break my existing Xero or MYOB connection?",
+        "name": "Will this work with our custom forms and checklists?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. OpenClaw works alongside ServiceM8's native accounting integrations. If you want to keep using the built-in Xero sync for basic invoicing, you can. OpenClaw adds the logic that the native sync can't handle: conditional invoice routing, multi-entity accounting, custom line item mapping, and triggered actions based on payment status."
+          "text": "Yes. OpenClaw can trigger actions when specific forms are completed in ServiceM8. A safety checklist gets submitted? OpenClaw can file the PDF in Google Drive, notify your compliance officer, and update your tracking spreadsheet. The form data flows into whatever external system needs it."
         }
       },
       {
         "@type": "Question",
-        "name": "Can OpenClaw handle multiple staff members and crews?",
+        "name": "Can OpenClaw track staff badges and certification expiry?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. OpenClaw reads staff assignments, GPS check-in data, and job completion status for every technician in your ServiceM8 account. You can build automations per staff member, per crew, or across your whole team. Common setups include per-technician performance reports, automated timesheet sync, and crew-specific notification routing."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens if a webhook fires while OpenClaw is processing another job?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "OpenClaw queues incoming webhooks and processes them in order. Nothing gets dropped. If three jobs complete at the same time, all three will trigger their accounting entries, client notifications, and follow-up actions. Processing typically takes under 60 seconds per event."
+          "text": "Yes. OpenClaw monitors badge expiry dates in ServiceM8 and triggers alerts before certifications lapse. Your office manager gets a Slack message 30 days before a license expires. The staff member gets an email reminder. And a task appears in your tracking system so nothing falls through the cracks."
         }
       }
     ]
@@ -187,6 +191,7 @@
                   <a href="/for/ecommerce">E-commerce</a>
                   <a href="/for/architecture-firms">Architecture Firms</a>
                   <a href="/for/coaches-consultants">Coaches & Consultants</a>
+                  <a href="/for/contractors">Contractors</a>
                 </div>
                 <div style="border-top: 1px solid #e5e7eb; margin-top: 0.75rem; padding-top: 0.75rem;">
                   <a href="/industries" style="display: block; text-align: center; font-size: 0.875rem; font-weight: 500; color: #111827;">View All Industries &rarr;</a>
@@ -211,13 +216,13 @@
         Platform Integration
       </div>
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-        ServiceM8 runs your field ops.<br>
-        <span class="text-gray-500">Everything after the job is on you.</span>
+        ServiceM8 runs your jobs.<br>
+        <span class="text-gray-500">The rest still runs on sticky notes.</span>
       </h1>
       <p class="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
-        ServiceM8 is great at dispatching, scheduling, and tracking jobs in the field. But once a job is marked complete, you're back to manual work. Invoices need to land in your accounting software. Clients need follow-ups. Reports need building. OpenClaw handles all of that automatically.
+        ServiceM8 handles scheduling, quoting, and invoicing. But when a job wraps up and you need to send a follow-up email, file the safety checklist, update your reporting dashboard, or remind a tech about an expiring license, that's all happening manually. OpenClaw connects ServiceM8 to the rest of your operation.
       </p>
-      <p class="text-sm text-gray-400 mb-10">OpenClaw sits on top of ServiceM8 and connects your field operations to accounting, client communication, and reporting tools.</p>
+      <p class="text-sm text-gray-400 mb-10">OpenClaw sits on top of ServiceM8 as the automation layer that bridges your job management platform to every other tool your trade business depends on.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=servicem8--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white rounded-lg bg-gray-900 hover:bg-gray-800 transition-all shadow-md hover:shadow-lg">
           Book a Free Discovery Call
@@ -234,8 +239,8 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <p class="text-3xl font-bold text-gray-900">15+</p>
-          <p class="text-sm text-gray-500 mt-1">ServiceM8 webhook events OpenClaw can act on</p>
+          <p class="text-3xl font-bold text-gray-900">20+</p>
+          <p class="text-sm text-gray-500 mt-1">ServiceM8 event types OpenClaw can act on</p>
         </div>
         <div>
           <p class="text-3xl font-bold text-gray-900">100+</p>
@@ -243,11 +248,11 @@
         </div>
         <div>
           <p class="text-3xl font-bold text-gray-900">&lt;60s</p>
-          <p class="text-sm text-gray-500 mt-1">from job completion to invoice in your accounting software</p>
+          <p class="text-sm text-gray-500 mt-1">from ServiceM8 trigger to external action</p>
         </div>
         <div>
-          <p class="text-3xl font-bold text-gray-900">0</p>
-          <p class="text-sm text-gray-500 mt-1">CSV exports needed for cross-platform reporting</p>
+          <p class="text-3xl font-bold text-gray-900">24/7</p>
+          <p class="text-sm text-gray-500 mt-1">automated follow-up and compliance coverage</p>
         </div>
       </div>
     </div>
@@ -257,25 +262,25 @@
   <section class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4">ServiceM8 stops where your back office starts.</h2>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Field ops run smoothly inside ServiceM8. The problem is everything that happens after.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">ServiceM8 handles jobs. Everything around the job is still manual.</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Your scheduling is sorted. But the follow-ups, the compliance paperwork, and the reporting all live outside ServiceM8, and nobody's automating them.</p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">Job completion doesn't trigger anything useful</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A tech marks a job done in ServiceM8. Then what? Someone in the office still needs to create the invoice in Xero or QuickBooks, send a follow-up email to the client, and update the project tracker. ServiceM8 knows the job is finished, but it can't tell your other systems. So your admin team becomes the messenger.</p>
+          <h3 class="text-lg font-semibold mb-2">Completed jobs don't trigger anything outside ServiceM8</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A job moves to "Completed" in ServiceM8. The invoice syncs to Xero (if you've set that up). But the thank-you email? The review request? The safety form filed in Google Drive? The notification to your office? All manual. Every time. For every job.</p>
         </div>
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">Accounting sync is limited and brittle</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">ServiceM8 has native Xero and MYOB integrations, but they only handle basic invoice push. Custom line items, split billing, multi-entity accounting, conditional tax rules: none of that works out of the box. If your accounting needs go beyond a simple invoice, you're back to doing it manually or building workarounds in spreadsheets.</p>
+          <h3 class="text-lg font-semibold mb-2">Forms and checklists are completed but not acted on</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Your techs fill out safety checklists and site assessment forms in ServiceM8. The data sits there. Nobody's automatically filing the PDFs, flagging failed inspections, or routing compliance documents to the right person. The forms exist, but the workflow around them doesn't.</p>
         </div>
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">Client communication is an afterthought</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">ServiceM8 sends basic job notifications via email and SMS. That's about it. You can't send a personalized thank-you message after a job, follow up on a quote that went cold three days ago, or ask for a review at the right moment. Your communication with clients lives outside ServiceM8, and there's no bridge between the two.</p>
+          <h3 class="text-lg font-semibold mb-2">Quote follow-ups depend on someone remembering</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You send 30 quotes a week through ServiceM8. Some get accepted right away. The rest? They sit in your queue and get followed up on whenever someone has a spare moment, which is almost never. You're losing jobs because the follow-up didn't happen fast enough.</p>
         </div>
         <div class="p-6 rounded-xl border border-gray-200">
-          <h3 class="text-lg font-semibold mb-2">Reporting requires exporting everything</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Want to see revenue by job type this month? Technician performance over the last quarter? Average job value by service area? You'll need to export CSVs from ServiceM8, pull matching data from your accounting software, and build the report yourself. There's no way to get a cross-platform view without leaving ServiceM8 entirely.</p>
+          <h3 class="text-lg font-semibold mb-2">Badge and certification tracking is a spreadsheet nightmare</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">ServiceM8's badge system tracks certifications. But knowing when licenses expire, reminding staff to renew, and making sure uncertified techs don't get dispatched to restricted jobs requires manual checking. One lapsed certification on a regulated job site can cost you the contract.</p>
         </div>
       </div>
     </div>
@@ -286,50 +291,50 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">What OpenClaw adds on top of ServiceM8</h2>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">ServiceM8 stays your field operations hub. OpenClaw connects it to everything else and adds the automation ServiceM8 can't handle alone.</p>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">ServiceM8 stays your job management hub. OpenClaw connects it to everything else and automates the work that falls between systems.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
-          <h3 class="font-semibold mb-2">Job completion triggers accounting entries</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A technician marks a job complete in ServiceM8. OpenClaw picks up the webhook, reads the job details (services performed, materials used, photos attached), and creates the correct invoice in QuickBooks, Xero, or MYOB. Custom line items, tax calculations, and client-specific pricing rules are all handled automatically. No one in the office needs to touch it.</p>
+          <h3 class="font-semibold mb-2">Automated post-job workflows</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A job moves to "Completed" in ServiceM8. OpenClaw picks up the webhook and handles everything that comes next: sends a thank-you email through your email platform, texts a review request, files job photos and forms in Google Drive, and posts a summary to your team's Slack channel. One status change, five actions, zero manual work.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Form and checklist automation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">When a tech completes a form in ServiceM8, OpenClaw reads the submission and takes action. Safety checklist passed? File the PDF in the client's Google Drive folder. Failed inspection item? Alert your compliance manager in Slack with the details. Site assessment form submitted? Update your asset tracking spreadsheet with the new data.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
           </div>
-          <h3 class="font-semibold mb-2">Two-way client sync</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Client updates in ServiceM8 flow to your accounting software, your email marketing platform, and your CRM. And it works the other direction too. A client updates their billing address in Xero? OpenClaw syncs it back to ServiceM8. No more maintaining the same contact record in four different systems.</p>
+          <h3 class="font-semibold mb-2">Quote follow-up sequences</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw monitors your ServiceM8 quote queue. When a quote hasn't been accepted after 48 hours, it sends a follow-up email. After five days, another. After ten, a final check-in with an adjusted offer if you've configured one. No more lost revenue from quotes that went cold because nobody followed up.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
-          <h3 class="font-semibold mb-2">Automated quote follow-ups</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">You sent a quote in ServiceM8 three days ago. The client hasn't responded. OpenClaw notices the status hasn't changed, drafts a follow-up email referencing the original quote details, and sends it from your business email. If the client approves the quote, OpenClaw schedules the job and notifies your dispatch team. The whole cycle runs without manual intervention.</p>
+          <h3 class="font-semibold mb-2">Badge and compliance monitoring</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw tracks badge expiry dates in ServiceM8. Thirty days before a certification expires, your office manager gets a Slack alert. The staff member gets an email reminder with renewal instructions. If a badge lapses, OpenClaw can flag that tech in your scheduling notes so they don't get dispatched to jobs requiring that certification.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
           </div>
           <h3 class="font-semibold mb-2">Cross-platform reporting</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw pulls job data from ServiceM8, revenue data from your accounting software, and client feedback from your review platform. It compiles everything into a single report: revenue by job type, technician utilization rates, average job value by service area, outstanding invoices. Delivered weekly to your inbox or a shared Google Sheet. No exports required.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">OpenClaw pulls job data, revenue figures, and staff performance metrics from ServiceM8 and compiles them into reports your team can use. Daily job summaries in Slack. Weekly Google Sheets with quote conversion rates. Monthly breakdowns by job category, staff member, or client. No more end-of-week data exports and manual spreadsheet work.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
           <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
-          <h3 class="font-semibold mb-2">Photo and document routing</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Technicians take before-and-after photos in ServiceM8. OpenClaw automatically routes those photos to the right place: a Google Drive folder organized by client and job, an email to the property manager, or an attachment on the invoice in your accounting software. Badge form data gets extracted and stored wherever you need it, not just inside ServiceM8.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="w-10 h-10 rounded-lg bg-gray-900 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-          </div>
-          <h3 class="font-semibold mb-2">Recurring job automation</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">ServiceM8 handles recurring jobs, but everything around them is still manual. OpenClaw adds the missing pieces: automatic reminder emails to clients before their next service, pre-populated job notes from the last visit, invoice generation that matches the recurring schedule, and alerts when a recurring client hasn't booked their next appointment on time.</p>
+          <h3 class="font-semibold mb-2">Asset tracking and maintenance alerts</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">ServiceM8 tracks assets at client sites. OpenClaw watches for equipment age, service history patterns, and warranty dates. When a unit hits a maintenance threshold or warranty expiration, OpenClaw notifies your team with the full asset history so they can proactively reach out to the client. Preventive outreach beats emergency callbacks every time.</p>
         </div>
       </div>
     </div>
@@ -343,7 +348,7 @@
         OpenClaw is an open-source AI assistant that connects to the tools you already use and operates them for you. Email, calendar, CRM, messaging, accounting, file storage. It reads, it responds, it takes action. It runs on your own devices, so your data stays yours.
       </p>
       <p class="text-gray-500 text-lg leading-relaxed">
-        For ServiceM8 users, OpenClaw is the layer between your field operations and your back office. It listens for job status changes, quote approvals, and new bookings in ServiceM8, then takes action in your accounting software, email, file storage, and reporting tools. The work that used to require someone in the office watching a screen all day now happens on its own.
+        For ServiceM8 users, OpenClaw is the automation layer your job management platform doesn't have. It's the bridge between your job queue and every other system your trade business depends on, handling the follow-ups, compliance tracking, and multi-tool workflows that ServiceM8 can't reach on its own.
       </p>
     </div>
   </section>
@@ -353,23 +358,23 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">What this looks like in practice</h2>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three field service businesses running ServiceM8 with OpenClaw handling the rest.</p>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Three scenarios where OpenClaw extends ServiceM8 into the rest of your business.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Cleaning Company</div>
-          <h3 class="font-semibold mb-3">Job done, invoice sent, review requested. All automatic.</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A cleaner finishes a recurring office cleaning and marks it complete in ServiceM8. OpenClaw creates the invoice in Xero with the correct line items and sends it to the client. Two hours later, a personalized review request goes out via email. If the client leaves a 5-star review, it gets posted to the company's Google Business profile. The office manager used to spend 45 minutes per day on this. Now she doesn't.</p>
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Electrical Contractor, 8 Staff</div>
+          <h3 class="font-semibold mb-3">Every completed job triggers a full follow-up chain</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">A tech finishes a switchboard upgrade and marks the job complete in ServiceM8. Within 60 seconds, OpenClaw sends the client a thank-you email with a maintenance guide, texts a review request, files the compliance certificate in Google Drive, updates the weekly revenue tracker, and notifies the office in Slack. The tech tapped one button. Five things happened across four systems.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Plumbing Business</div>
-          <h3 class="font-semibold mb-3">Emergency call to paid invoice in under an hour</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A homeowner calls about a burst pipe. The job gets created in ServiceM8 and dispatched to the nearest available plumber (GPS confirms he's 10 minutes away). The plumber arrives, takes photos of the damage, fills out the badge form with parts used, and completes the job. OpenClaw pulls the form data, builds the invoice with the right part numbers and labor rates, sends it to QuickBooks, and emails the client a receipt with the before-and-after photos attached.</p>
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Plumbing Company</div>
+          <h3 class="font-semibold mb-3">Quotes that follow up on themselves</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You send 25 quotes a week. OpenClaw watches the ServiceM8 quote queue. Any quote not accepted within 48 hours gets an automated follow-up email. After five days, a second email with a gentle nudge. After ten days, a final check-in. Your quote conversion rate went from 35% to 52% because the follow-ups actually happen now, consistently and on time.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-gray-200">
-          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Electrical Contractor</div>
-          <h3 class="font-semibold mb-3">Weekly reports that actually tell you something</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Every Friday at 6 PM, OpenClaw pulls the week's data from ServiceM8 and Xero. Jobs completed by each electrician, revenue per job type, outstanding quotes, overdue invoices, and average response time. The report lands in the owner's inbox as a formatted Google Doc with a summary at the top. He reads it over coffee Saturday morning. No spreadsheets. No exports. Just the numbers that matter.</p>
+          <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">HVAC Company</div>
+          <h3 class="font-semibold mb-3">Compliance tracking that runs itself</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">You have 10 techs with gas fitting licenses, electrical tickets, and working-at-heights certifications. OpenClaw checks ServiceM8 badge dates daily. Thirty days before any certification expires, the tech gets an email reminder and your office manager gets a Slack alert. No more spreadsheet audits. No more finding out a license lapsed after a tech was already on site.</p>
         </div>
       </div>
     </div>
@@ -386,22 +391,22 @@
         <div class="flex gap-6 items-start">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">1</div>
           <div>
-            <h3 class="text-lg font-semibold mb-1">We connect OpenClaw to ServiceM8 and your external tools</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">We set up API access to your ServiceM8 account, configure webhooks for job status changes, new bookings, quote updates, and completions. Then we connect the external tools you need: QuickBooks, Xero, Google Drive, your email platform, Slack, whatever your business runs on. This happens on day one.</p>
+            <h3 class="text-lg font-semibold mb-1">We connect OpenClaw to ServiceM8 and your other tools</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We set up API access to your ServiceM8 account, configure webhooks for the events that matter (job status changes, new clients, form completions, quote updates), and connect the external tools you need: your email platform, Slack, Google Drive, your CRM, whatever your business runs on. This happens on day one.</p>
           </div>
         </div>
         <div class="flex gap-6 items-start">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">2</div>
           <div>
-            <h3 class="text-lg font-semibold mb-1">We map your job-to-invoice and communication workflows</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Which job types should generate invoices automatically? What line items map to which accounting codes? When should follow-up emails go out? How should photos and documents be organized? We map out the logic, build the connections, and configure OpenClaw to handle the workflows that cross the boundary between ServiceM8 and everything else.</p>
+            <h3 class="text-lg font-semibold mb-1">We map the workflows that cross system boundaries</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Which ServiceM8 events should trigger actions in other tools? What data needs to sync between systems? How should compliance alerts be routed? We map out the logic, build the connections, and configure OpenClaw to handle the automation your job management platform can't reach.</p>
           </div>
         </div>
         <div class="flex gap-6 items-start">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg">3</div>
           <div>
-            <h3 class="text-lg font-semibold mb-1">OpenClaw starts running your back-office workflows</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Jobs complete in ServiceM8. Invoices appear in your accounting software. Clients get follow-ups. Reports generate on schedule. Photos land in the right folders. You review the first few days, tell us what to adjust, and we fine-tune. Within a week, the gap between your field operations and your back office is closed.</p>
+            <h3 class="text-lg font-semibold mb-1">OpenClaw starts running your cross-platform operations</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">ServiceM8 events fire. OpenClaw handles the cross-platform actions. Data flows between systems. Reports generate automatically. You review the first few days, tell us what to adjust, and we fine-tune. Within a week, the bridge between ServiceM8 and everything else is running on its own.</p>
           </div>
         </div>
       </div>
@@ -507,11 +512,20 @@
       <div class="space-y-4">
         <details class="border border-gray-200 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between p-6 cursor-pointer">
-            <span class="font-semibold text-sm">Does this replace ServiceM8?</span>
+            <span class="font-semibold text-sm">Does OpenClaw replace ServiceM8?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            No. ServiceM8 stays your field operations hub. OpenClaw is the layer that connects ServiceM8 to your accounting software, communication tools, and reporting systems. Your jobs, staff schedules, and client records stay exactly where they are. OpenClaw just makes them talk to everything else.
+            No. ServiceM8 stays your job management and scheduling hub. OpenClaw is the automation layer that connects ServiceM8 to your other business tools: email platforms, Slack, Google Drive, reporting dashboards, and anything else ServiceM8 doesn't talk to natively. Your job queue, client records, and invoicing stay exactly where they are.
+          </div>
+        </details>
+        <details class="border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer">
+            <span class="font-semibold text-sm">How is this different from ServiceM8's Xero/MYOB sync?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
+            ServiceM8's accounting sync handles invoice and payment data with Xero or MYOB. OpenClaw handles everything else that crosses system boundaries. When a job completes, OpenClaw can send the customer a follow-up email, file the compliance forms in Google Drive, update your reporting dashboard, and flag any incomplete checklists. Accounting sync covers one connection. OpenClaw covers the rest.
           </div>
         </details>
         <details class="border border-gray-200 rounded-xl overflow-hidden">
@@ -520,34 +534,25 @@
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            Most integrations are running within 3 to 5 days. Day one covers the ServiceM8 API connection and webhook configuration. The remaining time goes toward mapping your job completion workflows, connecting your accounting and communication tools, and testing the full chain from job status change to external action.
+            Most integrations are running within 3 to 5 days. Day one covers the ServiceM8 API connection and webhook configuration. The remaining time goes toward mapping your specific workflows, connecting your external tools, and testing the full chain from ServiceM8 trigger to external action.
           </div>
         </details>
         <details class="border border-gray-200 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between p-6 cursor-pointer">
-            <span class="font-semibold text-sm">Will this break my existing Xero or MYOB connection?</span>
+            <span class="font-semibold text-sm">Will this work with our custom forms and checklists?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            No. OpenClaw works alongside ServiceM8's native accounting integrations. If you want to keep using the built-in Xero sync for basic invoicing, you can. OpenClaw adds the logic that the native sync can't handle: conditional invoice routing, multi-entity accounting, custom line item mapping, and triggered actions based on payment status.
+            Yes. OpenClaw can trigger actions when specific forms are completed in ServiceM8. A safety checklist gets submitted? OpenClaw files the PDF in Google Drive, notifies your compliance officer in Slack, and updates your tracking spreadsheet. The form data flows into whatever external system needs it.
           </div>
         </details>
         <details class="border border-gray-200 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between p-6 cursor-pointer">
-            <span class="font-semibold text-sm">Can OpenClaw handle multiple staff members and crews?</span>
+            <span class="font-semibold text-sm">Can OpenClaw track staff badges and certification expiry?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            Yes. OpenClaw reads staff assignments, GPS check-in data, and job completion status for every technician in your ServiceM8 account. You can build automations per staff member, per crew, or across your whole team. Common setups include per-technician performance reports, automated timesheet sync, and crew-specific notification routing.
-          </div>
-        </details>
-        <details class="border border-gray-200 rounded-xl overflow-hidden">
-          <summary class="flex items-center justify-between p-6 cursor-pointer">
-            <span class="font-semibold text-sm">What happens if a webhook fires while OpenClaw is processing another job?</span>
-            <svg class="faq-chevron w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">
-            OpenClaw queues incoming webhooks and processes them in order. Nothing gets dropped. If three jobs complete at the same time, all three will trigger their accounting entries, client notifications, and follow-up actions. Processing typically takes under 60 seconds per event.
+            Yes. OpenClaw monitors badge expiry dates in ServiceM8 and triggers alerts before certifications lapse. Your office manager gets a Slack message 30 days before a license expires. The staff member gets an email reminder. And a task appears in your tracking system so nothing falls through the cracks.
           </div>
         </details>
       </div>
@@ -559,11 +564,10 @@
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-sm text-gray-400 mb-4">OpenClaw + ServiceM8 works across trades. See setup details for yours:</p>
       <div class="flex flex-wrap justify-center gap-3 mb-4">
+        <a href="/for/contractors" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Contractors</a>
         <a href="/for/property-management" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Property Management</a>
         <a href="/for/real-estate" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Real Estate</a>
         <a href="/for/insurance-agencies" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Insurance Agencies</a>
-        <a href="/for/accounting-firms" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Accounting Firms</a>
-        <a href="/for/coaches-consultants" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Coaches & Consultants</a>
         <a href="/industries" class="px-4 py-2 text-sm text-gray-900 font-semibold bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">View All Industries &rarr;</a>
       </div>
       <p class="text-sm text-gray-400 mb-4">Compare with other field service integrations:</p>
@@ -578,8 +582,8 @@
   <!-- FINAL CTA -->
   <section class="py-20 px-6 bg-gray-900 text-white">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4">ServiceM8 handles the field. Let's connect the office.</h2>
-      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your ServiceM8 setup, identify where data is falling through the cracks, and figure out where OpenClaw can close the gaps.</p>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">ServiceM8 runs the jobs. Let's connect the rest of the business.</h2>
+      <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Book a free 15-minute call. We'll look at your ServiceM8 setup, identify the integration gaps, and figure out where OpenClaw can bridge them.</p>
       <a href="https://cal.com/giovanninyc/15min?utm_source=nycclaw&utm_medium=website&utm_campaign=integrations&utm_content=servicem8--discovery" target="_blank" class="inline-flex items-center px-6 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg">
         Book a Free Discovery Call
       </a>
